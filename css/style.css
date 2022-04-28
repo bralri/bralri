@@ -1,0 +1,68 @@
+/*boiler plate*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Courier New', Courier, monospace;
+}
+
+/*text: font, style, colour*/
+h1, h2, h3 {
+    color: black;
+}
+h2, h3 {
+    padding-block: 10px;
+}
+
+/*hyperlinks*/
+a {
+    color: black;
+    list-style: none;
+    text-decoration: none;
+}
+a:hover {
+    color: white;
+}
+
+/*background color*/
+body {
+    background-color: #242526;
+}
+
+/*main*/
+main {
+    width: 95%;
+    margin: auto;
+}
+
+/*gallery*/
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    align-content: center;
+  }
+  .gallery img {
+    width: 100%;
+    padding-top: 10px;
+  }
+
+  /*footer*/
+  footer {
+    width: 95%;
+    padding-top: 10px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 10vh;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+  }
+  .footer {
+    justify-self: right;
+    align-self: center;
+  }
+  .footer-empty {
+    justify-self: left;
+    align-self: center;
+  }
