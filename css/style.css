@@ -79,16 +79,12 @@ footer {
     padding-bottom: 10px;
     margin: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 10vh;
     grid-column-gap: 10px;
     grid-row-gap: 10px;
   }
 .footer {
     justify-self: right;
-    align-self: center;
-}
-.footer-empty {
-    justify-self: left;
     align-self: center;
 }
