@@ -58,16 +58,17 @@ header {
     padding-bottom: 10px;
     margin: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 75% 1fr 1fr 1fr;
     grid-template-rows: 10vh;
     grid-column-gap: 10px;
     grid-row-gap: 10px;
 }
-.header-temp-left {
+.header-home {
     justify-self: left;
     align-self: center;
 }
-.header-temp-right {
+
+.header-archive, .header-about, .header-contact {
     justify-self: right;
     align-self: center;
 }
