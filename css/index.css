@@ -1,0 +1,46 @@
+/*boiler plate*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Courier New', Courier, monospace;
+}
+
+a {
+    color: white;
+    list-style: none;
+    text-decoration: none;
+}
+a:hover{
+    color: gray;
+}
+
+h1, h2, h3 {
+    color: blue;
+}
+
+/*background-image*/
+.background-image {
+    background-image: url('../img/9.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 1;
+    height: 100vh;
+}
+
+/*enter-button*/
+.enter-button {
+    display: grid;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.enter-text {
+    color: whitesmoke;
+    align-self: center;
+    justify-self: center;
+}
+

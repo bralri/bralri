@@ -8,7 +8,7 @@
 
 /*text: font, style, colour*/
 h1, h2, h3 {
-    color: black;
+    color: whitesmoke;
 }
 h2, h3 {
     padding-block: 10px;
@@ -16,12 +16,12 @@ h2, h3 {
 
 /*hyperlinks*/
 a {
-    color: black;
+    color: whitesmoke;
     list-style: none;
     text-decoration: none;
 }
 a:hover {
-    color: white;
+    color: gray;
 }
 
 /*background color*/
