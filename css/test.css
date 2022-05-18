@@ -115,6 +115,7 @@ main {
     margin: auto;
     z-index: 0;
 }
+
 /*gallery*/
 .gallery {
     display: grid;
@@ -124,17 +125,17 @@ main {
     align-content: center;
     justify-content: center;
 }
+.gallery img {
+    width: 100%;
+}
 .gallery-collages {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(575px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     grid-template-rows: 1fr;
     grid-row-gap: 20px;
     grid-column-gap: 20px;
     align-content: center;
     justify-content: center;
-}
-.gallery img {
-    width: 100%;
 }
 .gallery-collages img {
     width: 100%;
@@ -142,6 +143,7 @@ main {
 .image:hover {
     cursor: pointer;
 }
+
 /*footer*/
 footer {
     width: 90%;
