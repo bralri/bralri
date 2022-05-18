@@ -10,6 +10,7 @@ a {
     color: white;
     list-style: none;
     text-decoration: none;
+    font-size: 128px;
 }
 a:hover{
     color: gray;

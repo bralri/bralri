@@ -1,0 +1,165 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #242526;
+    overflow-x: hidden;
+}
+
+/*header*/
+header {
+    overflow: hidden;
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 95px 95%;
+    background-color: transparent;
+}
+header .navbar {
+    align-self: center;
+    justify-self: center;
+}
+
+/*pop-out side nav bar*/
+.side-nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: #242526;
+    opacity: 0.8;
+    overflow-x: hidden;
+    padding-top: 90px;
+    transition: 0.5s;
+}
+
+.side-nav a {
+    padding: 30px 10px 10px 30px; /*top,right,bottom,left*/
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    color: whitesmoke;
+    /*background-color: blue;*/
+    display: block;
+    transition: 0.3s;
+}
+.side-nav a:hover {
+    color: gray;
+}
+
+button {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    font-size: 64px;
+    color: whitesmoke;
+    /*background-color: red;*/
+    overflow: hidden;
+    outline: none;
+}
+button:hover {
+    cursor: pointer;
+    color: gray;
+}
+.side-nav .btn-close {
+    position: absolute;
+    background-color: transparent;
+    top: 0px;
+    left: 22px;
+    font-size: 64px;
+}
+.navbar .openslide {
+    background-color: #242526;
+}
+
+/*navbar - burger menu sticky*/
+.sticky {
+    position: fixed;
+}
+
+.sticky + main {
+    padding-top: 20px;
+}
+
+
+/*style.css*/
+/*boiler plate*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Courier New', Courier, monospace;
+}
+
+/*text: font, style, colour*/
+h1, h2, h3, h4 {
+    color: whitesmoke;
+}
+h2, h3 {
+    padding-block: 10px;
+}
+
+/*hyperlinks*/
+a {
+    color: whitesmoke;
+    list-style: none;
+    text-decoration: none;
+}
+a:hover {
+    color: gray;
+}
+
+/*main*/
+main {
+    width: 90%;
+    margin: auto;
+    z-index: 0;
+}
+/*gallery*/
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1fr, 1fr));
+    grid-template-rows: 1fr;
+    grid-row-gap: 10px;
+    align-content: center;
+    justify-content: center;
+}
+.gallery img {
+    width: 100%;
+}
+.image:hover {
+    cursor: pointer;
+}
+/*footer*/
+footer {
+    width: 90%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10vh;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+.footer {
+    justify-self: right;
+    align-self: center;
+}
+/*scrollbar*/
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}    
+/* Track */
+::-webkit-scrollbar-track {
+    background: #242526;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: whitesmoke;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: gray;
+}
