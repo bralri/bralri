@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bralri.net</title>
+    <link rel="stylesheet" href="../css/test.css"/>
+    <link rel="icon" type="image/png" href="./img/favicon.png">
+    <link rel="prefetch" href="./img/ecg_tabs_10.png">
+    <link rel="prefetch" href="./img/ecg_tabs_9.png">
+    <link rel="prefetch" href="./img/ecg_tabs_8.png">
+    <link rel="prefetch" href="./img/ecg_tabs_7.png">
+    <link rel="prefetch" href="./img/ecg_tabs_6.png">
+    <link rel="prefetch" href="./img/ecg_tabs_4.png">
+    <link rel="prefetch" href="./img/ecg_tabs_3.png">
+    <link rel="prefetch" href="./img/ecg_tabs_2.png">
+    <link rel="prefetch" href="./img/ecg_tabs_1.png">
+</head>
+
+<body>
+
+    <header id="navigation">
+        <!--hamburger button-->
+        <nav class="navbar">
+            <span class="open-slide">
+                <button id="button" href="#" onclick="openSlideMenu()">&#9864;</button>
+            </span>
+        </nav>
+
+        
+
+        <!--pop-out side menu nav-->
+        <div id="slide-menu" class="side-nav">
+            <button href="#" class="btn-close" onclick="closeSlideMenu()">&#9862;</button>
+            <a href="/">archive</a>
+            <a href="../about">about</a>
+            <a href="../contact">contact</a>
+        </div>
+
+        <script>
+            function openSlideMenu() {
+                document.getElementById('slide-menu').style.width = '250px';
+                //document.getElementById('main').style.marginLeft = '250px';
+                document.getElementById('button').style.visibility = 'hidden';
+            }
+
+            function closeSlideMenu() {
+                document.getElementById('slide-menu').style.width = '0px';
+                //document.getElementById('main').style.marginLeft = '0px';
+                document.getElementById('button').style.visibility = 'visible';
+            }
+
+            window.onscroll = function() {myFunction()};
+            var navbar = document.getElementById('navigation');
+            var sticky = navbar.offsetTop;
+
+            function myFunction() {
+                if (window.pageYOffset >= sticky) {
+                    navbar.classList.add('sticky')
+                } else {
+                    navbar.classList.remove('sticky');
+                }
+            }
+        </script>
+    </header>
+
+    <main>
+        <div class="gallery">
+            <div class="img-container">
+                <div class="image">
+                    <a href="/img/ecg_tabs_1.png" target="_blank">
+                        <img src="/img/ecg_tabs_1.png" alt=".">
+                    </a>
+                </div>
+            </div>
+            <div class="img-container">
+                <div class="image">
+                    <a href="/img/ecg_tabs_2.png" target="_blank">
+                        <img src="/img/ecg_tabs_2.png" alt=".">
+                    </a>
+                </div>
+            </div>
+            <div class="img-container">
+                <div class="image">
+                    <a href="/img/ecg_tabs_3.png" target="_blank">
+                        <img src="/img/ecg_tabs_3.png" alt=".">
+                    </a>
+                </div>
+            </div>
+            <div class="img-container">
+                <div class="image">
+                    <a href="/img/ecg_tabs_4.png" target="_blank">
+                        <img src="/img/ecg_tabs_4.png" alt=".">
+                    </a>
+                </div>
+            </div>
+            <div class="img-container">
+                <div class="image">
+                    <a href="/img/ecg_tabs_6.png" target="_blank">
+                        <img src="/img/ecg_tabs_6.png" alt=".">
+                    </a>
+                </div>
+            </div>
+            <div class="img-container">
+                <div class="image">
+                    <a href="/img/ecg_tabs_7.png" target="_blank">
+                        <img src="/img/ecg_tabs_7.png" alt=".">
+                    </a>
+                </div>
+            </div>
+            <div class="img-container">
+                <div class="image">
+                    <a href="/img/ecg_tabs_8.png" target="_blank">
+                        <img src="/img/ecg_tabs_8.png" alt=".">
+                    </a>
+                </div>
+            </div>
+            <div class="img-container">
+                <div class="image">
+                    <a href="/img/ecg_tabs_9.png" target="_blank">
+                        <img src="/img/ecg_tabs_9.png" alt=".">
+                    </a>
+                </div>
+            </div>
+            <div class="img-container">
+                <div class="image">
+                    <a href="/img/ecg_tabs_10.png" target="_blank">
+                        <img src="/img/ecg_tabs_10.png" alt=".">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer">
+            <h3>&copy; <script>document.write(new Date().getFullYear())</script> Bryan Ridpath</h3>
+        </div>
+    </footer>
+
+</body>
+</html>
