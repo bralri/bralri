@@ -1,6 +1,9 @@
 /*gallery*/
 .recent-work {
-    padding-top: 70px;
+    padding-top: 50px;
+}
+.recent-work h3 {
+    padding-bottom: 30px;
 }
 .archive-work {
     padding-top: 50px;
@@ -10,11 +13,12 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     grid-template-rows: 1fr;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
+    grid-column-gap: 15px;
+    grid-row-gap: 40px;
     padding-bottom: 50px;
 }
 .recent-work-gallery img {
+    height: 350px;
     width: 100%;
 }
 .img-container:hover {
