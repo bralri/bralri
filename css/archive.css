@@ -1,0 +1,22 @@
+/*gallery*/
+.recent-work {
+    padding-top: 70px;
+}
+.archive-work {
+    padding-top: 50px;
+}
+
+.recent-work-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-template-rows: 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    padding-bottom: 50px;
+}
+.recent-work-gallery img {
+    width: 100%;
+}
+.img-container:hover {
+    cursor: pointer;
+}

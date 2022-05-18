@@ -5,20 +5,136 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bralri.net</title>
-    <link rel="stylesheet" href="./css/index.css"/>
+    <link rel="stylesheet" href="./css/test.css"/>
+    <link rel="stylesheet" href="./css/archive.css">
     <link rel="icon" type="image/png" href="./img/favicon.png">
-    <link rel="prefetch" href="./img/9.png">
 </head>
 
 <body>
 
-        <div class="enter-button">
-            <h3 class="enter-text">
-                <a href="archive">&#9737;</a>
-            </h3>
+    <header id="navigation">
+        <!--hamburger button-->
+        <nav class="navbar">
+            <span class="open-slide">
+                <button id="button" href="#" onclick="openSlideMenu()">&#9864;</button>
+            </span>
+        </nav>
+
+        
+
+        <!--pop-out side menu nav-->
+        <div id="slide-menu" class="side-nav">
+            <button href="#" class="btn-close" onclick="closeSlideMenu()">&#9862;</button>
+            <a href="archive">archive</a>
+            <a href="about">about</a>
+            <a href="contact">contact</a>
         </div>
 
+        <script>
+            function openSlideMenu() {
+                document.getElementById('slide-menu').style.width = '250px';
+                //document.getElementById('main').style.marginLeft = '250px';
+                document.getElementById('button').style.visibility = 'hidden';
+            }
 
-        <div class="background-image"></div>
+            function closeSlideMenu() {
+                document.getElementById('slide-menu').style.width = '0px';
+                //document.getElementById('main').style.marginLeft = '0px';
+                document.getElementById('button').style.visibility = 'visible';
+            }
+
+            window.onscroll = function() {myFunction()};
+            var navbar = document.getElementById('navigation');
+            var sticky = navbar.offsetTop;
+
+            function myFunction() {
+                if (window.pageYOffset >= sticky) {
+                    navbar.classList.add('sticky')
+                } else {
+                    navbar.classList.remove('sticky');
+                }
+            }
+        </script>
+    </header>
+
+    <main class="archive">
+        <div class="recent-work">
+            <h3>
+                recent work:
+            </h3>
+            <div class="recent-work-gallery">
+                <div class="image-container">
+                    <a href="artifact_1.html">
+                        <img src="/img/10.png" alt="">
+                    </a>
+                    <a href="artifact_1.html">
+                        <h4>artifact_v1 : screenshots</h4>
+                    </a>
+                    </div>
+                <div class="image-container">
+                    <img src="/img/cryo_10.png" alt="">
+                    <h4>cryo_v1 : screenshots</h4>
+                </div>
+                <div class="image-container">
+                    <img src="/img/ecg_tabs_1.png" alt="">
+                    <h4>ecg_tabs_v1 : screenshots</h4>
+                </div>
+
+
+            </div>
+            
+        </div>
+        <div class="archive-work">
+            <h3>
+                2021:
+            </h3>
+            <div class="recent-work-gallery">
+                <div class="image-container">
+                    <img src="/img/10.png" alt="">
+                </div>
+                <div class="image-container">
+                    <img src="/img/10.png" alt="">
+                </div>
+                <div class="image-container">
+                    <img src="/img/10.png" alt="">
+                </div>
+            </div>
+            <h3>
+                2020:
+            </h3>
+            <div class="recent-work-gallery">
+                <div class="image-container">
+                    <img src="/img/10.png" alt="">
+                </div>
+                <div class="image-container">
+                    <img src="/img/10.png" alt="">
+                </div>
+                <div class="image-container">
+                    <img src="/img/10.png" alt="">
+                </div>
+            </div>
+            <h3>
+                2019:
+            </h3>
+            <div class="recent-work-gallery">
+                <div class="image-container">
+                    <img src="/img/10.png" alt="">
+                </div>
+                <div class="image-container">
+                    <img src="/img/10.png" alt="">
+                </div>
+                <div class="image-container">
+                    <img src="/img/10.png" alt="">
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer">
+            <h3>&copy; <script>document.write(new Date().getFullYear())</script> Bryan Ridpath</h3>
+        </div>
+    </footer>
+
 </body>
 </html>
