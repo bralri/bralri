@@ -130,7 +130,7 @@ main {
 }
 .gallery-collages {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-template-columns:repeat(auto-fit, minmax(1fr,  1fr));
     grid-template-rows: 1fr;
     grid-row-gap: 20px;
     grid-column-gap: 20px;
@@ -140,6 +140,13 @@ main {
 .gallery-collages img {
     width: 100%;
 }
+
+@media(min-width: 568px) {
+    .gallery-collages {
+        grid-template-columns:repeat(auto-fit, minmax(500px,  1fr));
+    }
+}
+
 .image:hover {
     cursor: pointer;
 }
