@@ -23,3 +23,9 @@
 .img-container:hover {
     cursor: pointer;
 }
+
+@media(min-width: 568px) {
+    .recent-work-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(1fr, 1fr));
+    }
+}
