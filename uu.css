@@ -1,0 +1,31 @@
+/*gallery*/
+.recent-work {
+    padding-top: 50px;
+}
+.recent-work h3 {
+    padding-bottom: 30px;
+}
+.archive-work {
+    padding-top: 50px;
+}
+
+.recent-work-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-template-rows: 1fr;
+    grid-column-gap: 15px;
+    grid-row-gap: 40px;
+    padding-bottom: 50px;
+}
+.recent-work-gallery img {
+    width: 100%;
+}
+.img-container:hover {
+    cursor: pointer;
+}
+
+@media(min-width: 568px) {
+    .recent-work-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(1fr, 1fr));
+    }
+}

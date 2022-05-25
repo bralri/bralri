@@ -1,3 +1,15 @@
 main {
   height: 75vh;
+  display: grid;
+  text-align: center;
+}
+
+.contact-text {
+  align-self: center;
+  justify-self: center;
+}
+
+.about-text {
+  align-self: center;
+  justify-self: center;
 }
