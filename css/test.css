@@ -1,15 +1,14 @@
 body {
-    font-family: 'Courier New', Courier, monospace;
-    background-color: whitesmoke;
+    background-color: #242526;
     overflow-x: hidden;
 }
 
 /*header*/
 header {
-    overflow: hidden;
-    width: 100%;
+    top: 0;
+    width: 95px;
     display: grid;
-    grid-template-columns: 95px 95%;
+    grid-template-columns: 95px;
     background-color: transparent;
 }
 header .navbar {
@@ -25,7 +24,7 @@ header .navbar {
     z-index: 2;
     top: 0;
     left: 0;
-    background-color: whitesmoke;
+    background-color: #242526;
     opacity: 0.8;
     overflow-x: hidden;
     padding-top: 90px;
@@ -37,7 +36,7 @@ header .navbar {
     text-decoration: none;
     font-size: 30px;
     font-weight: bold;
-    color: #242526;
+    color: whitesmoke;
     /*background-color: blue;*/
     display: block;
     transition: 0.3s;
@@ -51,7 +50,7 @@ button {
     background-repeat: no-repeat;
     border: none;
     font-size: 64px;
-    color: #242526;
+    color:whitesmoke;
     /*background-color: red;*/
     overflow: hidden;
     outline: none;
@@ -92,7 +91,7 @@ button:hover {
 
 /*text: font, style, colour*/
 h1, h2, h3, h4 {
-    color: #242526;
+    color: whitesmoke;
 }
 h2, h3 {
     padding-block: 10px;
@@ -100,7 +99,7 @@ h2, h3 {
 
 /*hyperlinks*/
 a {
-    color: #242526;
+    color: whitesmoke;
     list-style: none;
     text-decoration: none;
 }
@@ -177,11 +176,11 @@ footer {
 }    
 /* Track */
 ::-webkit-scrollbar-track {
-    background: whitesmoke;
+    background: #242526;
 }
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #242526;
+    background: whitesmoke;
 }
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
