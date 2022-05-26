@@ -1,0 +1,25 @@
+.gallery-3030-2021 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    grid-template-rows: 1fr;
+    grid-row-gap: 5px;
+    grid-column-gap: 10px;
+    align-content: center;
+    justify-content: center;
+}
+.gallery-3030-2021 img {
+    width: 100%;
+}
+
+.image:hover {
+    cursor: pointer;
+}
+
+@media(max-width: 568px) {
+    .gallery-3030-2021 {
+        grid-template-columns: 1fr;
+    }
+    .gallery-3030-2021 img {
+        width: 100%;
+    }
+}
