@@ -69,6 +69,13 @@ button:hover {
     background-color: #242526;
 }
 
+.copyright {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+
+}
+
 /*information button & popout*/
 .info-btn {
     position: fixed;
@@ -219,6 +226,7 @@ footer {
     justify-self: right;
     align-self: center;
 }
+
 /*scrollbar*/
 /* width */
 ::-webkit-scrollbar {

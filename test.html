@@ -32,7 +32,11 @@
             <a href="/">archive</a>
             <a href="about.html">about</a>
             <a href="contact.html">contact</a>
+            <div class="copyright">
+                <h3>&copy; <script>document.write(new Date().getFullYear())</script> Bryan Ridpath</h3>
+            </div>
         </div>
+
 
         <script>
             function openSlideMenu() {
@@ -133,7 +137,7 @@
 
             const update = function() {
                 if(!isMouseDown) {
-                    model.rotation.y += 0.003;
+                    model.rotation.y += 0.002;
                 };
             };
 
@@ -152,10 +156,12 @@
         </script>
 
     </main>
+    <!--
     <footer>
         <div class="footer">
             <h3>&copy; <script>document.write(new Date().getFullYear())</script> Bryan Ridpath</h3>
         </div>
     </footer>
+    -->
 </body>
 </html>
