@@ -108,10 +108,25 @@
             // const axesHelper = new THREE.AxesHelper( 5 );
             // scene.add( axesHelper );
 
+            const isMouseDown = false;
+
+            function init(){
+                window.addEventListener('mousedown', onMouseDown);
+                window.addEventListener('mouseup', onMouseUp);
+            }
+
+            function onMouseDown() {
+                isMouseDown = true;
+            }
+
+            function onMouseUp() {
+                isMouseDown = false;
+            }
+
             const update = function() {
-                model.rotation.y += 0.005;
-                // cube.rotation.x += 0.01;
-                // cube.rotation.y += 0.005;
+                if(!isMouseDown) {
+                    model.rotation.y += 0.003;
+                };
             };
 
             const render = function() {
