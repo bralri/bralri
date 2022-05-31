@@ -69,6 +69,18 @@ button:hover {
     background-color: #242526;
 }
 
+/*information button & popout*/
+.info-btn {
+    position: fixed;
+    top: 0;
+    right: 10px;
+    font-size: 50px;
+    border: none;
+    overflow: hidden;
+    outline: none;
+}
+
+
 /*navbar - burger menu sticky*/
 .sticky {
     position: fixed;
