@@ -6,9 +6,7 @@ body {
 /*header*/
 header {
     top: 0;
-    width: 95px;
-    display: grid;
-    grid-template-columns: 95px;
+    position: fixed;
     background-color: transparent;
 }
 header .navbar {
@@ -46,12 +44,13 @@ header .navbar {
 }
 
 button {
+    position: fixed;
+    left: 20px;
     background-color: transparent;
     background-repeat: no-repeat;
     border: none;
-    font-size: 64px;
+    font-size: 50px;
     color:whitesmoke;
-    /*background-color: red;*/
     overflow: hidden;
     outline: none;
 }
@@ -63,8 +62,8 @@ button:hover {
     position: absolute;
     background-color: transparent;
     top: 0px;
-    left: 22px;
-    font-size: 64px;
+    left: 185px;
+    font-size: 50px;
 }
 .navbar .openslide {
     background-color: #242526;
