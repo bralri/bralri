@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>looks like it's gunna rain, 2021 : bralri.net</title>
+    <link rel="stylesheet" href="../../css/test.css"/>
+    <link rel="stylesheet" href="../../css/about.css"/>
+    <link rel="stylesheet" href="../../css/form.css">
+    <link rel="icon" type="image/png" href="../../img/favicon.png">
+</head>
+
+<body>
+
+    <header id="navigation">
+        <!--hamburger button-->
+        <nav class="navbar">
+            <span class="open-slide">
+                <button id="button" href="#" onclick="openSlideMenu()">&#9776;</button>
+            </span>
+        </nav>
+
+        
+
+        <!--pop-out side menu nav-->
+        <div id="slide-menu" class="side-nav">
+            <button href="#" class="btn-close" onclick="closeSlideMenu()">&#10005;</button>
+            <a href="../../recent_work">recent</a>
+            <a href="../../archive.html">archive</a>
+            <a href="../../about">about</a>
+            <a href="../../contact">contact</a>
+            <div class="copyright">
+                <h3>&copy; <script>document.write(new Date().getFullYear())</script> Bryan Ridpath</h3>
+            </div>
+        </div>
+
+        <script>
+            function openSlideMenu() {
+                document.getElementById('slide-menu').style.width = '250px';
+                //document.getElementById('main').style.marginLeft = '250px';
+                document.getElementById('button').style.visibility = 'hidden';
+            }
+
+            function closeSlideMenu() {
+                document.getElementById('slide-menu').style.width = '0px';
+                //document.getElementById('main').style.marginLeft = '0px';
+                document.getElementById('button').style.visibility = 'visible';
+            }
+
+            window.onscroll = function() {myFunction()};
+            var navbar = document.getElementById('navigation');
+            var sticky = navbar.offsetTop;
+
+            function myFunction() {
+                if (window.pageYOffset >= sticky) {
+                    navbar.classList.add('sticky')
+                } else {
+                    navbar.classList.remove('sticky');
+                }
+            }
+        </script>
+    </header>
+
+    <main>
+        <div class="about-text">
+            <h3>page under construction</h3>
+        </div>
+    </main>
+    
+</body>
+</html>
