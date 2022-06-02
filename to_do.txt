@@ -1,0 +1,29 @@
+global :
+convert all png's to webp?, add back up system for browsers that don't support this
+
+recent_work.html :
+convert all gifs to ANPG, add fall back system for browsers that don't support ANPG
+add cover image for jennifer_is_in_paradise.html
+
+archive.html :
+add cover image for hinterland residency
+add cover image for "pin_presents.html"
+add bus paintings?
+add removal sculpture?
+add old studio work?
+add bus shelter plans?
+add yeah about utopia video?
+
+about.html :
+write statement for about page
+add downloadable cv
+
+pages to finish:
+about.html
+looks_like_its_gunna_rain.html - add cover image for this on archive
+deepspaceanomaly.html - embed video from vimeo?
+fields_of_elysium.html - ""
+
+change:
+moods_n_noods.html - change url to something else / work title
+pin_presents.html - change url to something else / work title
