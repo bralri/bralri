@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Page Not Found</title>
+    <title>404 page not found : bralri.net</title>
     <link rel="icon" type="image/png" href="./img/favicon.png">
+    <link rel="stylesheet" href="./css/test.css"/>
     <style>
         * {
             overflow: hidden;
@@ -37,6 +38,56 @@
     </style>
 </head>
 <body>
+
+    <header id="navigation">
+        <!--hamburger button-->
+        <nav class="navbar">
+            <span class="open-slide">
+                <button id="button" href="#" onclick="openSlideMenu()">&#9776;</button>
+            </span>
+        </nav>
+
+        
+
+        <!--pop-out side menu nav-->
+        <div id="slide-menu" class="side-nav">
+            <button href="#" class="btn-close" onclick="closeSlideMenu()">&#10005;</button>
+            <a href="./recent_work">recent</a>
+            <a href="./archive.html">archive</a>
+            <a href="./about">about</a>
+            <a href="./contact">contact</a>
+            <div class="copyright">
+                <h3>&copy; <script>document.write(new Date().getFullYear())</script> Bryan Ridpath</h3>
+            </div>
+        </div>
+
+        <script>
+            function openSlideMenu() {
+                document.getElementById('slide-menu').style.width = '250px';
+                //document.getElementById('main').style.marginLeft = '250px';
+                document.getElementById('button').style.visibility = 'hidden';
+            }
+
+            function closeSlideMenu() {
+                document.getElementById('slide-menu').style.width = '0px';
+                //document.getElementById('main').style.marginLeft = '0px';
+                document.getElementById('button').style.visibility = 'visible';
+            }
+
+            window.onscroll = function() {myFunction()};
+            var navbar = document.getElementById('navigation');
+            var sticky = navbar.offsetTop;
+
+            function myFunction() {
+                if (window.pageYOffset >= sticky) {
+                    navbar.classList.add('sticky')
+                } else {
+                    navbar.classList.remove('sticky');
+                }
+            }
+        </script>
+    </header>
+
     <main>
         <h4 class="header404">404 page not found</h4>
         <p>
