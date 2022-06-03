@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>reconfigured fedora, 2018 : bralri.net</title>
     <link rel="stylesheet" type="text/css" href="../../css/test.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="icon" type="image/png" href="../../img/favicon.png">
     <style>
         #button, h3 {
@@ -19,171 +20,184 @@
 
 <body>
 
-    <header id="navigation">
-        <!--hamburger button-->
-        <nav class="navbar">
-            <span class="open-slide">
-                <button id="button" href="#" onclick="openSlideMenu()">&#9776;</button>
-            </span>
-        </nav>
-        <!--pop-out side menu nav-->
-        <div id="slide-menu" class="side-nav">
-            <button href="#" class="btn-close" onclick="closeSlideMenu()">&#10005;</button>
-            <a href="../../recent_work">recent</a>
-            <a href="../../archive.html">archive</a>
-            <a href="../../about">about</a>
-            <a href="../../contact">contact</a>
-            <div class="copyright">
-                <h3>&copy; <script>document.write(new Date().getFullYear())</script> Bryan Ridpath</h3>
+    <div class="loader">
+        <div></div>
+    </div>
+
+    <div class="content">
+        <header id="navigation">
+            <!--hamburger button-->
+            <nav class="navbar">
+                <span class="open-slide">
+                    <button id="button" href="#" onclick="openSlideMenu()">&#9776;</button>
+                </span>
+            </nav>
+            <!--pop-out side menu nav-->
+            <div id="slide-menu" class="side-nav">
+                <button href="#" class="btn-close" onclick="closeSlideMenu()">&#10005;</button>
+                <a href="../../recent_work">recent</a>
+                <a href="../../archive.html">archive</a>
+                <a href="../../about">about</a>
+                <a href="../../contact">contact</a>
+                <div class="copyright">
+                    <h3>&copy; <script>document.write(new Date().getFullYear())</script> Bryan Ridpath</h3>
+                </div>
             </div>
-        </div>
 
-        <script>
-            function openSlideMenu() {
-                document.getElementById('slide-menu').style.width = '250px';
-                //document.getElementById('main').style.marginLeft = '250px';
-                document.getElementById('button').style.visibility = 'hidden';
-            }
-
-            function closeSlideMenu() {
-                document.getElementById('slide-menu').style.width = '0px';
-                //document.getElementById('main').style.marginLeft = '0px';
-                document.getElementById('button').style.visibility = 'visible';
-            }
-
-            window.onscroll = function() {myFunction()};
-            var navbar = document.getElementById('navigation');
-            var sticky = navbar.offsetTop;
-
-            function myFunction() {
-                if (window.pageYOffset >= sticky) {
-                    navbar.classList.add('sticky')
-                } else {
-                    navbar.classList.remove('sticky');
+            <script>
+                function openSlideMenu() {
+                    document.getElementById('slide-menu').style.width = '250px';
+                    //document.getElementById('main').style.marginLeft = '250px';
+                    document.getElementById('button').style.visibility = 'hidden';
                 }
-            }
-        </script>
-    </header>
 
-    <main>
+                function closeSlideMenu() {
+                    document.getElementById('slide-menu').style.width = '0px';
+                    //document.getElementById('main').style.marginLeft = '0px';
+                    document.getElementById('button').style.visibility = 'visible';
+                }
 
-        <div class="gallery">
+                window.onscroll = function() {myFunction()};
+                var navbar = document.getElementById('navigation');
+                var sticky = navbar.offsetTop;
 
-            <div class="img-container">
-                <div class="image">
-                    <a href="/img/installations/reconfigured_fedora/L/IMG_1865.JPG" target="_blank">
-                        <img src="/img/installations/reconfigured_fedora/S/IMG_1865.JPG" loading="lazy" alt=".">
-                    </a>
-                </div>
-            </div>
-            <div class="img-container">
-                <div class="image">
-                    <a href="/img/installations/reconfigured_fedora/L/IMG_1872.JPG" target="_blank">
-                        <img src="/img/installations/reconfigured_fedora/S/IMG_1872.JPG" loading="lazy" alt=".">
-                    </a>
-                </div>
-            </div>
-            <div class="img-container">
-                <div class="image">
-                    <a href="/img/installations/reconfigured_fedora/L/IMG_1874.JPG" target="_blank">
-                        <img src="/img/installations/reconfigured_fedora/S/IMG_1874.JPG" loading="lazy" alt=".">
-                    </a>
-                </div>
-            </div>
-            <div class="img-container">
-                <div class="image">
-                    <a href="/img/installations/reconfigured_fedora/L/IMG_1877.JPG" target="_blank">
-                        <img src="/img/installations/reconfigured_fedora/S/IMG_1877.JPG" loading="lazy" alt=".">
-                    </a>
-                </div>
-            </div>
-            <div class="img-container">
-                <div class="image">
-                    <a href="/img/installations/reconfigured_fedora/L/IMG_1880.JPG" target="_blank">
-                        <img src="/img/installations/reconfigured_fedora/S/IMG_1880.JPG" loading="lazy" alt=".">
-                    </a>
-                </div>
-            </div>
-            <div class="img-container">
-                <div class="image">
-                    <a href="/img/installations/reconfigured_fedora/L/IMG_1881.JPG" target="_blank">
-                        <img src="/img/installations/reconfigured_fedora/S/IMG_1881.JPG" loading="lazy" alt=".">
-                    </a>
-                </div>
-            </div>
-            <div class="img-container">
-                <div class="image">
-                    <a href="/img/installations/reconfigured_fedora/L/IMG_1882.JPG" target="_blank">
-                        <img src="/img/installations/reconfigured_fedora/S/IMG_1882.JPG" loading="lazy" alt=".">
-                    </a>
-                </div>
-            </div>
-            <div class="img-container">
-                <div class="image">
-                    <a href="/img/installations/reconfigured_fedora/L/IMG_1883.JPG" target="_blank">
-                        <img src="/img/installations/reconfigured_fedora/S/IMG_1883.JPG" loading="lazy" alt=".">
-                    </a>
-                </div>
-            </div>
-            <div class="img-container">
-                <div class="image">
-                    <a href="/img/installations/reconfigured_fedora/L/IMG_1884.JPG" target="_blank">
-                        <img src="/img/installations/reconfigured_fedora/S/IMG_1884.JPG" loading="lazy" alt=".">
-                    </a>
-                </div>
-            </div>
-            <div class="img-container">
-                <div class="image">
-                    <a href="/img/installations/reconfigured_fedora/L/IMG_1885.JPG" target="_blank">
-                        <img src="/img/installations/reconfigured_fedora/S/IMG_1885.JPG" loading="lazy" alt=".">
-                    </a>
-                </div>
-            </div>
-            <div class="img-container">
-                <div class="image">
-                    <a href="/img/installations/reconfigured_fedora/L/IMG_1886.JPG" target="_blank">
-                        <img src="/img/installations/reconfigured_fedora/S/IMG_1886.JPG" loading="lazy" alt=".">
-                    </a>
-                </div>
-            </div>
-            <div class="img-container">
-                <div class="image">
-                    <a href="/img/installations/reconfigured_fedora/L/IMG_1888.JPG" target="_blank">
-                        <img src="/img/installations/reconfigured_fedora/S/IMG_1888.JPG" loading="lazy" alt=".">
-                    </a>
-                </div>
-            </div>
-            <div class="img-container">
-                <div class="image">
-                    <a href="/img/installations/reconfigured_fedora/L/IMG_1889.JPG" target="_blank">
-                        <img src="/img/installations/reconfigured_fedora/S/IMG_1889.JPG" loading="lazy" alt=".">
-                    </a>
-                </div>
-            </div>
-            <div class="img-container">
-                <div class="image">
-                    <a href="/img/installations/reconfigured_fedora/L/IMG_1893.JPG" target="_blank">
-                        <img src="/img/installations/reconfigured_fedora/S/IMG_1893.JPG" loading="lazy" alt=".">
-                    </a>
-                </div>
-            </div>
-            <div class="img-container">
-                <div class="image">
-                    <a href="/img/installations/reconfigured_fedora/L/IMG_1894.JPG" target="_blank">
-                        <img src="/img/installations/reconfigured_fedora/S/IMG_1894.JPG" loading="lazy" alt=".">
-                    </a>
-                </div>
-            </div>
-            <div class="img-container">
-                <div class="image">
-                    <a href="/img/installations/reconfigured_fedora/L/IMG_1895.JPG" target="_blank">
-                        <img src="/img/installations/reconfigured_fedora/S/IMG_1895.JPG" loading="lazy" alt=".">
-                    </a>
-                </div>
-            </div>
-        </div>
+                function myFunction() {
+                    if (window.pageYOffset >= sticky) {
+                        navbar.classList.add('sticky')
+                    } else {
+                        navbar.classList.remove('sticky');
+                    }
+                }
+            </script>
+        </header>
 
-    </main>
+        <main>
+
+            <div class="gallery">
+
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/installations/reconfigured_fedora/L/IMG_1865.JPG" target="_blank">
+                            <img src="/img/installations/reconfigured_fedora/S/IMG_1865.JPG" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/installations/reconfigured_fedora/L/IMG_1872.JPG" target="_blank">
+                            <img src="/img/installations/reconfigured_fedora/S/IMG_1872.JPG" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/installations/reconfigured_fedora/L/IMG_1874.JPG" target="_blank">
+                            <img src="/img/installations/reconfigured_fedora/S/IMG_1874.JPG" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/installations/reconfigured_fedora/L/IMG_1877.JPG" target="_blank">
+                            <img src="/img/installations/reconfigured_fedora/S/IMG_1877.JPG" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/installations/reconfigured_fedora/L/IMG_1880.JPG" target="_blank">
+                            <img src="/img/installations/reconfigured_fedora/S/IMG_1880.JPG" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/installations/reconfigured_fedora/L/IMG_1881.JPG" target="_blank">
+                            <img src="/img/installations/reconfigured_fedora/S/IMG_1881.JPG" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/installations/reconfigured_fedora/L/IMG_1882.JPG" target="_blank">
+                            <img src="/img/installations/reconfigured_fedora/S/IMG_1882.JPG" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/installations/reconfigured_fedora/L/IMG_1883.JPG" target="_blank">
+                            <img src="/img/installations/reconfigured_fedora/S/IMG_1883.JPG" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/installations/reconfigured_fedora/L/IMG_1884.JPG" target="_blank">
+                            <img src="/img/installations/reconfigured_fedora/S/IMG_1884.JPG" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/installations/reconfigured_fedora/L/IMG_1885.JPG" target="_blank">
+                            <img src="/img/installations/reconfigured_fedora/S/IMG_1885.JPG" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/installations/reconfigured_fedora/L/IMG_1886.JPG" target="_blank">
+                            <img src="/img/installations/reconfigured_fedora/S/IMG_1886.JPG" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/installations/reconfigured_fedora/L/IMG_1888.JPG" target="_blank">
+                            <img src="/img/installations/reconfigured_fedora/S/IMG_1888.JPG" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/installations/reconfigured_fedora/L/IMG_1889.JPG" target="_blank">
+                            <img src="/img/installations/reconfigured_fedora/S/IMG_1889.JPG" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/installations/reconfigured_fedora/L/IMG_1893.JPG" target="_blank">
+                            <img src="/img/installations/reconfigured_fedora/S/IMG_1893.JPG" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/installations/reconfigured_fedora/L/IMG_1894.JPG" target="_blank">
+                            <img src="/img/installations/reconfigured_fedora/S/IMG_1894.JPG" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/installations/reconfigured_fedora/L/IMG_1895.JPG" target="_blank">
+                            <img src="/img/installations/reconfigured_fedora/S/IMG_1895.JPG" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        $(window).on('load',function(){
+            $(".loader").fadeOut(1500);
+            $(".content").fadeIn(1500);
+        });
+    </script>
     
 </body>
 </html>

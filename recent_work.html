@@ -7,6 +7,7 @@
     <title>recent work : bralri.net</title>
     <link rel="stylesheet" href="./css/test.css"/>
     <link rel="stylesheet" type="text/css" href="../../css/30302021.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="icon" type="image/png" href="./img/favicon.png">
     <style>
         h1 {
@@ -18,266 +19,279 @@
 
 <body>
 
-    <header id="navigation">
-        <!--hamburger button-->
-        <nav class="navbar">
-            <span class="open-slide">
-                <button id="button" href="#" onclick="openSlideMenu()">&#9776;</button>
-            </span>
-        </nav>
+    <div class="loader">
+        <div></div>
+    </div>
 
-        
+    <div class="content">
+        <header id="navigation">
+            <!--hamburger button-->
+            <nav class="navbar">
+                <span class="open-slide">
+                    <button id="button" href="#" onclick="openSlideMenu()">&#9776;</button>
+                </span>
+            </nav>
 
-        <!--pop-out side menu nav-->
-        <div id="slide-menu" class="side-nav">
-            <button href="#" class="btn-close" onclick="closeSlideMenu()">&#10005;</button>
-            <a href="./recent_work">recent</a>
-            <a href="./archive.html">archive</a>
-            <a href="./about">about</a>
-            <a href="./contact">contact</a>
-            <!--
-            <div class="copyright">
+            
+
+            <!--pop-out side menu nav-->
+            <div id="slide-menu" class="side-nav">
+                <button href="#" class="btn-close" onclick="closeSlideMenu()">&#10005;</button>
+                <a href="./recent_work">recent</a>
+                <a href="./archive.html">archive</a>
+                <a href="./about">about</a>
+                <a href="./contact">contact</a>
+                <!--
+                <div class="copyright">
+                    <h3>&copy; <script>document.write(new Date().getFullYear())</script> Bryan Ridpath</h3>
+                </div>
+                -->
+            </div>
+
+            <script>
+                function openSlideMenu() {
+                    document.getElementById('slide-menu').style.width = '250px';
+                    //document.getElementById('main').style.marginLeft = '250px';
+                    document.getElementById('button').style.visibility = 'hidden';
+                }
+
+                function closeSlideMenu() {
+                    document.getElementById('slide-menu').style.width = '0px';
+                    //document.getElementById('main').style.marginLeft = '0px';
+                    document.getElementById('button').style.visibility = 'visible';
+                }
+
+                window.onscroll = function() {myFunction()};
+                var navbar = document.getElementById('navigation');
+                var sticky = navbar.offsetTop;
+
+                function myFunction() {
+                    if (window.pageYOffset >= sticky) {
+                        navbar.classList.add('sticky')
+                    } else {
+                        navbar.classList.remove('sticky');
+                    }
+                }
+            </script>
+        </header>
+
+        <main>
+            <div class="gallery-3030-2021">
+
+                <div class="img-container-3030-2021">
+                    <div class="image">
+                        <a href="/recent/models/metamorphosis/v6">
+                            <img src="/gif/metamorphosis_v6.0.gif" alt=".">
+                        </a>
+                    </div>
+                    
+                </div>
+                <div class="img-container-3030-2021">
+                    <div class="image">
+                        <a href="/recent/models/metamorphosis/v5">
+                            <img src="/gif/metamorphosis_v5.0.gif" alt=".">
+                        </a>
+                    </div>
+                    
+                </div>
+
+                <div class="img-container-3030-2021">
+                    <div class="image">
+                        <a href="/recent/models/metamorphosis/v3">
+                            <img src="/gif/metamorphosis_v3.gif" alt=".">
+                        </a>
+                    </div>
+                    
+                </div>
+
+                <div class="img-container-3030-2021">
+                    <div class="image">
+                        <a href="/recent/models/metamorphosis/v2.1">
+                            <img src="/gif/metamorphosis_v2.1.gif" alt=".">
+                        </a>
+                    </div>
+                    
+                </div>
+                <div class="img-container-3030-2021">
+                    <div class="image">
+                        <a href="/recent/models/metamorphosis/v2.0">
+                            <img src="/gif/metamorphosis_v2.0.gif" alt=".">
+                        </a>
+                    </div>
+                    
+                </div>
+                
+                <div class="img-container-3030-2021">
+                    <div class="image">
+                        <a href="/recent/models/metamorphosis/v1.1">
+                            <img src="/gif/metamorphosis_v1.1.gif" alt=".">
+                        </a>
+                    </div>
+                    
+                </div>
+                <div class="img-container-3030-2021">
+                    <div class="image">
+                        <a href="/recent/models/metamorphosis/v1.0">
+                            <img src="/gif/metamorphosis_v1.0.gif" alt=".">
+                        </a>
+                    </div>
+                    
+                </div>
+                <div class="img-container-3030-2021">
+                    <div class="image">
+                        <a href="/recent/collages/metamorphosis_v1">
+                            <img src="/img/archive/metamorphosis_collages_1.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                    
+                </div>
+                <div class="img-container-3030-2021">
+                    <div class="image">
+                        <a href="/recent/screenshots/artifact_1">
+                            <img src="/img/archive/artifact_v1_1.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+
+                </div>
+                <div class="img-container-3030-2021">
+                    <div class="image">
+                        <a href="/recent/screenshots/artifact_2">
+                            <img src="/img/archive/artifact_v2_1.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+
+                </div>
+                <div class="img-container-3030-2021">
+                    <div class="image">
+                        <a href="/recent/screenshots/cryo">
+                            <img src="/img/archive/cryo.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+
+                </div>
+                <div class="img-container-3030-2021">
+                    <div class="image">
+                        <a href="/recent/screenshots/nlthi">
+                            <img src="/img/archive/NLTHI.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+
+                </div>
+                <div class="img-container-3030-2021">
+                    <div class="image">
+                        <a href="/recent/screenshots/tabs">
+                            <img src="/img/archive/ecg_tabs.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+
+                </div>
+                <div></div>
+                <div></div>
+                
+                <!--artifacts-->
+
+                <div class="img-container-3030-2021">
+                    <div class="image">
+                        <a href="/recent/models/photogrammetry/artifacts/v1.0">
+                            <img src="/gif/artifact_v1.0.gif" loading="lazy" alt=".">
+                        </a>
+                    </div>
+
+                </div>
+                <div class="img-container-3030-2021">
+                    <div class="image">
+                        <a href="/recent/models/photogrammetry/artifacts/v2.0">
+                            <img src="/gif/artifact_v2.0.gif" loading="lazy" alt=".">
+                        </a>
+                    </div>
+
+                </div>
+                <div class="img-container-3030-2021">
+                    <div class="image">
+                        <a href="/recent/models/photogrammetry/artifacts/v3.0">
+                            <img src="/gif/artifact_v6.0_anpg.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="img-container-3030-2021">
+                    <div class="image">
+                        <a href="/recent/models/photogrammetry/artifacts/v4.0">
+                            <img src="/gif/artifact_v3.0.gif" loading="lazy" alt=".">
+                        </a>
+                    </div>
+
+                </div>
+                <div class="img-container-3030-2021">
+                    <div class="image">
+                        <a href="/recent/models/photogrammetry/artifacts/v5.0.html">
+                            <img src="/gif/artifact_v4.0.gif" loading="lazy" alt=".">
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="img-container-3030-2021">
+                    <div class="image">
+                        <a href="/recent/models/photogrammetry/artifacts/v6.0.html">
+                            <img src="/gif/artifact_v5.0.gif" loading="lazy" alt=".">
+                        </a>
+                    </div>
+
+                </div>
+
+                <!--add photogrammetry models here-->
+                <div class="img-container-3030-2021">
+                    <div class="image">
+                        <a href="/recent/models/photogrammetry/sculptures/cryo_v1.0">
+                            <img src="/gif/cryo_v1.0.gif" loading="lazy" alt=".">
+                        </a>
+                    </div>
+
+                </div>
+                <div class="img-container-3030-2021">
+                    <div class="image">
+                        <a href="/recent/models/photogrammetry/sculptures/ecg_tabs_v1.0">
+                            <img src="/gif/tab_v1.0.gif" loading="lazy" alt=".">
+                        </a>
+                    </div>
+
+                </div>
+                <div class="img-container-3030-2021">
+                    <div class="image">
+                        <a href="/recent/models/photogrammetry/sculptures/nlthi_v1.0">
+                            <img src="/gif/nlthi_v1.0.gif" loading="lazy" alt=".">
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="img-container-3030-2021">
+                    <div class="image">
+                        <a href="/recent/exhibitions/jennifer_is_in_paradise">
+                            <img src="/img/archive/artifact_v1_2.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+
+        <footer>
+            <div class="footer">
                 <h3>&copy; <script>document.write(new Date().getFullYear())</script> Bryan Ridpath</h3>
             </div>
-            -->
-        </div>
-
-        <script>
-            function openSlideMenu() {
-                document.getElementById('slide-menu').style.width = '250px';
-                //document.getElementById('main').style.marginLeft = '250px';
-                document.getElementById('button').style.visibility = 'hidden';
-            }
-
-            function closeSlideMenu() {
-                document.getElementById('slide-menu').style.width = '0px';
-                //document.getElementById('main').style.marginLeft = '0px';
-                document.getElementById('button').style.visibility = 'visible';
-            }
-
-            window.onscroll = function() {myFunction()};
-            var navbar = document.getElementById('navigation');
-            var sticky = navbar.offsetTop;
-
-            function myFunction() {
-                if (window.pageYOffset >= sticky) {
-                    navbar.classList.add('sticky')
-                } else {
-                    navbar.classList.remove('sticky');
-                }
-            }
-        </script>
-    </header>
-
-    <main>
-        <div class="gallery-3030-2021">
-
-            <div class="img-container-3030-2021">
-                <div class="image">
-                    <a href="/recent/models/metamorphosis/v6">
-                        <img src="/gif/metamorphosis_v6.0.gif" alt=".">
-                    </a>
-                </div>
-                
-            </div>
-            <div class="img-container-3030-2021">
-                <div class="image">
-                    <a href="/recent/models/metamorphosis/v5">
-                        <img src="/gif/metamorphosis_v5.0.gif" alt=".">
-                    </a>
-                </div>
-                
-            </div>
-
-            <div class="img-container-3030-2021">
-                <div class="image">
-                    <a href="/recent/models/metamorphosis/v3">
-                        <img src="/gif/metamorphosis_v3.gif" alt=".">
-                    </a>
-                </div>
-                
-            </div>
-
-            <div class="img-container-3030-2021">
-                <div class="image">
-                    <a href="/recent/models/metamorphosis/v2.1">
-                        <img src="/gif/metamorphosis_v2.1.gif" alt=".">
-                    </a>
-                </div>
-                
-            </div>
-            <div class="img-container-3030-2021">
-                <div class="image">
-                    <a href="/recent/models/metamorphosis/v2.0">
-                        <img src="/gif/metamorphosis_v2.0.gif" alt=".">
-                    </a>
-                </div>
-                
-            </div>
-            
-            <div class="img-container-3030-2021">
-                <div class="image">
-                    <a href="/recent/models/metamorphosis/v1.1">
-                        <img src="/gif/metamorphosis_v1.1.gif" alt=".">
-                    </a>
-                </div>
-                
-            </div>
-            <div class="img-container-3030-2021">
-                <div class="image">
-                    <a href="/recent/models/metamorphosis/v1.0">
-                        <img src="/gif/metamorphosis_v1.0.gif" alt=".">
-                    </a>
-                </div>
-                
-            </div>
-            <div class="img-container-3030-2021">
-                <div class="image">
-                    <a href="/recent/collages/metamorphosis_v1">
-                        <img src="/img/archive/metamorphosis_collages_1.png" loading="lazy" alt=".">
-                    </a>
-                </div>
-                
-            </div>
-            <div class="img-container-3030-2021">
-                <div class="image">
-                    <a href="/recent/screenshots/artifact_1">
-                        <img src="/img/archive/artifact_v1_1.png" loading="lazy" alt=".">
-                    </a>
-                </div>
-
-            </div>
-            <div class="img-container-3030-2021">
-                <div class="image">
-                    <a href="/recent/screenshots/artifact_2">
-                        <img src="/img/archive/artifact_v2_1.png" loading="lazy" alt=".">
-                    </a>
-                </div>
-
-            </div>
-            <div class="img-container-3030-2021">
-                <div class="image">
-                    <a href="/recent/screenshots/cryo">
-                        <img src="/img/archive/cryo.png" loading="lazy" alt=".">
-                    </a>
-                </div>
-
-            </div>
-            <div class="img-container-3030-2021">
-                <div class="image">
-                    <a href="/recent/screenshots/nlthi">
-                        <img src="/img/archive/NLTHI.png" loading="lazy" alt=".">
-                    </a>
-                </div>
-
-            </div>
-            <div class="img-container-3030-2021">
-                <div class="image">
-                    <a href="/recent/screenshots/tabs">
-                        <img src="/img/archive/ecg_tabs.png" loading="lazy" alt=".">
-                    </a>
-                </div>
-
-            </div>
-            <div></div>
-            <div></div>
-            
-            <!--artifacts-->
-
-            <div class="img-container-3030-2021">
-                <div class="image">
-                    <a href="/recent/models/photogrammetry/artifacts/v1.0">
-                        <img src="/gif/artifact_v1.0.gif" loading="lazy" alt=".">
-                    </a>
-                </div>
-
-            </div>
-            <div class="img-container-3030-2021">
-                <div class="image">
-                    <a href="/recent/models/photogrammetry/artifacts/v2.0">
-                        <img src="/gif/artifact_v2.0.gif" loading="lazy" alt=".">
-                    </a>
-                </div>
-
-            </div>
-            <div class="img-container-3030-2021">
-                <div class="image">
-                    <a href="/recent/models/photogrammetry/artifacts/v3.0">
-                        <img src="/gif/artifact_v6.0_anpg.png" loading="lazy" alt=".">
-                    </a>
-                </div>
-
-            </div>
-
-            <div class="img-container-3030-2021">
-                <div class="image">
-                    <a href="/recent/models/photogrammetry/artifacts/v4.0">
-                        <img src="/gif/artifact_v3.0.gif" loading="lazy" alt=".">
-                    </a>
-                </div>
-
-            </div>
-            <div class="img-container-3030-2021">
-                <div class="image">
-                    <a href="/recent/models/photogrammetry/artifacts/v5.0.html">
-                        <img src="/gif/artifact_v4.0.gif" loading="lazy" alt=".">
-                    </a>
-                </div>
-
-            </div>
-
-            <div class="img-container-3030-2021">
-                <div class="image">
-                    <a href="/recent/models/photogrammetry/artifacts/v6.0.html">
-                        <img src="/gif/artifact_v5.0.gif" loading="lazy" alt=".">
-                    </a>
-                </div>
-
-            </div>
-
-            <!--add photogrammetry models here-->
-            <div class="img-container-3030-2021">
-                <div class="image">
-                    <a href="/recent/models/photogrammetry/sculptures/cryo_v1.0">
-                        <img src="/gif/cryo_v1.0.gif" loading="lazy" alt=".">
-                    </a>
-                </div>
-
-            </div>
-            <div class="img-container-3030-2021">
-                <div class="image">
-                    <a href="/recent/models/photogrammetry/sculptures/ecg_tabs_v1.0">
-                        <img src="/gif/tab_v1.0.gif" loading="lazy" alt=".">
-                    </a>
-                </div>
-
-            </div>
-            <div class="img-container-3030-2021">
-                <div class="image">
-                    <a href="/recent/models/photogrammetry/sculptures/nlthi_v1.0">
-                        <img src="/gif/nlthi_v1.0.gif" loading="lazy" alt=".">
-                    </a>
-                </div>
-
-            </div>
-
-            <div class="img-container-3030-2021">
-                <div class="image">
-                    <a href="/recent/exhibitions/jennifer_is_in_paradise">
-                        <img src="/img/archive/artifact_v1_2.png" loading="lazy" alt=".">
-                    </a>
-                </div>
-
-            </div>
-        </div>
-
-    </main>
-
-    <footer>
-        <div class="footer">
-            <h3>&copy; <script>document.write(new Date().getFullYear())</script> Bryan Ridpath</h3>
-        </div>
-    </footer>
+        </footer>
+    </div>
+    
+    <script>
+        $(window).on('load',function(){
+            $(".loader").fadeOut(1500);
+            $(".content").fadeIn(1500);
+        });
+    </script>
 
 </body>
 </html>

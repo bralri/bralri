@@ -7,6 +7,7 @@
     <title>archive : bralri.net</title>
     <link rel="stylesheet" href="./css/test.css"/>
     <link rel="stylesheet" type="text/css" href="../../css/30302021.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="icon" type="image/png" href="./img/favicon.png">
     <style>
         #button {
@@ -20,128 +21,141 @@
 
 <body>
 
-    <header id="navigation">
-        <!--hamburger button-->
-        <nav class="navbar">
-            <span class="open-slide">
-                <button id="button" href="#" onclick="openSlideMenu()">&#9776;</button>
-            </span>
-        </nav>
+    <div class="loader">
+        <div></div>
+    </div>
+    
+    <div class="content">
+        <header id="navigation">
+            <!--hamburger button-->
+            <nav class="navbar">
+                <span class="open-slide">
+                    <button id="button" href="#" onclick="openSlideMenu()">&#9776;</button>
+                </span>
+            </nav>
 
-        <!--pop-out side menu nav-->
-        <div id="slide-menu" class="side-nav">
-            <button href="#" class="btn-close" onclick="closeSlideMenu()">&#10005;</button>
-            <a href="./recent_work">recent</a>
-            <a href="./archive.html">archive</a>
-            <a href="./about">about</a>
-            <a href="./contact">contact</a>
-            <!--
-            <div class="copyright">
+            <!--pop-out side menu nav-->
+            <div id="slide-menu" class="side-nav">
+                <button href="#" class="btn-close" onclick="closeSlideMenu()">&#10005;</button>
+                <a href="./recent_work">recent</a>
+                <a href="./archive.html">archive</a>
+                <a href="./about">about</a>
+                <a href="./contact">contact</a>
+                <!--
+                <div class="copyright">
+                    <h3>&copy; <script>document.write(new Date().getFullYear())</script> Bryan Ridpath</h3>
+                </div>
+                -->
+            </div>
+
+            <script>
+                function openSlideMenu() {
+                    document.getElementById('slide-menu').style.width = '250px';
+                    //document.getElementById('main').style.marginLeft = '250px';
+                    document.getElementById('button').style.visibility = 'hidden';
+                }
+
+                function closeSlideMenu() {
+                    document.getElementById('slide-menu').style.width = '0px';
+                    //document.getElementById('main').style.marginLeft = '0px';
+                    document.getElementById('button').style.visibility = 'visible';
+                }
+
+                window.onscroll = function() {myFunction()};
+                var navbar = document.getElementById('navigation');
+                var sticky = navbar.offsetTop;
+
+                function myFunction() {
+                    if (window.pageYOffset >= sticky) {
+                        navbar.classList.add('sticky')
+                    } else {
+                        navbar.classList.remove('sticky');
+                    }
+                }
+            </script>
+        </header>
+
+        <main>
+            <div class="gallery-3030-2021">
+                <div class="img-container-3030-2021">
+                    <div class="image">
+                        <a href="/archive/2021/3030">
+                            <img src="/img/archive/3030_2021.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container-3030-2021">
+                    <div class="image">
+                        <a href="/archive/2021/looks_like_its_gunna_rain">
+                            <img src="img/archive/metamorphosis_collages_3.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container-3030-2021">
+                    <div class="image">
+                        <a href="https://forcedcollaboration.org/Kayt-Hughes-and-Bryan-Ridpath" target="_blank">
+                            <img src="/img/archive/fc_KH_BR.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container-3030-2021">
+                    <div class="image">
+                        <a href="https://forcedcollaboration.org/Bryan-Ridpath-and-Pippa-Eason" target="_blank">
+                            <img src="img/archive/fc_BR_PE.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container-3030-2021">
+                    <div class="image">
+                        <a href="/archive/2019/moods_n_noods" >
+                            <img src="/img/archive/moods_n_noods.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container-3030-2021">
+                    <div class="image">
+                        <a href="/archive/2018/pin_presents" >
+                            <img src="img/archive/pin_presents.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container-3030-2021">
+                    <div class="image">
+                        <a href="/archive/2018/things_of_the_never_will_and_always">
+                            <img src="/img/archive/totnwaa_3.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container-3030-2021">
+                    <div class="image">
+                        <a href="/archive/2018/reconfigured_fedora">
+                            <img src="img/archive/reconfigured_fedora.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container-3030-2021">
+                    <div class="image">
+                        <a href="/archive/2018/in_utopia">
+                            <img src="img/archive/in_utopia.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer">
                 <h3>&copy; <script>document.write(new Date().getFullYear())</script> Bryan Ridpath</h3>
             </div>
-            -->
-        </div>
+        </footer>
+    </div>
 
-        <script>
-            function openSlideMenu() {
-                document.getElementById('slide-menu').style.width = '250px';
-                //document.getElementById('main').style.marginLeft = '250px';
-                document.getElementById('button').style.visibility = 'hidden';
-            }
-
-            function closeSlideMenu() {
-                document.getElementById('slide-menu').style.width = '0px';
-                //document.getElementById('main').style.marginLeft = '0px';
-                document.getElementById('button').style.visibility = 'visible';
-            }
-
-            window.onscroll = function() {myFunction()};
-            var navbar = document.getElementById('navigation');
-            var sticky = navbar.offsetTop;
-
-            function myFunction() {
-                if (window.pageYOffset >= sticky) {
-                    navbar.classList.add('sticky')
-                } else {
-                    navbar.classList.remove('sticky');
-                }
-            }
-        </script>
-    </header>
-
-    <main>
-        <div class="gallery-3030-2021">
-            <div class="img-container-3030-2021">
-                <div class="image">
-                    <a href="/archive/2021/3030">
-                        <img src="/img/archive/3030_2021.png" loading="lazy" alt=".">
-                    </a>
-                </div>
-            </div>
-            <div class="img-container-3030-2021">
-                <div class="image">
-                    <a href="/archive/2021/looks_like_its_gunna_rain">
-                        <img src="img/archive/metamorphosis_collages_3.png" loading="lazy" alt=".">
-                    </a>
-                </div>
-            </div>
-            <div class="img-container-3030-2021">
-                <div class="image">
-                    <a href="https://forcedcollaboration.org/Kayt-Hughes-and-Bryan-Ridpath" target="_blank">
-                        <img src="/img/archive/fc_KH_BR.png" loading="lazy" alt=".">
-                    </a>
-                </div>
-            </div>
-            <div class="img-container-3030-2021">
-                <div class="image">
-                    <a href="https://forcedcollaboration.org/Bryan-Ridpath-and-Pippa-Eason" target="_blank">
-                        <img src="img/archive/fc_BR_PE.png" loading="lazy" alt=".">
-                    </a>
-                </div>
-            </div>
-            <div class="img-container-3030-2021">
-                <div class="image">
-                    <a href="/archive/2019/moods_n_noods" >
-                        <img src="/img/archive/moods_n_noods.png" loading="lazy" alt=".">
-                    </a>
-                </div>
-            </div>
-            <div class="img-container-3030-2021">
-                <div class="image">
-                    <a href="/archive/2018/pin_presents" >
-                        <img src="img/archive/pin_presents.png" loading="lazy" alt=".">
-                    </a>
-                </div>
-            </div>
-            <div class="img-container-3030-2021">
-                <div class="image">
-                    <a href="/archive/2018/things_of_the_never_will_and_always">
-                        <img src="/img/archive/totnwaa_3.png" loading="lazy" alt=".">
-                    </a>
-                </div>
-            </div>
-            <div class="img-container-3030-2021">
-                <div class="image">
-                    <a href="/archive/2018/reconfigured_fedora">
-                        <img src="img/archive/reconfigured_fedora.png" loading="lazy" alt=".">
-                    </a>
-                </div>
-            </div>
-            <div class="img-container-3030-2021">
-                <div class="image">
-                    <a href="/archive/2018/in_utopia">
-                        <img src="img/archive/in_utopia.png" loading="lazy" alt=".">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <div class="footer">
-            <h3>&copy; <script>document.write(new Date().getFullYear())</script> Bryan Ridpath</h3>
-        </div>
-    </footer>
+    <script>
+        $(window).on('load',function(){
+            $(".loader").fadeOut(1500);
+            $(".content").fadeIn(1500);
+        });
+    </script>
 
 </body>
 </html>
