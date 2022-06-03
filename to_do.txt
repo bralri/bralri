@@ -7,7 +7,6 @@ add cover image for jennifer_is_in_paradise.html
 
 archive.html :
 add cover image for hinterland residency
-add cover image for "pin_presents.html"
 add bus paintings?
 add removal sculpture?
 add old studio work?
