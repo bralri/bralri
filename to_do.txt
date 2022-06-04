@@ -26,3 +26,6 @@ fields_of_elysium.html - ""
 change:
 moods_n_noods.html - change url to something else / work title
 pin_presents.html - change url to something else / work title
+
+
+upload videos to vimeo and just embed them
