@@ -6,7 +6,6 @@ convert all gifs to ANPG/webp/avif, add fall back system for browsers that don't
 add cover image for jennifer_is_in_paradise.html
 
 archive.html :
-add cover image for hinterland residency
 add bus paintings?
 add removal sculpture?
 add old studio work?
@@ -19,13 +18,8 @@ add downloadable cv
 
 pages to finish:
 about.html
-looks_like_its_gunna_rain.html - add cover image for this on archive
-deepspaceanomaly.html - embed video from vimeo?
-fields_of_elysium.html - ""
+looks_like_its_gunna_rain.html
 
 change:
 moods_n_noods.html - change url to something else / work title
 pin_presents.html - change url to something else / work title
-
-
-upload videos to vimeo and just embed them
