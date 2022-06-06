@@ -1,9 +1,8 @@
 global :
-convert all png's to webp?, add back up system for browsers that don't support this
+
 
 recent_work.html :
-convert all gifs to ANPG/webp/avif, add fall back system for browsers that don't support ANPG
-add cover image for jennifer_is_in_paradise.html
+
 
 archive.html :
 add bus paintings?
