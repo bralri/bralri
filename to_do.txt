@@ -1,23 +1,17 @@
 global :
-
-
-recent_work.html :
-
+add text / titles to archive.html/recent_work.html & any pages linked via.
+add info pop-out for model pages?
 
 archive.html :
 add bus paintings?
 add removal sculpture?
-add old studio work?
-add bus shelter plans?
-add yeah about utopia video?
 
 about.html :
 write statement for about page
 add downloadable cv
 
 pages to finish:
-about.html
-looks_like_its_gunna_rain.html
+looks_like_its_gunna_rain.html - sort and add images
 
 change:
 moods_n_noods.html - change url to something else / work title
