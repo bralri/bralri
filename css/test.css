@@ -6,10 +6,11 @@ body {
 /*header*/
 header {
     top: 0;
+    width: 100%;
     position: fixed;
     background-color: transparent;
 }
-header .navbar {
+header .navbar .info {
     align-self: center;
     justify-self: center;
 }
@@ -69,11 +70,11 @@ button:hover {
     background-color: #242526;
 }
 
+/*optional sticky copyright text*/
 .copyright {
     position: fixed;
     bottom: 10px;
     right: 20px;
-
 }
 
 /*information button & popout*/
@@ -87,7 +88,6 @@ button:hover {
     outline: none;
 }
 
-
 /*navbar - burger menu sticky*/
 .sticky {
     position: fixed;
@@ -96,7 +96,6 @@ button:hover {
 .sticky + main {
     padding-top: 0px;
 }
-
 
 /*style.css*/
 /*boiler plate*/
@@ -157,7 +156,6 @@ main {
 .gallery-collages img {
     width: 50vw;
 }
-
 
 @media(max-width: 568px) {
     
@@ -228,9 +226,7 @@ footer {
     background: gray;
 }
 
-
-
-
+/*page loader*/
 .content {
     display: none;
 }
