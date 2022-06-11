@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../../../css/test.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="icon" type="image/png" href="../../../../img/favicon.png">
-    <title>NLTHI photogrammetry model</title>
+    <title>NLTHI photogrammetry model - Bryan Ridpath</title>
     <style>
         body {
             margin: 0;
@@ -40,14 +40,13 @@
             <div id="slide-menu" class="side-nav">
                 <button href="#" class="btn-close" onclick="closeSlideMenu()">&#10005;</button>
                 <a href="../../../../recent_work">recent</a>
-                <a href="../../../../archive.html">archive</a>
+                <a href="../../../../archive">archive</a>
                 <a href="../../../../about">about</a>
                 <a href="../../../../contact">contact</a>
                 <div class="copyright">
                     <h3>&copy; <script>document.write(new Date().getFullYear())</script> Bryan Ridpath</h3>
                 </div>
             </div>
-
 
             <script>
                 function openSlideMenu() {
@@ -97,6 +96,8 @@
                 });
                 renderer.setSize(window.innerWidth, window.innerHeight);
                 document.body.appendChild(renderer.domElement);
+                
+                renderer.outputEncoding = THREE.sRGBEncoding;
 
                 window.addEventListener('resize', function() {
                     const width = window.innerWidth;
@@ -105,16 +106,8 @@
                     camera.aspect = width/height;
                     camera.updateProjectionMatrix();
                 });
-                
 
                 const controls = new THREE.OrbitControls(camera, renderer.domElement)
-
-                const ambientLight = new THREE.AmbientLight(0xffffff, 1);
-                scene.add(ambientLight);
-
-                const directionalLight = new THREE.DirectionalLight(0xffffff, 0.2);
-                directionalLight.position.set(3, 1, 3);
-                scene.add(directionalLight);
 
                 const loader = new THREE.GLTFLoader();
                 loader.load(
