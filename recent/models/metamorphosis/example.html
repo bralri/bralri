@@ -119,8 +119,15 @@
                     '../../../3D_models/metamorphosis/metamorphosis_v1.glb',
 
                     function(gltf) {
+
                         model = gltf.scene
                         model.position.set(0, 0, 0)
+
+                        //potential animation script?
+                        mixer = new THREE.AnimationMixer(model);
+                        const action = mixer.clipAction(gltf.animations[0]);
+                        action.play();
+
                         scene.add(model)
                     }
                 );
@@ -143,6 +150,13 @@
                 const update = function() {
                     if(!isMouseDown) {
                         model.rotation.y += 0.002;
+                    };
+
+                    //potential animation script?
+                    if (mixer) {
+
+                        mixer.update(delta);
+                        
                     };
                 };
 
