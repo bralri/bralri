@@ -77,15 +77,10 @@ button:hover {
     right: 20px;
 }
 
-/*information button & popout*/
-.info-btn {
+.model-info {
     position: fixed;
-    top: 0;
-    right: 10px;
-    font-size: 50px;
-    border: none;
-    overflow: hidden;
-    outline: none;
+    bottom: 10px;
+    left: 20px;
 }
 
 /*navbar - burger menu sticky*/
