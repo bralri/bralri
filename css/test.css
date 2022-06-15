@@ -1,3 +1,36 @@
+/*boiler plate*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Courier New', Courier, monospace;
+}
+
+/*text: font, style, colour*/
+h1, h2, h3, h4 {
+    color: whitesmoke;
+}
+h2, h3 {
+    padding-block: 10px;
+}
+
+/*hyperlinks*/
+a {
+    color: whitesmoke;
+    list-style: none;
+    text-decoration: none;
+}
+a:hover {
+    color: gray;
+}
+
+/*main*/
+main {
+    width: 100%;
+    margin: auto;
+    z-index: 0;
+}
+
 body {
     background-color: #242526;
     overflow-x: hidden;
@@ -83,6 +116,14 @@ button:hover {
     left: 20px;
 }
 
+@media only screen and (hover: none) and (pointer: coarse){
+
+    .copyright {
+        display: none;
+    }
+
+}
+
 /*navbar - burger menu sticky*/
 .sticky {
     position: fixed;
@@ -90,40 +131,6 @@ button:hover {
 
 .sticky + main {
     padding-top: 0px;
-}
-
-/*style.css*/
-/*boiler plate*/
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family:'Courier New', Courier, monospace;
-}
-
-/*text: font, style, colour*/
-h1, h2, h3, h4 {
-    color: whitesmoke;
-}
-h2, h3 {
-    padding-block: 10px;
-}
-
-/*hyperlinks*/
-a {
-    color: whitesmoke;
-    list-style: none;
-    text-decoration: none;
-}
-a:hover {
-    color: gray;
-}
-
-/*main*/
-main {
-    width: 100%;
-    margin: auto;
-    z-index: 0;
 }
 
 /*gallery*/
