@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metamorphosis Collages v2 - Bryan Ridpath</title>
+    <link rel="stylesheet" href="../../css/test.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="icon" type="image/png" href="../../img/favicon.png">
+    <style>
+        #button, h3 {
+            color: black;
+        }
+        #button:hover {
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="loader">
+        <div></div>
+    </div>
+
+    <div class="content">
+        <header id="navigation">
+            <!--hamburger button-->
+            <nav class="navbar">
+                <span class="open-slide">
+                    <button id="button" href="#" onclick="openSlideMenu()">&#9776;</button>
+                </span>
+            </nav>
+
+            <!--pop-out side menu nav-->
+            <div id="slide-menu" class="side-nav">
+                <button href="#" class="btn-close" onclick="closeSlideMenu()">&#10005;</button>
+                <a href="../../recent_work">recent</a>
+                <a href="../../archive">archive</a>
+                <a href="http://blog.bralri.net/" target="_blank">blog</a>
+                <a href="../../about">about</a>
+                <a href="../../contact">contact</a>
+                <div class="copyright">
+                    <h3>&copy; <script>document.write(new Date().getFullYear())</script> Bryan Ridpath</h3>
+                </div>
+            </div>
+
+            <script>
+                function openSlideMenu() {
+                    document.getElementById('slide-menu').style.width = '250px';
+                    //document.getElementById('main').style.marginLeft = '250px';
+                    document.getElementById('button').style.visibility = 'hidden';
+                }
+
+                function closeSlideMenu() {
+                    document.getElementById('slide-menu').style.width = '0px';
+                    //document.getElementById('main').style.marginLeft = '0px';
+                    document.getElementById('button').style.visibility = 'visible';
+                }
+
+                window.onscroll = function() {myFunction()};
+                var navbar = document.getElementById('navigation');
+                var sticky = navbar.offsetTop;
+
+                function myFunction() {
+                    if (window.pageYOffset >= sticky) {
+                        navbar.classList.add('sticky')
+                    } else {
+                        navbar.classList.remove('sticky');
+                    }
+                }
+            </script>
+        </header>
+
+        <main>
+            <div class="gallery-collages">
+                <div class="img-container">
+                    <div class="image">
+                        <a href="../../img/collages/metamorphosis/v2/4k/2022-06-28_013070.png" target="_blank">
+                            <img src="../../img/collages/metamorphosis/v2/4k/2022-06-28_013070.png" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_013133.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_013133.png" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_013231.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_013231.png"alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_013295.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_013295.png" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_013305.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_013305.png" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_013374.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_013374.png" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_013560.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_013560.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_013634.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_013634.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_013673.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_013673.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_013709.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_013709.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_013840.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_013840.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_013844.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_013844.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_013929.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_013929.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_013981.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_013981.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_014009.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_014009.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_014090.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_014090.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_014101.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_014101.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_014191.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_014191.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_014242.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_014242.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_014294.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_014294.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_014306.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_014306.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_014403.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_014403.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_014443.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_014443.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_014510.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_014510.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_014584.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_014584.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_014631.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_014631.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_014663.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_014663.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 26 -->
+
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_014707.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_014707.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_014730.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_014707.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_014817.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_014817.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_014927.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_014927.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_014953.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_014953.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_015052.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_015052.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_015102.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_015102.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_015169.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_015169.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_015236.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_015236.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_015422.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_015422.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_015457.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_015457.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_015470.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_015470.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_015597.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_015597.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_015603.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_015603.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_015620.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_015620.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_015764.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_015764.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_015767.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_015767.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_015796.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_015796.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_015863.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_015863.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_015879.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_015879.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_015921.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_015921.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_015955.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_015955.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_020012.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_020012.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_020014.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_020014.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_020140.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_020140.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_020144.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_020144.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_020222.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_020222.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_020229.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_020229.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_020283.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_020283.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_020350.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_020350.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_020363.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_020363.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_020484.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_020484.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_020557.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_020557.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_020578.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_020578.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_020678.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_020678.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_020683.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_020683.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_020728.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_020728.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_020746.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_020746.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_020827.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_020827.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_020884.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_020884.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_020928.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_020928.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_020997.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_020997.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_021044.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_021044.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_021101.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_021101.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_021286.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_021286.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_021291.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_021291.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_021340.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_021340.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_021352.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_021352.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+                <div class="img-container">
+                    <div class="image">
+                        <a href="/img/collages/metamorphosis/v2/4k/2022-06-28_021482.png" target="_blank">
+                            <img src="/img/collages/metamorphosis/v2/4k/2022-06-28_021482.png" loading="lazy" alt=".">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script>
+        $(window).on('load',function(){
+            $(".loader").fadeOut(1500);
+            $(".content").fadeIn(1500);
+        });
+    </script>
+
+</body>
+</html>
