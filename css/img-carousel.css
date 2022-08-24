@@ -1,0 +1,81 @@
+*, 
+*::before, 
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.carousel {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.carousel > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+
+    transition: 200ms opacity ease-in-out;
+    transition-delay: 200ms;
+}
+
+.slide > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.slide[data-active] {
+    opacity: 1;
+    z-index: 1;
+    transition-delay: 0ms;
+}
+
+.carousel-btn {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+
+    bottom: 10px;
+
+    background: none;
+    border: solid;
+    border-width: 4px;
+    border-color: whitesmoke;
+
+    font-size: 30px;
+    color: whitesmoke;
+    font-weight: bold;
+
+    cursor: pointer;
+    padding: 0;
+}
+
+.carousel-btn:hover {
+    color: gray;
+    border-color: gray;
+}
+
+.carousel-btn:focus {
+    outline: 1px solid black;
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+.carousel-btn.next {
+    right: 10px;
+}

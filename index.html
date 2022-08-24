@@ -1,185 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bryan Ridpath</title>
-    <meta name="Description" content="Website for multidisciplinary artist Bryan Ridpath. This portfolio showcases a selection of new & archived artworks. Featuring sculpture, installation, and new media such as: 3D modelling and animation.">
-    <link rel="stylesheet" href="./css/test.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="icon" type="image/png" href="./img/favicon.png">
-    <link rel="canonical" href="https://www.bralri.net"/>
-    <style>
-        body {
-            margin: 0;
-        }
-        canvas {
-            width: 100%; 
-            height: 100%;
-        }
-    </style>
-</head>
-
-<body>
-
-    <div class="loader">
-        <div></div>
-    </div>
-
-    <div class="content">
-        <header id="navigation">
-            <!--hamburger button-->
-            <nav class="navbar">
-                <span class="open-slide">
-                    <button id="button" href="#" onclick="openSlideMenu()">&#9776;</button>
-                </span>
-            </nav>
-
-            <!--pop-out side menu nav-->
-            <div id="slide-menu" class="side-nav">
-                <button href="#" class="btn-close" onclick="closeSlideMenu()">&#10005;</button>
-                <a href="./recent_work">recent</a>
-                <a href="./archive">archive</a>
-                <a href="http://blog.bralri.net/" target="_blank">blog</a>
-                <a href="./about">about</a>
-                <a href="./contact">contact</a>
-                <div class="copyright">
-                    <h3>&copy; <script>document.write(new Date().getFullYear())</script> Bryan Ridpath</h3>
-                </div>
-                <div class="model-info">
-                    <h3>
-                        Metamorphosis v2.1
-                    </h3>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/side-nav.css">
+        <link rel="stylesheet" href="/css/info-button.css">
+        <link rel="stylesheet" href="/css/model-switch.css">
+        <link rel="stylesheet" href="/css/model-loader.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="/js/nav-bar.js" defer></script>
+        <script src="/js/info-modal.js" defer></script>
+    
+        <link rel="icon" type="image/png" href="/img/favicon.png">
+    
+        <meta name="Description" content="An archive of previous artworks created by Bryan Ridpath.">
+        <title>Metamorphosis | Bryan Ridpath</title>
+    </head>
+    
+    <body>
+    
+        <section id="loading-screen">
+    
+            <div id="loader"></div>
+        
+        </section>
+    
+        <nav class="navbar">
+            <span class="open-slide">
+                <button id="nav-button" href="#" onclick="openSlideMenu()">&#9776;</button>
+            </span>
+        </nav>
+        <div id="slide-menu" class="side-nav">
+            <button href="#" id="close-btn" class="btn-close" onclick="closeSlideMenu()">&#10005;</button>
+            <a href="https://bralri.net/recent">recent</a>
+            <a href="https://bralri.net/archive">archive</a>
+            <a href="http://blog.bralri.net/" target="_blank">blog</a>
+            <a href="https://bralri.net/about">about</a>
+            <a href="https://bralri.net/contact">contact</a>
+        </div>
+        
+        <div id="instructions-button">
+            <button class="instructions_btn" onclick="document.getElementById('id01').style.display='block'">
+                i
+            </button>
+        </div>
+        <div class="w3-container">
+            <div id="id01" class="w3-modal" style="padding: 400px 0px 0px;">
+                <div id="modal" class="w3-modal-content w3-center w3-animate-opacity" style="width: 560px; padding: 30px;">
+                    <div class="w3-container">
+                        <h5>Portfolio website for artist Bryan Ridpath,</h5>
+                        <h5>background model from "<a href="/metamorphosis/1/">Metamorphosis</a>".</h5>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <script>
-                function openSlideMenu() {
-                    document.getElementById('slide-menu').style.width = '250px';
-                    //document.getElementById('main').style.marginLeft = '250px';
-                    document.getElementById('button').style.visibility = 'hidden';
-                }
+        <script src="../js/three/three.min.js"></script>
+        <script src="../js/three/OrbitControls.js"></script>
+        <script src="../js/three/GLTFLoader.js"></script>
+        <script src="/js/index.js"></script>
 
-                function closeSlideMenu() {
-                    document.getElementById('slide-menu').style.width = '0px';
-                    //document.getElementById('main').style.marginLeft = '0px';
-                    document.getElementById('button').style.visibility = 'visible';
-                }
-
-                window.onscroll = function() {myFunction()};
-                var navbar = document.getElementById('navigation');
-                var sticky = navbar.offsetTop;
-
-                function myFunction() {
-                    if (window.pageYOffset >= sticky) {
-                        navbar.classList.add('sticky')
-                    } else {
-                        navbar.classList.remove('sticky');
-                    }
-                }
-            </script>
-        </header>
-
-        <main>
-        
-            
-            <script src="../js/three/three.min.js"></script>
-            <script src="../js/three/OrbitControls.js"></script>
-            <script src="../js/three/GLTFLoader.js"></script>
-            <script>
-
-                const scene = new THREE.Scene();
-                const camera = new THREE.PerspectiveCamera(
-                    75, 
-                    window.innerWidth/window.innerHeight, 
-                    0.1, 
-                    1000
-                );
-                camera.position.set(0, -0.3, 0);
-                camera.rotation.x = 90;
-                camera.rotation.z = 90;
-                
-
-                const renderer = new THREE.WebGLRenderer({
-                    alpha: true,
-                    antialias: true
-                });
-                renderer.setSize(window.innerWidth, window.innerHeight);
-                document.body.appendChild(renderer.domElement);
-
-                renderer.outputEncoding = THREE.sRGBEncoding;
-                
-                window.addEventListener('resize', function() {
-                    const width = window.innerWidth;
-                    const height = window.innerHeight;
-                    renderer.setSize(width, height);
-                    camera.aspect = width/height;
-                    camera.updateProjectionMatrix();
-                });
-
-                const controls = new THREE.OrbitControls(camera, renderer.domElement)
-                controls.enabled = false;
-
-                const loader = new THREE.GLTFLoader();
-                loader.load(
-                    
-                    '../3D_models/metamorphosis/metamorphosis_v2_txt2.glb',
-
-                    function(gltf) {
-                        model = gltf.scene
-                        model.position.set(0, -1, 0)
-                        scene.add(model)
-                    }
-                );
-
-                // const axesHelper = new THREE.AxesHelper( 5 );
-                // scene.add( axesHelper );
-
-                const isMouseDown = false;
-
-                function init(){
-                    window.addEventListener('mousedown', onMouseDown);
-                    window.addEventListener('mouseup', onMouseUp);
-                }
-
-                function onMouseDown() {
-                    isMouseDown = true;
-                }
-
-                function onMouseUp() {
-                    isMouseDown = false;
-                }
-
-                const update = function() {
-                    if(!isMouseDown) {
-                        model.rotation.y += 0.002;
-                    };
-                };
-
-                const render = function() {
-                    renderer.render(scene, camera);
-                };
-
-                const GameLoop = function() {
-                    requestAnimationFrame(GameLoop);
-                    update();
-                    render();
-                };
-
-
-                GameLoop();
-            </script>
-
-        </main>
     </div>
-
-    <script>
-        $(window).on('load',function(){
-            $(".loader").fadeOut(1500);
-            $(".content").fadeIn(1500);
-        });
-    </script>
 
 </body>
 </html>
