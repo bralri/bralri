@@ -30,27 +30,27 @@
 
     <div class="content">
 
-            <nav class="navbar">
-                <span class="open-slide">
-                    <button id="nav-button" href="#" onclick="openSlideMenu()">&#9776;</button>
-                </span>
-            </nav>
-            <div id="slide-menu" class="side-nav">
-                <button href="#" id="close-btn" class="btn-close" onclick="closeSlideMenu()">&#10005;</button>
-                <a href="https://bralri.net/recent">recent</a>
-                <a href="https://bralri.net/archive">archive</a>
-                <a href="http://blog.bralri.net/" target="_blank">blog</a>
-                <a href="https://bralri.net/about">about</a>
-                <a href="https://bralri.net/contact">contact</a>
+        <nav class="navbar" id="sticky">
+            <span class="open-slide">
+                <button id="nav-button" href="#" onclick="openSlideMenu()">&#9776;</button>
+            </span>
+            <div id="info-button" class="sticky">
+                <button 
+                    class="info"
+                    onclick="document.getElementById('id01').style.display='block'">
+                        i
+                </button>
             </div>
-        
-        <div id="info-button">
-            <button 
-                class="info" 
-                onclick="document.getElementById('id01').style.display='block'">
-                    i
-            </button>
+        </nav>
+        <div id="slide-menu" class="side-nav">
+            <button href="#" id="close-btn" class="btn-close" onclick="closeSlideMenu()">&#10005;</button>
+            <a href="https://bralri.net/recent">recent</a>
+            <a href="https://bralri.net/archive">archive</a>
+            <a href="http://blog.bralri.net/" target="_blank">blog</a>
+            <a href="https://bralri.net/about">about</a>
+            <a href="https://bralri.net/contact">contact</a>
         </div>
+        
         <div class="w3-container">
             <div id="id01" class="w3-modal" style="padding: 400px 0px 0px;">
                 <div 
@@ -74,7 +74,7 @@
                         <a href="/metamorphosis/collage/2/">
                             <img 
                                 src="./img/metamorphosis_collages_4.png" 
-                                title="metamorphosis v2 : collages" 
+                                title="metamorphosis : collages" 
                                 alt="Metamorphosis collages v2"
                             >
                         </a>
@@ -87,7 +87,7 @@
                         <a href="/metamorphosis/1/">
                             <img 
                                 src="./img/metamorphosis_v26.0.png" 
-                                title="metamorphosis VOL1 : models" 
+                                title="metamorphosis : models" 
                                 alt="Metamorphosis Volume 1"
                             >
                         </a>
@@ -109,10 +109,10 @@
                 </div>
                 <div class="img-container-3030-2021">
                     <div class="image">
-                        <a href="/recent/screenshots/artifact_1">
+                        <a href="/photogrammetry/screenshots/artifact/1/">
                             <img 
                                 src="./img/artifact_v1_1.png" 
-                                title="artifact v2.0 : model screenshots" 
+                                title="artifact : photogrammetry screenshots" 
                                 loading="lazy" 
                                 alt="."
                             >
@@ -121,10 +121,10 @@
                 </div>
                 <div class="img-container-3030-2021">
                     <div class="image">
-                        <a href="/recent/screenshots/artifact_2">
+                        <a href="/photogrammetry/screenshots/artifact/2/">
                             <img 
                                 src="./img/artifact_v2_1.png" 
-                                title="artifact v1.0 : model screenshots" 
+                                title="artifact : photogrammetry screenshots" 
                                 loading="lazy" 
                                 alt="."
                             >
@@ -133,10 +133,10 @@
                 </div>
                 <div class="img-container-3030-2021">
                     <div class="image">
-                        <a href="/recent/screenshots/cryo">
+                        <a href="/photogrammetry/screenshots/cryo/">
                             <img 
                                 src="./img/cryo.png" 
-                                title="cryo : model screenshots" 
+                                title="cryo : photogrammetry screenshots" 
                                 loading="lazy" 
                                 alt="."
                             >
@@ -145,10 +145,10 @@
                 </div>
                 <div class="img-container-3030-2021">
                     <div class="image">
-                        <a href="/recent/screenshots/nlthi">
+                        <a href="/photogrammetry/screenshots/nlthi/">
                             <img 
                                 src="./img/NLTHI.png" 
-                                title="non life threatening heart irregularities : model screenshots" 
+                                title="non life threatening heart irregularities : photogrammetry screenshots" 
                                 loading="lazy" 
                                 alt="."
                             >
@@ -157,10 +157,10 @@
                 </div>
                 <div class="img-container-3030-2021">
                     <div class="image">
-                        <a href="/recent/screenshots/tabs">
+                        <a href="/photogrammetry/screenshots/nlthi/tabs/">
                             <img 
                                 src="./img/ecg_tabs.png"
-                                title="ECG tabs : model screenshots" 
+                                title="ECG tabs : photogrammetry screenshots" 
                                 loading="lazy" 
                                 alt="."
                             >
@@ -171,70 +171,10 @@
                 <!--artifact models-->
                 <div class="img-container-3030-2021">
                     <div class="image">
-                        <a href="/recent/models/photogrammetry/artifacts/v1.0">
+                        <a href="/photogrammetry/artifact/">
                             <img 
                                 src="./img/artifact_v1.0.png" 
-                                title="artifact v1.0 : photogrammetry model" 
-                                loading="lazy" 
-                                alt="."
-                            >
-                        </a>
-                    </div>
-                </div>
-                <div class="img-container-3030-2021">
-                    <div class="image">
-                        <a href="/recent/models/photogrammetry/artifacts/v2.0">
-                            <img 
-                                src="./img/artifact_v2.0.png" 
-                                title="artifact v2.0 : photogrammetry model" 
-                                loading="lazy" 
-                                alt="."
-                            >
-                        </a>
-                    </div>
-                </div>
-                <div class="img-container-3030-2021">
-                    <div class="image">
-                        <a href="/recent/models/photogrammetry/artifacts/v3.0">
-                            <img 
-                                src="./img/artifact_v3.0.png" 
-                                title="artifact v3.0 : photogrammetry model" 
-                                loading="lazy" 
-                                alt="."
-                            >
-                        </a>
-                    </div>
-                </div>
-                <div class="img-container-3030-2021">
-                    <div class="image">
-                        <a href="/recent/models/photogrammetry/artifacts/v4.0">
-                            <img 
-                                src="./img/artifact_v4.0.png" 
-                                title="artifact v4.0 : photogrammetry model" 
-                                loading="lazy" 
-                                alt="."
-                            >
-                        </a>
-                    </div>
-                </div>
-                <div class="img-container-3030-2021">
-                    <div class="image">
-                        <a href="/recent/models/photogrammetry/artifacts/v5.0.html">
-                            <img 
-                                src="./img/artifact_v5.0.png"
-                                title="artifact v5.0 : photogrammetry model" 
-                                loading="lazy" 
-                                alt="."
-                            >
-                        </a>
-                    </div>
-                </div>
-                <div class="img-container-3030-2021">
-                    <div class="image">
-                        <a href="/recent/models/photogrammetry/artifacts/v6.0.html">
-                            <img 
-                                src="./img/artifact_v6.0.png" 
-                                title="artifact v6.0 : photogrammetry model" 
+                                title="photogrammetry models" 
                                 loading="lazy" 
                                 alt="."
                             >
@@ -242,37 +182,13 @@
                     </div>
                 </div>
 
-                <!--photogrammetry models-->
+                <!--photogrammetry sculpture models-->
                 <div class="img-container-3030-2021">
                     <div class="image">
-                        <a href="/recent/models/photogrammetry/sculptures/cryo_v1.0">
-                            <img 
-                                src="./img/cyro_v1.0.png" 
-                                title="cryo : photogrammetry model" 
-                                loading="lazy" 
-                                alt="."
-                            >
-                        </a>
-                    </div>
-                </div>
-                <div class="img-container-3030-2021">
-                    <div class="image">
-                        <a href="/recent/models/photogrammetry/sculptures/ecg_tabs_v1.0">
-                            <img 
-                                src="./img/tabs_v1.0.png" 
-                                title="ECG tabs : photogrammetry model" 
-                                loading="lazy" 
-                                alt="."
-                            >
-                        </a>
-                    </div>
-                </div>
-                <div class="img-container-3030-2021">
-                    <div class="image">
-                        <a href="/recent/models/photogrammetry/sculptures/nlthi_v1.0">
+                        <a href="/photogrammetry/sculptures/">
                             <img 
                                 src="./img/nlthi_v1.0.png" 
-                                title="non life threatening heart irregularities : photogrammetry model" 
+                                title="photogrammetry sculptures" 
                                 loading="lazy" 
                                 alt="."
                             >
@@ -283,7 +199,7 @@
                 <!--jennifer is in paradise-->
                 <div class="img-container-3030-2021">
                     <div class="image">
-                        <a href="/recent/exhibitions/jennifer_is_in_paradise">
+                        <a href="/exhibition/jennifer_is_in_paradise/">
                             <img 
                                 src="./img/IMG_20220215_180138_012.jpg" 
                                 title="jennifer is in paradise : exhibition" 

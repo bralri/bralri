@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family:'Courier New', Courier, monospace;
-    overflow: hidden;
 }
 
 /*text: font, style, colour*/
@@ -33,7 +32,12 @@ main {
 
 body {
     background-color: #242526;
-    overflow-x: hidden;
+}
+
+#sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
 }
 
 /*scrollbar*/

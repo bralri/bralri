@@ -30,10 +30,17 @@
 
     <div class="content">
 
-            <nav class="navbar">
+            <nav class="navbar" id="sticky">
                 <span class="open-slide">
                     <button id="nav-button" href="#" onclick="openSlideMenu()">&#9776;</button>
                 </span>
+                <div id="info-button">
+                    <button 
+                        class="info" 
+                        onclick="document.getElementById('id01').style.display='block'">
+                            i
+                    </button>
+                </div>
             </nav>
             <div id="slide-menu" class="side-nav">
                 <button href="#" id="close-btn" class="btn-close" onclick="closeSlideMenu()">&#10005;</button>
@@ -44,13 +51,6 @@
                 <a href="https://bralri.net/contact">contact</a>
             </div>
         
-        <div id="info-button">
-            <button 
-                class="info" 
-                onclick="document.getElementById('id01').style.display='block'">
-                    i
-            </button>
-        </div>
         <div class="w3-container">
             <div id="id01" class="w3-modal" style="padding: 400px 0px 0px;">
                 <div 
