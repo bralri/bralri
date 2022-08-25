@@ -1,4 +1,8 @@
 /*pop-out side nav bar*/
+nav {
+    z-index: 101;
+}
+
 .side-nav {
     height: 100%;
     width: 0;
@@ -18,7 +22,6 @@
     font-size: 30px;
     font-weight: bold;
     color: whitesmoke;
-    /*background-color: blue;*/
     display: block;
     transition: 0.3s;
 }

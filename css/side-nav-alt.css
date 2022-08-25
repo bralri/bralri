@@ -1,4 +1,8 @@
 /*pop-out side nav bar*/
+nav {
+    z-index: 101;
+}
+
 .side-nav {
     height: 100%;
     width: 0;

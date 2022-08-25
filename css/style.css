@@ -1,3 +1,7 @@
+HTML {
+    cursor: pointer;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,33 +9,27 @@
     font-family:'Courier New', Courier, monospace;
 }
 
-/*text: font, style, colour*/
 h1, h2, h3, h4 {
     color: whitesmoke;
 }
-h2, h3 {
-    padding-block: 10px;
-}
-
-/*hyperlinks*/
 a {
     color: whitesmoke;
     list-style: none;
     text-decoration: none;
+    font-weight: bold;
 }
 a:hover {
     color: gray;
 }
 
-/*main*/
 main {
     width: 100%;
     margin: auto;
     z-index: 0;
 }
-
 body {
     background-color: #242526;
+    cursor: default;
 }
 
 #sticky {
@@ -52,6 +50,7 @@ body {
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: whitesmoke;
+    cursor: pointer !important;
 }
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
