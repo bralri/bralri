@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/img-grid.css">
+    <link rel="stylesheet" type="text/css" href="/css/side-nav.css">
+    <link rel="stylesheet" type="text/css" href="/css/info-button.css">
+    <link rel="stylesheet" type="text/css" href="/css/window-loader.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/js/nav-bar.js" defer></script>
+    <script src="/js/info-modal.js" defer></script>
+
+    <link rel="icon" type="image/png" href="/img/favicon.png">
+
+    <meta name="Description" content="An archive of previous artworks created by Bryan Ridpath.">
+    <title>Photogrammetry | Bryan Ridpath</title>
+</head>
+
+<body>
+
+    <div class="loader">
+        <div></div>
+    </div>
+
+    <div class="content">
+
+        <nav class="navbar" id="sticky">
+            <span class="open-slide">
+                <button id="nav-button" href="#" onclick="openSlideMenu()">&#9776;</button>
+            </span>
+            <div id="info-button">
+                <button 
+                    class="info" 
+                    onclick="document.getElementById('id01').style.display='block'">
+                        i
+                </button>
+            </div>
+        </nav>
+        <div id="slide-menu" class="side-nav">
+            <button href="#" id="close-btn" class="btn-close" onclick="closeSlideMenu()">&#10005;</button>
+            
+            <a href="https://bralri.net/archive">archive</a>
+            <a href="http://blog.bralri.net/" target="_blank">blog</a>
+            <a href="https://bralri.net/about">about</a>
+            <a href="https://bralri.net/contact">contact</a>
+        </div>
+    
+    <div class="w3-container">
+        <div id="id01" class="w3-modal" style="padding: 400px 0px 0px;">
+            <div 
+                id="modal" 
+                class="w3-modal-content w3-center w3-animate-opacity" 
+                style="width: 600px; padding: 30px;">
+                    <div class="w3-container">
+                        <h5>An archive of previous: exhibitions, videos,</h5>
+                        <h5>installations, sculptures and residencies.</h5>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="img-grid">
+
+            <!--hinterland-->
+            <div class="img-container-3030-2021">
+                <div class="image">
+                    <a href="https://www.instagram.com/sketchupresidency/" target="_blank">
+                        <img 
+                            src="./img/hinterland.png"
+                            title="hinterland, 2020 : residency" 
+                            alt="."
+                        >
+                    </a>
+                    <h3>Hinterland</h3>
+                </div>
+            </div>
+
+            <!--courtyard arts residency film-->
+            <div class="img-container-3030-2021">
+                <div class="image">
+                    <a href="/video/ca_residency/" >
+                        <img 
+                            src="./img/ca_residency_1.jpg"
+                            title="courtyard arts residency film, 2018 : residency film"
+                            loading="lazy"  
+                            alt="."
+                        >
+                    </a>
+                    <h3>Courtyard Arts Residency Film</h3>
+                </div>
+            </div>
+
+            <!--things of the never will and always-->
+            <div class="img-container-3030-2021">
+                <div class="image">
+                    <a href="/residency/things_of_the_never_will_and_always/">
+                        <img 
+                            src="./img/totnwaa_3.png"
+                            title="things of the never will and always, 2018 : residency" 
+                            loading="lazy" 
+                            alt="."
+                        >
+                    </a>
+                    <h3>Things of the Never-Will & Always:</h3>
+                    <h3>Courtyard Arts Residency</h3>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="/js/window-load.js"></script>
+</body>
+</html>

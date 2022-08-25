@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/img-grid.css">
+    <link rel="stylesheet" type="text/css" href="/css/side-nav.css">
+    <link rel="stylesheet" type="text/css" href="/css/info-button.css">
+    <link rel="stylesheet" type="text/css" href="/css/window-loader.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/js/nav-bar.js" defer></script>
+    <script src="/js/info-modal.js" defer></script>
+
+    <link rel="icon" type="image/png" href="/img/favicon.png">
+
+    <meta name="Description" content="An archive of previous artworks created by Bryan Ridpath.">
+    <title>Exhibitions | Bryan Ridpath</title>
+</head>
+
+<body>
+
+    <div class="loader">
+        <div></div>
+    </div>
+
+    <div class="content">
+
+        <nav class="navbar" id="sticky">
+            <span class="open-slide">
+                <button id="nav-button" href="#" onclick="openSlideMenu()">&#9776;</button>
+            </span>
+            <div id="info-button">
+                <button 
+                    class="info" 
+                    onclick="document.getElementById('id01').style.display='block'">
+                        i
+                </button>
+            </div>
+        </nav>
+        <div id="slide-menu" class="side-nav">
+            <button href="#" id="close-btn" class="btn-close" onclick="closeSlideMenu()">&#10005;</button>
+            
+            <a href="https://bralri.net/archive">archive</a>
+            <a href="http://blog.bralri.net/" target="_blank">blog</a>
+            <a href="https://bralri.net/about">about</a>
+            <a href="https://bralri.net/contact">contact</a>
+        </div>
+    
+    <div class="w3-container">
+        <div id="id01" class="w3-modal" style="padding: 400px 0px 0px;">
+            <div 
+                id="modal" 
+                class="w3-modal-content w3-center w3-animate-opacity" 
+                style="width: 600px; padding: 30px;">
+                    <div class="w3-container">
+                        <h5>An archive of previous: exhibitions, videos,</h5>
+                        <h5>installations, sculptures and residencies.</h5>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="img-grid">
+
+            <!--jennifer is in paradise-->
+            <div class="img-container-3030-2021">
+                <div class="image">
+                    <a href="/exhibition/jennifer_is_in_paradise/">
+                        <img 
+                            src="./img/jip.jpg" 
+                            title="jennifer is in paradise : exhibition" 
+                            loading="lazy"
+                            alt="."
+                        >
+                    </a>
+                    <h3>Jennifer is in Paradise</h3>
+                </div>
+            </div>
+
+            <!--looks like its gunna rain-->
+            <div class="img-container-3030-2021">
+                <div class="image">
+                    <a href="/exhibition/looks_like_its_gunna_rain/">
+                        <img 
+                            src="./img/LLIGR_1.png" 
+                            title="looks like its gunna rain, 2021 : exhibition" 
+                            alt="."
+                        >
+                    </a>
+                    <h3>Looks like its Gunna Rain</h3>
+                </div>
+            </div>
+
+            <!--moods n noods-->
+            <div class="img-container-3030-2021">
+                <div class="image">
+                    <a href="/exhibition/moods_n_noods/" >
+                        <img 
+                            src="./img/moods_n_noods.png"
+                            title="moods n noods, 2019 : exhibition" 
+                            loading="lazy" 
+                            alt="."
+                        >
+                    </a>
+                    <h3>Moods 'n' Noods</h3>
+                </div>
+            </div>
+
+                            <!--pin presents-->
+            <div class="img-container-3030-2021">
+                <div class="image">
+                    <a href="/exhibition/pin_presents/" >
+                        <img 
+                            src="./img/pin_presents.png"
+                            title="pin present, 2018 : exhibition" 
+                            loading="lazy" 
+                            alt="."
+                        >
+                    </a>
+                    <h3>Pin Presents</h3>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="/js/window-load.js"></script>
+</body>
+</html>
