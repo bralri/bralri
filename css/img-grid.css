@@ -20,8 +20,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
-    visibility: visible;
+}
+.img-text:hover {
+    color: transparent;
 }
 
 img {
@@ -31,7 +32,6 @@ img {
     transition: 0.3s ease;
 }
 img:hover {
-    opacity: 0.5;
     scale: 1.1;
 
     transition: 0.3s ease;

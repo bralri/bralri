@@ -19,7 +19,7 @@ a {
     font-weight: bold;
 }
 a:hover {
-    color: gray;
+    color: transparent;
 }
 
 main {
