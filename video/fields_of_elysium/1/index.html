@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/side-nav.css">
+    <link rel="stylesheet" type="text/css" href="/css/info-button.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/video.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/window-loader.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/js/nav-bar.js" defer></script>
+    <script src="/js/info-modal.js" defer></script>
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <title>Fields of Elysium I | Bryan Ridpath</title>
+</head>
+
+<body>
+
+    <div class="loader">
+        <div></div>
+    </div>
+
+    <div class="content">
+        <nav class="navbar">
+            <span class="open-slide">
+                <button id="nav-button" href="#" onclick="openSlideMenu()">&#9776;</button>
+            </span>
+        </nav>
+        <div id="slide-menu" class="side-nav">
+            <button href="#" id="close-btn" class="btn-close" onclick="closeSlideMenu()">&#10005;</button>
+            
+            <a href="https://bralri.net/archive">archive</a>
+            <a href="http://blog.bralri.net/" target="_blank">blog</a>
+            <a href="https://bralri.net/about">about</a>
+            <a href="https://bralri.net/contact">contact</a>
+        </div>
+    
+        <div id="info-button">
+            <button 
+                class="info" 
+                onclick="document.getElementById('id01').style.display='block'">
+                    i
+            </button>
+        </div>
+        <div class="w3-container">
+            <div id="id01" class="w3-modal" style="padding: 350px 0px 0px;">
+                <div 
+                    id="modal" 
+                    class="w3-modal-content w3-center w3-animate-opacity" 
+                    style="width: 600px; padding: 30px;">
+                        <div class="w3-container">
+                            <h5>Deepspaceanomaly</h5>
+                            <h5>A video made in response and in</h5>
+                            <h5>collaboration with "esquisite corpos".</h5>
+                        </div>
+                </div>
+            </div>
+        </div>
+                
+        <div id="video-container">
+            <iframe
+                id="video-iframe"
+                src="https://player.vimeo.com/video/413703984?h=2cb6267fcc&autoplay=1&loop=1&title=0&byline=0&portrait=0" 
+                frameborder="0" 
+                allow="autoplay;"
+                allowfullscreen
+                webkitallowfullscreen 
+                mozallowfullscreen 
+            >
+            </iframe>
+        </div>
+        <script src="https://player.vimeo.com/api/player.js"></script>
+    </div>
+
+    <script src="/js/window-load.js"></script>
+
+</body>
+</html>
