@@ -21,7 +21,7 @@ document.getElementById("total-model-number").innerHTML = totalModelNmb;
 let prevBtn, nextBtn;
 
 let ambientLight;
-let GLBLoader, manager;
+let GLBLoader, manager, loadingScreen;
 
 let width = window.innerWidth;
 let height = window.innerHeight;
@@ -78,10 +78,18 @@ function init() {
 
 function loading_Manager() {
     manager = new THREE.LoadingManager(() => {
-        const loadingScreen = document.getElementById('loading-screen');
-        loadingScreen.classList.add('fade-out');
-        loadingScreen.addEventListener('transitionend', onTransitionEnd);
+        windowLoad();
+
+        // loadingScreen = document.getElementById('loading-screen');
+        // loadingScreen.classList.add('fade-out');
+        // loadingScreen.addEventListener('transitionend', onTransitionEnd);
     });
+}
+
+function windowLoad() {
+    loadingScreen = document.getElementById('loading-screen');
+    loadingScreen.classList.add('fade-out');
+    loadingScreen.addEventListener('transitionend', onTransitionEnd);
 }
 
 function next_Button() {
@@ -103,7 +111,7 @@ function next_Button() {
         });
     }
 
-    function next() {
+    function next() {   
         i++;
         load_Model(i);
 
