@@ -13,6 +13,8 @@
     text-align: center;
 
     overflow: hidden;
+
+    cursor: zoom-in;
 }
 
 .img-text {

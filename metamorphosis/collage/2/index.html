@@ -6,781 +6,846 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <link rel="stylesheet" type="text/css" href="/css/multi-carousel-collages.css">
+    <link rel="stylesheet" type="text/css" href="/css/collage-gallery.css">
     <link rel="stylesheet" type="text/css" href="/css/side-nav-alt.css">
     <link rel="stylesheet" type="text/css" href="/css/info-button-alt.css">
     <link rel="stylesheet" type="text/css" href="/css/window-loader.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/img-slider-modal-alt.css">
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="/js/nav-bar.js" defer></script>
-    <script src="/js/img-carousel.js" defer></script>
     <script src="/js/info-modal.js" defer></script>
 
     <link rel="icon" type="image/png" href="/favicon.png">
 
-    <title>Metamorphosis Collages | Bryan Ridpath</title>
+    <title>Metamorphosis Collages II | Bryan Ridpath</title>
 </head>
 
 <body>
 
     <div class="loader">
-        <div></div>
+      <div></div>
     </div>
 
     <div class="content">
 
-            <nav class="navbar">
-                <span class="open-slide">
-                    <button id="nav-button" href="#" onclick="openSlideMenu()">&#9776;</button>
-                </span>
-            </nav>
-            <div id="slide-menu" class="side-nav">
-                <button href="#" id="close-btn" class="btn-close" onclick="closeSlideMenu()">&#10005;</button>
-                
-                <a href="https://bralri.net/archive">archive</a>
-                <a href="http://blog.bralri.net/" target="_blank">blog</a>
-                <a href="https://bralri.net/about">about</a>
-                <a href="https://bralri.net/contact">contact</a>
-            </div>
-        
-        <div id="info-button">
+      <nav class="navbar" id="sticky">
+          <span class="open-slide">
+            <button id="nav-button" href="#" onclick="openSlideMenu()">&#9776;</button>
+          </span>
+
+          <div id="info-button">
             <button 
-                class="info" 
-                onclick="document.getElementById('id01').style.display='block'">
-                    i
+              class="info" 
+              onclick="document.getElementById('id01').style.display='block'">
+                i
             </button>
         </div>
-        <div class="w3-container">
-            <div id="id01" class="w3-modal" style="padding: 300px 0px 0px;">
-                <div 
-                    id="modal" 
-                    class="w3-modal-content w3-center w3-animate-opacity" 
-                    style="width: 600px; padding: 30px;">
-                        <div class="w3-container">
-                            <h5>Detailed screenshots of digital 3D models.</h5>
-                            <h5>3D models were made using photogrammetry,</h5>
-                            <h5>documenting wrapped and archived sculptures.</h5>
-                            <h5>These screenshots were printed and used to</h5>
-                            <h5>create the collages for "<a href="#">Metamorphosis v1</a>"</h5>
-                        </div>
-                </div>
-            </div>
-        </div>
-
-        <div class='demo-container'>
-      <div class='carousel'>
-        <input checked='checked' class='carousel__activator' id='carousel-slide-activator-1' name='carousel' type='radio'>
-        <input class='carousel__activator' id='carousel-slide-activator-2' name='carousel' type='radio'>
-        <input class='carousel__activator' id='carousel-slide-activator-3' name='carousel' type='radio'>
-        <input class='carousel__activator' id='carousel-slide-activator-4' name='carousel' type='radio'>
-        <input class='carousel__activator' id='carousel-slide-activator-5' name='carousel' type='radio'>
-        <input class='carousel__activator' id='carousel-slide-activator-6' name='carousel' type='radio'>
-        <input class='carousel__activator' id='carousel-slide-activator-7' name='carousel' type='radio'>
-        <input class='carousel__activator' id='carousel-slide-activator-8' name='carousel' type='radio'>
-        <input class='carousel__activator' id='carousel-slide-activator-9' name='carousel' type='radio'>
-        <input class='carousel__activator' id='carousel-slide-activator-10' name='carousel' type='radio'>
-        <input class='carousel__activator' id='carousel-slide-activator-11' name='carousel' type='radio'>
-        <input class='carousel__activator' id='carousel-slide-activator-12' name='carousel' type='radio'>
-        <input class='carousel__activator' id='carousel-slide-activator-13' name='carousel' type='radio'>
-        <input class='carousel__activator' id='carousel-slide-activator-14' name='carousel' type='radio'>
-        <input class='carousel__activator' id='carousel-slide-activator-15' name='carousel' type='radio'>
-        <input class='carousel__activator' id='carousel-slide-activator-16' name='carousel' type='radio'>
-        <input class='carousel__activator' id='carousel-slide-activator-17' name='carousel' type='radio'>
-        <input class='carousel__activator' id='carousel-slide-activator-18' name='carousel' type='radio'>
-        <input class='carousel__activator' id='carousel-slide-activator-19' name='carousel' type='radio'>
-        <input class='carousel__activator' id='carousel-slide-activator-20' name='carousel' type='radio'>
-        <input class='carousel__activator' id='carousel-slide-activator-21' name='carousel' type='radio'>
-        <input class='carousel__activator' id='carousel-slide-activator-22' name='carousel' type='radio'>
-        <input class='carousel__activator' id='carousel-slide-activator-23' name='carousel' type='radio'>
-        <input class='carousel__activator' id='carousel-slide-activator-24' name='carousel' type='radio'>
-        <input class='carousel__activator' id='carousel-slide-activator-25' name='carousel' type='radio'>
-        <input class='carousel__activator' id='carousel-slide-activator-26' name='carousel' type='radio'>
-
-        <!-- page 1 -->
-        <div class='carousel__controls'>
-            <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-2'>
-                >
-            </label>
-        </div>
-
-        <!-- page 2 -->
-        <div class='carousel__controls'>
-            <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-1'>
-                <
-            </label>
-            <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-3'>
-                >
-            </label>
-        </div>
-
-        <!-- page 3 -->
-        <div class='carousel__controls'>
-            <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-2'>
-                <
-            </label>
-            <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-4'>
-                >
-            </label>
-        </div>
-        
-        <!-- page 4 -->
-        <div class='carousel__controls'>
-            <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-3'>
-                <
-            </label>
-            <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-5'>
-                >
-            </label>
-        </div>
-
-        <!-- page 5 -->
-        <div class='carousel__controls'>
-            <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-4'>
-                <
-            </label>
-            <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-6'>
-                >
-            </label>
-        </div>
-
-        <!-- page 6 -->
-        <div class='carousel__controls'>
-            <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-5'>
-                <
-            </label>
-            <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-7'>
-                >
-            </label>
-        </div>
-
-        <!-- page 7 -->
-        <div class='carousel__controls'>
-            <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-6'>
-                <
-            </label>
-            <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-8'>
-                >
-            </label>
-        </div>
-
-        <!-- page 8 -->
-        <div class='carousel__controls'>
-            <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-7'>
-                <
-            </label>
-            <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-9'>
-                >
-            </label>
-        </div>
-
-        <!-- page 9 -->
-        <div class='carousel__controls'>
-            <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-8'>
-                <
-            </label>
-            <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-10'>
-                >
-            </label>
-        </div>
-
-        <!-- page 10 -->
-        <div class='carousel__controls'>
-            <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-9'>
-                <
-            </label>
-            <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-11'>
-                >
-            </label>
-        </div>
-
-        <!-- page 11 -->
-        <div class='carousel__controls'>
-            <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-10'>
-                <
-            </label>
-            <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-12'>
-                >
-            </label>
-        </div>
-
-        <!-- page 12 -->
-        <div class='carousel__controls'>
-            <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-11'>
-                <
-            </label>
-            <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-13'>
-                >
-            </label>
-        </div>
-
-        <!-- page 13 -->
-        <div class='carousel__controls'>
-            <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-12'>
-                <
-            </label>
-            <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-14'>
-                >
-            </label>
-        </div>
-
-        <!-- page 14 -->
-        <div class='carousel__controls'>
-            <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-13'>
-                <
-            </label>
-            <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-15'>
-                >
-            </label>
-        </div>
-
-        <!-- page 15 -->
-        <div class='carousel__controls'>
-            <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-14'>
-                <
-            </label>
-            <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-16'>
-                >
-            </label>
-        </div>
-
-        <!-- page 16 -->
-        <div class='carousel__controls'>
-            <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-15'>
-                <
-            </label>
-            <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-17'>
-                >
-            </label>
-        </div>
-
-        <!-- page 17 -->
-        <div class='carousel__controls'>
-            <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-16'>
-                <
-            </label>
-            <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-18'>
-                >
-            </label>
-        </div>
-
-        <!-- page 18 -->
-        <div class='carousel__controls'>
-            <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-17'>
-                <
-            </label>
-            <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-19'>
-                >
-            </label>
-        </div>
-
-        <!-- page 19 -->
-        <div class='carousel__controls'>
-            <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-18'>
-                <
-            </label>
-            <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-20'>
-                >
-            </label>
-        </div>
-
-        <!-- page 20 -->
-        <div class='carousel__controls'>
-            <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-19'>
-                <
-            </label>
-            <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-21'>
-                >
-            </label>
-        </div>
-
-        <!-- page 21 -->
-        <div class='carousel__controls'>
-            <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-20'>
-                <
-            </label>
-            <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-22'>
-                >
-            </label>
-        </div>
-
-        <!-- page 22 -->
-        <div class='carousel__controls'>
-            <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-21'>
-                <
-            </label>
-            <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-23'>
-                >
-            </label>
-        </div>
-
-        <!-- page 23 -->
-        <div class='carousel__controls'>
-            <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-22'>
-                <
-            </label>
-            <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-24'>
-                >
-            </label>
-        </div>
-
-        <!-- page 24 -->
-        <div class='carousel__controls'>
-            <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-23'>
-                <
-            </label>
-            <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-25'>
-                >
-            </label>
-        </div>
-
-        <!-- page 25 -->
-        <div class='carousel__controls'>
-            <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-24'>
-                <
-            </label>
-        </div>
-
-        <div class='carousel__screen'>
-          <div class='carousel__track'>
-
-            <!-- page 1 -->
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/1.png" alt="">
+      </nav>
+      <div id="slide-menu" class="side-nav">
+          <button href="#" id="close-btn" class="btn-close" onclick="closeSlideMenu()">&#10005;</button>
+            <a href="https://bralri.net/archive">archive</a>
+            <a href="http://blog.bralri.net/" target="_blank">blog</a>
+            <a href="https://bralri.net/about">about</a>
+            <a href="https://bralri.net/contact">contact</a>
+      </div>
+      <div class="w3-container">
+        <div id="id01" class="w3-modal" style="padding: 400px 0px 0px; cursor: pointer;" >
+          <div 
+            id="modal" 
+            class="w3-modal-content w3-center w3-animate-opacity" 
+            style="width: 600px; padding: 30px;">
+              <div class="w3-container">
+                <h5>30 works 30 days, 2021</h5>
+                <h5><a href="https://www.12ocollective.com/" target="_blank">12ø Collective</a></h5>
               </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/2.png" alt="">
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/3.png" alt="">
-              </div>
-            </div>
-
-            <!-- page 2 -->
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/4.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/5.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/6.png" alt="" >
-              </div>
-            </div>
-
-            <!-- page 3 -->
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/7.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/8.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/9.png" alt="" >
-              </div>
-            </div>
-
-            <!-- page 4 -->
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/10.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/11.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/12.png" alt="" >
-              </div>
-            </div>
-
-            <!-- page 5 -->
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/13.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/14.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/15.png" alt="" >
-              </div>
-            </div>
-
-            <!-- page 6 -->
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/16.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/17.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/18.png" alt="" >
-              </div>
-            </div>
-
-            <!-- page 7 -->            
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/19.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/20.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/21.png" alt="" >
-              </div>
-            </div>
-
-            <!-- page 8 -->
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/22.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/23.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/24.png" alt="" >
-              </div>
-            </div>
-
-            <!-- page 9 -->
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/25.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/26.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/27.png" alt="" >
-              </div>
-            </div>
-
-            <!-- page 10 -->
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/28.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/29.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/30.png" alt="" >
-              </div>
-            </div>
-
-            <!-- page 11 -->
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/31.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/32.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/33.png" alt="" >
-              </div>
-            </div>
-
-            <!-- page 12 -->
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/34.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/35.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/36.png" alt="" >
-              </div>
-            </div>
-
-            <!-- page 13 -->
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/37.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/38.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/39.png" alt="" >
-              </div>
-            </div>
-
-            <!-- page 14 -->
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/40.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/41.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/42.png" alt="" >
-              </div>
-            </div>
-
-            <!-- page 15 -->
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/43.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/44.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/45.png" alt="" >
-              </div>
-            </div>
-
-            <!-- page 16 -->
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/46.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/47.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/48.png" alt="" >
-              </div>
-            </div>
-
-            <!-- page 17 -->
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/49.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/50.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/51.png" alt="" >
-              </div>
-            </div>
-
-            <!-- page 18 -->
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/52.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/53.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/54.png" alt="" >
-              </div>
-            </div>
-
-            <!-- page 19 -->
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/55.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/56.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/57.png" alt="" >
-              </div>
-            </div>
-
-            <!-- page 20 -->
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/58.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/59.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/60.png" alt="" >
-              </div>
-            </div>
-
-            <!-- page 21 -->
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/61.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/62.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/63.png" alt="" >
-              </div>
-            </div>
-
-            <!-- page 22 -->
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/64.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/65.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/66.png" alt="" >
-              </div>
-            </div>
-
-            <!-- page 23 -->
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/67.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/68.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/69.png" alt="" >
-              </div>
-            </div>
-
-            <!-- page 24 -->
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/70.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/71.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/72.png" alt="" >
-              </div>
-            </div>
-
-            <!-- page 25 -->
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/73.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/74.png" alt="" >
-              </div>
-            </div>
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/75.png" alt="" >
-              </div>
-            </div>
-
-            <!-- page 26 -->
-            <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-              <div class='demo-content'>
-                <img src="./img/76.png" alt="" >
-              </div>
-            </div>
           </div>
         </div>
       </div>
-    </div>
+
+      <main>
+        <div class="img-grid">
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/1.png"
+                  alt="."
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/2.png"
+                  alt="."
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/3.png"
+                  alt="."
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/4.png"
+                  alt="."
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/5.png"
+                  alt="."
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/6.png"
+                  alt="."
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/7.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/8.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/9.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/10.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/11.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/12.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/13.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/14.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/15.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/16.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/17.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/18.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/19.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/20.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/21.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/22.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/23.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/24.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/25.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/26.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/27.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/28.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/29.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/30.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/31.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/32.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/33.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/34.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/35.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/36.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/37.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/38.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/39.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/40.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/41.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/42.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/43.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/44.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/45.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/46.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/47.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/48.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/49.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/50.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/51.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/52.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/53.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/54.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/55.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/56.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/57.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/58.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/59.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/60.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/61.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/62.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/63.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/64.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/65.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/66.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/67.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/68.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/69.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/70.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/71.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/72.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/73.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/74.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/75.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+          <div class="img-container">
+            <div class="image">
+                <img 
+                  src="./img/76.png"
+                  alt="."
+                  loading="lazy"
+                >
+            </div>
+          </div>
+
+        </div>
+
+        <!-- img slider/modal -->
+
+        <div class="img-view"></div>
+
+        <div class="img-box">
+            <div id="prev-btn">
+                <button id="prev-img">
+                    <
+                </button>
+            </div>
+            <div id="next-btn">
+                <button id="next-img">
+                    >
+                </button>
+            </div>
+        </div>
+
+      </main>
 
     </div>
+
+    <script src="/js/img-slider-modal.js" async defer></script>
     <script src="/js/window-load.js"></script>
 </body>
 </html>
