@@ -111,7 +111,21 @@
 
 @media(max-width: 500px) {
     .img-box {
-        width: 70%;
-        height: 40%;
+        width: 90%;
+        height: 45%;
+    }
+
+    #prev-btn, #next-btn {
+        position: absolute;
+        top: 100%;
+        transform: translateY(20%);
+        transition: all 0.5s ease;
+        cursor: pointer;
+    }
+    #prev-btn {
+        left: 0px;
+    }
+    #next-btn {
+        right: 0px;
     }
 }

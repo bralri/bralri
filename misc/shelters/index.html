@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/img-carousel.css">
+    <link rel="stylesheet" type="text/css" href="/css/side-nav.css">
+    <link rel="stylesheet" type="text/css" href="/css/info-button.css">
+    <link rel="stylesheet" type="text/css" href="/css/window-loader.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/js/nav-bar.js" defer></script>
+    <script src="/js/img-carousel.js" defer></script>
+    <script src="/js/info-modal.js" defer></script>
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <title>Artifact Screenshots | Bryan Ridpath</title>
+</head>
+
+<body>
+
+    <div class="loader">
+        <div></div>
+    </div>
+
+    <div class="content">
+
+            <nav class="navbar">
+                <span class="open-slide">
+                    <button id="nav-button" href="#" onclick="openSlideMenu()">&#9776;</button>
+                </span>
+            </nav>
+            <div id="slide-menu" class="side-nav">
+                <button href="#" id="close-btn" class="btn-close" onclick="closeSlideMenu()">&#10005;</button>
+                
+                <a href="https://bralri.net/archive">archive</a>
+                <a href="http://blog.bralri.net/" target="_blank">blog</a>
+                <a href="https://bralri.net/about">about</a>
+                <a href="https://bralri.net/contact">contact</a>
+            </div>
+        
+        <div id="info-button">
+            <button 
+                class="info" 
+                onclick="document.getElementById('id01').style.display='block'">
+                    i
+            </button>
+        </div>
+        <div class="w3-container">
+            <div id="id01" class="w3-modal" style="padding: 300px 0px 0px;">
+                <div 
+                    id="modal" 
+                    class="w3-modal-content w3-center w3-animate-opacity" 
+                    style="width: 600px; padding: 30px;">
+                        <div class="w3-container">
+                            <h5>Detailed screenshots of digital 3D models.</h5>
+                            <h5>3D models were made using photogrammetry,</h5>
+                            <h5>documenting wrapped and archived sculptures.</h5>
+                            <h5>These screenshots were printed and used to</h5>
+                            <h5>create the collages for "<a href="#">Metamorphosis v1</a>"</h5>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <section aria-label="Photo Gallery">
+
+            <div class="carousel" data-carousel>
+                <button class="carousel-btn prev" data-carousel-button = "prev">
+                    <
+                </button>
+                <button class="carousel-btn next" data-carousel-button = "next">
+                    >
+                </button>
+                <ul data-slides>
+                    <li class="slide" data-active>
+                        <img src="./img/0.jpg" alt="Abstract screenshot of a 3D digital model">
+                    </li>
+                    <li class="slide">
+                        <img src="./img/1.jpg" alt="Abstract screenshot of a 3D digital model" loading="lazy">
+                    </li>
+                    <li class="slide">
+                        <img src="./img/2.jpg" alt="Abstract screenshot of a 3D digital model" loading="lazy">
+                    </li>
+                    <li class="slide">
+                        <img src="./img/3.jpg" alt="Abstract screenshot of a 3D digital model" loading="lazy">
+                    </li>
+                    <li class="slide">
+                        <img src="./img/4.png" alt="Abstract screenshot of a 3D digital model" loading="lazy">
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+    <script src="/js/window-load.js"></script>
+</body>
+</html>
