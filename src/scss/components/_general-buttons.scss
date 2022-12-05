@@ -1,0 +1,20 @@
+// Article Snippet Button
+.snippet__btn {
+    background-color: $secondary-l;
+    color: $primary-l;
+
+    grid-area: button;
+
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    line-height: 1;
+    padding: 0.75em 1.75em;
+    border-radius: 0.25em;
+    align-self: start;
+    justify-self: start;
+}
+
+.snippet__btn:hover {
+    color: $primary-l;
+}

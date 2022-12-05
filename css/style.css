@@ -1,14 +1,3 @@
-HTML {
-    cursor: pointer;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family:'Courier New', Courier, monospace;
-}
-
 h1, h2, h3, h4 {
     color: whitesmoke;
 }
@@ -37,23 +26,4 @@ body {
     position: -webkit-sticky;
     position: sticky;
     top: 0px;
-}
-
-/*scrollbar*/
-/* width */
-::-webkit-scrollbar {
-    width: 10px;
-}    
-/* Track */
-::-webkit-scrollbar-track {
-    background: #242526;
-}
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: whitesmoke;
-    cursor: pointer !important;
-}
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: gray;
 }

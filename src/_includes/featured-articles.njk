@@ -1,0 +1,10 @@
+<section id="featured-articles" class="featured-articles">
+    <div class="container container--narrow flow">
+        <h2 class="section-title">recent blog posts</h2>
+        <ul role="list" class="articles__list flow">
+            {%- for post in collections.featured | reverse -%}
+                {% include 'article-snippet.njk' %}
+            {%- endfor -%}
+        </ul>
+    </div>
+</section>

@@ -1,0 +1,42 @@
+---
+{
+  "permalink": "rss.xml",
+  "eleventyExcludeFromCollections": true,
+  "metadata": {
+    "title": "Bralri Blog",
+    "description": "Blog by Bryan Ridpath",
+    "language": "en-gb",
+    "url": "https://bralri.net/",
+    "author": {
+      "name": "Bryan Ridpath",
+      "email": "bryanridpath@gmail.com"
+    }
+  }
+}
+---
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns="http://www.w3.org/2005/Atom" xml:base="{{ metadata.url }}" version="2.0">
+    <channel>
+        <title>{{ metadata.title }}</title>
+        <link>{{ metadata.url }}</link>
+        <description>{{ metadata.description }}</description>
+        <generator>@11ty/Eleventy -- 11ty.dev</generator>
+        <language>{{ metadata.language }}</language>
+        <lastBuildDate>{{ collections.posts | getNewestCollectionItemDate | dateToRfc822 }}</lastBuildDate>
+        <link href="{{ permalink | absoluteUrl(metadata.url) }}" rel="self" type="application/rss+xml"/>
+        <author>
+          <name>{{ metadata.author.name }}</name>
+          <email>{{ metadata.author.email }}</email>
+        </author>
+        {%- for post in collections.post | reverse %}
+          {%- set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
+            <item>
+              <title>{{ post.data.title }}</title>
+              <link>{{ absolutePostUrl }}</link>
+              <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
+              <guid>{{ absolutePostUrl }}</guid>
+              <description>{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</description>
+            </item>
+        {%- endfor %}
+    </channel>
+</rss>
