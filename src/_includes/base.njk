@@ -21,7 +21,10 @@
           </main>
           {% include 'footer.njk'%}
 
-        <script src="/js/netlifyIdentify.js"></script>
+        <script>
+          CMS.registerPreviewStyle("{{ '/css/main.css' | url }}");
+        </script>
+        <script src="/js/netlifyIdentity.js"></script>
         <script src="/js/darkmode.js"></script>
         <script src="/js/navigation.js"></script>
     </body>
