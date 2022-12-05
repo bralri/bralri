@@ -4,8 +4,6 @@ backend:
 media_folder: "public/assets/img"
 public_folder: "/assets/img"
 
-locale: 'fr'
-
 collections:
   - name: "blog"
     label: "Blog"
