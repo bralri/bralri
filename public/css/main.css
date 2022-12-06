@@ -221,6 +221,18 @@ a:hover {
   display: none;
 }
 
+.nav__links {
+  list-style: none;
+}
+.nav__links li {
+  display: inline-block;
+  padding: 0 20px;
+}
+
+.darkmode__btn {
+  margin-left: 20px;
+}
+
 @media (max-width: 50em) {
   .primary-navigation {
     display: none;
@@ -271,16 +283,9 @@ a:hover {
     right: 4rem;
   }
 }
-.nav__links {
-  list-style: none;
-}
-.nav__links li {
-  display: inline-block;
-  padding: 0 20px;
-}
-
-.darkmode__btn {
-  margin-left: 20px;
+footer .container {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .articles__list {

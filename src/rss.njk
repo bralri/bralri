@@ -3,10 +3,10 @@
   "permalink": "rss.xml",
   "eleventyExcludeFromCollections": true,
   "metadata": {
-    "title": "Bralri Blog",
-    "description": "Blog by Bryan Ridpath",
+    "title": "bralri.net/blog",
+    "description": "bralri.net/blog",
     "language": "en-gb",
-    "url": "https://bralri.net/",
+    "url": "https://bralri.net",
     "author": {
       "name": "Bryan Ridpath",
       "email": "bryanridpath@gmail.com"
@@ -20,8 +20,14 @@
         <title>{{ metadata.title }}</title>
         <link>{{ metadata.url }}</link>
         <description>{{ metadata.description }}</description>
-        <generator>@11ty/Eleventy -- 11ty.dev</generator>
         <language>{{ metadata.language }}</language>
+        <image>
+          <title>{{ metadata.title }}</title>
+          <link>{{ metadata.url }}</link>
+          <url>http://wwww.bralri.net/assets/img/1.png</url>
+          <width>1080</width>
+          <height>1080</height>
+        </image>
         <lastBuildDate>{{ collections.posts | getNewestCollectionItemDate | dateToRfc822 }}</lastBuildDate>
         <link href="{{ permalink | absoluteUrl(metadata.url) }}" rel="self" type="application/rss+xml"/>
         <author>
@@ -35,6 +41,13 @@
               <link>{{ absolutePostUrl }}</link>
               <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
               <guid>{{ absolutePostUrl }}</guid>
+              <image>
+                <title>{{ post.data.imageAlt }}</title>
+                <link>{{ absolutePostUrl }}</link>
+                <url>{{ metadata.url + post.data.image }}</url>
+                <width>1080</width>
+                <height>1080</height>
+              </image>
               <description>{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</description>
             </item>
         {%- endfor %}
