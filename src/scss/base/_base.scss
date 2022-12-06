@@ -13,26 +13,31 @@ body {
     color: $txt-primary-l;
 }
 
-main {
-    padding: 0 80px;
+.container {
+    
+    $max-width: 1110px;
+    $padding: 1rem;
+
+    width: min($max-width, 100% - $padding * 2);
+    margin-inline: auto;
 }
 
 img {
     cursor: pointer;
 }
 
-.snippet-img-container {
-    overflow: hidden;
+// .snippet-img-container {
+//     overflow: hidden;
 
-    img {
-        transition: 0.3s ease;
+//     img {
+//         transition: 0.3s ease;
 
-        &:hover {
-            scale: (1.05);
-            transition: 0.3s ease;
-        }
-    }
-}
+//         &:hover {
+//             scale: (1.05);
+//             transition: 0.3s ease;
+//         }
+//     }
+// }
 
 //
 
@@ -58,9 +63,9 @@ img {
     }
 }
 
-section {
-    padding: 40px 0;
-}
+// section {
+//     padding: 40px 0;
+// }
 
 .flex-group {
     display: flex;
@@ -74,3 +79,15 @@ picture {
   display: block;
 }
 
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

@@ -1,18 +1,18 @@
 // Featured Articles - Home Page
 .articles__list {
     --flow-spacer: 48px;
-    margin: 96px 0;
+    // margin: 96px 0;
 }
 
 .flow > *:where(:not(:first-child)) {
     margin-top: var(--flow-spacer, 16px);
 }
-.container--narrow {
-    max-width: 65rem;
-}
+// .container--narrow {
+//     // max-width: 65rem;
+// }
 .container {
     margin-inline: auto;
-    max-width: 72rem;
+    // max-width: 72rem;
 }
 
 .section-title {
@@ -25,7 +25,7 @@
 
 .articles__list {
     --flow-spacer: 48px;
-    margin: 96px 0;
+    // margin: 96px 0;
 }
 
 li {
