@@ -41,13 +41,13 @@
               <link>{{ absolutePostUrl }}</link>
               <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
               <guid>{{ absolutePostUrl }}</guid>
-              <image>
+              <!-- <image>
                 <title>{{ post.data.imageAlt }}</title>
                 <link>{{ absolutePostUrl }}</link>
                 <url>{{ metadata.url + post.data.image }}</url>
                 <width>1080</width>
                 <height>1080</height>
-              </image>
+              </image> -->
               <description>{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</description>
             </item>
         {%- endfor %}
