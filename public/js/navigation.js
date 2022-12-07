@@ -1,4 +1,6 @@
 const primaryHeader = document.querySelector('.primary-header');
+const iconHamburger = document.querySelector('.icon-hamburger');
+const iconClose = document.querySelector('.icon-close');
 const navToggle = document.querySelector('.mobile-nav-toggle');
 const primaryNav = document.querySelector('.primary-navigation');
 

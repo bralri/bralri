@@ -14,7 +14,6 @@ body {
 }
 
 .container {
-    
     $max-width: 1110px;
     $padding: 1rem;
 
@@ -22,22 +21,15 @@ body {
     margin-inline: auto;
 }
 
+main {
+    .container {
+        padding-bottom: $--size-700;
+    }
+}
+
 img {
     cursor: pointer;
 }
-
-// .snippet-img-container {
-//     overflow: hidden;
-
-//     img {
-//         transition: 0.3s ease;
-
-//         &:hover {
-//             scale: (1.05);
-//             transition: 0.3s ease;
-//         }
-//     }
-// }
 
 //
 

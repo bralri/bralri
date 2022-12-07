@@ -1,6 +1,5 @@
 ---
 title: blog post 3
-author: bryan ridpath
 date: 2022-12-02
 tags: ['post', 'featured']
 image: /assets/img/3.png

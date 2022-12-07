@@ -13,7 +13,6 @@ collections:
     fields:
       - { label:  "Title", name: "title", widget: "string" }
       - { label:  "Description", name: "description", widget: "markdown" }
-      - { label:  "Author", name: "author", widget: "string" }
       - { label:  "Date", name: "date", widget: "datetime" }
       - { label:  "Featured Image", name: "image", widget: "image" }
       - { label:  "Image Caption", name: "imageAlt", widget: "string" }

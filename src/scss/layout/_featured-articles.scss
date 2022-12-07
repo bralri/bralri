@@ -7,13 +7,6 @@
 .flow > *:where(:not(:first-child)) {
     margin-top: var(--flow-spacer, 16px);
 }
-// .container--narrow {
-//     // max-width: 65rem;
-// }
-.container {
-    margin-inline: auto;
-    // max-width: 72rem;
-}
 
 .section-title {
     text-align: left;

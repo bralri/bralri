@@ -1,7 +1,6 @@
 ---
 title: cms blog post
 description: cms blog post
-author: bryan ridpath
 date: 2022-12-05T23:31:06.192Z
 image: /assets/img/6.png
 imageAlt: image caption from cms

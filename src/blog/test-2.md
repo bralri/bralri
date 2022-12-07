@@ -1,6 +1,5 @@
 ---
 title: blog post 2
-author: Bryan Ridpath
 date: 2022-11-28
 tags: ['post', 'featured']
 image: /assets/img/1.png
