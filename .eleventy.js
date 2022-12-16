@@ -1,7 +1,7 @@
 const { DateTime } = require("luxon");
 const pluginRSS = require("@11ty/eleventy-plugin-rss");
 
-module.exports = function(eleventyConfig) {
+module.exports = (eleventyConfig) => {
 
     eleventyConfig.addPlugin(pluginRSS);
     eleventyConfig.addLiquidFilter("dateToRfc822", pluginRSS.dateToRfc822);
@@ -17,6 +17,11 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addFilter("postDate", (dateObj) => {
         return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
     })
+
+    // Configure image in a template paired shortcode
+    // eleventyConfig.addPairedShortcode("image", (srcSet, src, alt, sizes="(min-width: 400px) 33.3vw, 100vw") => {
+    //     return `<img srcset="${srcSet}" src="${src}" alt="${alt}" sizes="${sizes}" />`;
+    // });
 
     return {
         dir: {
