@@ -12,7 +12,7 @@
           <width>1080</width>
           <height>1080</height>
         </image>
-        <lastBuildDate>Thu, 08 Dec 2022 16:16:49 +0000</lastBuildDate>
+        <lastBuildDate>Tue, 04 Apr 2023 15:33:35 +0000</lastBuildDate>
         <link href="https://bralri.net/rss.xml" rel="self" type="application/rss+xml"/>
         <author>
           <name>Bryan Ridpath</name>
@@ -23,13 +23,6 @@
               <link>https://bralri.net/blog/cms-blog-post/</link>
               <pubDate>Mon, 05 Dec 2022 23:31:06 +0000</pubDate>
               <guid>https://bralri.net/blog/cms-blog-post/</guid>
-              <!-- <image>
-                <title>image caption from cms</title>
-                <link>https://bralri.net/blog/cms-blog-post/</link>
-                <url>https://bralri.net/assets/img/6.png</url>
-                <width>1080</width>
-                <height>1080</height>
-              </image> -->
               <description>&lt;p&gt;Sed lacus eros, luctus vel metus in, pulvinar faucibus metus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus sagittis faucibus sapien ac viverra. Fusce ut est eget nulla bibendum consectetur. Aliquam ac rhoncus lorem, at scelerisque ligula. Nulla ac ullamcorper elit. Phasellus sed risus risus. Etiam mi risus, luctus a tempor nec, consequat ac nisl. In suscipit est nisi, nec sodales nunc faucibus et.&lt;/p&gt;
 &lt;p&gt;Cras vel lectus vel enim tempor condimentum non eget dolor. Suspendisse vel mi sit amet mauris sodales elementum. Maecenas ac justo sodales, aliquam neque a, cursus orci. Nam aliquam nibh et elementum blandit. Aliquam diam arcu, venenatis non interdum in, blandit pulvinar felis. Curabitur hendrerit sapien id erat tempus condimentum. Nulla quis vulputate dolor. Donec tempus felis justo, ac vulputate ipsum consequat et. Proin cursus nunc in sem luctus venenatis. Duis urna ligula, gravida ac fringilla semper, lacinia vitae ex. Pellentesque sit amet laoreet lacus, et vestibulum ante. Vivamus maximus non dolor eu vestibulum. In quis euismod nisl. Quisque lacinia ligula sit amet metus suscipit, eu cursus mauris tincidunt. Quisque faucibus accumsan nisl, nec luctus justo laoreet in. Nulla orci massa, fringilla in elit ut, facilisis convallis odio.&lt;/p&gt;
 &lt;p&gt;Sed feugiat placerat metus, sit amet ultricies risus. Sed ullamcorper eros lectus, nec egestas arcu ullamcorper ac. Proin iaculis magna est, in viverra diam imperdiet vitae. Nunc accumsan hendrerit quam non fermentum. Duis eu lectus tincidunt, ultrices sem interdum, mollis orci. Praesent congue magna vitae vehicula sagittis. Etiam dapibus sed libero a ultrices. Pellentesque sodales, diam id aliquet sollicitudin, tellus ipsum auctor sem, nec mattis sapien risus in sem.&lt;/p&gt;
@@ -40,13 +33,6 @@
               <link>https://bralri.net/blog/test-3/</link>
               <pubDate>Fri, 02 Dec 2022 00:00:00 +0000</pubDate>
               <guid>https://bralri.net/blog/test-3/</guid>
-              <!-- <image>
-                <title>a cross-section screenshot detail of a photogrammetry model</title>
-                <link>https://bralri.net/blog/test-3/</link>
-                <url>https://bralri.net/assets/img/3.png</url>
-                <width>1080</width>
-                <height>1080</height>
-              </image> -->
               <description>&lt;p&gt;&lt;a href=&quot;https://bralri.net/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Lorem ipsum dolor sit amet, consectetur&lt;/a&gt; adipiscing elit. Curabitur in tortor nisl. Mauris maximus, sapien non pellentesque ornare, nulla nisl convallis risus, sit amet mattis risus quam varius tortor. Suspendisse dui risus, sollicitudin nec vestibulum quis, ultrices vel nisi. Sed vitae enim dui. Etiam accumsan a ante vitae pellentesque. Mauris at mauris at erat ornare blandit non sed turpis. Etiam suscipit ex ut neque egestas, nec consequat augue hendrerit. Aliquam molestie justo sem. Etiam ultrices ac urna eu pulvinar. Etiam pellentesque quam vitae sem accumsan gravida.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Vivamus sed arcu diam. Morbi sed nisl pretium, dignissim mi vitae,&lt;/strong&gt; scelerisque libero. Nunc nec mi nec libero sollicitudin ullamcorper. Aliquam in nulla suscipit, fringilla sapien eu, tristique metus. Phasellus quis enim in dui varius consequat eu eu ante. Praesent ullamcorper consequat arcu sed commodo. In quis lectus non augue luctus pretium. Praesent vel nulla sit amet magna convallis cursus. Sed lacinia neque id nulla maximus auctor. Curabitur a metus orci. Sed viverra tincidunt purus, quis aliquet diam ullamcorper aliquam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed mollis tellus eu nibh cursus sodales. Curabitur egestas nisl sollicitudin libero dictum, at sodales ante laoreet. Praesent condimentum urna orci, pharetra aliquam enim accumsan non.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://bralri.net/assets/img/3.png&quot; alt=&quot;a cross-section screenshot detail of a photogrammetry model&quot; title=&quot;a cross-section screenshot detail of a photogrammetry model&quot; /&gt;&lt;/p&gt;
@@ -61,13 +47,6 @@
               <link>https://bralri.net/blog/test-2/</link>
               <pubDate>Mon, 28 Nov 2022 00:00:00 +0000</pubDate>
               <guid>https://bralri.net/blog/test-2/</guid>
-              <!-- <image>
-                <title>Illustration of a yellow metal road sign on a green background</title>
-                <link>https://bralri.net/blog/test-2/</link>
-                <url>https://bralri.net/assets/img/1.png</url>
-                <width>1080</width>
-                <height>1080</height>
-              </image> -->
               <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in tortor nisl. Mauris maximus, sapien non pellentesque ornare, nulla nisl convallis risus, sit amet mattis risus quam varius tortor. Suspendisse dui risus, sollicitudin nec vestibulum quis, ultrices vel nisi. Sed vitae enim dui. Etiam accumsan a ante vitae pellentesque. Mauris at mauris at erat ornare blandit non sed turpis. Etiam suscipit ex ut neque egestas, nec consequat augue hendrerit. Aliquam molestie justo sem. Etiam ultrices ac urna eu pulvinar. Etiam pellentesque quam vitae sem accumsan gravida.&lt;/p&gt;
 &lt;p&gt;Vivamus sed arcu diam. Morbi sed nisl pretium, dignissim mi vitae, scelerisque libero. Nunc nec mi nec libero sollicitudin ullamcorper. Aliquam in nulla suscipit, fringilla sapien eu, tristique metus. Phasellus quis enim in dui varius consequat eu eu ante. Praesent ullamcorper consequat arcu sed commodo. In quis lectus non augue luctus pretium. Praesent vel nulla sit amet magna convallis cursus. Sed lacinia neque id nulla maximus auctor. Curabitur a metus orci. Sed viverra tincidunt purus, quis aliquet diam ullamcorper aliquam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed mollis tellus eu nibh cursus sodales. Curabitur egestas nisl sollicitudin libero dictum, at sodales ante laoreet. Praesent condimentum urna orci, pharetra aliquam enim accumsan non.&lt;/p&gt;
 &lt;p&gt;Sed lacus eros, luctus vel metus in, pulvinar faucibus metus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus sagittis faucibus sapien ac viverra. Fusce ut est eget nulla bibendum consectetur. Aliquam ac rhoncus lorem, at scelerisque ligula. Nulla ac ullamcorper elit. Phasellus sed risus risus. Etiam mi risus, luctus a tempor nec, consequat ac nisl. In suscipit est nisi, nec sodales nunc faucibus et.&lt;/p&gt;
@@ -80,13 +59,6 @@
               <link>https://bralri.net/blog/test/</link>
               <pubDate>Tue, 28 Jun 2022 01:00:00 +0000</pubDate>
               <guid>https://bralri.net/blog/test/</guid>
-              <!-- <image>
-                <title>A series of 9 3D models in a grid pattern</title>
-                <link>https://bralri.net/blog/test/</link>
-                <url>https://bralri.net/assets/img/2.png</url>
-                <width>1080</width>
-                <height>1080</height>
-              </image> -->
               <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in tortor nisl. Mauris maximus, sapien non pellentesque ornare, nulla nisl convallis risus, sit amet mattis risus quam varius tortor. Suspendisse dui risus, sollicitudin nec vestibulum quis, ultrices vel nisi. Sed vitae enim dui. Etiam accumsan a ante vitae pellentesque. Mauris at mauris at erat ornare blandit non sed turpis. Etiam suscipit ex ut neque egestas, nec consequat augue hendrerit. Aliquam molestie justo sem. Etiam ultrices ac urna eu pulvinar. Etiam pellentesque quam vitae sem accumsan gravida.&lt;/p&gt;
 &lt;p&gt;Vivamus sed arcu diam. Morbi sed nisl pretium, dignissim mi vitae, scelerisque libero. Nunc nec mi nec libero sollicitudin ullamcorper. Aliquam in nulla suscipit, fringilla sapien eu, tristique metus. Phasellus quis enim in dui varius consequat eu eu ante. Praesent ullamcorper consequat arcu sed commodo. In quis lectus non augue luctus pretium. Praesent vel nulla sit amet magna convallis cursus. Sed lacinia neque id nulla maximus auctor. Curabitur a metus orci. Sed viverra tincidunt purus, quis aliquet diam ullamcorper aliquam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed mollis tellus eu nibh cursus sodales. Curabitur egestas nisl sollicitudin libero dictum, at sodales ante laoreet. Praesent condimentum urna orci, pharetra aliquam enim accumsan non.&lt;/p&gt;
 &lt;p&gt;Sed lacus eros, luctus vel metus in, pulvinar faucibus metus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus sagittis faucibus sapien ac viverra. Fusce ut est eget nulla bibendum consectetur. Aliquam ac rhoncus lorem, at scelerisque ligula. Nulla ac ullamcorper elit. Phasellus sed risus risus. Etiam mi risus, luctus a tempor nec, consequat ac nisl. In suscipit est nisi, nec sodales nunc faucibus et.&lt;/p&gt;
