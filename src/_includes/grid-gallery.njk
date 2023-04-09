@@ -1,0 +1,24 @@
+<div class="photo-grid-container">
+    {% for image in gallery %}
+        <div class="photo-grid-item">
+            <img
+                class="photo-grid-image"
+                src="{{ image.url }}"
+                alt="{{ image.alt }}"
+                title="{{ image.title }}">
+        </div>
+    {% endfor %}
+</div>
+
+<div id="image-modal" class="modal">
+    <a class="modal-prev" href="#">
+        <i class="fa fa-chevron-left"></i>
+    </a>
+    <a class="modal-next" href="#">
+        <i class="fa fa-chevron-right"></i>
+    </a>
+    <div class="modal-image-container">
+        <img id="modal-image" class="modal-content">
+        <p id="modal-caption" class="modal-caption"></p>
+    </div>
+</div>

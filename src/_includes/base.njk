@@ -4,14 +4,75 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="{{ site.authorName }}">
+        <meta name="Description" content="{{ metaDescription }}">
+
+        <meta property="og:title" content="{{ title }}">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="{{ rootURL }}{{ page.url }}">
+        <meta property="og:description" content="{{ description }}">
+        <meta property="og:image" content="{{ rootURL }}{{ gallery[0].url }}">
+        <meta property="og:image:alt" content="{{ gallery[0].alt }}">
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@bryanridpath" />
+        <meta name="twitter:title" content="{{ title }}" />
+        <meta name="twitter:description" content="{{ description }}" />
+        <meta name="twitter:image" content="{{ rootURL }}{{ gallery[0].url }}" />
+        <meta name="twitter:creator" content="@bryanridpath">
+
         <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
         <link rel="stylesheet" href="{{ '/css/main.css' | url }}">
-        <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+        <link rel="icon" type="image/x-icon" href="{{ site.favicon }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
-        <meta name="Description" content="{{ description }}">
-        <title>Bryan Ridpath</title>
+        <script type="application/ld+json">
+          {
+            "@context": "https://schema.org/",
+            "@type": "{{ type }}",
+            "headline": "{{ title }}",
+            "url": "{{ rootURL }}{{ page.url }}",
+            "image": [
+              "{{ rootURL }}{{ image }}"
+            ],
+            "datePublished": "{{ date }}",
+            "description": "{{ description }}",
+            "author": {
+              "@type": "Person",
+              "name": "Bryan Ridpath",
+              "url": "{{ rootURL }}/about/"
+            }
+          },
+          [{% for image in gallery %}
+            {
+              "@context": "https://schema.org/",
+              "@type": "ImageObject",
+              "contentUrl": "{{ rootURL }}{{ image.url }}",
+              "creator": {
+                "@type": "Person",
+                "name": "{{ site.authorName }}"
+              },
+              "copyrightNotice": "{{ site.authorName }}"
+            },
+          {% endfor %}],
+          [{% for media in video %}
+            {
+              "@context": "https://schema.org/",
+              "@type": "VideoObject",
+              "name": "{{ media.name }}",
+              "description": "{{ media.description }}",
+              "thumbnailURL": [
+                "{{ rootURL }}{{ media.thumbnail }}"
+              ],
+              "uploadDate": "{{ media.uploadDate }}",
+              "duration": "{{ media.duration }}",
+              "contentUrl": "{{ rootURL }}{{ media.url }}",
+              "embedUrl": "{{ rootURL }}{{ media.url }}",
+            },
+          {% endfor %}]
+        </script>
+        <title>{{ title }}</title>
     </head>
     <body>
 
@@ -21,8 +82,8 @@
           </main>
           {% include 'footer.njk'%}
 
+        <script src="/js/modal.js"></script>
         <script src="/js/netlifyIdentity.js"></script>
-        <script src="/js/darkmode.js"></script>
         <script src="/js/navigation.js"></script>
     </body>
 </html>

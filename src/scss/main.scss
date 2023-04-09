@@ -2,17 +2,19 @@
         './abstracts/variables';
 
 @import './base/base',
-        './base/typography',
-        './base/darkmode';
+        './base/typography';
 
 @import './layout/navigation',
         './layout/header',
         './layout/footer',
         './layout/featured-articles',
-        './layout/article';
+        './layout/article',
+        './layout/image-gallery-grid',
+        './layout/featured-works',
+        './layout/instagram-grid';
 
 @import './components/general-buttons',
-        './components/darkmode-button';
+        './components/social-share-links',
+        './components/blockquote';
 
-@import './pages/home',
-        './pages/contact';
+@import './utilities/grid-gallery-modal';

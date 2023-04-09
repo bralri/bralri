@@ -7,14 +7,14 @@ layout: 'base.njk'
         <h2 class="article-title">
             {{ title }}
         </h2>
+        <h3 class="article-title">
+            Published: {{ date | postDate }}
+        </h3><br>
 
         {{ content | safe }}
 
-        <figure class="main-article__figure">
-            <img src="{{ image  }}" alt="{{ imageAlt }}" title="{{ imageAlt }}">
-            <figcaption>
-                {{ imageAlt }}
-            </figcaption>
-        </figure>
+        {% include 'grid-gallery.njk' %}
+
+        {% include 'social-share-links.njk' %}
     </div>
 </article>

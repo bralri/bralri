@@ -34,7 +34,7 @@ li {
 .snippet__image {
     grid-area: image;
     width: 100%;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 1/1;
     object-fit: cover;
 }
 .snippet__title {
@@ -44,7 +44,7 @@ li {
     grid-area: meta;
 }
 
-@media (min-width: 720px) {
+@media (min-width: 50em) {
     .snippet {
         grid-template-areas: "title image" "meta image" "body image" "button image";
         grid-column-gap: 64px;

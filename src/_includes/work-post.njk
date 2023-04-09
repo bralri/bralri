@@ -1,0 +1,20 @@
+---
+layout: 'base.njk'
+---
+
+<article class="main-article">
+    <div class="container container--narrow flow">
+        <h1 class="article-title">
+            {{ title }}
+        </h1>
+        <h3 class="article-title">
+            {{ year }}
+        </h3><br>
+        
+        {{ content | safe }}
+
+        {% include 'grid-gallery.njk' %}
+
+        {% include 'social-share-links.njk' %}
+    </div>
+</article>

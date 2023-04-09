@@ -1,0 +1,123 @@
+---
+layout: "work-post.njk"
+title: "Courtyard Arts Residency"
+type: "BlogPosting"
+priority: "0.5"
+date: 2018-09-18
+year: "2018"
+tags: ["work"]
+description: "Courtyard Arts Residency"
+
+video:
+  - url: "/assets/video/works/courtyard-arts-residency/courtyard-arts-residency.mp4"
+    name: "Courtyard Arts Residency"
+    description: "Documentation of the actions, processes and artworks made during the residency"
+    thumbnail: "/assets/img/works/courtyard-arts-residency/1.png"
+    uploadDate: "2018-09-18"
+    duration: "PT10M0S"
+
+gallery:
+  - url: "/assets/img/works/courtyard-arts-residency/gallery/1.JPG"
+    title: "Courtyard Arts Residency"
+    alt: "Plaster & dried clay"
+  - url: "/assets/img/works/courtyard-arts-residency/gallery/2.JPG"
+    title: "Courtyard Arts Residency"
+    alt: "Unfired clay"
+  - url: "/assets/img/works/courtyard-arts-residency/gallery/3.JPG"
+    title: "Courtyard Arts Residency"
+    alt: "Unfired clay, plaster, aluminium sheet"
+  - url: "/assets/img/works/courtyard-arts-residency/gallery/5.JPG"
+    title: "Courtyard Arts Residency"
+    alt: "Alginate & dried clay"
+  - url: "/assets/img/works/courtyard-arts-residency/gallery/6.JPG"
+    title: "Courtyard Arts Residency"
+    alt: "Aluminium sheet, plaster, dried clay"
+  - url: "/assets/img/works/courtyard-arts-residency/gallery/7.JPG"
+    title: "Courtyard Arts Residency"
+    alt: "Installation shot"
+  - url: "/assets/img/works/courtyard-arts-residency/gallery/8.JPG"
+    title: "Courtyard Arts Residency"
+    alt: "Aluminium"
+  - url: "/assets/img/works/courtyard-arts-residency/gallery/10.JPG"
+    title: "Courtyard Arts Residency"
+    alt: "Unfired clay"
+  - url: "/assets/img/works/courtyard-arts-residency/gallery/11.JPG"
+    title: "Courtyard Arts Residency"
+    alt: "Unfired clay"
+  - url: "/assets/img/works/courtyard-arts-residency/gallery/12.JPG"
+    title: "Courtyard Arts Residency"
+    alt: "Installation shot"
+  - url: "/assets/img/works/courtyard-arts-residency/gallery/13.JPG"
+    title: "Courtyard Arts Residency"
+    alt: "Aluminium sheet"
+  - url: "/assets/img/works/courtyard-arts-residency/gallery/14.JPG"
+    title: "Courtyard Arts Residency"
+    alt: "Unfired clay"
+  - url: "/assets/img/works/courtyard-arts-residency/gallery/15.JPG"
+    title: "Courtyard Arts Residency"
+    alt: "Unfired clay & aluminium sheet"
+  - url: "/assets/img/works/courtyard-arts-residency/gallery/16.JPG"
+    title: "Courtyard Arts Residency"
+    alt: "Plaster & dried clay"
+  - url: "/assets/img/works/courtyard-arts-residency/gallery/17.JPG"
+    title: "Courtyard Arts Residency"
+    alt: "Installation shot"
+  - url: "/assets/img/works/courtyard-arts-residency/gallery/18.JPG"
+    title: "Courtyard Arts Residency"
+    alt: "Installation shot"
+  - url: "/assets/img/works/courtyard-arts-residency/gallery/19.JPG"
+    title: "Courtyard Arts Residency"
+    alt: "Installation shot"
+  - url: "/assets/img/works/courtyard-arts-residency/gallery/20.JPG"
+    title: "Courtyard Arts Residency"
+    alt: "Unfired clay"
+  - url: "/assets/img/works/courtyard-arts-residency/gallery/21.JPG"
+    title: "Courtyard Arts Residency"
+    alt: "Unfired clay, plaster, alginate, plastic sheet"
+  - url: "/assets/img/works/courtyard-arts-residency/gallery/22.JPG"
+    title: "Courtyard Arts Residency"
+    alt: "Unfired clay, plaster, alginate, plastic sheet"
+  - url: "/assets/img/works/courtyard-arts-residency/gallery/23.JPG"
+    title: "Courtyard Arts Residency"
+    alt: "Plaster & dried clay"
+---
+
+<video width="100%" height="100%" controls controlsList="nodownload">
+    <source src="{{ video[0].url }}" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+<figcaption>
+    "{{ video[0].name }}". {{ video[0].description }}.
+</figcaption>
+
+<br>
+
+<p>In 2018, I was artist in residence at Courtyard Arts Centre in Hertford, UK. Explain the residency concept further.</p>
+
+<br>
+
+<blockquote>
+<p>"what do we call these relics?</p>
+<p>do they have names? Or are they just things?</p>
+<p>things that did a thing?</p>
+<p>things that will do a thing?</p>
+<p>things that do nothing?</p>
+<p>things that do everything?</p>
+<p>useless to us, what are they?</p>
+<p>what will they be use for?</p>
+<p>when will they be used?</p>
+<p>who uses them?</p>
+<p>they almost look like they do something, right?</p>
+<p>things of remembrance,</p>
+<p>things of optimism,</p>
+<p>things of pessimism,</p>
+<p>things of opportunity,</p>
+<p>things of the past,</p>
+<p>things of the future & things of the present,</p>
+<p>things of the never-will & always."</p>
+
+<cite>~ Things of the Never-Will and Always</cite>
+</blockquote>
+
+<br>
+<br>

@@ -1,0 +1,48 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+    {% for post in collections.all | reverse %}
+        <url>
+            <loc>{{ rootURL }}{{ post.url }}</loc>
+            <priority>{{ post.data.priority }}</priority>
+            <lastmod>{{ post.date.toISOString() }}</lastmod>
+            <news:news>
+                <news:publication>
+                    <news:name>Bryan Ridpath</news:name>
+                    <news:language>en</news:language>
+                </news:publication>
+                <news:publication_date>{{ post.data.date }}</news:publication_date>
+                <news:title>{{ post.data.title }}</news:title>
+            </news:news>
+            
+            {% for image in post.data.gallery %}
+                <image:image>
+                    <image:loc>{{ rootURL }}{{ image.url }}</image:loc>
+                </image:image>
+                <image:caption><![CDATA[{{ image.alt }}]]></image:caption>
+            {% endfor %}
+
+            {% for media in post.data.video %}
+            <video:video>
+                <video:thumbnail_loc>{{ rootURL }}{{ post.data.image }}</video:thumbnail_loc>
+                <video:title>{{ post.data.title }}</video:title>
+                <video:description>
+                    {{ post.data.description }}
+                </video:description>
+                <video:content_loc>
+                    {{ media.url }}
+                </video:content_loc>
+                <video:player_loc>
+                    {{ media.url }}
+                </video:player_loc>
+            </video:video>
+            {% endfor %}
+        </url>
+    {% endfor %}
+</urlset>

@@ -1,0 +1,18 @@
+.instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-rows: auto;
+    grid-gap: 20px;
+}
+
+.instagram-media {
+    background: #FFF;
+    border: 0;
+    border-radius: 3px;
+    box-shadow: 0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);
+    margin: 1px;
+    max-width: 540px;
+    min-width: 280px;
+    padding: 0;
+    width: 100%;
+}

@@ -2,12 +2,42 @@
     <article class="snippet">
         <a href="{{ post.url }}" class="snippet__image">
             <div class="snippet-img-container">
-                <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt }}" class="snippet__image" title="{{ post.data.title }}">
+                <img class="snippet__image" src="{{ post.data.gallery[0].url }}" alt="{{ post.data.gallery[0].alt }}" title="{{ post.data.gallery[0].title }}">
             </div>
         </a>
         <h3 class="snippet__title" title="{{ post.data.title }}"><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
-        <p class="snippet__meta"><span>{{ post.date | postDate }}</span></p>
+        <p class="snippet__meta"><span>Published: {{ post.date | postDate }}</span></p>
         <p class="snippet__body">{{ post.data.description }}</p>
-        <a href="{{ post.url }}" class="snippet__btn" title="Continue Reading">continue reading</a>
+        <br>
+        <div class="share-container">
+            <p class="share-text"><i class="fa-solid fa-share-nodes"></i> Share:</p>
+            <div class="share-links">
+                <a
+                    href="https://twitter.com/share?url={{ rootURL }}{{ post.url }}&text={{ post.data.title }}"
+                    target="_blank"
+                    rel="noopener"
+                    title="Share to Twiiter"
+                    aria-label="Share to Twiiter">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a
+                    href="https://www.facebook.com/sharer/sharer.php?u={{ rootURL }}{{ post.url }}"
+                    target="_blank"
+                    rel="noopener"
+                    title="Share to Facebook"
+                    aria-label="Share to Facebook">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a
+                    href="http://pinterest.com/pin/create/button/?url={{ rootURL }}{{ post.url }}"
+                    target="_blank"
+                    rel="noopener"
+                    title="Share to Pinterest"
+                    aria-label="Share to Pinterest">
+                    <i class="fa-brands fa-pinterest"></i>
+                </a>
+            </div>
+        </div>
+        <a href="{{ post.url }}" class="snippet__btn" title="read more">read more</a>
     </article>
 </li>

@@ -1,11 +1,18 @@
 ---
+eleventyExcludeFromCollections: false
 layout: 'base.njk'
+tabTitle: "| Blog"
+
+type: "BlogPosting"
+title: "Blog"
+image: ""
+
+priority: "1.0"
 ---
 
 <div class="container container--narrow flow">
-    <h2 class="section-title">blog</h2>
     <ul role="list" class="articles__list flow">
-        {%- for post in collections.featured | reverse -%}
+        {%- for post in collections.post | reverse -%}
             {% include 'article-snippet.njk' %}
         {%- endfor -%}
     </ul>

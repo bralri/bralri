@@ -1,0 +1,12 @@
+<section id="featured-works" class="featured-works">
+    <div class="container container--narrow flow">
+        <h2 class="section-title">Featured <a href="works">Works</a></h2>
+        <ul role="list" class="works__list">
+            {%- for post in collections.featuredWork | reverse -%}
+                {% if loop.index0 < 8 %}
+                    {% include 'works-snippet.njk' %}
+                {% endif %}
+            {%- endfor -%}
+        </ul>
+    </div>
+</section>

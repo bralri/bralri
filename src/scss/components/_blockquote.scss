@@ -1,0 +1,18 @@
+blockquote {
+    max-width: 800px;
+    margin: 32px auto;
+    padding: 20px;
+    position: relative;
+    text-align: justify;
+    text-align-last: left;
+}
+
+.indent {
+    text-indent: 30px;
+}
+
+cite {
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+}

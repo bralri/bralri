@@ -1,0 +1,20 @@
+---
+eleventyExcludeFromCollections: false
+layout: 'base.njk'
+
+type: "BlogPosting"
+title: "Works"
+image: ""
+
+priority: "1.0"
+---
+
+<section id="featured-works" class="featured-works">
+    <div class="container container--narrow flow">
+        <ul role="list" class="works__list">
+            {%- for post in collections.work | reverse -%}
+                {% include 'works-snippet.njk' %}
+            {%- endfor -%}
+        </ul>
+    </div>
+</section>

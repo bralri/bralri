@@ -1,14 +1,16 @@
 // Main Article Page
 .main-article {
-    // margin-bottom: 6rem;
-
     img {
         width: 100%;
-        aspect-ratio: 4 / 3;
         object-fit: cover;
+        aspect-ratio: 3/2;
     }
+}
 
-    // .article-title {
-    //     padding-bottom: 5px;
-    // }
+@media (max-width: 50em) {
+    .main-article {
+        img {
+            width: 100%;
+        }
+    }
 }

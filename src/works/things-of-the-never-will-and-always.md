@@ -1,0 +1,71 @@
+---
+layout: 'work-post.njk'
+title: "Things of the Never-Will and Always"
+type: "BlogPosting"
+priority: "0.5"
+date: 2018-12-15
+year: "2018"
+tags: ["work", "featuredWork"]
+description: "Things of the Never-Will and Always, 2018, was a re-installation from a body of work which combined sculptures and objects from previous exhibitions and residencies. This installation was part of a group show in London, UK at a pop-up gallery in Brick Lane."
+
+gallery:
+  - url: "/assets/img/works/things-of-the-never-will-and-always/gallery/1.JPG"
+    title: "Things of the Never-Will and Always"
+    alt: "Glazed ceramic, unfired clay, 3D printed SLS plastic, shelving, found objects, plaster"
+  - url: "/assets/img/works/things-of-the-never-will-and-always/gallery/2.JPG"
+    title: "Things of the Never-Will and Always"
+    alt: "Glazed ceramic, unfired clay, 3D printed SLS plastic, shelving, found objects, plaster"
+  - url: "/assets/img/works/things-of-the-never-will-and-always/gallery/3.JPG"
+    title: "Things of the Never-Will and Always"
+    alt: "Glazed ceramic, unfired clay, 3D printed SLS plastic, shelving, found objects, plaster"
+  - url: "/assets/img/works/things-of-the-never-will-and-always/gallery/4.JPG"
+    title: "Things of the Never-Will and Always"
+    alt: "Glazed ceramic, unfired clay, 3D printed SLS plastic, shelving, found objects, plaster"
+  - url: "/assets/img/works/things-of-the-never-will-and-always/gallery/5.JPG"
+    title: "Things of the Never-Will and Always"
+    alt: "Glazed ceramic, unfired clay, 3D printed SLS plastic, shelving, found objects, plaster"
+  - url: "/assets/img/works/things-of-the-never-will-and-always/gallery/6.JPG"
+    title: "Things of the Never-Will and Always"
+    alt: "Glazed ceramic, unfired clay, 3D printed SLS plastic, shelving, found objects, plaster"
+  - url: "/assets/img/works/things-of-the-never-will-and-always/gallery/7.JPG"
+    title: "Things of the Never-Will and Always"
+    alt: "Glazed ceramic, unfired clay, 3D printed SLS plastic, shelving, found objects, plaster"
+  - url: "/assets/img/works/things-of-the-never-will-and-always/gallery/8.JPG"
+    title: "Things of the Never-Will and Always"
+    alt: "Glazed ceramic, unfired clay, 3D printed SLS plastic, shelving, found objects, plaster"
+  - url: "/assets/img/works/things-of-the-never-will-and-always/gallery/9.JPG"
+    title: "Things of the Never-Will and Always"
+    alt: "Glazed ceramic, unfired clay, 3D printed SLS plastic, shelving, found objects, plaster"
+  - url: "/assets/img/works/things-of-the-never-will-and-always/gallery/10.JPG"
+    title: "Things of the Never-Will and Always"
+    alt: "Glazed ceramic, unfired clay, 3D printed SLS plastic, shelving, found objects, plaster"
+  - url: "/assets/img/works/things-of-the-never-will-and-always/gallery/11.JPG"
+    title: "Things of the Never-Will and Always"
+    alt: "Glazed ceramic, unfired clay, 3D printed SLS plastic, shelving, found objects, plaster"
+  - url: "/assets/img/works/things-of-the-never-will-and-always/gallery/12.JPG"
+    title: "Things of the Never-Will and Always"
+    alt: "Glazed ceramic, unfired clay, 3D printed SLS plastic, shelving, found objects, plaster"
+  - url: "/assets/img/works/things-of-the-never-will-and-always/gallery/13.JPG"
+    title: "Things of the Never-Will and Always"
+    alt: "Glazed ceramic, unfired clay, 3D printed SLS plastic, shelving, found objects, plaster"
+  - url: "/assets/img/works/things-of-the-never-will-and-always/gallery/14.JPG"
+    title: "Things of the Never-Will and Always"
+    alt: "Glazed ceramic, unfired clay, 3D printed SLS plastic, shelving, found objects, plaster"
+  - url: "/assets/img/works/things-of-the-never-will-and-always/gallery/15.JPG"
+    title: "Things of the Never-Will and Always"
+    alt: "Glazed ceramic, unfired clay, 3D printed SLS plastic, shelving, found objects, plaster"
+---
+
+<figure class="main-article__figure">
+    <img src="{{ gallery[13].url  }}" alt="{{ gallery[13].alt }}" title="{{ gallery[13].title }}">
+        <figcaption>
+            "{{ gallery[13].title }}". {{ gallery[13].alt }}.
+        </figcaption>
+</figure>
+
+<br>
+
+<p>text</p>
+
+<br>
+<br>

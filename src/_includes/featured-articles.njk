@@ -1,9 +1,11 @@
 <section id="featured-articles" class="featured-articles">
     <div class="container container--narrow flow">
-        <h2 class="section-title">recent blog posts</h2>
+        <h2 class="section-title">Recent <a href="blog">Blog</a> Posts</h2>
         <ul role="list" class="articles__list flow">
-            {%- for post in collections.featured | reverse -%}
-                {% include 'article-snippet.njk' %}
+            {%- for post in collections.post | reverse -%}
+                {% if loop.index0 < 3 %}
+                    {% include 'article-snippet.njk' %}
+                {% endif %}
             {%- endfor -%}
         </ul>
     </div>
