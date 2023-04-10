@@ -24,8 +24,9 @@ eleventyExcludeFromCollections: true
             {% for image in post.data.gallery %}
                 <image:image>
                     <image:loc>{{ rootURL }}{{ image.url }}</image:loc>
+                    <image:title><![CDATA[{{ image.title }}]]></image:title>
+                    <image:caption><![CDATA[{{ image.alt }}]]></image:caption>
                 </image:image>
-                <image:caption><![CDATA[{{ image.alt }}]]></image:caption>
             {% endfor %}
 
             {% for media in post.data.video %}
