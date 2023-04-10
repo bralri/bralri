@@ -24,9 +24,9 @@
         <image>
           <title>{{ metadata.title }}</title>
           <link>{{ metadata.url }}</link>
-          <url>http://wwww.bralri.net/assets/img/1.png</url>
-          <width>1080</width>
-          <height>1080</height>
+          <url>http://www.bralri.net/assets/bralri.jpg</url>
+          <width>406</width>
+          <height>406</height>
         </image>
         <lastBuildDate>{{ collections.posts | getNewestCollectionItemDate | dateToRfc822 }}</lastBuildDate>
         <link href="{{ permalink | absoluteUrl(metadata.url) }}" rel="self" type="application/rss+xml"/>
@@ -34,14 +34,14 @@
           <name>{{ metadata.author.name }}</name>
           <email>{{ metadata.author.email }}</email>
         </author>
-        {%- for post in collections.all | reverse %}
+        {%- for post in collections.rss | reverse %}
           {%- set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
             <item>
               <title>{{ post.data.title }}</title>
               <link>{{ absolutePostUrl }}</link>
               <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
               <guid>{{ absolutePostUrl }}</guid>
-              <description>{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</description>
+              <description><![CDATA[{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}]]></description>
             </item>
         {%- endfor %}
     </channel>

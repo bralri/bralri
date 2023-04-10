@@ -1,4 +1,4 @@
 {
     "layout": "article.njk",
-    "tags": "post"
+    "tags": ["post", "rss"]
 }

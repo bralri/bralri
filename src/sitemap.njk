@@ -21,11 +21,11 @@ eleventyExcludeFromCollections: true
                 <news:title>{{ post.data.title }}</news:title>
             </news:news>
             {% for image in post.data.gallery %}
-                <image:image>
-                    <image:loc>{{ rootURL }}{{ image.url }}</image:loc>
-                    <image:title><![CDATA[{{ image.title }}]]></image:title>
-                    <image:caption><![CDATA[{{ image.alt }}]]></image:caption>
-                </image:image>
+            <image:image>
+                <image:loc>{{ rootURL }}{{ image.url }}</image:loc>
+                <image:title><![CDATA[{{ image.title }}]]></image:title>
+                <image:caption><![CDATA[{{ image.alt }}]]></image:caption>
+            </image:image>
             {% endfor %}
             {% for media in post.data.video %}
             <video:video>
