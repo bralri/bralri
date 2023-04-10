@@ -18,9 +18,8 @@ eleventyExcludeFromCollections: true
                     <news:language>en</news:language>
                 </news:publication>
                 <news:publication_date>{{ post.date.toISOString() }}</news:publication_date>
-                <news:title>{{ post.title }}</news:title>
+                <news:title>{{ post.data.title }}</news:title>
             </news:news>
-            
             {% for image in post.data.gallery %}
                 <image:image>
                     <image:loc>{{ rootURL }}{{ image.url }}</image:loc>
@@ -28,7 +27,6 @@ eleventyExcludeFromCollections: true
                     <image:caption><![CDATA[{{ image.alt }}]]></image:caption>
                 </image:image>
             {% endfor %}
-
             {% for media in post.data.video %}
             <video:video>
                 <video:thumbnail_loc>{{ rootURL }}{{ post.image }}</video:thumbnail_loc>
