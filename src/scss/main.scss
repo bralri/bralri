@@ -11,10 +11,12 @@
         './layout/article',
         './layout/image-gallery-grid',
         './layout/featured-works',
-        './layout/instagram-grid';
+        './layout/instagram-grid',
+        './layout/video-grid';
 
 @import './components/general-buttons',
         './components/social-share-links',
-        './components/blockquote';
+        './components/blockquote',
+        './components/next-prev-item';
 
 @import './utilities/grid-gallery-modal';

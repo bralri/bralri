@@ -17,8 +17,8 @@ eleventyExcludeFromCollections: true
                     <news:name>Bryan Ridpath</news:name>
                     <news:language>en</news:language>
                 </news:publication>
-                <news:publication_date>{{ post.data.date }}</news:publication_date>
-                <news:title>{{ post.data.title }}</news:title>
+                <news:publication_date>{{ post.date.toISOString() }}</news:publication_date>
+                <news:title>{{ post.title }}</news:title>
             </news:news>
             
             {% for image in post.data.gallery %}
@@ -30,10 +30,10 @@ eleventyExcludeFromCollections: true
 
             {% for media in post.data.video %}
             <video:video>
-                <video:thumbnail_loc>{{ rootURL }}{{ post.data.image }}</video:thumbnail_loc>
-                <video:title>{{ post.data.title }}</video:title>
+                <video:thumbnail_loc>{{ rootURL }}{{ post.image }}</video:thumbnail_loc>
+                <video:title>{{ post.title }}</video:title>
                 <video:description>
-                    {{ post.data.description }}
+                    {{ post.description }}
                 </video:description>
                 <video:content_loc>
                     {{ media.url }}

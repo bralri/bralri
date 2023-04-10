@@ -8,6 +8,62 @@ year: "2022"
 tags: ["work"]
 description: "Transient Residency is an Online Residency Programme via Instagram, supporting creatives who explore the relationship between Art & Technology."
 
+video:
+  - url: "/assets/video/works/transient-residency/1.m4v"
+    name: "Metamorphosis"
+    description: "Video of a rotating 3D model"
+    thumbnail: "/assets/img/works/in-utopia/in-utopia.png"
+    uploadDate: "2022-07-04"
+    duration: "PT0M20S"
+  - url: "/assets/video/works/transient-residency/2.m4v"
+    name: "Metamorphosis"
+    description: "Video of a rotating 3D model"
+    thumbnail: "/assets/img/works/in-utopia/in-utopia.png"
+    uploadDate: "2022-07-04"
+    duration: "PT0M20S"
+  - url: "/assets/video/works/transient-residency/3.m4v"
+    name: "Metamorphosis"
+    description: "Video of a rotating 3D model"
+    thumbnail: "/assets/img/works/in-utopia/in-utopia.png"
+    uploadDate: "2022-07-04"
+    duration: "PT0M20S"
+  - url: "/assets/video/works/transient-residency/4.m4v"
+    name: "Metamorphosis"
+    description: "Video of a rotating 3D model"
+    thumbnail: "/assets/img/works/in-utopia/in-utopia.png"
+    uploadDate: "2022-07-04"
+    duration: "PT0M20S"
+  - url: "/assets/video/works/transient-residency/5.m4v"
+    name: "Metamorphosis"
+    description: "Video of a rotating 3D model"
+    thumbnail: "/assets/img/works/in-utopia/in-utopia.png"
+    uploadDate: "2022-07-04"
+    duration: "PT0M20S"
+  - url: "/assets/video/works/transient-residency/6.m4v"
+    name: "Metamorphosis"
+    description: "Video of a rotating 3D model"
+    thumbnail: "/assets/img/works/in-utopia/in-utopia.png"
+    uploadDate: "2022-07-04"
+    duration: "PT0M20S"
+  - url: "/assets/video/works/transient-residency/7.m4v"
+    name: "Metamorphosis"
+    description: "Video of a rotating 3D model"
+    thumbnail: "/assets/img/works/in-utopia/in-utopia.png"
+    uploadDate: "2022-07-04"
+    duration: "PT0M20S"
+  - url: "/assets/video/works/transient-residency/8.m4v"
+    name: "Metamorphosis"
+    description: "Video of a rotating 3D model"
+    thumbnail: "/assets/img/works/in-utopia/in-utopia.png"
+    uploadDate: "2022-07-04"
+    duration: "PT0M20S"
+  - url: "/assets/video/works/transient-residency/9.m4v"
+    name: "Metamorphosis"
+    description: "Video of a rotating 3D model"
+    thumbnail: "/assets/img/works/in-utopia/in-utopia.png"
+    uploadDate: "2022-07-04"
+    duration: "PT0M20S"
+
 gallery:
   - url: "/assets/img/works/transient-residency/transient-residency.png"
     title: "Metamorphosis.1.2.2"
@@ -36,3 +92,14 @@ gallery:
 
 <br>
 <br>
+
+<div class="videos-grid">
+{% for media in video %}
+<div class="video">
+    <video width="100%" height="100%" controls="controls" controlsList="nodownload">
+        <source src="{{ media.url }}" type="video/mp4">
+            Your browser does not support the video tag.
+    </video>
+</div>
+{% endfor %}
+</div>

@@ -9,7 +9,7 @@ tags: ["work", "featuredWork"]
 description: "Yeah, about utopia ..."
 
 video:
-  - url: "/assets/video/works/yeah-about-utopia/yeah-about-utopia.mp4"
+  - url: "/assets/video/works/yeah-about-utopia/yeah-about-utopia.m4v"
     name: "Yeah, about utopia..."
     description: "Single channel video mockumentary"
     thumbnail: "/assets/img/works/yeah-about-utopia/1.png"

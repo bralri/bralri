@@ -9,7 +9,7 @@ tags: ['work']
 description: DeepSpaceAnomaly
 
 video:
-  - url: "/assets/video/works/deepspaceanomaly/deepspaceanomaly.mp4"
+  - url: "/assets/video/works/deepspaceanomaly/deepspaceanomaly.m4v"
     name: "DeepSpaceAnomaly"
     description: "Single channel video animation"
     thumbnail: "/assets/img/works/deepspaceanomaly/1.png"

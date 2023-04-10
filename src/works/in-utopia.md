@@ -9,7 +9,7 @@ tags: ["work", "featuredWork"]
 description: "In Utopia was an installation of a made for my undergraduate degree show group exhibition in 2018. The installation consisted of a series of large sculptures, ceramics, improvised structures and a single channel video mockumentary"
 
 video:
-  - url: "/assets/video/works/in-utopia/in-utopia.mp4"
+  - url: "/assets/video/works/in-utopia/in-utopia.m4v"
     name: "Yeah, about utopia ..."
     description: "Single channel video mockumentary. Installed within the sculpture 'Smoke Stack': 25mm steel square tube & 3D printed SLS plastic"
     thumbnail: "/assets/img/works/in-utopia/in-utopia.png"
