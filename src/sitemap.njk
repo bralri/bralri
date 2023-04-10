@@ -31,15 +31,9 @@ eleventyExcludeFromCollections: true
             <video:video>
                 <video:thumbnail_loc>{{ rootURL }}{{ media.thumbnail }}</video:thumbnail_loc>
                 <video:title>{{ media.name }}</video:title>
-                <video:description>
-                    {{ media.description }}
-                </video:description>
-                <video:content_loc>
-                    {{ media.url }}
-                </video:content_loc>
-                <video:player_loc>
-                    {{ media.url }}
-                </video:player_loc>
+                <video:description>{{ media.description }}</video:description>
+                <video:content_loc>{{ rootURL }}{{ media.url }}</video:content_loc>
+                <video:player_loc>{{ rootURL }}{{ media.url }}</video:player_loc>
             </video:video>
             {% endfor %}
         </url>
