@@ -29,10 +29,10 @@ eleventyExcludeFromCollections: true
             {% endfor %}
             {% for media in post.data.video %}
             <video:video>
-                <video:thumbnail_loc>{{ rootURL }}{{ post.image }}</video:thumbnail_loc>
-                <video:title>{{ post.title }}</video:title>
+                <video:thumbnail_loc>{{ rootURL }}{{ media.thumbnail }}</video:thumbnail_loc>
+                <video:title>{{ media.name }}</video:title>
                 <video:description>
-                    {{ post.description }}
+                    {{ media.description }}
                 </video:description>
                 <video:content_loc>
                     {{ media.url }}
