@@ -1,16 +1,12 @@
 // Main Article Page
-.main-article {
-    img {
-        width: 100%;
-        object-fit: cover;
-        aspect-ratio: 3/2;
-    }
+.main-article__figure img {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 3/2;
 }
 
-@media (max-width: 50em) {
-    .main-article {
-        img {
-            width: 100%;
-        }
-    }
+.photo-grid-image {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 3/2;
 }

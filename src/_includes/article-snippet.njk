@@ -2,11 +2,11 @@
     <article class="snippet">
         <a href="{{ post.url }}" class="snippet__image">
             <div class="snippet-img-container">
-                <img class="snippet__image" src="{{ post.data.gallery[0].url }}" alt="{{ post.data.gallery[0].alt }}" title="{{ post.data.gallery[0].title }}">
+                <img class="snippet__image" src="{{ post.data.gallery[0].url }}" alt="{{ post.data.gallery[0].alt }}" title="{{ post.data.gallery[0].title }}" loading="lazy">
             </div>
         </a>
         <h3 class="snippet__title" title="{{ post.data.title }}"><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
-        <p class="snippet__meta"><span>Published: {{ post.date | postDate }}</span></p>
+        <p class="snippet__meta"><span>{{ post.date | postDate }}</span></p>
         <p class="snippet__body">{{ post.data.description }}</p>
         <br>
         <div class="share-container">

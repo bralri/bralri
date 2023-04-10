@@ -37,7 +37,7 @@ gallery:
     alt: "Screenshot from Eternal Engine, a red circular machine with pumps. There is two cyclindrical towers in the background flanking the machine"
 ---
 
-<video width="100%" height="100%" controls controlsList="nodownload">
+<video width="100%" height="100%" controls controlsList="nodownload" poster="{{ video[0].thumbnail }}">
     <source src="{{ video[0].url }}" type="video/mp4">
     Your browser does not support the video tag.
 </video>

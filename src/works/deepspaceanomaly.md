@@ -9,7 +9,7 @@ tags: ['work']
 description: DeepSpaceAnomaly
 
 video:
-  - url: "/assets/video/works/deepspaceanomaly/deepspaceanomaly.m4v"
+  - url: "/assets/video/works/deepspaceanomaly/deepspaceanomaly.mp4"
     name: "DeepSpaceAnomaly"
     description: "Single channel video animation"
     thumbnail: "/assets/img/works/deepspaceanomaly/1.png"
@@ -43,7 +43,7 @@ gallery:
     alt: "Screenshot from DeepSpaceAnomaly"
 ---
 
-<video width="100%" height="100%" controls controlsList="nodownload">
+<video width="100%" height="100%" controls controlsList="nodownload" poster="{{ video[0].thumbnail }}">
     <source src="{{ video[0].url }}" type="video/mp4">
     Your browser does not support the video tag.
 </video>
