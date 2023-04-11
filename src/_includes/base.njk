@@ -45,6 +45,9 @@
             "@type": "{{ type }}",
             "headline": "{{ title }}",
             "url": "{{ rootURL }}{{ page.url }}",
+            "image": [
+              "{{ rootURL }}{{ gallery[0].url }}"
+            ],
             "datePublished": "{{ date }}",
             "description": "{{ description }}",
             "author": {
