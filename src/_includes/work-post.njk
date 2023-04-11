@@ -4,12 +4,10 @@ layout: 'base.njk'
 
 <article class="main-article">
     <div class="container container--narrow flow">
-        <h1 class="article-title">
-            {{ title }}
-        </h1>
-        <h3 class="article-title">
-            {{ year }}
-        </h3><br>
+        <h3 class="article-title">{{ title }}</h3>
+        <p class="article-title"><span>{{ date | postDate }}</span></p>
+        
+        <br>
         
         {{ content | safe }}
 

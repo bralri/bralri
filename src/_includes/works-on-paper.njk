@@ -5,13 +5,12 @@ layout: 'base.njk'
 <article class="main-article">
     <div class="container container--narrow flow">
         <h3 class="article-title">{{ title }}</h3>
-        <p class="article-title"><span>{{ date | postDate }}</span></p>
         
-        <br>
-        
-        {{ content | safe }}
-
-        {% include 'social-share-links.njk' %}
+        <ul role="list" class="works__list">
+            {%- for post in collections.worksonpaper | reverse -%}
+                {% include 'works-snippet.njk' %}
+            {%- endfor -%}
+        </ul>
     </div>
 </article>
 

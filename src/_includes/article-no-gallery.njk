@@ -4,8 +4,8 @@ layout: 'base.njk'
 
 <article class="main-article">
     <div class="container container--narrow flow">
-        <h2 class="article-title">{{ title }}</h2>
-        <h3 class="article-title">{{ date | postDate }}</h3>
+        <h3 class="article-title">{{ title }}</h3>
+        <p class="article-title"><span>{{ date | postDate }}</span></p>
         
         <br>
 
@@ -14,3 +14,5 @@ layout: 'base.njk'
         {% include 'social-share-links.njk' %}
     </div>
 </article>
+
+{% include 'selected-articles.njk' %}

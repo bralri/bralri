@@ -66,6 +66,20 @@ h3 {
         }
 }
 
+h4 {
+    font-family: fontRegular;
+    color: $white;
+    line-height: 1.1;
+    font-size: 1.0625rem;
+        a {
+            font-family: fontItalic;
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            text-decoration-thickness: 3px;
+            text-decoration-color: $accent;
+        }
+}
+
 
 p {
     font-family: fontRegular;

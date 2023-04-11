@@ -96,7 +96,7 @@ gallery:
 <div class="videos-grid">
 {% for media in video %}
 <div class="video">
-    <video width="100%" height="100%" controls="controls" controlsList="nodownload">
+    <video width="100%" height="100%" controls="controls" controlsList="nodownload" title="{{ media.name }}" alt="{{ media.description }}">
         <source src="{{ media.url }}" type="video/mp4">
             Your browser does not support the video tag.
     </video>
