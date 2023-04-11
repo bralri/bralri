@@ -45,9 +45,9 @@
             "@type": "{{ type }}",
             "headline": "{{ title }}",
             "url": "{{ rootURL }}{{ page.url }}",
-            "image": [
-              "{{ rootURL }}{{ image }}"
-            ],
+            "image": [{% for image in gallery %}
+              "{{ rootURL }}{{ image.url }}",
+            {% endfor %}],
             "datePublished": "{{ date }}",
             "description": "{{ description }}",
             "author": {
@@ -56,9 +56,9 @@
               "url": "{{ rootURL }}/about/"
             }
           },
-          [{% for image in gallery %}
+
+          "image": [{% for image in gallery %}
             {
-              "@context": "https://schema.org/",
               "@type": "ImageObject",
               "contentUrl": "{{ rootURL }}{{ image.url }}",
               "creator": {
@@ -68,9 +68,9 @@
               "copyrightNotice": "{{ site.authorName }}"
             },
           {% endfor %}],
-          [{% for media in video %}
+          
+          "video": [{% for media in video %}
             {
-              "@context": "https://schema.org/",
               "@type": "VideoObject",
               "name": "{{ media.name }}",
               "description": "{{ media.description }}",
