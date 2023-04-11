@@ -17,7 +17,7 @@ body {
 }
 
 .container {
-    $max-width: 1100px;
+    $max-width: 1050px;
     $padding: 1rem;
 
     width: min($max-width, 100% - $padding * 2);
@@ -32,7 +32,11 @@ main {
 
 img {
     filter: brightness(.8) contrast(1.2);
+}
+
+video {
     cursor: pointer;
+    filter: brightness(.8) contrast(1.2);
 }
 
 //

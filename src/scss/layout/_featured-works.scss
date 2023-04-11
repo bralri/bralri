@@ -1,8 +1,8 @@
 .works__list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 1rem;
-    grid-row-gap: 4rem;
+    grid-gap: 5px;
+    grid-row-gap: 3rem;
     margin-top: 32px;
 }
 
@@ -20,19 +20,19 @@
     height: auto;
     aspect-ratio: 1/1;
     object-fit: cover;
+
+    transition: 0.3s ease;
+    
+        &:hover {
+            opacity: 0.75;
+            transition: 0.3s ease;
+        }
 }
 
-// .snippet__image {
-//     display: block;
-//     width: 100%;
-//     height: auto;
-//     aspect-ratio: 1/1;
-//     object-fit: cover;
-// }
-
 .works-snippet__title {
-    font-size: 1.25rem;
-    margin: 1rem 0 0;
+    font-size: 1.0625rem;
+    line-height: 1.1;
+    margin: 10px 0 0;
 }
 
 @media (max-width: 50em) {
