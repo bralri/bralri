@@ -1,12 +1,12 @@
 ---
 {
-  "permalink": "rss.xml",
+  "permalink": "works.xml",
   "eleventyExcludeFromCollections": true,
   "metadata": {
-    "title": "bralri updates",
-    "description": "bralri.net",
+    "title": "bralri works",
+    "description": "bralri.net/works/",
     "language": "en-gb",
-    "url": "https://bralri.net",
+    "url": "https://bralri.net/",
     "author": {
       "name": "Bryan Ridpath",
       "email": "bryanridpath@gmail.com"
@@ -28,13 +28,13 @@
           <width>406</width>
           <height>406</height>
         </image>
-        <lastBuildDate>{{ collections.rss | getNewestCollectionItemDate | dateToRfc822 }}</lastBuildDate>
+        <lastBuildDate>{{ collections.work | getNewestCollectionItemDate | dateToRfc822 }}</lastBuildDate>
         <link href="{{ permalink | absoluteUrl(metadata.url) }}" rel="self" type="application/rss+xml"/>
         <author>
           <name>{{ metadata.author.name }}</name>
           <email>{{ metadata.author.email }}</email>
         </author>
-        {%- for post in collections.rss | reverse %}
+        {%- for post in collections.work | reverse %}
           {%- set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
             <item>
               <title>{{ post.data.title }}</title>

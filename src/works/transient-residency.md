@@ -83,7 +83,7 @@ gallery:
 
 <p>Exploring ideas such as posthumanism and transhumanism, bodily augmentation, cybernetics and biomechanics. This project explores those ideas through the lens of science-fiction and fantasy. How these ideas present themselves in fiction and how they depict the enhancement of humanity, for example like the enxtention and longevity of human life or technological advancements which can aid and improve on the body.</p>
 
-<p><i>Metamorphosis</i> also reflects on my relationship with my own body and the concerns I have with hereditary conditions and the fragilities that come with growing older. With fantastical post-humanism in mind, I imagined these potential machine, these vessel-like chrysalis whose potential and purpose has not yet been fully realised. They could be for traversing space, or interdimensional cryostasis pods, or multi-purpose bespoke chambers to heal all ailments. Or even personal personal bunker armours to out live a potential armageddon</p>
+<p><i>Metamorphosis</i> also reflects on the relationship with my own body and the concerns I have with hereditary conditions and the fragilities that come with growing older. With fantastical post-humanism in mind, I imagined these potential machine, these vessel-like chrysalis whose potential and purpose has not yet been fully realised. They could be for traversing space, or interdimensional cryostasis pods, or multi-purpose bespoke chambers to heal all ailments. Or even personal personal bunker armours to out live a potential armageddon.</p>
 
 <br>
 

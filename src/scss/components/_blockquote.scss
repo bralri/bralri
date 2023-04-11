@@ -1,5 +1,5 @@
 blockquote {
-    max-width: 800px;
+    max-width: 700px;
     margin: 32px auto;
     padding: 20px;
     position: relative;
@@ -13,6 +13,7 @@ blockquote {
 
 cite {
     position: absolute;
-    bottom: -20px;
+    bottom: -30px;
     right: 20px;
+    color: $grey;
 }
