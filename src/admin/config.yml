@@ -17,4 +17,17 @@ collections:
       - { label:  "Featured Image", name: "image", widget: "image" }
       - { label:  "Image Caption", name: "imageAlt", widget: "string" }
       - { label:  "Body", name: "body", widget: "markdown" }
-      - { label:  "Tags", name: "tags", widget: "list", default: ["post"] }
+      - { label:  "Tags", name: "tags", widget: "list", default: ["post", "rss"] }
+  - name: "work"
+    label: "Works"
+    folder: "src/works"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label:  "Title", name: "title", widget: "string" }
+      - { label:  "Description", name: "description", widget: "markdown" }
+      - { label:  "Date", name: "date", widget: "datetime" }
+      - { label:  "Featured Image", name: "image", widget: "image" }
+      - { label:  "Image Caption", name: "imageAlt", widget: "string" }
+      - { label:  "Body", name: "body", widget: "markdown" }
+      - { label:  "Tags", name: "tags", widget: "list", default: ["work", "featuredWork", "rss"] }

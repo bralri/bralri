@@ -1,90 +1,117 @@
 @font-face {
     font-family: fontRegular;
     src: url(/assets/fonts/Atkinson-Hyperlegible-Regular-102.ttf);
+    font-display: swap;
 }
 @font-face {
     font-family: fontItalic;
     src: url(/assets/fonts/Atkinson-Hyperlegible-Italic-102.ttf);
     font-style: italic;
+    font-display: swap;
 }
 @font-face {
     font-family: fontBold;
     src: url(/assets/fonts/Atkinson-Hyperlegible-Bold-102.ttf);
     font-weight: bold;
+    font-display: swap;
 }
 @font-face {
     font-family: fontBoldItalic;
     src: url(/assets/fonts/Atkinson-Hyperlegible-BoldItalic-102.ttf);
     font-style: italic;
     font-weight: bold;
+    font-display: swap;
 }
 
 h1 {
-    font-family: fontBold;
-    color: $txt-secondary-l;
+    font-family: fontRegular;
+    color: $white;
     line-height: 1.1;
     font-size: 2rem;
-
-    a {
-        font-family: fontBold;
-        color: $txt-primary-l;
-        line-height: 1.1;
-        font-size: 2rem;
-    }
-}
-
-h2 {
-    font-family: fontRegular;
-    color: $txt-secondary-l;
-    line-height: 1.1;
-    font-size: 1.875rem;
-}
-
-h3 {
-    font-family: fontRegular;
-    line-height: 1.1;
-    font-size: 1.375rem;
-}
-
-p {
-    font-family: fontRegular;
-    color: $txt-secondary-l;
-    font-size: 1.0625rem;
-    text-align: justify;
 
         a {
             font-family: fontItalic;
             text-decoration: underline;
             text-decoration-style: dotted;
+            text-decoration-thickness: 3px;
+            text-decoration-color: $accent;
+        }
+}
+
+h2 {
+    font-family: fontRegular;
+    color: $white;
+    line-height: 1.1;
+    font-size: 1.875rem;
+        a {
+            font-family: fontItalic;
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            text-decoration-thickness: 3px;
+            text-decoration-color: $accent;
+        }
+}
+
+h3 {
+    font-family: fontRegular;
+    color: $white;
+    line-height: 1.1;
+    font-size: 1.375rem;
+        a {
+            font-family: fontItalic;
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            text-decoration-thickness: 3px;
+            text-decoration-color: $accent;
+        }
+}
+
+
+p {
+    font-family: fontRegular;
+    color: $white;
+    font-size: 1.0625rem;
+
+        a {
+            font-family: fontItalic;
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            text-decoration-thickness: 3px;
+            text-decoration-color: $accent;
         }
 }
 
 span {
     font-family: fontItalic;
-    color: $txt-secondary-l;
+    color: $white;
     font-size: 1.0625rem;
 }
 
 figcaption {
     font-family: fontItalic;
-    color: $txt-secondary-l;
+    color: $grey;
     font-size: 0.9375rem;
     opacity: 0.9;
     margin: 1rem 0;
 }
 
 a {
-    font-family: fontBoldItalic;
+    font-family: fontItalic;
     text-decoration: none;
-    color: $txt-primary-l;
+    color: $white;
 }
 
 a:hover {
-    color: $txt-secondary-l;
+    color: $grey;
+    text-decoration-color: $accent;
     transition: all 0.3s ease 0s;
 }
 
 #social__links {
     font-size: 1.375rem;
     padding-right: 10px;
+}
+
+.share-text {
+    color: $accent;
 }

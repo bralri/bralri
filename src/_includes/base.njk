@@ -34,6 +34,11 @@
         <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
         <link rel="stylesheet" href="{{ '/css/main.css' | url }}">
+
+        <!-- <link rel="preload" href="{{ '/css/main.css' | url }}" as="style">
+        <link rel="stylesheet" href="{{ '/css/main.css' | url }}" media="print" onload="this.media='all'">
+        <noscript><link rel="stylesheet" href="{{ '/css/main.css' | url }}"></noscript> -->
+
         <link rel="icon" type="image/x-icon" href="{{ site.favicon }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
         <link rel="alternate" type="application/rss+xml" title="bralri updates" href="{{ rootURL }}/rss.xml">
@@ -88,13 +93,15 @@
     <body>
 
           {% include 'header.njk' %}
+
           <main>
             {{ content | safe }}
           </main>
+          
           {% include 'footer.njk'%}
 
-        <script src="/js/modal.js"></script>
-        <script src="/js/netlifyIdentity.js"></script>
-        <script src="/js/navigation.js"></script>
+        <script async src="/js/modal.js"></script>
+        <script async src="/js/netlifyIdentity.js"></script>
+        <script async src="/js/navigation.js"></script>
     </body>
 </html>

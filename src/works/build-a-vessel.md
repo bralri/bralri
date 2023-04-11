@@ -15,7 +15,7 @@ gallery:
 ---
 
 <figure class="main-article__figure">
-    <img src="{{ gallery[0].url  }}" alt="{{ gallery[0].alt }}" title="{{ gallery[0].title }}">
+    <img class="main-article__img" src="{{ gallery[0].url  }}" alt="{{ gallery[0].alt }}" title="{{ gallery[0].title }}">
         <figcaption>
             "{{ gallery[0].title }}". {{ gallery[0].alt }}.
         </figcaption>

@@ -1,6 +1,6 @@
 <section id="featured-articles" class="featured-articles">
     <div class="container container--narrow flow">
-        <h2 class="section-title">Recent <a href="blog">Blog</a> Posts</h2>
+        <h3 class="section-title">Recent <a href="blog">Blog</a> Posts</h3>
         <ul role="list" class="articles__list flow">
             {%- for post in collections.post | reverse -%}
                 {% if loop.index0 < 3 %}

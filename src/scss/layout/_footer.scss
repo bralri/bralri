@@ -25,12 +25,12 @@ footer {
 
             a {
                 display: inline-block;
-                color: $secondary-l;
+                color: $white;
                 font-size: 24px;
                 transition: color 0.2s;
 
                 &:hover {
-                    color: $hover;
+                    color: $grey;
                 }
 
                 &:not(:last-child) {

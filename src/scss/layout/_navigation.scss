@@ -33,7 +33,7 @@
       padding: $--size-600;
       inset: 0;
       margin-inline: auto;
-      background: $primary-l;
+      background: $black;
       border-radius: $--size-100;
       gap: $--size-600;
     }
@@ -51,11 +51,11 @@
       }
   
       a {
-        color: $txt-primary-l;
+        color: $white;
   
         &:focus,
         &:hover {
-          color: $txt-secondary-l;
+          color: $grey;
         }
       }
     }

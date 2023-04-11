@@ -10,6 +10,7 @@ priority: "0.8"
 ---
 
 <div class="container container--narrow flow">
+    <h3 class="section-title">Blog</a></h3>
     <ul role="list" class="articles__list flow">
         {%- for post in collections.post | reverse -%}
             {% include 'article-snippet.njk' %}

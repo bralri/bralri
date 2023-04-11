@@ -11,8 +11,8 @@ HTML {
 }
 
 body {
-    background-color: $primary-l;
-    color: $txt-primary-l;
+    background-color: $black;
+    color: $black;
     padding-bottom: 250px;
 }
 
@@ -31,6 +31,7 @@ main {
 }
 
 img {
+    filter: brightness(.8) contrast(1.2);
     cursor: pointer;
 }
 

@@ -11,6 +11,7 @@ priority: "0.8"
 
 <section id="featured-works" class="featured-works">
     <div class="container container--narrow flow">
+        <h3 class="section-title">Works <a href="works"></a></h3>
         <ul role="list" class="works__list">
             {%- for post in collections.work | reverse -%}
                 {% include 'works-snippet.njk' %}
