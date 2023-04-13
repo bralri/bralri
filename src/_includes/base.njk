@@ -58,7 +58,7 @@
                 {%- for image in gallery -%}
                     {
                         "@type": "ImageObject",
-                        "contentUrl": "{{ rootURL }}{{ image.url }}",
+                        "url": "{{ rootURL }}{{ image.url }}",
                         "creator": {
                             "@type": "Person",
                             "name": "{{ site.authorName }}"
