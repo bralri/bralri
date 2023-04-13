@@ -56,7 +56,7 @@ gallery:
 
 <br>
 
-<p>{{ description }}</p>
+<p class="indent">HinterLand is a project which was developed during a month long residency at The SketchUp Residency. A residency where artists use the 3D modelling software, Google SketchUp, for the duration of their term.</p>
 
 <br>
 
@@ -65,3 +65,4 @@ gallery:
 
 <br>
 <br>
+<script async src="/js/modal.js"></script>

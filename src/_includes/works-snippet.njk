@@ -1,6 +1,6 @@
 <li>
     <article class="works-snippet">
-        <a href="{{ post.url }}" class="works-snippet__image">
+        <a href="{{ post.url }}" class="works-snippet__image" aria-label="Read more about {{ post.data.title }}">
             <div class="works-snippet-img-container">
                 <img class="works-snippet__image" 
                     src="{{ post.data.gallery[0].url }}" 
@@ -9,8 +9,8 @@
                     loading="lazy">
             </div>
         </a>
-        <h3 class="works-snippet__title" title="{{ post.data.gallery[0].title }}">
-            <a href="{{ post.url }}">{{ post.data.title }} {{ post.data.year }}</a>
+        <h3 class="works-snippet__title" title="{{ post.data.gallery[0].title }}" >
+            <a href="{{ post.url }}"  aria-label="Read more about {{ post.data.title }}">{{ post.data.title }} {{ post.data.year }}</a>
         </h3>
     </article>
 </li>

@@ -63,27 +63,29 @@ gallery:
         </figcaption>
 </figure><br>
 
-<p>{{ description }}</p>
+<p class="indent">{{ description }}</p>
 
 <br>
 
 <blockquote>
-<p>"IN THE CENTER of Fedora, that gray stone metroprolis, stands a metal building with a crystal globe in every room. Looking into each globe you see a blue city, the model of a different Fedora. These are the forms the city could have taken if, for one reason or another, it had not become what we see today. In every age someone, looking at Fedora as it was, imagined a way of making it the ideal city, but while he constructed his miniature model, Fedora was already no longer the same as before, and what had been until yesterday a possible future became only a toy in a glass globe.</p>
+<p class="indent">"<i>IN THE CENTER of Fedora</i>, that gray stone metroprolis, stands a metal building with a crystal globe in every room. Looking into each globe you see a blue city, the model of a different Fedora. These are the forms the city could have taken if, for one reason or another, it had not become what we see today. In every age someone, looking at Fedora as it was, imagined a way of making it the ideal city, but while he constructed his miniature model, Fedora was already no longer the same as before, and what had been until yesterday a possible future became only a toy in a glass globe.</p>
 
 <br>
 
-<p class="indent">The building with the globes is now Fedora's museum; every inhabitant visits it, chooses the city that corresponds to his desires, contemplates it, imagining his reflection in the medua pond that would have collected the water of the canal (if it had not been dried up), the view from the high canopied box along the avenue reserved for elephants (now banished from the city), the fun of sliding down the spiral, twisting, minaret (which never found a pedestal from which to rise).</p>
+<p>The building with the globes is now Fedora's museum; every inhabitant visits it, chooses the city that corresponds to his desires, contemplates it, imagining his reflection in the medua pond that would have collected the water of the canal (if it had not been dried up), the view from the high canopied box along the avenue reserved for elephants (now banished from the city), the fun of sliding down the spiral, twisting, minaret (which never found a pedestal from which to rise).</p>
 
 <br>
 
-<p class="indent">On the map of your empire, O Great Khan, there must be room both for the big, stone Fedora and the little Fedoras in the glass globes. Not because all are only assumptions. The one contains what is accepted as necessary when it is not yet so; the others, what is imagined as possible and, a moment later, is possible no longer."</p>
+<p>On the map of your empire, O Great Khan, there must be room both for the big, stone Fedora and the little Fedoras in the glass globes. Not because all are only assumptions. The one contains what is accepted as necessary when it is not yet so; the others, what is imagined as possible and, a moment later, is possible no longer."</p>
 
 <cite>~ Italo Calvino. Invisible Cities, Cities & Desire 4. P. 28</cite>
 </blockquote>
 
 <br>
 
-<p>{{ description }}</p>
+<p>continue</p>
 
 <br>
 <br>
+
+<script async src="/js/modal.js"></script>

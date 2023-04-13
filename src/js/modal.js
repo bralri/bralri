@@ -15,6 +15,17 @@ images.forEach((image, index) => {
             currentIndex = index;
         }
     });
+
+    image.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.keycode === 13) {
+            if (window.innerWidth > 50 * 16) {
+                modal.style.display = "block";
+                modalImg.src = image.src;
+                modalCaption.textContent = image.title;
+                currentIndex = index;
+        }
+        }
+    });
 });
 
 const closeModal = () => {

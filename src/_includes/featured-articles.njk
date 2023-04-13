@@ -1,9 +1,9 @@
-<section id="featured-articles" class="featured-articles">
+<section id="featured-works" class="featured-works">
     <div class="container container--narrow flow">
         <h3 class="section-title">Recent <a href="blog">Blog</a> Posts</h3>
-        <ul role="list" class="articles__list flow">
+        <ul role="list" class="works__list">
             {%- for post in collections.post | reverse -%}
-                {% if loop.index0 < 3 %}
+                {% if loop.index0 < 8 %}
                     {% include 'article-snippet.njk' %}
                 {% endif %}
             {%- endfor -%}

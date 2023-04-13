@@ -74,7 +74,7 @@ gallery:
 
 <br>
 
-<p>{{ description }}</p>
+<p class="indent">Jennifer is in Paradise was a group exhibition</p>
 
 <br>
 
@@ -98,7 +98,8 @@ gallery:
 
 <br>
 
-<p>{{ description }}</p>
+<p>text</p>
 
 <br>
 <br>
+<script async src="/js/modal.js"></script>

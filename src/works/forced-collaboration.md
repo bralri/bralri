@@ -66,3 +66,4 @@ gallery:
 
 <br>
 <br>
+<script async src="/js/modal.js"></script>

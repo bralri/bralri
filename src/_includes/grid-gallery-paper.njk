@@ -1,0 +1,27 @@
+<div class="photo-grid-container-paper">
+    {% for image in gallery %}
+        <div class="photo-grid-item-paper">
+            <img
+                class="photo-grid-image-paper"
+                src="{{ image.url }}"
+                alt="{{ image.alt }}"
+                title="{{ image.title }}"
+                loading="lazy"
+                tabindex="0"
+                aria-label="Open {{ image.title }}">
+        </div>
+    {% endfor %}
+</div>
+
+<div id="image-modal" class="modal">
+    <a class="modal-prev" href="#" aria-label="Previous image">
+        <i class="fa fa-chevron-left"></i>
+    </a>
+    <a class="modal-next" href="#" aria-label="Next image">
+        <i class="fa fa-chevron-right"></i>
+    </a>
+    <div class="modal-image-container">
+        <img id="modal-image" class="modal-content" title="{{ image.title }}">
+        <p id="modal-caption" class="modal-caption" aria-label="Caption: {{ image.title }}"></p>
+    </div>
+</div>

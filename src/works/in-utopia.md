@@ -6,7 +6,7 @@ priority: "0.5"
 date: 2018-06-01
 year: "2018"
 tags: ["work", "featuredWork"]
-description: "In Utopia was an installation of a made for my undergraduate degree show group exhibition in 2018. The installation consisted of a series of large sculptures, ceramics, improvised structures and a single channel video mockumentary"
+description: "In Utopia was an installation of a made for my undergraduate degree show group exhibition in 2018. The installation consisted of a series of large sculptures, ceramics, improvised structures and a single channel video mockumentary."
 
 video:
   - url: "/assets/video/works/in-utopia/in-utopia.m4v"
@@ -70,7 +70,7 @@ gallery:
 
 <br>
 
-<p>{{ description }}.</p>
+<p class="indent">In Utopia was an installation of a made for my undergraduate degree show group exhibition in 2018. The installation consisted of a series of large sculptures, ceramics, improvised structures and a single channel video mockumentary.</p>
 
 <br>
 <br>
@@ -85,7 +85,7 @@ gallery:
 
 <br>
 
-<p>text here</p>
+<p class="indent">text here</p>
 
 <br>
 <br>
@@ -104,3 +104,5 @@ gallery:
 
 <br>
 <br>
+
+<script async src="/js/modal.js"></script>

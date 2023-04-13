@@ -6,7 +6,7 @@ priority: "0.5"
 date: 2022-12-17
 year: "2022"
 tags: ["work", "featuredWork"]
-description: "Cloud Shelter"
+description: "In 2022, I launched Cloud Shelter, an online gallery and project space that's dedicated to showcasing experimental digital art from artists of all disciplines. As an artist, I wanted to create a platform that would provide opportunities for artists to experiment and collaborate."
 
 gallery:
   - url: "/assets/img/works/cloud-shelter/cloud.gif"
@@ -23,13 +23,13 @@ gallery:
 
 <br>
 
-<p>In 2022, I launched <a href="https://cloudshelter.space" target="_blank" rel="noopener">Cloud Shelter</a>, an online gallery and project space that's dedicated to showcasing experimental digital art from artists of all disciplines. As an artist, I wanted to create a platform that would provide opportunities for artists to experiment and collaborate.
+<p class="indent">In 2022, I launched <a href="https://cloudshelter.space" target="_blank" rel="noopener">Cloud Shelter</a>, an online gallery and project space that's dedicated to showcasing experimental digital art from artists of all disciplines. As an artist, I wanted to create a platform that would provide opportunities for artists to experiment and collaborate.</p>
 
-I was frustrated with the opportunities available for showcasing experimental digital art and I wanted to create an inclusive environment that fosters creativity and innovation. I took it upon myself to learn to code and design a website to serve as the foundation for this new curatorial project.
+<p>I was frustrated with the opportunities available for showcasing experimental digital art and I wanted to create an inclusive environment that fosters creativity and innovation. I took it upon myself to learn to code and design a website to serve as the foundation for this new curatorial project.</p>
 
-At Cloud Shelter, my mission is to promote artists who are wanting to push the boundaries of digital art. I'm passionate about providing a platform for artists to showcase their work and connect with others who share their vision and passion for experimentation.
+<p>At Cloud Shelter, my mission is to promote artists who are wanting to push the boundaries of digital art. I'm passionate about providing a platform for artists to showcase their work and connect with others who share their vision and passion for experimentation.</p>
 
-I believe that digital art has the potential to be more accessible, engaging, and interactive, and I want to help pave the way for its future. By creating an platform that values experimentation and collaboration, I'm providing artists with the opportunity to push the boundaries of digital art and create new and exciting works.</p>
+<p>I believe that digital art has the potential to be more accessible, engaging, and interactive, and I want to help pave the way for its future. By creating an platform that values experimentation and collaboration, I'm providing artists with the opportunity to push the boundaries of digital art and create new and exciting works.</p>
 
 <br>
 
@@ -40,3 +40,4 @@ I believe that digital art has the potential to be more accessible, engaging, an
 
 <br>
 <br>
+<script async src="/js/modal.js"></script>

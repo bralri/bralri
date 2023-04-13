@@ -5,15 +5,18 @@ layout: 'base.njk'
 type: "BlogPosting"
 title: "Blog"
 image: "/assets/bralri.jpg"
+description: "Recent blog postings."
 
 priority: "0.8"
 ---
 
-<div class="container container--narrow flow">
-    <h3 class="section-title">Blog</a></h3>
-    <ul role="list" class="articles__list flow">
-        {%- for post in collections.post | reverse -%}
-            {% include 'article-snippet.njk' %}
-        {%- endfor -%}
-    </ul>
-</div>
+<section id="featured-works" class="featured-works">
+    <div class="container container--narrow flow">
+        <h3 class="section-title">Blog</a></h3>
+        <ul role="list" class="works__list">
+            {%- for post in collections.post | reverse -%}
+                {% include 'article-snippet.njk' %}
+            {%- endfor -%}
+        </ul>
+    </div>
+</section>

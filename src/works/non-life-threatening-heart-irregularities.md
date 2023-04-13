@@ -35,7 +35,8 @@ gallery:
 
 <br>
 
-<p>text</p>
+<p class="indent">text</p>
 
 <br>
 <br>
+<script async src="/js/modal.js"></script>
