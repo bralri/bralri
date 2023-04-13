@@ -1,7 +1,6 @@
 ---
 layout: "work-post-alt.njk"
 title: "Build-A-Vessel"
-type: "BlogPosting"
 priority: "0.5"
 date: 2022-07-28
 year: "2022"
@@ -12,6 +11,10 @@ gallery:
   - url: "/assets/img/works/build-a-vessel/build-a-vessel.png"
     title: "Screenshot from Build-A-Vessel"
     alt: "A series of 3D models with pixelated surfaces"
+  - url: "/assets/img/works/build-a-vessel/build-a-vessel.png"
+    title: "Screenshot from Build-A-Vessel"
+    alt: "A series of 3D models with pixelated surfaces"
+
 ---
 
 <figure class="main-article__figure">

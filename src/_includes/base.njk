@@ -39,52 +39,50 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
         <link rel="alternate" type="application/rss+xml" title="bralri updates" href="{{ rootURL }}/rss.xml">
 
+        <title>{{ title }}</title>
+
         <script type="application/ld+json">
           {
             "@context": "https://schema.org/",
             "@type": "{{ type }}",
             "headline": "{{ title }}",
             "url": "{{ rootURL }}{{ page.url }}",
-            "image": [
-              "{{ rootURL }}{{ gallery[0].url }}"
-            ],
-            "datePublished": "{{ date }}",
+            "datePublished": "{{ date | postDate }}",
             "description": "{{ description }}",
             "author": {
               "@type": "Person",
-              "name": "Bryan Ridpath",
-              "url": "{{ rootURL }}/about/"
-            }
-          },
-
-          "image": [{% for image in gallery %}
-            {
-              "@type": "ImageObject",
-              "contentUrl": "{{ rootURL }}{{ image.url }}",
-              "creator": {
-                "@type": "Person",
-                "name": "{{ site.authorName }}"
-              },
-              "copyrightNotice": "{{ site.authorName }}"
+              "name": "{{ site.authorName }}",
+              "url": "{{ rootURL }}"
             },
-          {% endfor %}],
-          
-          "video": [{% for media in video %}
-            {
-              "@type": "VideoObject",
-              "name": "{{ media.name }}",
-              "description": "{{ media.description }}",
-              "thumbnailURL": [
-                "{{ rootURL }}{{ media.thumbnail }}"
-              ],
-              "uploadDate": "{{ media.uploadDate }}",
-              "duration": "{{ media.duration }}",
-              "contentUrl": "{{ rootURL }}{{ media.url }}",
-              "embedUrl": "{{ rootURL }}{{ media.url }}",
-            },
-          {% endfor %}]
-        </script>
-        <title>{{ title }}</title>
+            "image": [
+                {%- for image in gallery -%}
+                    {
+                        "@type": "ImageObject",
+                        "contentUrl": "{{ rootURL }}{{ image.url }}",
+                        "creator": {
+                            "@type": "Person",
+                            "name": "{{ site.authorName }}"
+                        },
+                        "copyrightNotice": "{{ site.authorName }}"
+                    }{% if not loop.last and loop.index != gallery|length %},{% endif %}
+                {%- endfor -%}
+            ],
+            "video": [
+                {%- for media in video -%}
+                    {
+                        "@type": "VideoObject",
+                        "name": "{{ media.name }}",
+                        "description": "{{ media.description }}",
+                        "thumbnailUrl": "{{ rootURL }}{{ media.thumbnail }}",
+                        "uploadDate": "{{ date | postDate }}",
+                        "duration": "{{ media.duration }}",
+                        "contentUrl": "{{ rootURL }}{{ media.url }}",
+                        "embedUrl": "{{ rootURL }}{{ media.url }}"
+                    }{% if not loop.last and loop.index != video|length %},{% endif %}
+              {%- endfor -%}
+            ]
+          }
+          </script>
     </head>
     <body>
 
