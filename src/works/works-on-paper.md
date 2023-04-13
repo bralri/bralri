@@ -9,7 +9,7 @@ tags: ["work"]
 description: "photogrammetry-screenshots"
 
 gallery:
-  - url: "/assets/img/works/works-on-paper/metamorphosis/1/4.png"
+  - url: "/assets/img/works/works-on-paper/metamorphosis/1/4.jpg"
     title: "Works on Paper"
     alt: "Collage on recycled paper"
 ---

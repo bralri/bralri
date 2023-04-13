@@ -9,7 +9,7 @@ tags: ["work"]
 description: "page description"
 
 gallery:
-  - url: "/assets/img/works/thingamajig/1.png"
+  - url: "/assets/img/works/thingamajig/1.jpg"
     title: "Thingamajig"
     alt: "Digital collage"
 ---

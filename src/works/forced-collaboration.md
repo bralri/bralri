@@ -9,7 +9,7 @@ tags: ["work"]
 description: "Forced Collaboration is an online platform that matches artist's practices anonymously and creates a space for cross-disciplinary collaborations through the process of making/following instructions to create artworks."
 
 gallery:
-  - url: "/assets/img/works/forced-collaboration/1.png"
+  - url: "/assets/img/works/forced-collaboration/1.jpg"
     title: "Create an object that's possibly useful and possibly useless but definitely beautiful"
     alt: "Printed text on paper that reads: 'Create an object that's possibly useful and possibly useless but definitely beautiful'"
   - url: "/assets/img/works/forced-collaboration/2.jpg"

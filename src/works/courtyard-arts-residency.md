@@ -12,7 +12,7 @@ video:
   - url: "/assets/video/works/courtyard-arts-residency/courtyard-arts-residency.mp4"
     name: "Courtyard Arts Residency"
     description: "Documentation of the actions, processes and artworks made during the residency"
-    thumbnail: "/assets/img/works/courtyard-arts-residency/1.png"
+    thumbnail: "/assets/img/works/courtyard-arts-residency/1.jpg"
     uploadDate: "2018-09-18"
     duration: "PT10M0S"
 
