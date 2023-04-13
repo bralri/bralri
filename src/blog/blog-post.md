@@ -16,7 +16,7 @@ description: "page description"
 #     duration: "PT M S"
 
 gallery:
-  - url: "/assets/bralri.jpg"
+  - url: "/assets/bralri.webp"
     title: "blog-post"
     alt: "image of a childs drawing of a face"
 ---

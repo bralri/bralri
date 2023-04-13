@@ -9,7 +9,7 @@ tags: ["work", "featuredWork"]
 description: "In 2022, I launched Cloud Shelter, an online gallery and project space that's dedicated to showcasing experimental digital art from artists of all disciplines. As an artist, I wanted to create a platform that would provide opportunities for artists to experiment and collaborate."
 
 gallery:
-  - url: "/assets/img/works/cloud-shelter/cloud.jpg"
+  - url: "/assets/img/works/cloud-shelter/cloud.webp"
     title: "Landing space from the launch of Cloud Shelter"
     alt: "A 3D model of a group of translucent clouds rotating in a foggy grey sky"
 ---

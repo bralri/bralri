@@ -8,7 +8,7 @@ tags: ["work", "featuredWork"]
 description: "Build-A-Vessel"
 
 gallery:
-  - url: "/assets/img/works/build-a-vessel/build-a-vessel.jpg"
+  - url: "/assets/img/works/build-a-vessel/build-a-vessel.webp"
     title: "Screenshot from Build-A-Vessel"
     alt: "A series of 3D models with pixelated surfaces"
 
