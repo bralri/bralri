@@ -1,5 +1,5 @@
 ---
-layout: "works-on-paper.njk"
+layout: "layouts/works-on-paper.njk"
 title: "Works on Paper"
 type: "BlogPosting"
 priority: "0.5"

@@ -1,0 +1,4 @@
+---
+permalink: /js/navigation.min.js
+---
+{% set js %}{% include "js/navigation.js" %}{% endset %}{{ js | jsmin | safe }}

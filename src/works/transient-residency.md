@@ -1,5 +1,5 @@
 ---
-layout: 'work-post-alt.njk'
+layout: 'layouts/work-post-alt.njk'
 title: "Transient Residency"
 type: "BlogPosting"
 priority: "0.5"
@@ -95,7 +95,7 @@ gallery:
 <div class="videos-grid">
 {% for media in video %}
 <div class="video">
-    <video width="100%" height="100%" controls="controls" controlsList="nodownload" title="{{ media.name }}" alt="{{ media.description }}">
+    <video width="100%" height="100%" controls="controls" controlsList="nodownload" title="{{ media.name }}" alt="{{ media.description }}" loop>
         <source src="{{ media.url }}" type="video/mp4">
             Your browser does not support the video tag.
     </video>

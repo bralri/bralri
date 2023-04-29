@@ -1,5 +1,5 @@
 ---
-layout: 'base.njk'
+layout: 'layouts/base.njk'
 ---
 
 <article class="main-article">
@@ -8,10 +8,10 @@ layout: 'base.njk'
         
         <ul role="list" class="works__list">
             {%- for post in collections.works_on_paper | reverse -%}
-                {% include 'works-snippet.njk' %}
+                {% include 'layouts/works-snippet.njk' %}
             {%- endfor -%}
         </ul>
     </div>
 </article>
 
-{% include 'selected-works.njk' %}
+{% include 'layouts/selected-works.njk' %}

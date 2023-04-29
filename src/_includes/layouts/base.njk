@@ -88,19 +88,14 @@
     </head>
     <body>
 
-          {% include 'header.njk' %}
+          {% include 'layouts/header.njk' %}
 
           <main>
             {{ content | safe }}
           </main>
           
-          {% include 'footer.njk'%}
+          {% include 'layouts/footer.njk'%}
 
-        {% set js %}
-          {% include "js/navigation.js" %}
-        {% endset %}
-        <script>
-          {{ js | jsmin | safe }}
-        </script>
+          <script src="/js/navigation.min.js"></script>
     </body>
 </html>

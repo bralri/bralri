@@ -1,0 +1,4 @@
+---
+permalink: /js/modal.min.js
+---
+{% set js %}{% include "js/modal.js" %}{% endset %}{{ js | jsmin | safe }}

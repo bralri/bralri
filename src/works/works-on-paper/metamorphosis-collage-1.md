@@ -1,5 +1,5 @@
 ---
-layout: "work-post-paper-gallery.njk"
+layout: "layouts/work-post-paper-gallery.njk"
 title: "Metamorphosis Collage 1"
 type: "BlogPosting"
 priority: "0.5"

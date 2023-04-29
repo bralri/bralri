@@ -1,5 +1,5 @@
 ---
-layout: "work-post.njk"
+layout: "layouts/work-post.njk"
 title: "Eternal Engine"
 type: "BlogPosting"
 priority: "0.5"

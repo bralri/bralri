@@ -1,6 +1,6 @@
 ---
 eleventyExcludeFromCollections: false
-layout: 'base.njk'
+layout: 'layouts/base.njk'
 
 title: "Blog"
 type: "BlogPosting"
@@ -19,7 +19,7 @@ priority: "0.8"
         <h3 class="section-title">Blog</a></h3>
         <ul role="list" class="works__list">
             {%- for post in collections.post | reverse -%}
-                {% include 'article-snippet.njk' %}
+                {% include 'layouts/article-snippet.njk' %}
             {%- endfor -%}
         </ul>
     </div>

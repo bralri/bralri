@@ -1,5 +1,5 @@
 ---
-layout: 'work-post-alt.njk'
+layout: 'layouts/work-post-alt.njk'
 title: "Thingamajig"
 type: "BlogPosting"
 priority: "0.5"

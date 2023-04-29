@@ -1,0 +1,33 @@
+<!-- Main Gallery -->
+<div class="photo-grid-container-paper">
+    {% for image in gallery %}
+        <div class="photo-grid-item-paper">
+            <img
+                class="photo-grid-image-paper"
+                src="{{ image.url }}"
+                alt="{{ image.alt }}"
+                title="{{ image.title }}"
+                loading="lazy"
+                tabindex="0"
+                aria-label="Open {{ image.title }}">
+        </div>
+    {% endfor %}
+</div>
+
+<!-- Gallery Modal -->
+<div id="image-modal-paper" class="modal-paper">
+    <div role="button" aria-label="Previous image" aria-pressed="false">
+        <a class="modal-prev" href="#" title="Previous image">
+            <i class="fa fa-chevron-left"></i>
+        </a>
+    </div>
+    <div role="button" aria-label="Next image" aria-pressed="false">
+        <a class="modal-next" href="#" title="Next image">
+            <i class="fa fa-chevron-right"></i>
+        </a>
+    </div>
+    <div class="modal-image-container-paper">
+        <img id="modal-image-paper" class="modal-content-paper" title="{{ image.title }}">
+        <!-- <p id="modal-caption" class="modal-caption" aria-label="Caption: {{ image.title }}"></p> -->
+    </div>
+</div>

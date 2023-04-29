@@ -1,5 +1,5 @@
 ---
-layout: 'base.njk'
+layout: 'layouts/base.njk'
 ---
 
 <article class="main-article">
@@ -11,17 +11,12 @@ layout: 'base.njk'
         
         {{ content | safe }}
 
-        {% include 'grid-gallery.njk' %}
+        {% include 'layouts/grid-gallery-paper.njk' %}
 
-        {% include 'social-share-links.njk' %}
+        {% include 'layouts/social-share-links.njk' %}
     </div>
 </article>
 
-{% include 'selected-works.njk' %}
+{% include 'layouts/selected-works.njk' %}
 
-{% set js %}
-    {% include "js/modal.js" %}
-{% endset %}
-<script>
-    {{ js | jsmin | safe }}
-</script>
+<script src="/js/modal-alt.min.js"></script>

@@ -1,5 +1,5 @@
 ---
-layout: 'base.njk'
+layout: 'layouts/base.njk'
 ---
 
 <article class="main-article">
@@ -8,18 +8,11 @@ layout: 'base.njk'
         <p class="article-title"><span>{{ date | postDate }}</span></p>
         
         <br>
-        
+
         {{ content | safe }}
 
-        {% include 'social-share-links.njk' %}
+        {% include 'layouts/social-share-links.njk' %}
     </div>
 </article>
 
-{% include 'selected-works.njk' %}
-
-{% set js %}
-    {% include "js/modal.js" %}
-{% endset %}
-<script>
-    {{ js | jsmin | safe }}
-</script>
+{% include 'layouts/selected-articles.njk' %}

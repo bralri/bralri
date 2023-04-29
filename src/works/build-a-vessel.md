@@ -1,5 +1,5 @@
 ---
-layout: "work-post-alt.njk"
+layout: "layouts/work-post-alt.njk"
 title: "Build-A-Vessel"
 priority: "0.5"
 date: 2022-07-28

@@ -2,3 +2,6 @@ ignore
 node_modules
 template-blog.md
 template-works.md
+
+modal.js.njk
+navigation.js.njk

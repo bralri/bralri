@@ -15,5 +15,12 @@
 .photo-grid-image-paper {
     max-width: 100%;
     max-height: 100%;
-    cursor: default;
+    cursor: pointer;
+
+    transition: 0.3s ease 0s;
+    
+        &:hover {
+            opacity: 0.75;
+            transition: 0.3s ease 0s;
+        }
 }

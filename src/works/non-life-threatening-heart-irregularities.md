@@ -1,5 +1,5 @@
 ---
-layout: "work-post.njk"
+layout: "layouts/work-post.njk"
 title: "non life-threatening heart irregularities"
 type: "BlogPosting"
 priority: "0.5"

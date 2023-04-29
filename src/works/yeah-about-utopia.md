@@ -1,5 +1,5 @@
 ---
-layout: 'work-post.njk'
+layout: 'layouts/work-post.njk'
 title: "Yeah, about utopia ..."
 type: "BlogPosting"
 priority: "0.5"
