@@ -47,7 +47,7 @@ gallery:
 
 <br>
 
-<p class="indent">Eternal Engine is a work-in-progress single channel video collage series, inspired by films like the 1927 science-fiction classic <i>Metropolis</i>, directed by Fritz Lang; as well as films like <i>Snowpiercer</i>, 2013 and <i>Event Horizon</i>, 1997.</p>
+<p class="indent">Eternal Engine is a work-in-progress single channel video collage series, inspired by films like the 1927 science-fiction classic <a href="https://www.imdb.com/title/tt0017136/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_metr" target="_blank" rel="noopener">Metropolis</a>, directed by Fritz Lang; as well as films like <a href="https://www.imdb.com/title/tt1706620/?ref_=nv_sr_srsg_4_tt_4_nm_3_q_snowp" target="_blank" rel="noopener">Snowpiercer</a>, 2013 and <a href="https://www.imdb.com/title/tt0119081/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_event%2520ho" target="_blank" rel="noopener">Event Horizon</a>, 1997.</p>
 
 <br>
 <br>
