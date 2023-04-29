@@ -5,7 +5,6 @@ type: "BlogPosting"
 priority: "0.5"
 date: 2020-06-30
 year: "2020"
-tags: ['work']
 description: DeepSpaceAnomaly
 
 video:
@@ -57,4 +56,3 @@ gallery:
 
 <br>
 <br>
-<script async src="/js/modal.js"></script>

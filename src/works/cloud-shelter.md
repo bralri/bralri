@@ -5,7 +5,7 @@ type: "BlogPosting"
 priority: "0.5"
 date: 2022-12-17
 year: "2022"
-tags: ["work", "featuredWork"]
+tags: ["featured_work"]
 description: "In 2022, I launched Cloud Shelter, an online gallery and project space that's dedicated to showcasing experimental digital art from artists of all disciplines. As an artist, I wanted to create a platform that would provide opportunities for artists to experiment and collaborate."
 
 gallery:
@@ -40,4 +40,3 @@ gallery:
 
 <br>
 <br>
-<script async src="/js/modal.js"></script>

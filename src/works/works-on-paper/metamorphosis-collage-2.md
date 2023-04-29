@@ -5,7 +5,6 @@ type: "BlogPosting"
 priority: "0.5"
 date: 2022-05-28
 year: "2022"
-tags: ["worksonpaper"]
 description: "Metamorphosis Collage 2"
 
 gallery:

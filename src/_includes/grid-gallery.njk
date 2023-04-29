@@ -1,3 +1,4 @@
+<!-- Main Gallery -->
 <div class="photo-grid-container">
     {% for image in gallery %}
         <div class="photo-grid-item">
@@ -13,6 +14,7 @@
     {% endfor %}
 </div>
 
+<!-- Gallery Modal -->
 <div id="image-modal" class="modal">
     <div role="button" aria-label="Previous image" aria-pressed="false">
         <a class="modal-prev" href="#" title="Previous image">
@@ -26,6 +28,6 @@
     </div>
     <div class="modal-image-container">
         <img id="modal-image" class="modal-content" title="{{ image.title }}">
-        <p id="modal-caption" class="modal-caption" aria-label="Caption: {{ image.title }}"></p>
+        <!-- <p id="modal-caption" class="modal-caption" aria-label="Caption: {{ image.title }}"></p> -->
     </div>
 </div>

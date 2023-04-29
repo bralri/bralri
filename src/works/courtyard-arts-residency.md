@@ -5,7 +5,6 @@ type: "BlogPosting"
 priority: "0.5"
 date: 2018-09-18
 year: "2018"
-tags: ["work"]
 description: "Courtyard Arts Residency"
 
 video:
@@ -121,4 +120,3 @@ gallery:
 
 <br>
 <br>
-<script async src="/js/modal.js"></script>

@@ -84,7 +84,7 @@
               {%- endfor -%}
             ]
           }
-          </script>
+        </script>
     </head>
     <body>
 
@@ -96,6 +96,11 @@
           
           {% include 'footer.njk'%}
 
-        <script async src="/js/navigation.js"></script>
+        {% set js %}
+          {% include "js/navigation.js" %}
+        {% endset %}
+        <script>
+          {{ js | jsmin | safe }}
+        </script>
     </body>
 </html>

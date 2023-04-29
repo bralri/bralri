@@ -5,7 +5,7 @@ type: "BlogPosting"
 priority: "0.5"
 date: 2018-06-01
 year: "2018"
-tags: ["work", "featuredWork"]
+tags: ["featured_work"]
 description: "'Yeah, about utopia ...' is a singel channel mockumetary which was created as part of a larger installation of work which was the focus for my graduate degree show. The larger body of work and this film explored themes of nostalgia and how places and things in the past were designed with a utopian ideal but over time have become concrete shells of their intended design."
 
 video:
@@ -74,5 +74,3 @@ gallery:
 
 <br>
 <br>
-
-<script async src="/js/modal.js"></script>

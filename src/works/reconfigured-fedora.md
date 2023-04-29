@@ -5,7 +5,6 @@ type: "BlogPosting"
 priority: "0.5"
 date: 2018-07-11
 year: "2018"
-tags: ["work"]
 description: "Reconfigured Fedora, 2018, is a reconfiguration of an installation of work made for my degree show earlier in the year. The use of the name 'Fedora' comes from the Italo Calvino novel called Invisible Cities which explores imagination and the imaginable through the descriptions of cities by an explorer, Marco Polo."
 
 gallery:
@@ -87,5 +86,3 @@ gallery:
 
 <br>
 <br>
-
-<script async src="/js/modal.js"></script>

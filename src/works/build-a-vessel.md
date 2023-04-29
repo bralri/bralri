@@ -4,7 +4,7 @@ title: "Build-A-Vessel"
 priority: "0.5"
 date: 2022-07-28
 year: "2022"
-tags: ["work", "featuredWork"]
+tags: ["featured_work"]
 description: "Build-A-Vessel"
 
 gallery:
@@ -31,4 +31,3 @@ gallery:
 
 <br>
 <br>
-<script async src="/js/modal.js"></script>

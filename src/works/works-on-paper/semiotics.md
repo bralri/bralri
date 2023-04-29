@@ -5,7 +5,6 @@ type: "BlogPosting"
 priority: "0.5"
 date: 2021-05-16
 year: "2021"
-tags: ["worksonpaper"]
 description: "Series of limeted edition prints from 2021"
 
 gallery:

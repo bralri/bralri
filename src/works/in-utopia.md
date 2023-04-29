@@ -5,7 +5,7 @@ type: "BlogPosting"
 priority: "0.5"
 date: 2018-06-01
 year: "2018"
-tags: ["work", "featuredWork"]
+tags: ["featured_work"]
 description: "In Utopia was an installation of a made for my undergraduate degree show group exhibition in 2018. The installation consisted of a series of large sculptures, ceramics, improvised structures and a single channel video mockumentary."
 
 video:
@@ -104,5 +104,3 @@ gallery:
 
 <br>
 <br>
-
-<script async src="/js/modal.js"></script>

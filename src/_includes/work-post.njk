@@ -18,3 +18,10 @@ layout: 'base.njk'
 </article>
 
 {% include 'selected-works.njk' %}
+
+{% set js %}
+    {% include "js/modal.js" %}
+{% endset %}
+<script>
+    {{ js | jsmin | safe }}
+</script>

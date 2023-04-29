@@ -7,7 +7,7 @@ layout: 'base.njk'
         <h3 class="article-title">{{ title }}</h3>
         
         <ul role="list" class="works__list">
-            {%- for post in collections.worksonpaper | reverse -%}
+            {%- for post in collections.works_on_paper | reverse -%}
                 {% include 'works-snippet.njk' %}
             {%- endfor -%}
         </ul>

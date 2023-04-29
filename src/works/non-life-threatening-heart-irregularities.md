@@ -5,7 +5,7 @@ type: "BlogPosting"
 priority: "0.5"
 date: 2017-02-23
 year: "2017"
-tags: ["work", "featuredWork"]
+tags: ["featured_work"]
 description: "non life-threatening heart irregularities, 2017."
 
 gallery:
@@ -39,4 +39,3 @@ gallery:
 
 <br>
 <br>
-<script async src="/js/modal.js"></script>

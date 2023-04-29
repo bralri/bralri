@@ -5,7 +5,6 @@ type: "BlogPosting"
 priority: "0.5"
 date: 2020-04-17
 year: "2020"
-tags: ["work"]
 description: "Forced Collaboration is an online platform that matches artist's practices anonymously and creates a space for cross-disciplinary collaborations through the process of making/following instructions to create artworks."
 
 gallery:
@@ -66,4 +65,3 @@ gallery:
 
 <br>
 <br>
-<script async src="/js/modal.js"></script>

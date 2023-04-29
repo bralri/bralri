@@ -5,7 +5,7 @@ type: "BlogPosting"
 priority: "0.5"
 date: 2018-12-15
 year: "2018"
-tags: ["work", "featuredWork"]
+tags: ["featured_work"]
 description: "Things of the Never-Will and Always, 2018, was a re-installation from a body of work which combined sculptures and objects from previous exhibitions and residencies. This installation was part of a group show in London, UK at a pop-up gallery in Brick Lane."
 
 gallery:
@@ -69,4 +69,3 @@ gallery:
 
 <br>
 <br>
-<script async src="/js/modal.js"></script>

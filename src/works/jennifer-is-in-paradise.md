@@ -5,7 +5,7 @@ type: "BlogPosting"
 priority: "0.5"
 date: 2022-03-03
 year: "2022"
-tags: ["work", "featuredWork"]
+tags: ["featured_work"]
 description: "Jennifer is in Paradise was a group exhibition"
 
 gallery:
@@ -102,4 +102,3 @@ gallery:
 
 <br>
 <br>
-<script async src="/js/modal.js"></script>

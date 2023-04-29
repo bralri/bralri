@@ -5,7 +5,6 @@ type: "BlogPosting"
 priority: "0.5"
 date: 2022-04-28
 year: ""
-tags: ["work"]
 description: "photogrammetry-screenshots"
 
 gallery:
