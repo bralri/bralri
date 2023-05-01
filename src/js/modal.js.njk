@@ -1,4 +1,5 @@
 ---
 permalink: /js/modal.min.js
+eleventyExcludeFromCollections: true
 ---
 {% set js %}{% include "js/modal.js" %}{% endset %}{{ js | jsmin | safe }}
