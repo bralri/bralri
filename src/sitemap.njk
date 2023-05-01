@@ -10,7 +10,6 @@ eleventyExcludeFromCollections: true
     {% for post in collections.all | reverse %}
         <url>
             <loc>{{ rootURL }}{{ post.url }}</loc>
-            <priority>{{ post.data.priority }}</priority>
             <lastmod>{{ post.date.toISOString() }}</lastmod>
             <news:news>
                 <news:publication>
