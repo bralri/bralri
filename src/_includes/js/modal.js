@@ -9,11 +9,16 @@ let currentIndex;
 // Get the image index from the URL parameter
 const getImageIndexFromUrl = () => {
     const params = new URLSearchParams(window.location.search);
-    const image = parseInt(params.get('image'));
+    const image = parseInt(params.get('id'));
     if (isNaN(image) || image <= 0 || image > images.length) {
         return -1;
     }
     return image - 1;
+}
+
+Array.prototype.removeLast = function () {
+    this.length--;
+    return this;
 }
 
 // Show the modal with the image related to the given index
@@ -25,18 +30,21 @@ const showImage = index => {
     }
 
     const imageURL = images[index].src;
+    console.log(imageURL)
+    let filename = images[index].src.split("/").pop().split("-").removeLast().join("-");
+    // const filename = images[index].src.split("/").pop().split(".")[0];
+    console.log(filename);
     modalImg.src = imageURL;
-    // modalCaption.textContent = images[index].alt;
     currentIndex = index;
-    updateUrl(index);
+    updateUrl(index, filename);
 
     document.body.style.overflow = "hidden"; // Disable page scrolling
 };
 
 // Update the URL parameter when changing the image in the modal
-const updateUrl = index => {
+function updateUrl(index, filename) {
     const image = index + 1;
-    const newUrl = `${window.location.origin}${window.location.pathname}?image=${image}`;
+    const newUrl = `${window.location.origin}${window.location.pathname}?img=${filename}&id=${image}`;
     window.history.pushState({
         path: newUrl
     }, '', newUrl);

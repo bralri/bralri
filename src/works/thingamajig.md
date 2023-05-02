@@ -8,7 +8,7 @@ year: "2020"
 description: "page description"
 
 gallery:
-  - url: "/assets/img/works/thingamajig/1.webp"
+  - url: "/assets/img/works/thingamajig/thingamajig.webp"
     title: "Thingamajig"
     alt: "Digital collage"
 ---

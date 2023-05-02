@@ -8,28 +8,31 @@ year: "2020"
 description: "Forced Collaboration is an online platform that matches artist's practices anonymously and creates a space for cross-disciplinary collaborations through the process of making/following instructions to create artworks."
 
 gallery:
-  - url: "/assets/img/works/forced-collaboration/1.webp"
+  - url: "/assets/img/works/forced-collaboration/gallery/forced-collaboration-1.webp"
     title: "Create an object that's possibly useful and possibly useless but definitely beautiful"
     alt: "Printed text on paper that reads: 'Create an object that's possibly useful and possibly useless but definitely beautiful'"
-  - url: "/assets/img/works/forced-collaboration/2.webp"
+  - url: "/assets/img/works/forced-collaboration/gallery/forced-collaboration-2.webp"
     title: "Create an object that's possibly useful and possibly useless but definitely beautiful"
     alt: "Plaster, salt dough, wire, tape, card, paper"
-  - url: "/assets/img/works/forced-collaboration/3.webp"
+  - url: "/assets/img/works/forced-collaboration/gallery/forced-collaboration-3.png"
+    title: "Create an object that's possibly useful and possibly useless but definitely beautiful"
+    alt: "Plaster, salt dough, wire, tape, card, paper"
+  - url: "/assets/img/works/forced-collaboration/gallery/forced-collaboration-3.webp"
     title: "Blueprint for Bus Shelter"
     alt: "Digital diagram of a Bus Shelter made in Excel"
-  - url: "/assets/img/works/forced-collaboration/4.webp"
+  - url: "/assets/img/works/forced-collaboration/gallery/forced-collaboration-4.webp"
     title: "Blueprint for Bus Shelter"
     alt: "Digital diagram of a Bus Shelter made in Excel"
-  - url: "/assets/img/works/forced-collaboration/5.webp"
+  - url: "/assets/img/works/forced-collaboration/gallery/forced-collaboration-5.webp"
     title: "Forced Collaboration, 2020"
     alt: "Forced Collaboration"
-  - url: "/assets/img/works/forced-collaboration/6.webp"
+  - url: "/assets/img/works/forced-collaboration/gallery/forced-collaboration-6.webp"
     title: "Forced Collaboration, 2020"
     alt: "Forced Collaboration"
-  - url: "/assets/img/works/forced-collaboration/7.webp"
+  - url: "/assets/img/works/forced-collaboration/gallery/forced-collaboration-7.webp"
     title: "Forced Collaboration, 2020"
     alt: "Forced Collaboration"
-  - url: "/assets/img/works/forced-collaboration/8.webp"
+  - url: "/assets/img/works/forced-collaboration/gallery/forced-collaboration-8.webp"
     title: "Forced Collaboration, 2020"
     alt: "Forced Collaboration"
 ---
@@ -43,7 +46,7 @@ gallery:
 
 <br>
 
-<p>🎮 <a href="https://www.forcedcollaboration.org/" target="_blank" rel="noopener">Collaboration: Kayt Hughes & Bryan Ridpath</a>.</p>
+<p>🎮 <a href="https://www.forcedcollaboration.org/Kayt-Hughes-and-Bryan-Ridpath" target="_blank" rel="noopener">Collaboration: Kayt Hughes & Bryan Ridpath</a>.</p>
 <p>🚏 <a href="https://forcedcollaboration.org/Bryan-Ridpath-and-Pippa-Eason" target="_blank" rel="noopener">Collaboration: Bryan Ridpath & Pippa Eason</a>.</p>
 
 <br>
