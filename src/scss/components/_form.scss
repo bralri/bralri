@@ -13,7 +13,7 @@ input[type=text], select, textarea {
     resize: vertical;
 }
 
-input[type=submit] {
+button[type=submit] {
     background-color: $accent;
     color: $white;
     padding: 12px 20px;
@@ -22,7 +22,7 @@ input[type=submit] {
     cursor: pointer;
 }
 
-input[type=submit]:hover {
+button[type=submit]:hover {
     background-color: $grey;
 }
 
