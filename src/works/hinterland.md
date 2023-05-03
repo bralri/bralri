@@ -59,8 +59,8 @@ gallery:
 
 <br>
 
-<p>🏗️ SketchUp Residency <a href="https://www.sidandjim.com/the-sketchup-residency" target="_blank" rel="noopener">Website</a>.</p>
-<p>🔗 SketchUp Residency <a href="https://www.instagram.com/sketchupresidency/" target="_blank" rel="noopener">Instagram</a>.</p>
+<p><i class="fa-solid fa-star-of-life icon-accent"></i> SketchUp Residency <a href="https://www.sidandjim.com/the-sketchup-residency" target="_blank" rel="noopener">Website</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></p>
+<p><i class="fa-solid fa-star-of-life icon-accent"></i> SketchUp Residency <a href="https://www.instagram.com/sketchupresidency/" target="_blank" rel="noopener">Instagram</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></p>
 
 <br>
 <br>

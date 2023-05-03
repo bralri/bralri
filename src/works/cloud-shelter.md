@@ -23,7 +23,7 @@ gallery:
 
 <br>
 
-<p class="indent">In 2022, I launched <a href="https://cloudshelter.space" target="_blank" rel="noopener">Cloud Shelter</a>, an online gallery and project space that's dedicated to showcasing experimental digital art from artists of all disciplines. As an artist, I wanted to create a platform that would provide opportunities for artists to experiment and collaborate.</p>
+<p class="indent">In 2022, I launched <a href="https://cloudshelter.space" target="_blank" rel="noopener">Cloud Shelter</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup>, an online gallery and project space that's dedicated to showcasing experimental digital art from artists of all disciplines. As an artist, I wanted to create a platform that would provide opportunities for artists to experiment and collaborate.</p>
 
 <p>I was frustrated with the opportunities available for showcasing experimental digital art and I wanted to create an inclusive environment that fosters creativity and innovation. I took it upon myself to learn to code and design a website to serve as the foundation for this new curatorial project.</p>
 
@@ -33,10 +33,13 @@ gallery:
 
 <br>
 
-<p>☁️ Visit <a href="https://cloudshelter.space" target="_blank" rel="noopener">Cloud Shelter.</a></p>
-<p>✍️ Check out Cloud Shelter's <a href="https://www.cloudshelter.space/updates" target="_blank" rel="noopener">Updates</a> blog for news on upcoming shows and events.</p>
-<p>🔗 Follow Cloud Shelter's <a href="https://instagram.com/cloud.shelter" target="_blank" rel="noopener">Instagram</a>.</p>
-<p>🌐 Follow Cloud Shelter's <a href="https://www.cloudshelter.space/rss.xml" target="_blank" rel="noopener">RSS Feed</a>.</p>
+<p><i class="fa-solid fa-star-of-life icon-accent"></i> Visit <a href="https://cloudshelter.space" target="_blank" rel="noopener">Cloud Shelter</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></p>
+
+<p><i class="fa-solid fa-star-of-life icon-accent"></i> Check out Cloud Shelter's <a href="https://www.cloudshelter.space/updates" target="_blank" rel="noopener">Updates</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup> blog for news on upcoming shows and events.</p>
+
+<p><i class="fa-solid fa-star-of-life icon-accent"></i> Follow Cloud Shelter's <a href="https://instagram.com/cloud.shelter" target="_blank" rel="noopener">Instagram</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></p>
+
+<p><i class="fa-solid fa-star-of-life icon-accent"></i> Follow Cloud Shelter's <a href="https://www.cloudshelter.space/rss.xml" target="_blank" rel="noopener">RSS Feed</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></p>
 
 <br>
 <br>

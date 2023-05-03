@@ -1,0 +1,44 @@
+---
+eleventyExcludeFromCollections: false
+layout: 'layouts/base.njk'
+
+title: "Contact"
+type: "WebPage"
+description: "Contact Bryan Ridpath."
+date: 2017-01-01
+gallery:
+  - url: "/assets/bralri.webp"
+    title: "Site Logo"
+    alt: "Drawing of a face"
+---
+
+<section class="container container--narrow flow">
+    <h3 class="section-title">Contact</h3>
+
+    <p>
+        <i class="fa-solid fa-star-of-life icon-accent"></i>
+        <a
+            href="mailto:bryanridpath@gmail.com"
+            title="email"
+            target="_blank"
+            rel="noopener"
+            aria-label="email link">bryanridpath@gmail.com</a>
+    </p>
+
+    <br>
+
+    Email Form
+    <form method="POST" name="contact" action="/contact" netlify>
+  
+      <label for="name">Your name</label>
+      <input type="text" id="name" name="name" placeholder="Your name *">
+
+      <label for="email">Your email</label>
+      <input type="text" id="email" name="email" placeholder="Your email *">
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Message *" style="height:200px"></textarea>
+
+      <input type="submit" value="Submit">
+    </form>
+</section>

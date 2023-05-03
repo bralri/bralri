@@ -7,8 +7,12 @@ blockquote {
     text-align-last: left;
 }
 
-.indent {
+p.indent {
     text-indent: 30px;
+
+    sup {
+        text-indent: 0px;
+    }
 }
 
 cite {

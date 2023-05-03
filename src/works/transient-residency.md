@@ -8,73 +8,21 @@ year: "2022"
 description: "Transient Residency is an Online Residency Programme via Instagram, supporting creatives who explore the relationship between Art & Technology. During this residency I shared works from a recent work in progress project called <i>Metamorphosis</i>. Metamorphosis being the transformation, change and growth of something, this project is interested in those concepts of change specific to the human condition."
 
 video:
-  - url: "/assets/video/works/transient-residency/1.m4v"
+  - url: "/assets/video/works/transient-residency/transient-residency.m4v"
     name: "Metamorphosis"
-    description: "Video of a rotating 3D model"
-    thumbnail: "/assets/img/works/in-utopia/in-utopia.webp"
+    description: "Excerpts from the Transient Residency. Video of a rotating 3D models."
+    thumbnail: "/assets/img/works/transient-residency/video-thumbnail.webp"
     uploadDate: "2022-07-04"
-    duration: "PT0M20S"
-  - url: "/assets/video/works/transient-residency/2.m4v"
-    name: "Metamorphosis"
-    description: "Video of a rotating 3D model"
-    thumbnail: "/assets/img/works/in-utopia/in-utopia.webp"
-    uploadDate: "2022-07-04"
-    duration: "PT0M20S"
-  - url: "/assets/video/works/transient-residency/3.m4v"
-    name: "Metamorphosis"
-    description: "Video of a rotating 3D model"
-    thumbnail: "/assets/img/works/in-utopia/in-utopia.webp"
-    uploadDate: "2022-07-04"
-    duration: "PT0M20S"
-  - url: "/assets/video/works/transient-residency/4.m4v"
-    name: "Metamorphosis"
-    description: "Video of a rotating 3D model"
-    thumbnail: "/assets/img/works/in-utopia/in-utopia.webp"
-    uploadDate: "2022-07-04"
-    duration: "PT0M20S"
-  - url: "/assets/video/works/transient-residency/5.m4v"
-    name: "Metamorphosis"
-    description: "Video of a rotating 3D model"
-    thumbnail: "/assets/img/works/in-utopia/in-utopia.webp"
-    uploadDate: "2022-07-04"
-    duration: "PT0M20S"
-  - url: "/assets/video/works/transient-residency/6.m4v"
-    name: "Metamorphosis"
-    description: "Video of a rotating 3D model"
-    thumbnail: "/assets/img/works/in-utopia/in-utopia.webp"
-    uploadDate: "2022-07-04"
-    duration: "PT0M20S"
-  - url: "/assets/video/works/transient-residency/7.m4v"
-    name: "Metamorphosis"
-    description: "Video of a rotating 3D model"
-    thumbnail: "/assets/img/works/in-utopia/in-utopia.webp"
-    uploadDate: "2022-07-04"
-    duration: "PT0M20S"
-  - url: "/assets/video/works/transient-residency/8.m4v"
-    name: "Metamorphosis"
-    description: "Video of a rotating 3D model"
-    thumbnail: "/assets/img/works/in-utopia/in-utopia.webp"
-    uploadDate: "2022-07-04"
-    duration: "PT0M20S"
-  - url: "/assets/video/works/transient-residency/9.m4v"
-    name: "Metamorphosis"
-    description: "Video of a rotating 3D model"
-    thumbnail: "/assets/img/works/in-utopia/in-utopia.webp"
-    uploadDate: "2022-07-04"
-    duration: "PT0M20S"
-
-gallery:
-  - url: "/assets/img/works/transient-residency/transient-residency.webp"
-    title: "Metamorphosis.1.2.2"
-    alt: "3D model with a pixelated surface."
+    duration: "PT03M00S"
 ---
 
-<figure class="main-article__figure">
-    <img src="{{ gallery[0].url  }}" alt="{{ gallery[0].alt }}" title="{{ gallery[0].title }}">
-        <figcaption>
-            "{{ gallery[0].title }}". {{ gallery[0].alt }}.
-        </figcaption>
-</figure>
+<video width="100%" height="100%" controls controlsList="nodownload" poster="{{ video[0].thumbnail }}">
+    <source src="{{ video[0].url }}" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+<figcaption>
+    "{{ video[0].name }}". {{ video[0].description }}.
+</figcaption>
 
 <br>
 
@@ -86,19 +34,8 @@ gallery:
 
 <br>
 
-<p>🌌 Transient Residency <a href="https://www.transienttt.co.uk/about" target="_blank" rel="noopener">Website</a>.</p>
-<p>🔗 Transient Residency <a href="https://www.instagram.com/t.ransienttt/" target="_blank" rel="noopener">Instagram</a>.</p>
+<p><i class="fa-solid fa-star-of-life icon-accent"></i> Transient Residency <a href="https://www.transienttt.co.uk/about" target="_blank" rel="noopener">Website</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></p>
+<p><i class="fa-solid fa-star-of-life icon-accent"></i> Transient Residency <a href="https://www.instagram.com/t.ransienttt/" target="_blank" rel="noopener">Instagram</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></p>
 
 <br>
 <br>
-
-<div class="videos-grid">
-{% for media in video %}
-<div class="video">
-    <video width="100%" height="100%" controls="controls" controlsList="nodownload" title="{{ media.name }}" alt="{{ media.description }}" loop>
-        <source src="{{ media.url }}" type="video/mp4">
-            Your browser does not support the video tag.
-    </video>
-</div>
-{% endfor %}
-</div>

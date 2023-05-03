@@ -34,7 +34,8 @@ h1 {
             text-decoration: underline;
             text-decoration-style: solid;
             text-decoration-thickness: 2px;
-            text-decoration-color: $white;
+            text-decoration-color: $accent;
+            text-underline-position: under;
         }
 }
 
@@ -48,21 +49,23 @@ h2 {
             text-decoration: underline;
             text-decoration-style: solid;
             text-decoration-thickness: 2px;
-            text-decoration-color: $white;
+            text-decoration-color: $accent;
+            text-underline-position: under;
         }
 }
 
 h3 {
     font-family: fontRegular;
     color: $white;
-    line-height: 1.25;
+    line-height: 1.1;
     font-size: $--fs-500;
         a {
             font-family: fontItalic;
             text-decoration: underline;
             text-decoration-style: solid;
             text-decoration-thickness: 2px;
-            text-decoration-color: $white;
+            text-decoration-color: $accent;
+            text-underline-position: under;
         }
 }
 
@@ -76,7 +79,9 @@ h4 {
             text-decoration: underline;
             text-decoration-style: solid;
             text-decoration-thickness: 2px;
-            text-decoration-color: $white;
+            text-decoration-color: $accent;
+            text-underline-position: under;
+            line-height: 1.5;
         }
 }
 
@@ -91,7 +96,8 @@ p {
             text-decoration: underline;
             text-decoration-style: solid;
             text-decoration-thickness: 2px;
-            text-decoration-color: $white;
+            text-decoration-color: $accent;
+            text-underline-position: under;
         }
 }
 
@@ -114,11 +120,14 @@ a {
     text-decoration: none;
     color: $white;
 
+    text-decoration-color: $accent;
+    text-underline-position: under;
+
     transition: all 0.3s ease 0s;
 
         &:hover {
             color: $grey;
-            text-decoration-color: $grey;
+            text-decoration-color: $accent;
             transition: all 0.3s ease 0s;
         }
 }
@@ -128,6 +137,22 @@ a {
     padding-right: 10px;
 }
 
-.share-text {
+.icon-accent {
     color: $accent;
+}
+
+.icon-grey {
+    color: $grey;
+}
+
+sup {
+    display: inline-block;
+    vertical-align: super; 
+    font-size: 60%;
+}
+
+sub {
+    display: inline-block;
+    vertical-align: sub; 
+    font-size: $--fs-500;
 }

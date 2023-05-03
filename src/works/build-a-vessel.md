@@ -23,11 +23,11 @@ gallery:
 
 <br>
 
-<p class="indent">In 2022 I built and launched <a href="https://app.bralri.net/build-a-vessel" target="_blank" rel="noopener">Build-A-Vessel</a>, an online project which experimented with user input to use spliced digital sculptures as "building blocks" to create their own vessels. Akin to the idea of "Build-A-Bear", each itteration and end result is unique. Users are able to refresh the page to load the blocks in new orientations and positions, and once they have completed building their Vessels they are able to download the Vessels as a .glb model.</p>
+<p class="indent">In 2022 I built and launched <a href="https://app.bralri.net/build-a-vessel" target="_blank" rel="noopener">Build-A-Vessel</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup>, an online project which experimented with user input to use spliced digital sculptures as "building blocks" to create their own vessels. Akin to the idea of "Build-A-Bear", each itteration and end result is unique. Users are able to refresh the page to load the blocks in new orientations and positions, and once they have completed building their Vessels they are able to download the Vessels as a .glb model.</p>
 
 <br>
 
-<p>🏺 Try Build-A-Vessel out <a href="https://app.bralri.net/build-a-vessel" target="_blank" rel="noopener">here</a>.</p>
+<p><i class="fa-solid fa-star-of-life icon-accent"></i> Try Build-A-Vessel out <a href="https://app.bralri.net/build-a-vessel" target="_blank" rel="noopener">here</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></p>
 
 <br>
 <br>

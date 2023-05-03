@@ -1,7 +1,7 @@
 {% set recommendedPosts = helpers.getRandomContent(collections.post, page) %}
 {% if recommendedPosts %}
 <div class="container container--narrow flow">
-    <h3 class="section-title">Other <a href="works">Blog</a> Posts</h3>
+    <h3 class="section-title">Recommended <a href="works">Blog</a> Posts <sub><i class="fa-solid fa-arrow-turn-down icon-accent"></i></sub></h3>
     <ul role="list" class="works__list">
         {% for post in recommendedPosts %}
             {% include 'layouts/works-snippet.njk' %}

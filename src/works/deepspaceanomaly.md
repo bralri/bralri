@@ -52,7 +52,7 @@ gallery:
 
 <br>
 
-<p>Made as part of the collaborative project, <a href="https://www.instagram.com/exquisite_corpo.s/" target="_blank" rel="noopener">Exquisite Corpos</a>.</p>
+<p>Made as part of the collaborative project, <a href="https://www.instagram.com/exquisite_corpo.s/" target="_blank" rel="noopener">Exquisite Corpos</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup>.</p>
 
 <br>
 <br>

@@ -46,8 +46,8 @@ gallery:
 
 <br>
 
-<p>🎮 <a href="https://www.forcedcollaboration.org/Kayt-Hughes-and-Bryan-Ridpath" target="_blank" rel="noopener">Collaboration: Kayt Hughes & Bryan Ridpath</a>.</p>
-<p>🚏 <a href="https://forcedcollaboration.org/Bryan-Ridpath-and-Pippa-Eason" target="_blank" rel="noopener">Collaboration: Bryan Ridpath & Pippa Eason</a>.</p>
+<p><i class="fa-solid fa-star-of-life icon-accent"></i> <a href="https://www.forcedcollaboration.org/Kayt-Hughes-and-Bryan-Ridpath" target="_blank" rel="noopener">Collaboration: Kayt Hughes & Bryan Ridpath</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></p>
+<p><i class="fa-solid fa-star-of-life icon-accent"></i> <a href="https://forcedcollaboration.org/Bryan-Ridpath-and-Pippa-Eason" target="_blank" rel="noopener">Collaboration: Bryan Ridpath & Pippa Eason</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></p>
 
 <br>
 
@@ -58,13 +58,13 @@ gallery:
 
 <p>Forced Collaboration aims to take the pressure off your own practice by experimenting with an idea you won't actually have to make and making an artwork you didn’t actually think of."</p>
 
-<cite>~ <a href="https://forcedcollaboration.org/about" target="_blank" rel="noopener">https://forcedcollaboration.org/about</a>.</cite>
+<cite>~ <a href="https://forcedcollaboration.org/about" target="_blank" rel="noopener">https://forcedcollaboration.org/about</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></cite>
 </blockquote>
 
 <br>
 
-<p>🤝 Forced Collaboration <a href="https://www.forcedcollaboration.org/" target="_blank" rel="noopener">Website</a>.</p>
-<p>🔗 Forced Collaboration <a href="https://www.instagram.com/forcedcollaboration_/" target="_blank" rel="noopener">Instagram</a>.</p>
+<p><i class="fa-solid fa-star-of-life icon-accent"></i> Forced Collaboration <a href="https://www.forcedcollaboration.org/" target="_blank" rel="noopener">Website</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></p>
+<p><i class="fa-solid fa-star-of-life icon-accent"></i> Forced Collaboration <a href="https://www.instagram.com/forcedcollaboration_/" target="_blank" rel="noopener">Instagram</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></p>
 
 <br>
 <br>
