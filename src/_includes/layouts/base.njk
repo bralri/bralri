@@ -21,14 +21,14 @@
         <meta property="og:type" content="article">
         <meta property="og:url" content="{{ rootURL }}{{ page.url }}">
         <meta property="og:description" content="{{ description }}">
-        <meta property="og:image" content="">
-        <meta property="og:image:alt" content="{{ gallery[0].alt }}">
+        <meta property="og:image" content="{{ rootURL }}{{ thumbnail }}">
+        <meta property="og:image:alt" content="{{ description }}">
 
         <meta name="twitter:card" content="summary"/>
         <meta name="twitter:site" content="@bryanridpath"/>
         <meta name="twitter:title" content="{{ title }}"/>
         <meta name="twitter:description" content="{{ description }}"/>
-        <meta name="twitter:image" content=""/>
+        <meta name="twitter:image" content="{{ rootURL }}{{ thumbnail }}"/>
         <meta name="twitter:creator" content="@bryanridpath">
 
         <link rel="stylesheet" href="{{ '/css/main.css' | url }}">
@@ -74,19 +74,19 @@
                 {%- endfor -%}
             ],
             "video": [
-                {%- for media in video -%}
-                    {
-                        "@type": "VideoObject",
-                        "name": "{{ media.name }}",
-                        "description": "{{ media.description }}",
-                        "thumbnailUrl": "{{ rootURL }}{{ media.thumbnail }}",
-                        "uploadDate": "{{ date | postDate }}",
-                        "duration": "{{ media.duration }}",
-                        "contentUrl": "{{ rootURL }}{{ media.url }}",
-                        "embedUrl": "{{ rootURL }}{{ media.url }}"
-                    }{% if not loop.last and loop.index != video|length %},{% endif %}
+              {%- for media in video -%}
+                  {
+                      "@type": "VideoObject",
+                      "name": "{{ media.name }}",
+                      "description": "{{ media.description }}",
+                      "thumbnailUrl": "{{ rootURL }}{{ media.thumbnail }}",
+                      "uploadDate": "{{ date | postDate }}",
+                      "duration": "{{ media.duration }}",
+                      "contentUrl": "{{ rootURL }}{{ media.url }}",
+                      "embedUrl": "{{ rootURL }}{{ media.url }}"
+                  }{% if not loop.last and loop.index != video|length %},{% endif %}
               {%- endfor -%}
-            ]
+            ]        
           }
         </script>
         <title>{{ title }}</title>

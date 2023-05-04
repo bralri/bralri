@@ -5,10 +5,6 @@ type: "BlogPosting"
 priority: "0.5"
 date: 2022-04-28
 year: ""
-description: "photogrammetry-screenshots"
-
-gallery:
-  - url: "/assets/img/works/works-on-paper/metamorphosis/1/4.webp"
-    title: "Works on Paper"
-    alt: "Collage on recycled paper"
+description: "Works on Paper"
+thumbnail: "/assets/img/works/works-on-paper/post-thumbnail.webp"
 ---

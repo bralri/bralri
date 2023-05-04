@@ -6,6 +6,7 @@ date: 2022-07-28
 year: "2022"
 tags: ["featured_work"]
 description: "Build-A-Vessel"
+thumbnail: "/assets/img/works/build-a-vessel/post-thumbnail.webp"
 
 gallery:
   - url: "/assets/img/works/build-a-vessel/build-a-vessel.webp"

@@ -7,6 +7,7 @@ date: 2018-12-15
 year: "2018"
 tags: ["featured_work"]
 description: "Things of the Never-Will and Always, 2018, was a re-installation from a body of work which combined sculptures and objects from previous exhibitions and residencies. This installation was part of a group show in London, UK at a pop-up gallery in Brick Lane."
+thumbnail: "/assets/img/works/things-of-the-never-will-and-always/post-thumbnail.webp"
 
 gallery:
   - url: "/assets/img/works/things-of-the-never-will-and-always/gallery/things-of-the-never-will-and-always-1.webp"

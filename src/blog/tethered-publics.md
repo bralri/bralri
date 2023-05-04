@@ -5,6 +5,7 @@ date: 2023-05-04
 year: "2023"
 tags: ["post"]
 description: "Augmented Reality Exhibition!"
+thumbnail: "/assets/img/blog/tethered-publics/post-thumbnail.webp"
 
 video:
   - url: "/assets/video/blog/tethered-publics/tethered-publics.mp4"

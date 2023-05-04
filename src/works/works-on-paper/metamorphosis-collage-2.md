@@ -6,6 +6,7 @@ priority: "0.5"
 date: 2022-05-28
 year: "2022"
 description: "Metamorphosis Collage 2"
+thumbnail: "/assets/img/works/works-on-paper/metamorphosis-collage-2/post-thumbnail.webp"
 
 gallery:
   - url: "/assets/img/works/works-on-paper/metamorphosis-collage-2/gallery/metamorphosis-collage-2-1.webp"

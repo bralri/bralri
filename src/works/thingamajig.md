@@ -6,6 +6,7 @@ priority: "0.5"
 date: 2020-04-21
 year: "2020"
 description: "page description"
+thumbnail: "/assets/img/works/thingamajig/post-thumbnail.webp"
 
 gallery:
   - url: "/assets/img/works/thingamajig/thingamajig.webp"

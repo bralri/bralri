@@ -5,7 +5,8 @@ type: "BlogPosting"
 priority: "0.5"
 date: 2020-06-30
 year: "2020"
-description: DeepSpaceAnomaly
+description: "DeepSpaceAnomaly"
+thumbnail: "/assets/img/works/deepspaceanomaly/post-thumbnail.webp"
 
 video:
   - url: "/assets/video/works/deepspaceanomaly/deepspaceanomaly.mp4"

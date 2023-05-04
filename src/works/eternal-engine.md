@@ -7,6 +7,7 @@ date: 2020-04-30
 year: "2020"
 tags: ["featured_work"]
 description: "Eternal Engine is a work-in-progress single channel video collage series, inspired by films like the 1927 science-fiction classic Metropolis, directed by Fritz Lang; as well as films like Snowpiercer, 2013 and Event Horizon, 1997."
+thumbnail: "/assets/img/works/eternal-engine/post-thumbnail.webp"
 
 video:
   - url: "/assets/video/works/eternal-engine/eternal-engine.mp4"

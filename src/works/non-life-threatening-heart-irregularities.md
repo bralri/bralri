@@ -7,6 +7,7 @@ date: 2017-02-23
 year: "2017"
 tags: ["featured_work"]
 description: "non life-threatening heart irregularities, 2017."
+thumbnail: "/assets/img/works/non-life-threatening-heart-irregularities/post-thumbnail.webp"
 
 gallery:
   - url: "/assets/img/works/non-life-threatening-heart-irregularities/gallery/non-life-threatening-heart-irregularities-1.webp"
