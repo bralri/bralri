@@ -25,3 +25,9 @@
         grid-template-rows: auto;
     }
 }
+
+@media (max-width: 50em) {
+    video {
+        width: 100%;
+    }
+}

@@ -30,9 +30,7 @@ const showImage = index => {
     }
 
     const imageURL = images[index].src;
-    console.log(imageURL)
     let filename = images[index].src.split("/").pop().split("-").removeLast().join("-");
-    // const filename = images[index].src.split("/").pop().split(".")[0];
     console.log(filename);
     modalImg.src = imageURL;
     currentIndex = index;

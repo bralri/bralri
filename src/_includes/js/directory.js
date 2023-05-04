@@ -1,13 +1,38 @@
+const rootURL = "https://www.bralri.net"
 const postURL = document.querySelectorAll(".postURL");
 const snippetImage = document.querySelectorAll(".post-thumbnail");
-let currentDirectory;
+let metaImage = document.querySelectorAll('meta[property="og:image"]')[0];
+let twitterMetaImage = document.querySelectorAll('meta[name="twitter:image"]')[0];
+let snippetThumbnail, metaThumbnail, imageFolder, assetURL, postType;
 
 for (let i = 0; i < postURL.length; i++) {
-    currentDirectory = postURL[i].href.split('/').slice(0, -1);
+    snippetThumbnail = postURL[i].href.split('/').slice(0, -1);
 
-    if (currentDirectory.length > 5) {
-        snippetImage[i].src = `/assets/img/works/${currentDirectory[4]}/${currentDirectory[5]}/post-thumbnail.webp`;
+    if (snippetThumbnail.length > 5) {
+        assetURL = `/assets/img/${snippetThumbnail[3]}/${snippetThumbnail[4]}/${snippetThumbnail[5]}/post-thumbnail.webp`;
+        snippetImage[i].src = assetURL;
     } else {
-        snippetImage[i].src = `/assets/img/works/${currentDirectory[4]}/post-thumbnail.webp`;
+        assetURL = `/assets/img/${snippetThumbnail[3]}/${snippetThumbnail[4]}/post-thumbnail.webp`
+        snippetImage[i].src = assetURL;
+    }
+}
+
+let currentURL = window.location.href.split('/');
+for (let i = 0; i < currentURL.length; i++) {
+
+    postType = currentURL[3];
+
+    if (currentURL.length > 6) {
+        imageFolder = currentURL[5];
+        postFolder = currentURL[4];
+
+        metaThumbnail = rootURL + `/assets/img/${postType}/${postFolder}/${imageFolder}/post-thumbnail.webp`;
+        metaImage.content = metaThumbnail;
+        twitterMetaImage.content = metaThumbnail;
+    } else {
+        imageFolder = currentURL[4];
+        metaThumbnail = rootURL + `/assets/img/${postType}/${imageFolder}/post-thumbnail.webp`;
+        metaImage.content = metaThumbnail;
+        twitterMetaImage.content = metaThumbnail;
     }
 }

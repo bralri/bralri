@@ -35,7 +35,7 @@ gallery:
 
 <p><i class="fa-solid fa-star-of-life icon-accent"></i> Visit <a href="https://cloudshelter.space" target="_blank" rel="noopener">Cloud Shelter</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></p>
 
-<p><i class="fa-solid fa-star-of-life icon-accent"></i> Check out Cloud Shelter's <a href="https://www.cloudshelter.space/updates" target="_blank" rel="noopener">Updates</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup> blog for news on upcoming shows and events.</p>
+<p><i class="fa-solid fa-star-of-life icon-accent"></i> Check out Cloud Shelter's <a href="https://www.cloudshelter.space/updates" target="_blank" rel="noopener">Updates</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup> blog for news on upcoming shows and events</p>
 
 <p><i class="fa-solid fa-star-of-life icon-accent"></i> Follow Cloud Shelter's <a href="https://instagram.com/cloud.shelter" target="_blank" rel="noopener">Instagram</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></p>
 
