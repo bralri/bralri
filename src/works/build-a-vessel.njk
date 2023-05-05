@@ -1,0 +1,38 @@
+---
+layout: "layouts/app-base.njk"
+title: "Build-A-Vessel"
+date: 2022-07-28
+year: ""
+tags: ["featured_work"]
+description: "Build-A-Vessel"
+thumbnail: "/assets/img/works/build-a-vessel/post-thumbnail.webp"
+script: "vessels.min.js"
+---
+
+<section id="loading">
+    <div id="loader"></div>
+</section>
+
+<div id="buttons">
+    <p>
+        <button id="switch" title="Group 0">0</button>
+        <button id="switch" title="Group 1">1</button>
+        <button id="switch" title="Group 2">2</button>
+        <button id="switch" title="Group 3">3</button>
+        <button id="switch" title="Group 4">4</button>
+        <button id="reload" title="Reload"><i class="fa-solid fa-arrows-rotate"></i></button>
+        <button id="shuffle" title="Shuffle"><i class="fa-solid fa-shuffle"></i></button>
+        <button id="download-glb" title="Save Vessel"><i class="fa-solid fa-cloud-arrow-down"></i></button>
+    </p>
+</div>
+
+<div id="overlay">
+    <script src="/js/three/three.min.js"></script>
+    <script src="/js/three/DragControls.js"></script>
+    <script src="/js/three/OrbitControls.js"></script>
+    <script src="/js/three/GLTFLoader.js"></script>
+    <script src="/js/three/GLTFExporter.js"></script>
+    <script src="/js/_variables.min.js"></script>
+    <script src="/js/_config.min.js"></script>
+    <script src="/js/{{ script }}"></script>
+</div>

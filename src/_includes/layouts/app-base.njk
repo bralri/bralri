@@ -91,16 +91,9 @@
         </script>
         <title>{{ title }}</title>
     </head>
-    <body>
-
-          {% include 'layouts/header.njk' %}
-
+    <body style="padding-bottom: 0px;">
           <main>
             {{ content | safe }}
           </main>
-          
-          {% include 'layouts/footer.njk'%}
-
-          <script src="/js/navigation.min.js"></script>
     </body>
 </html>
