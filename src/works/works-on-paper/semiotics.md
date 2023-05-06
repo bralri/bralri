@@ -8,6 +8,8 @@ year: "2021"
 description: "Series of limeted edition prints from 2021"
 thumbnail: "/assets/img/works/works-on-paper/semiotics/post-thumbnail.webp"
 
+link: "/works/works-on-paper/semiotics/"
+
 gallery:
   - url: "/assets/img/works/works-on-paper/semiotics/gallery/diversion.webp"
     title: "Diversion"

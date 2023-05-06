@@ -8,6 +8,8 @@ year: "2020"
 description: "page description"
 thumbnail: "/assets/img/works/thingamajig/post-thumbnail.webp"
 
+link: "/works/thingamajig/"
+
 gallery:
   - url: "/assets/img/works/thingamajig/thingamajig.webp"
     title: "Thingamajig"

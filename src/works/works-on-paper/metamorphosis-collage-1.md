@@ -8,6 +8,8 @@ year: "2022"
 description: "Metamorphosis Collage 1"
 thumbnail: "/assets/img/works/works-on-paper/metamorphosis-collage-1/post-thumbnail.webp"
 
+link: "/works/works-on-paper/metamorphosis-collage-1/"
+
 gallery:
   - url: "/assets/img/works/works-on-paper/metamorphosis-collage-1/gallery/metamorphosis-collage-1-1.webp"
     title: "Works on Paper"

@@ -8,6 +8,8 @@ year: "2020"
 description: "HinterLand is a project which was developed during a month long residency at The SketchUp Residency. A residency where artists use the 3D modelling software, Google SketchUp, for the duration of their term."
 thumbnail: "/assets/img/works/hinterland/post-thumbnail.webp"
 
+link: "/works/hinterland/"
+
 gallery:
   - url: "/assets/img/works/hinterland/gallery/hinterland-1.webp"
     title: "HinterLand"
@@ -60,8 +62,8 @@ gallery:
 
 <br>
 
-<p><i class="fa-solid fa-star-of-life icon-accent"></i> SketchUp Residency <a href="https://www.sidandjim.com/the-sketchup-residency" target="_blank" rel="noopener">Website</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></p>
-<p><i class="fa-solid fa-star-of-life icon-accent"></i> SketchUp Residency <a href="https://www.instagram.com/sketchupresidency/" target="_blank" rel="noopener">Instagram</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></p>
+<p><i class="fa-solid fa-star-of-life icon-accent"></i> SketchUp Residency <a href="https://www.sidandjim.com/the-sketchup-residency">Website</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></p>
+<p><i class="fa-solid fa-star-of-life icon-accent"></i> SketchUp Residency <a href="https://www.instagram.com/sketchupresidency/">Instagram</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></p>
 
 <br>
 <br>

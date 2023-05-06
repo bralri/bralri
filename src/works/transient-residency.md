@@ -8,6 +8,8 @@ year: "2022"
 description: "Transient Residency is an Online Residency Programme via Instagram, supporting creatives who explore the relationship between Art & Technology. During this residency I shared works from a recent work in progress project called <i>Metamorphosis</i>. Metamorphosis being the transformation, change and growth of something, this project is interested in those concepts of change specific to the human condition."
 thumbnail: "/assets/img/works/transient-residency/post-thumbnail.webp"
 
+link: "/works/transient-residency/"
+
 video:
   - url: "/assets/video/works/transient-residency/transient-residency.m4v"
     name: "Metamorphosis"
@@ -35,8 +37,8 @@ video:
 
 <br>
 
-<p><i class="fa-solid fa-star-of-life icon-accent"></i> Transient Residency <a href="https://www.transienttt.co.uk/about" target="_blank" rel="noopener">Website</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></p>
-<p><i class="fa-solid fa-star-of-life icon-accent"></i> Transient Residency <a href="https://www.instagram.com/t.ransienttt/" target="_blank" rel="noopener">Instagram</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></p>
+<p><i class="fa-solid fa-star-of-life icon-accent"></i> Transient Residency <a href="https://www.transienttt.co.uk/about">Website</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></p>
+<p><i class="fa-solid fa-star-of-life icon-accent"></i> Transient Residency <a href="https://www.instagram.com/t.ransienttt/">Instagram</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></p>
 
 <br>
 <br>

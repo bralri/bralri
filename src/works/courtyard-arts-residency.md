@@ -8,6 +8,8 @@ year: "2018"
 description: "Courtyard Arts Residency"
 thumbnail: "/assets/img/works/courtyard-arts-residency/post-thumbnail.webp"
 
+link: "/works/courtyard-arts-residency/"
+
 video:
   - url: "/assets/video/works/courtyard-arts-residency/courtyard-arts-residency.mp4"
     name: "Courtyard Arts Residency"

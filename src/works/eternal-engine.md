@@ -9,6 +9,8 @@ tags: ["featured_work"]
 description: "Eternal Engine is a work-in-progress single channel video collage series, inspired by films like the 1927 science-fiction classic Metropolis, directed by Fritz Lang; as well as films like Snowpiercer, 2013 and Event Horizon, 1997."
 thumbnail: "/assets/img/works/eternal-engine/post-thumbnail.webp"
 
+link: "/works/eternal-engine/"
+
 video:
   - url: "/assets/video/works/eternal-engine/eternal-engine.mp4"
     name: "Eternal Engine"
@@ -48,7 +50,7 @@ gallery:
 
 <br>
 
-<p class="indent">Eternal Engine is a work-in-progress single channel video collage series, inspired by films like the 1927 science-fiction classic <a href="https://www.imdb.com/title/tt0017136/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_metr" target="_blank" rel="noopener">Metropolis</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup>, directed by Fritz Lang; as well as films like <a href="https://www.imdb.com/title/tt1706620/?ref_=nv_sr_srsg_4_tt_4_nm_3_q_snowp" target="_blank" rel="noopener">Snowpiercer</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup>, 2013 and <a href="https://www.imdb.com/title/tt0119081/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_event%2520ho" target="_blank" rel="noopener">Event Horizon</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup>, 1997.</p>
+<p class="indent">Eternal Engine is a work-in-progress single channel video collage series, inspired by films like the 1927 science-fiction classic <a href="https://www.imdb.com/title/tt0017136/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_metr">Metropolis</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup>, directed by Fritz Lang; as well as films like <a href="https://www.imdb.com/title/tt1706620/?ref_=nv_sr_srsg_4_tt_4_nm_3_q_snowp">Snowpiercer</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup>, 2013 and <a href="https://www.imdb.com/title/tt0119081/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_event%2520ho">Event Horizon</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup>, 1997.</p>
 
 <br>
 <br>

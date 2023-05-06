@@ -14,3 +14,9 @@ navToggle.addEventListener('click', () => {
 
     primaryHeader.toggleAttribute('data-overlay');
 })
+
+// const links = document.querySelectorAll('a');
+// for (let i = 0; i < links.length; i++) {
+//     let newText = links[i].textContent.concat(` <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup>`);
+//     console.log(newText);
+// }

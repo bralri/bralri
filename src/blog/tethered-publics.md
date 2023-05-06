@@ -56,9 +56,9 @@ This exhibition will provide a unique opportunity for audiences to experience th
 
 <br>
 
-<p><i class="fa-solid fa-star-of-life icon-accent"></i> <a href="https://tetheredpublics.app/exhibitions/MGekceDcjh2nGvKGhF3ETv" target="_blank" rel="noopener">Tethered Publics</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></p>
+<p><i class="fa-solid fa-star-of-life icon-accent"></i> <a href="https://tetheredpublics.app/exhibitions/MGekceDcjh2nGvKGhF3ETv">Tethered Publics</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></p>
 
-<p><i class="fa-solid fa-star-of-life icon-accent"></i> <a href="https://tetheredpublics.app/download" target="_blank" rel="noopener">Download the app!</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></p>
+<p><i class="fa-solid fa-star-of-life icon-accent"></i> <a href="https://tetheredpublics.app/download">Download the app!</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></p>
 
 <br>
 

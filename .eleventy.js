@@ -1,6 +1,7 @@
 const {DateTime} = require("luxon");
 const pluginRSS = require("@11ty/eleventy-plugin-rss");
 const {minify} = require("terser");
+const externalLinks = require('eleventy-plugin-external-links');
 
 module.exports = (eleventyConfig) => {
 
@@ -16,6 +17,15 @@ module.exports = (eleventyConfig) => {
             // Fail gracefully
             callback(null, code);
         }
+    });
+
+    eleventyConfig.addPlugin(externalLinks, {
+        name: 'external-links',
+        regex: /^(([a-z]+:)|(\/\/))/i,
+        target: "_blank",
+        rel: "noopener",
+        extensions: [".html"],
+        includeDoctype: true,
     });
 
     eleventyConfig.addPlugin(pluginRSS);

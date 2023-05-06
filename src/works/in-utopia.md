@@ -9,6 +9,8 @@ tags: ["featured_work"]
 description: "In Utopia was an installation of a made for my undergraduate degree show group exhibition in 2018. The installation consisted of a series of large sculptures, ceramics, improvised structures and a single channel video mockumentary."
 thumbnail: "/assets/img/works/in-utopia/post-thumbnail.webp"
 
+link: "/works/in-utopia/"
+
 video:
   - url: "/assets/video/works/in-utopia/in-utopia.m4v"
     name: "Yeah, about utopia ..."

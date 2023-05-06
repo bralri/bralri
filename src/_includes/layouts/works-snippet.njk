@@ -1,15 +1,34 @@
 <li>
     <article class="works-snippet">
-        <a href="{{ post.url }}" class="works-snippet__image" aria-label="Read more about {{ post.data.title }}">
-            <div class="works-snippet-img-container">
-                <img class="works-snippet__image post-thumbnail" 
-                    src="{{ post.data.thumbnail }}" 
-                    alt="{{ post.data.gallery[0].alt }}" 
-                    title="{{ post.data.gallery[0].title }}">
-            </div>
+      <a href="{{ post.data.link }}" class="works-snippet__image" aria-label="Read more about {{ post.data.title }}">
+        <div class="works-snippet-img-container">
+          <img class="works-snippet__image post-thumbnail" src="{{ post.data.thumbnail }}" alt="{{ post.data.gallery[0].alt }}" title="{{ post.data.gallery[0].title }}">
+        </div>
+      </a>
+      <h4 class="works-snippet__title" title="{{ post.data.gallery[0].title }}">
+        <a href="{{ post.data.link }}" aria-label="Read more about {{ post.data.title }}" class="postURL" id="post-link">
+          {{ post.data.title }} {{ post.data.year }}
         </a>
-        <h4 class="works-snippet__title" title="{{ post.data.gallery[0].title }}" >
-            <a href="{{ post.url }}"  aria-label="Read more about {{ post.data.title }}" class="postURL">{{ post.data.title }} {{ post.data.year }}</a>
-        </h4>
+      </h4>
     </article>
 </li>
+  
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var links = document.querySelectorAll(".postURL");
+        for (var i = 0; i < links.length; i++) {
+            var link = links[i];
+            var href = link.getAttribute("href");
+            if (href.indexOf("http://") === 0 || href.indexOf("https://") === 0) {
+                var sup = document.createElement("sup");
+                var icon = document.createElement("i");
+                icon.classList.add("fa-solid", "fa-arrow-up-right-from-square", "icon-grey");
+                sup.appendChild(icon);
+                var h4 = link.closest("h4");
+                if (h4.querySelector("sup") === null) {
+                    h4.appendChild(sup);
+                }
+            }
+        }
+    });
+</script>

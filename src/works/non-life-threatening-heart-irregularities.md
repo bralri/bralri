@@ -9,6 +9,8 @@ tags: ["featured_work"]
 description: "non life-threatening heart irregularities, 2017."
 thumbnail: "/assets/img/works/non-life-threatening-heart-irregularities/post-thumbnail.webp"
 
+link: "/works/non-life-threatening-heart-irregularities/"
+
 gallery:
   - url: "/assets/img/works/non-life-threatening-heart-irregularities/gallery/non-life-threatening-heart-irregularities-1.webp"
     title: "non life-threatening heart irregularities"

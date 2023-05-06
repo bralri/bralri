@@ -9,6 +9,8 @@ tags: ["featured_work"]
 description: "Jennifer is in Paradise was a group exhibition"
 thumbnail: "/assets/img/works/jennifer-is-in-paradise/post-thumbnail.webp"
 
+link: "/works/jennifer-is-in-paradise/"
+
 gallery:
   - url: "/assets/img/works/jennifer-is-in-paradise/gallery/jennifer-is-in-paradise-1.webp"
     title: "Thingamajig, 2020"

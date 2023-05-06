@@ -31,26 +31,27 @@ h1 {
 
         a {
             font-family: fontItalic;
-            text-decoration: underline;
-            text-decoration-style: solid;
-            text-decoration-thickness: 2px;
-            text-decoration-color: $accent;
-            text-underline-position: under;
+            text-decoration: none;
+            // text-decoration-style: solid;
+            // text-decoration-thickness: 2px;
+            // text-decoration-color: $accent;
+            // text-underline-position: under;
         }
 }
 
 h2 {
     font-family: fontRegular;
-    color: $white;
+    color: $grey;
     line-height: 1.1;
     font-size: $--fs-400;
         a {
             font-family: fontItalic;
-            text-decoration: underline;
-            text-decoration-style: solid;
-            text-decoration-thickness: 2px;
-            text-decoration-color: $accent;
-            text-underline-position: under;
+            color: $grey;
+            text-decoration: none;
+            // text-decoration-style: solid;
+            // text-decoration-thickness: 2px;
+            // text-decoration-color: $accent;
+            // text-underline-position: under;
         }
 }
 
@@ -61,11 +62,11 @@ h3 {
     font-size: $--fs-500;
         a {
             font-family: fontItalic;
-            text-decoration: underline;
-            text-decoration-style: solid;
-            text-decoration-thickness: 2px;
-            text-decoration-color: $accent;
-            text-underline-position: under;
+            text-decoration: none;
+            // text-decoration-style: solid;
+            // text-decoration-thickness: 2px;
+            // text-decoration-color: $accent;
+            // text-underline-position: under;
         }
 }
 
@@ -76,12 +77,12 @@ h4 {
     font-size: $--fs-400;
         a {
             font-family: fontItalic;
-            text-decoration: underline;
-            text-decoration-style: solid;
-            text-decoration-thickness: 2px;
-            text-decoration-color: $accent;
-            text-underline-position: under;
-            line-height: 1.5;
+            text-decoration: none;
+            // text-decoration-style: solid;
+            // text-decoration-thickness: 2px;
+            // text-decoration-color: $accent;
+            // text-underline-position: under;
+            // line-height: 1.5;
         }
 }
 
@@ -93,11 +94,11 @@ p {
 
         a {
             font-family: fontItalic;
-            text-decoration: underline;
-            text-decoration-style: solid;
-            text-decoration-thickness: 2px;
-            text-decoration-color: $accent;
-            text-underline-position: under;
+            text-decoration: none;
+            // text-decoration-style: solid;
+            // text-decoration-thickness: 2px;
+            // text-decoration-color: $accent;
+            // text-underline-position: under;
         }
 }
 
@@ -120,14 +121,14 @@ a {
     text-decoration: none;
     color: $white;
 
-    text-decoration-color: $accent;
-    text-underline-position: under;
+    // text-decoration-color: $accent;
+    // text-underline-position: under;
 
     transition: all 0.3s ease 0s;
 
         &:hover {
             color: $grey;
-            text-decoration-color: $accent;
+            // text-decoration-color: $accent;
             transition: all 0.3s ease 0s;
         }
 }
