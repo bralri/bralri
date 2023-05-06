@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/works/test/"
+  to = "/works/cloud-shelter/"
+  status = 301
+  force = false
