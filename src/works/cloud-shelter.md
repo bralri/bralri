@@ -12,8 +12,6 @@ gallery:
   - url: "/assets/img/works/cloud-shelter/cloud.webp"
     title: "Landing space from the launch of Cloud Shelter"
     alt: "A 3D model of a group of translucent clouds rotating in a foggy grey sky"
-
-permalink: "/cloud-shelter/"
 ---
 
 <figure class="main-article__figure">
