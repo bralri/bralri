@@ -20,7 +20,7 @@ function sceneSetup() {
     scene = new THREE.Scene();
     scene.background = new THREE.Color(0x000000);
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000);
-    if (window.innerWidth < 800) {
+    if (window.innerWidth <= 800) {
         camera.position.z = 12;
     } else {
         camera.position.z = 10;
@@ -144,7 +144,12 @@ function loadAssets() {
             // Set position based on grid index
             const x = (col - (numCols - 1) / 2) * spacing;
             const y = (row - (numRows - 1) / 2) * spacing;
-            object.position.set(x, y, 0);
+
+            if (window.innerWidth <= 800) {
+                object.position.set(x, y + 1, 0);
+            } else {
+                object.position.set(x, y, 0);
+            }
 
             // Set random rotation
             object.rotation.y = Math.random() * 4 * Math.PI;
