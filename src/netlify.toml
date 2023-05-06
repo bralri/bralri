@@ -1,5 +1,5 @@
 [[redirects]]
   from = "/works/test/"
-  to = "/works/cloud-shelter/"
-  status = 301
-  force = false
+  to = "https://cloudshelter.space"
+  status = 200
+  force = true
