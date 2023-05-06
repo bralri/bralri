@@ -1,18 +1,18 @@
-let scene, camera, renderer, dragControls, orbitControls, object, numObjects;
+let scene, camera, renderer, dragControls, orbitControls;
+let object, numObjects, numRows, numCols, uuid, uuidNumber;
 const manager = new THREE.LoadingManager();
 let modelArray = [];
 
 let sceneReady = false, exitRoom = false;
 
 const urlParams = new URLSearchParams(window.location.search);
-let groupNumb = parseInt(urlParams.get('group')) > vesselAssets.length ? '0' : parseInt(urlParams.get('group')) <= vesselAssets.length ? parseInt(urlParams.get('group')) : 0;
+let groupNumb = parseInt(urlParams.get('id')) > vesselAssets.length ? '0' : parseInt(urlParams.get('id')) <= vesselAssets.length ? parseInt(urlParams.get('id')) : 0;
 let currentGroup = vesselAssets[groupNumb];
 
 const btn = document.getElementById('download-glb');
 const loading = document.getElementById('loading');
 const overlay = document.getElementById('overlay');
-const reloadButton = document.getElementById('reload');
-const switchButton = document.querySelectorAll('#switch');
+const resetCameraButton = document.getElementById('reset');
 const shuffleButton = document.getElementById('shuffle');
 
 function sceneSetup() {
@@ -20,7 +20,11 @@ function sceneSetup() {
     scene = new THREE.Scene();
     scene.background = new THREE.Color(0x000000);
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000);
-    camera.position.z = 10;
+    if (window.innerWidth < 800) {
+        camera.position.z = 12;
+    } else {
+        camera.position.z = 10;
+    }
 
     // Renderer
     renderer = new THREE.WebGLRenderer({
@@ -33,14 +37,16 @@ function sceneSetup() {
     renderer.outputEncoding = THREE.sRGBEncoding;
     document.body.appendChild(renderer.domElement);
 
-    window.addEventListener('resize', onWindowResize);
-
     // Controls
+    // Orbit
     orbitControls = new THREE.OrbitControls(camera, renderer.domElement);
-    orbitControls.maxDistance = 10;
+    orbitControls.update();
+    orbitControls.addEventListener('change', render)
+    orbitControls.maxDistance = 15;
     orbitControls.enablePan = true;
     orbitControls.panSpeed = 0.5;
 
+    // Drag
     dragControls = new THREE.DragControls(modelArray, camera, renderer.domElement);
     dragControls.addEventListener('dragstart', function() {
         orbitControls.enabled = false;
@@ -53,6 +59,8 @@ function sceneSetup() {
     const ambientLight = new THREE.AmbientLight(0xffffff);
     scene.add(ambientLight);
 
+    window.addEventListener('resize', onWindowResize);
+
     // Buttons
     // Download vessel
     btn.addEventListener('click', downloadVessel);
@@ -60,70 +68,60 @@ function sceneSetup() {
     // Reload Scene
     document.body.addEventListener('keydown', function(event) {
         if (event.which == 82) { // R
-            reloadScene();
+            resetCamera();
         }
     }, false);
-    reloadButton.addEventListener('click', reloadScene, false);
+    resetCameraButton.addEventListener('click', resetCamera, false);
 
-    // Switch group
-    for (let i = 0; i < switchButton.length; i++) {
-        switchButton[i].addEventListener('click', function() {
-            groupNumb = switchButton[i].textContent || switchButton[i].innerText;
-        }, false)
+    uuid = generateUUID();
+    uuidNumber = parseInt(uuid.replace(/\D+/g, '').substring(0, 5));
 
-        switchButton[i].onclick = function() {
-            overlay.classList.add('fade');
-            loading.classList.remove('fade');
-            setTimeout(function () {
-                window.location.href = `?group=${groupNumb}`;
-            }, 1200)
-        }
-    }
-
-    shuffleButton.addEventListener('click', function() {
-        groupNumb = 5;
-    }, false)
     shuffleButton.onclick = function() {
         overlay.classList.add('fade');
         loading.classList.remove('fade');
         setTimeout(function () {
-            window.location.href = `?group=${groupNumb}`;
+            window.location.href = `?id=${uuidNumber}`;
         }, 1200)
     }
 
+    overlay.classList.remove('loading');
+
     sceneReady = true;
     exitRoom = true;
-
-    overlay.classList.remove('loading');
 }
 
+function generateUUID() {
+    var d = new Date().getTime();
+    if (window.performance && typeof window.performance.now === "function") {
+      d += performance.now(); // use high-precision timer if available
+    }
+    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      var r = (d + Math.random() * 16) % 16 | 0;
+      d = Math.floor(d / 16);
+      return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+    });
+    return uuid;
+  }
+
 function loadAssets() {
+
     // Define grid parameters
     let spacing = 3;
-    let numRows = 3;
-    let numCols = Math.ceil(numObjects / numRows);
 
-    if (groupNumb !== 5) {
-        numObjects = currentGroup.length;
-    } else {
-        for (let i = currentGroup.length - 1; i > 0; i--) {
+    for (let i = currentGroup.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [currentGroup[i], currentGroup[j]] = [currentGroup[j], currentGroup[i]];
         }
 
-        currentGroup = currentGroup.slice(0, 18);
-        numObjects = currentGroup.length;
-    }
+    currentGroup = currentGroup.slice(0, 15);
+    numObjects = currentGroup.length;
 
-    const aspectRatio = window.innerWidth / window.innerHeight;
-
-    if (window.innerWidth < 768) { // adjust grid parameters for mobile screens
-        spacing = 2;
-        numRows = Math.max(2, Math.ceil(Math.sqrt(numObjects) / aspectRatio));
-        numCols = Math.ceil(numObjects / numRows);
+    if (window.innerWidth < 800) { // adjust grid parameters for mobile screens
+        numRows = 5;
+        numCols = 3;
     } else {
-        numRows = Math.max(3, Math.ceil(Math.sqrt(numObjects) / aspectRatio));
-        numCols = Math.ceil(numObjects / numRows);
+        numRows = 3;
+        numCols = 5;
     }
 
     // Shuffle array
@@ -148,38 +146,38 @@ function loadAssets() {
             const y = (row - (numRows - 1) / 2) * spacing;
             object.position.set(x, y, 0);
 
-            if (window.innerWidth < 768) {
-                object.position.set(x, y + 1, 0);
-            }
-
             // Set random rotation
             object.rotation.y = Math.random() * 4 * Math.PI;
 
-            scene.add(object);
+            scene.add(object)
             modelArray.push(object);
         })
     }
 }
 
-
 function downloadVessel() {
     const exporter = new THREE.GLTFExporter();
+
+    const options = {
+        onlyVisible: true,
+        binary: true
+    };
     exporter.parse(
         scene,
         function(result) {
-            saveArrayBuffer(result, 'Vessel.glb')
+            saveArrayBuffer(result, 'vessel.glb')
         },
-        {
-            binary: true
-        }
+        function (error) {
+
+            console.log('An error happened during parsing', error);
+
+        },
+        options
     )
 }
 
-function saveArrayBuffer(buffer, fileName) {
-    save(new Blob([buffer], {type: 'application/octet-stream'}), fileName);
-}
-
 const link = document.createElement('a');
+link.style.display = 'none';
 document.body.appendChild(link);
 
 function save(blob, fileName) {
@@ -188,19 +186,29 @@ function save(blob, fileName) {
     link.click();
 }
 
-function reloadScene() {
-    window.location.reload();
+function saveArrayBuffer(buffer, fileName) {
+    save(new Blob([buffer], {type: 'application/octet-stream'}), fileName);
 }
 
-function animate() {
-    requestAnimationFrame(animate);
-    renderer.render(scene, camera);
+function resetCamera() {
+    orbitControls.reset();
 }
 
 function onWindowResize() {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
+
+    render();
+}
+
+function animate() {
+    requestAnimationFrame(animate);
+    render();
+}
+
+function render() {
+    renderer.render(scene, camera);
 }
 
 window.onload = function() {
@@ -211,5 +219,5 @@ window.onload = function() {
         loading.classList.add('fade');
     }, 1000);
 
-    console.log(`Group ${groupNumb}: Ready`);
+    console.log(`Build-A-Vessel: Ready`);
 }

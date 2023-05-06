@@ -18,7 +18,7 @@
 
 #loader {
     display: block;
-    position: relative;
+    position: absolute;
     left: 50%;
     top: 50%;
     width: 125px;
@@ -29,6 +29,8 @@
     border-top-color: $grey;
     -webkit-animation: spin 2s linear infinite;
     animation: spin 1.5s linear infinite;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
 }
 @-webkit-keyframes spin {
     0%   {
@@ -97,12 +99,15 @@
 }
 
 #buttons {
+    margin: 0;
     position: absolute;
-    bottom: 0;
-    left: 0;
     z-index: 9999;
     display: flex;
-    padding: 15px 20px;
+
+    left: 50%;
+    bottom: 15px;
+    transform: translate(-50%);
+    -ms-transform: translate(-50%);
 
         button {
 
@@ -127,24 +132,6 @@
         }
 }
 
-#switch {
+#reset, #download-glb, #shuffle {
     width: 50px;
-}
-
-#reload {
-    width: 50px;
-}
-
-#download-glb {
-    width: 50px;
-}
-
-#shuffle {
-    width: 50px;
-}
-
-@media (max-width: 50em) {
-    #buttons {
-        left: 15px;
-    }
 }
