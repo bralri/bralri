@@ -12,6 +12,6 @@
 *.vsix
 
 node_modules
-public
+/public
 template-blog.md
 template-works.md

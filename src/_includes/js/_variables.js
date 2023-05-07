@@ -1,4 +1,4 @@
-const vessels = [
+export const vessels = [
     {
         // Group 1
         vessel0: "/assets/models/vessels/1/0.glb",

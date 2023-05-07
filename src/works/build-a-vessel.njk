@@ -24,13 +24,15 @@ script: "vessels.min.js"
     </p>
 </div>
 
-<div id="overlay">
-    <script src="/js/three/three.min.js"></script>
-    <script src="/js/three/DragControls.js"></script>
-    <script src="/js/three/OrbitControls.js"></script>
-    <script src="/js/three/GLTFLoader.js"></script>
-    <script src="/js/three/GLTFExporter.js"></script>
-    <script src="/js/_variables.min.js"></script>
-    <script src="/js/_config.min.js"></script>
-    <script src="/js/{{ script }}"></script>
-</div>
+<script
+    async="async"
+    src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+<script type="importmap">
+    {
+        "imports": {
+            "three": "/js/three/three.module.min.js",
+            "three/": "/js/three/"
+        }
+    }
+</script>
+<script type="module" src="/js/{{ script }}"></script>

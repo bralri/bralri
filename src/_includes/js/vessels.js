@@ -1,17 +1,25 @@
+import * as THREE from 'three';
+import {GLTFLoader} from 'three/GLTFLoader.js';
+import {GLTFExporter} from 'three/GLTFExporter.js';
+import {DragControls} from 'three/DragControls.js';
+import {OrbitControls} from 'three/OrbitControls.js';
+
+import { vesselAssets } from '../js/_config.min.js';
+
 let scene, camera, renderer, dragControls, orbitControls;
-let object, numObjects, numRows, numCols, uuid, uuidNumber;
+let object, numObjects, numRows, numCols;
 const manager = new THREE.LoadingManager();
-let modelArray = [];
+let modelArray = []; const uuidArray = [];
 
 let sceneReady = false, exitRoom = false;
 
 const urlParams = new URLSearchParams(window.location.search);
 let groupNumb = parseInt(urlParams.get('id')) > vesselAssets.length ? '0' : parseInt(urlParams.get('id')) <= vesselAssets.length ? parseInt(urlParams.get('id')) : 0;
+const groupID = window.location.href.split('=').pop();
 let currentGroup = vesselAssets[groupNumb];
 
 const btn = document.getElementById('download-glb');
 const loading = document.getElementById('loading');
-const overlay = document.getElementById('overlay');
 const resetCameraButton = document.getElementById('reset');
 const shuffleButton = document.getElementById('shuffle');
 
@@ -34,12 +42,11 @@ function sceneSetup() {
     renderer.compile(scene, camera);
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.outputEncoding = THREE.sRGBEncoding;
     document.body.appendChild(renderer.domElement);
 
     // Controls
     // Orbit
-    orbitControls = new THREE.OrbitControls(camera, renderer.domElement);
+    orbitControls = new OrbitControls(camera, renderer.domElement);
     orbitControls.update();
     orbitControls.addEventListener('change', render)
     orbitControls.maxDistance = 15;
@@ -47,7 +54,7 @@ function sceneSetup() {
     orbitControls.panSpeed = 0.5;
 
     // Drag
-    dragControls = new THREE.DragControls(modelArray, camera, renderer.domElement);
+    dragControls = new DragControls(modelArray, camera, renderer.domElement);
     dragControls.addEventListener('dragstart', function() {
         orbitControls.enabled = false;
     });
@@ -73,35 +80,24 @@ function sceneSetup() {
     }, false);
     resetCameraButton.addEventListener('click', resetCamera, false);
 
-    uuid = generateUUID();
-    uuidNumber = parseInt(uuid.replace(/\D+/g, '').substring(0, 5));
+    generateUUID();
 
     shuffleButton.onclick = function() {
-        overlay.classList.add('fade');
         loading.classList.remove('fade');
         setTimeout(function () {
-            window.location.href = `?id=${uuidNumber}`;
+            window.location.href = `?id=${uuidArray[0]}`;
         }, 1200)
     }
-
-    overlay.classList.remove('loading');
 
     sceneReady = true;
     exitRoom = true;
 }
 
 function generateUUID() {
-    var d = new Date().getTime();
-    if (window.performance && typeof window.performance.now === "function") {
-      d += performance.now(); // use high-precision timer if available
-    }
-    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-      var r = (d + Math.random() * 16) % 16 | 0;
-      d = Math.floor(d / 16);
-      return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
-    });
+    const uuid = Math.floor(Math.random() * 100000);
+    uuidArray.push(uuid);
     return uuid;
-  }
+}
 
 function loadAssets() {
 
@@ -131,7 +127,7 @@ function loadAssets() {
     }
 
     // Load models
-    const loader = new THREE.GLTFLoader(manager);
+    const loader = new GLTFLoader(manager);
     for (let i = 0; i < numObjects; i++) {
 
         const obj = currentGroup[i];
@@ -161,8 +157,7 @@ function loadAssets() {
 }
 
 function downloadVessel() {
-    const exporter = new THREE.GLTFExporter();
-
+    const exporter = new GLTFExporter();
     const options = {
         onlyVisible: true,
         binary: true
@@ -170,12 +165,10 @@ function downloadVessel() {
     exporter.parse(
         scene,
         function(result) {
-            saveArrayBuffer(result, 'vessel.glb')
+            saveArrayBuffer(result, `vessel-${groupID}.glb`)
         },
         function (error) {
-
             console.log('An error happened during parsing', error);
-
         },
         options
     )
@@ -224,5 +217,5 @@ window.onload = function() {
         loading.classList.add('fade');
     }, 1000);
 
-    console.log(`Build-A-Vessel: Ready`);
+    console.log(`Build-A-Vessel-${groupID} Ready`);
 }

@@ -1,6 +1,8 @@
+import {vessels} from "../js/_variables.min.js";
+
 const v = vessels[0];
 
-const vesselAssets = [
+export const vesselAssets = [
     [
         {
             src: v.vessel0
