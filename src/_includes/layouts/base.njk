@@ -33,6 +33,7 @@
 
         <link rel="stylesheet" href="{{ '/css/main.css' | url }}">
         <link rel="stylesheet" href="/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css">
 
         <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon-180x180.png">
         <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-touch-icon-57x57.png">
@@ -102,5 +103,7 @@
           {% include 'layouts/footer.njk'%}
 
           <script src="/js/navigation.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+          <script>hljs.highlightAll();</script>
     </body>
 </html>

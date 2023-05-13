@@ -102,11 +102,11 @@ p {
         }
 }
 
-span {
-    font-family: fontItalic;
-    color: $white;
-    font-size: $--fs-400;
-}
+// span {
+//     font-family: fontItalic;
+//     color: $white;
+//     font-size: $--fs-400;
+// }
 
 figcaption {
     font-family: fontItalic;
@@ -156,4 +156,8 @@ sub {
     display: inline-block;
     vertical-align: sub; 
     font-size: $--fs-500;
+}
+
+code {
+    color: $white;
 }

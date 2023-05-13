@@ -14,7 +14,9 @@ let modelArray = []; const uuidArray = [];
 let sceneReady = false, exitRoom = false;
 
 const urlParams = new URLSearchParams(window.location.search);
-let groupNumb = parseInt(urlParams.get('id')) > vesselAssets.length ? '0' : parseInt(urlParams.get('id')) <= vesselAssets.length ? parseInt(urlParams.get('id')) : 0;
+let groupNumb = parseInt(urlParams.get('id')) > vesselAssets.length ? '0' : 
+                parseInt(urlParams.get('id')) <= vesselAssets.length ? parseInt(urlParams.get('id')) : 
+                0;
 const groupID = window.location.href.split('=').pop();
 let currentGroup = vesselAssets[groupNumb];
 
@@ -107,7 +109,7 @@ function loadAssets() {
     for (let i = currentGroup.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [currentGroup[i], currentGroup[j]] = [currentGroup[j], currentGroup[i]];
-        }
+    }
 
     currentGroup = currentGroup.slice(0, 15);
     numObjects = currentGroup.length;
