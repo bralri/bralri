@@ -4,14 +4,15 @@ import {GLTFExporter} from 'three/GLTFExporter.js';
 import {DragControls} from 'three/DragControls.js';
 import {OrbitControls} from 'three/OrbitControls.js';
 
-import { vesselAssets } from '../js/_config.min.js';
+import {vesselAssets} from '../js/_config.min.js';
 
 let scene, camera, renderer, dragControls, orbitControls;
 let object, numObjects, numRows, numCols;
 const manager = new THREE.LoadingManager();
-let modelArray = []; const uuidArray = [];
+const modelArray = []; 
+const uuidArray = [];
 
-let sceneReady = false, exitRoom = false;
+let sceneReady = false;
 
 const urlParams = new URLSearchParams(window.location.search);
 let groupNumb = parseInt(urlParams.get('id')) > vesselAssets.length ? '0' : 
@@ -26,7 +27,6 @@ const resetCameraButton = document.getElementById('reset');
 const shuffleButton = document.getElementById('shuffle');
 
 function sceneSetup() {
-    // Scene
     scene = new THREE.Scene();
     scene.background = new THREE.Color(0x000000);
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000);
@@ -36,7 +36,6 @@ function sceneSetup() {
         camera.position.z = 10;
     }
 
-    // Renderer
     renderer = new THREE.WebGLRenderer({
         alpha: true,
         antialias: true 
@@ -46,8 +45,6 @@ function sceneSetup() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
 
-    // Controls
-    // Orbit
     orbitControls = new OrbitControls(camera, renderer.domElement);
     orbitControls.update();
     orbitControls.addEventListener('change', render)
@@ -55,7 +52,6 @@ function sceneSetup() {
     orbitControls.enablePan = true;
     orbitControls.panSpeed = 0.5;
 
-    // Drag
     dragControls = new DragControls(modelArray, camera, renderer.domElement);
     dragControls.addEventListener('dragstart', function() {
         orbitControls.enabled = false;
@@ -64,17 +60,13 @@ function sceneSetup() {
         orbitControls.enabled = true;
     });
 
-    // Lighting
     const ambientLight = new THREE.AmbientLight(0xffffff);
     scene.add(ambientLight);
 
     window.addEventListener('resize', onWindowResize);
 
-    // Buttons
-    // Download vessel
-    btn.addEventListener('click', downloadVessel);
 
-    // Reload Scene
+    btn.addEventListener('click', downloadVessel);
     document.body.addEventListener('keydown', function(event) {
         if (event.which == 82) { // R
             resetCamera();
@@ -92,7 +84,6 @@ function sceneSetup() {
     }
 
     sceneReady = true;
-    exitRoom = true;
 }
 
 function generateUUID() {
@@ -103,7 +94,6 @@ function generateUUID() {
 
 function loadAssets() {
 
-    // Define grid parameters
     let spacing = 3;
 
     for (let i = currentGroup.length - 1; i > 0; i--) {
@@ -114,7 +104,7 @@ function loadAssets() {
     currentGroup = currentGroup.slice(0, 15);
     numObjects = currentGroup.length;
 
-    if (window.innerWidth < 800) { // adjust grid parameters for mobile screens
+    if (window.innerWidth < 800) {
         numRows = 5;
         numCols = 3;
     } else {
@@ -122,13 +112,11 @@ function loadAssets() {
         numCols = 5;
     }
 
-    // Shuffle array
     for (let i = numObjects - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [currentGroup[i], currentGroup[j]] = [currentGroup[j], currentGroup[i]];
     }
 
-    // Load models
     const loader = new GLTFLoader(manager);
     for (let i = 0; i < numObjects; i++) {
 
@@ -136,10 +124,9 @@ function loadAssets() {
 
         loader.load(obj.src, function (glb) {
             object = glb.scene;
+
             const row = Math.floor(i / numCols);
             const col = i % numCols;
-
-            // Set position based on grid index
             const x = (col - (numCols - 1) / 2) * spacing;
             const y = (row - (numRows - 1) / 2) * spacing;
 
@@ -149,7 +136,6 @@ function loadAssets() {
                 object.position.set(x, y, 0);
             }
 
-            // Set random rotation
             object.rotation.y = Math.random() * 4 * Math.PI;
 
             scene.add(object)

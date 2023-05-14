@@ -4,7 +4,7 @@ type: "BlogPosting"
 date: 2023-05-04
 year: "2023"
 tags: ["post"]
-description: "Augmented Reality Exhibition!"
+description: "Augmented reality exhibition!"
 thumbnail: "/assets/img/blog/tethered-publics/post-thumbnail.webp"
 
 video:
@@ -16,7 +16,13 @@ video:
     duration: "PT00M31S"
 ---
 
-<p class="indent">I am excited to announce that I will be showcasing a new collection of photogrammetry models titled "Amalgamations" in Tethered Public's latest augmented reality (AR) exhibition. These models represent a technogenic vision of the future, where waste, refuse, and detritus are repurposed and amalgamated into mesmerizing conglomerates of man-made materials.
+<p><i class="fa-solid fa-star-of-life icon-accent"></i> <a href="https://tetheredpublics.app/exhibitions/MGekceDcjh2nGvKGhF3ETv">Tethered Publics</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></p>
+
+<p><i class="fa-solid fa-star-of-life icon-accent"></i> <a href="https://tetheredpublics.app/download">Download the app</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup> to see the show!</p>
+
+<br>
+
+<p>I am excited to announce that I will be showcasing a new collection of photogrammetry models titled "Amalgamations" in Tethered Public's latest augmented reality (AR) exhibition. These models represent a technogenic vision of the future, where waste, refuse, and detritus are repurposed and amalgamated into mesmerizing conglomerates of man-made materials.
 
 Using the process of photogrammetry, I have captured the intricate details of these "fantasized future fossils" made up of an assortment of everyday waste materials that we consume on a daily basis.
 
@@ -27,7 +33,7 @@ This exhibition will provide a unique opportunity for audiences to experience th
 <p>Tethered Publics statement:</p>
 
 <blockquote>
-<p class="indent">"Step into the captivating world of augmented reality (AR) art through the innovative *Home Collection 2023* exhibition, curated by Tethered Publics. As emerging technologies transform how we perceive and engage with art, this exhibition strives to re-envision concepts of collecting and displaying items within domestic environments, seamlessly connecting physical and digital manifestations.</p>
+<p>"Step into the captivating world of augmented reality (AR) art through the innovative *Home Collection 2023* exhibition, curated by Tethered Publics. As emerging technologies transform how we perceive and engage with art, this exhibition strives to re-envision concepts of collecting and displaying items within domestic environments, seamlessly connecting physical and digital manifestations.</p>
 
 <br>
 
@@ -53,12 +59,6 @@ This exhibition will provide a unique opportunity for audiences to experience th
 
 <cite>~ Tethered Publics</cite>
 </blockquote>
-
-<br>
-
-<p><i class="fa-solid fa-star-of-life icon-accent"></i> <a href="https://tetheredpublics.app/exhibitions/MGekceDcjh2nGvKGhF3ETv">Tethered Publics</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></p>
-
-<p><i class="fa-solid fa-star-of-life icon-accent"></i> <a href="https://tetheredpublics.app/download">Download the app!</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></p>
 
 <br>
 

@@ -1,5 +1,4 @@
-export const vessels = [
-    {
+export const vesselPaths = {
         // Group 1
         vessel0: "/assets/models/vessels/1/0.glb",
         vessel1: "/assets/models/vessels/1/1.glb",
@@ -90,5 +89,4 @@ export const vessels = [
         vessel78: "/assets/models/vessels/5/11.glb",
         vessel79: "/assets/models/vessels/5/12.glb",
         vessel80: "/assets/models/vessels/5/13.glb",
-    }
-]
+};

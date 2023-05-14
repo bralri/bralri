@@ -1,6 +1,4 @@
-import {vessels} from "../js/_variables.min.js";
-
-const v = vessels[0];
+import {vesselPaths as v} from "../js/_variables.min.js";
 
 export const vesselAssets = [
     [
