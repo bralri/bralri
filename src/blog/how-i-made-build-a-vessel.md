@@ -431,7 +431,7 @@ function loadAssets() {
 </figure>
 
 <figure>
-    <img src="/assets/img/blog/how-i-made-build-a-vessel/vertical-grid.png" alt="" title="Vessel parts loaded in a grid vertical pattern" loading="lazy" style="width: 50%; height: 100%">
+    <img src="/assets/img/blog/how-i-made-build-a-vessel/vertical-grid.png" alt="" title="Vessel parts loaded in a grid vertical pattern" loading="lazy" style="width: 100%;">
         <figcaption>
             Vessel parts loaded in a vertical grid pattern
         </figcaption>
