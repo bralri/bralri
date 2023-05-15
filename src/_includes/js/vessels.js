@@ -12,8 +12,6 @@ const manager = new THREE.LoadingManager();
 const modelArray = []; 
 const uuidArray = [];
 
-let sceneReady = false;
-
 const urlParams = new URLSearchParams(window.location.search);
 let groupNumb = parseInt(urlParams.get('id')) > vesselAssets.length ? '0' : 
                 parseInt(urlParams.get('id')) <= vesselAssets.length ? parseInt(urlParams.get('id')) : 
@@ -21,12 +19,16 @@ let groupNumb = parseInt(urlParams.get('id')) > vesselAssets.length ? '0' :
 const groupID = window.location.href.split('=').pop();
 let currentGroup = vesselAssets[groupNumb];
 
-const btn = document.getElementById('download-glb');
 const loading = document.getElementById('loading');
+const downloadButton = document.getElementById('download-glb');
 const resetCameraButton = document.getElementById('reset');
 const shuffleButton = document.getElementById('shuffle');
+const imageScreenshotButton = document.getElementById('save-img');
+
+let sceneReady = false;
 
 function sceneSetup() {
+
     scene = new THREE.Scene();
     scene.background = new THREE.Color(0x000000);
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000);
@@ -38,7 +40,8 @@ function sceneSetup() {
 
     renderer = new THREE.WebGLRenderer({
         alpha: true,
-        antialias: true 
+        antialias: true,
+        preserveDrawingBuffer: true
     });
     renderer.compile(scene, camera);
     renderer.setPixelRatio(window.devicePixelRatio);
@@ -47,7 +50,7 @@ function sceneSetup() {
 
     orbitControls = new OrbitControls(camera, renderer.domElement);
     orbitControls.update();
-    orbitControls.addEventListener('change', render)
+    orbitControls.addEventListener('change', animate)
     orbitControls.maxDistance = 15;
     orbitControls.enablePan = true;
     orbitControls.panSpeed = 0.5;
@@ -60,25 +63,24 @@ function sceneSetup() {
         orbitControls.enabled = true;
     });
 
-    const ambientLight = new THREE.AmbientLight(0xffffff);
-    scene.add(ambientLight);
-
     window.addEventListener('resize', onWindowResize);
 
+    downloadButton.addEventListener('click', downloadVessel);
 
-    btn.addEventListener('click', downloadVessel);
-    document.body.addEventListener('keydown', function(event) {
-        if (event.which == 82) { // R
+    imageScreenshotButton.addEventListener('click', saveAsImage);
+
+    resetCameraButton.addEventListener('click', resetCamera, false);
+    document.body.addEventListener('keydown', (event) => {
+        if (event.code == "KeyR") {
             resetCamera();
         }
     }, false);
-    resetCameraButton.addEventListener('click', resetCamera, false);
 
     generateUUID();
 
     shuffleButton.onclick = function() {
         loading.classList.remove('fade');
-        setTimeout(function () {
+        setTimeout(() => {
             window.location.href = `?id=${uuidArray[0]}`;
         }, 1200)
     }
@@ -87,6 +89,7 @@ function sceneSetup() {
 }
 
 function generateUUID() {
+
     const uuid = Math.floor(Math.random() * 100000);
     uuidArray.push(uuid);
     return uuid;
@@ -145,6 +148,7 @@ function loadAssets() {
 }
 
 function downloadVessel() {
+
     const exporter = new GLTFExporter();
     const options = {
         onlyVisible: true,
@@ -161,47 +165,74 @@ function downloadVessel() {
         options
     )
 }
-
-const link = document.createElement('a');
-link.style.display = 'none';
-document.body.appendChild(link);
-
 function save(blob, fileName) {
+
+    const link = document.createElement('a');
+    document.body.appendChild(link);
     link.href = URL.createObjectURL(blob);
     link.download = fileName;
     link.click();
+    document.body.removeChild(link);
 }
-
 function saveArrayBuffer(buffer, fileName) {
+
     save(new Blob([buffer], {type: 'application/octet-stream'}), fileName);
 }
 
+function saveAsImage() {
+
+    let imgData;
+
+    try {
+        const strMime = "image/jpeg";
+        const strDownloadMime = "image/octet-stream";
+        imgData = renderer.domElement.toDataURL(strMime);
+        saveFile(imgData.replace(strMime, strDownloadMime), `vessel-${groupID}.jpg`);
+    } catch (e) {
+        console.log(e);
+        return;
+    }
+}
+function saveFile(strData, fileName) {
+
+    const link = document.createElement('a');
+    if (typeof link.download === 'string') {
+        document.body.appendChild(link);
+        link.download = fileName;
+        link.href = strData;
+        link.click();
+        document.body.removeChild(link);
+    } else {
+        location.replace(uri);
+    };
+}
+
 function resetCamera() {
+
     orbitControls.reset();
 }
 
 function onWindowResize() {
+
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
 
-    render();
+    animate();
 }
 
 function animate() {
-    requestAnimationFrame(animate);
-    render();
-}
 
-function render() {
+    requestAnimationFrame(animate);
     renderer.render(scene, camera);
 }
 
 window.onload = function() {
+    
     sceneSetup();
     loadAssets();
     setTimeout(animate, 1000);
-    setTimeout(function() {
+    setTimeout(() => {
         loading.classList.add('fade');
     }, 1000);
 

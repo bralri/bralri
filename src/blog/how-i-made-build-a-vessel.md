@@ -311,7 +311,7 @@ function sceneSetup() {
 
 <br>
 
-<p>Since there are almost 100 different potential spliced models which can be loaded into the scene, I decided that I wanted to load in a much smaller selection. This makes the application quicker to load and much more manageble. Here's what I did: I took the currentGroup model array, which contained all of the models, and shuffled the array. I then selected the first 15 models from the shuffled array and shuffled those 15 models again so that their order was fully randomized. Then the chosen 15 models get loaded into the scene and pushed to the modelArray.</p>
+<p>Since there are almost 100 different potential spliced models which can be loaded into the scene, I decided that I wanted to load in a much smaller selection. This makes the application quicker to load and much more manageble. Here's what I did: I took the currentGroup model array, which contained all of the models, and shuffled the array using the commonly used <a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle">Fisher-Yates shuffle algorithm</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup>, which is a technique technique used to randomly shuffle the elements of an array. It iterates over the array in reverse order, and for each element, it selects a random index from the remaining unshuffled portion of the array and swaps the current element with the randomly selected element. I then selected the first 15 models from the shuffled array and shuffled those 15 models again so that their order was fully randomized. Then the chosen 15 models get loaded into the scene and pushed to the modelArray.</p>
 
 <br>
 
@@ -680,7 +680,7 @@ function resetCamera() {
 
 <br>
 
-<p>For users who are on mobile or are not able to view the downloaded .glb vessel models, I would like to add a button which takes a screenshot image of the current camera view and saves it. This is so that all users will have a record of their Build-A-Vessel creations regardless of which device they are on!</p>
+<p>For users who are on mobile or are not able to view the downloaded .glb vessel models, I would like to add a button which takes a screenshot image of the current camera view and saves it. This is so that all users can have the option to save their Build-A-Vessel creations regardless of which device they are on!</p>
 
 <br>
 
