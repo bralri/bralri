@@ -1,10 +1,18 @@
 blockquote {
-    max-width: 700px;
-    margin: 32px auto;
-    padding: 20px;
-    position: relative;
-    text-align: justify;
-    text-align-last: left;
+    // max-width: 700px;
+    // margin: 32px auto;
+    // padding: 20px;
+    // position: relative;
+    // text-align: justify;
+    // text-align-last: left;
+
+    border-left: 4px solid $white;
+    margin: 20px 0;
+    padding: 0;
+
+        p {
+            margin-left: 20px;
+        }
 }
 
 p.indent {
@@ -13,11 +21,4 @@ p.indent {
     sup {
         text-indent: 0px;
     }
-}
-
-cite {
-    position: absolute;
-    bottom: -30px;
-    right: 20px;
-    color: $grey;
 }

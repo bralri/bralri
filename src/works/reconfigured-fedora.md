@@ -5,7 +5,7 @@ type: "BlogPosting"
 priority: "0.5"
 date: 2018-07-11
 year: "2018"
-description: "Reconfigured Fedora, 2018, is a reconfiguration of an installation of work made for my degree show earlier in the year. The use of the name 'Fedora' comes from the Italo Calvino novel called Invisible Cities which explores imagination and the imaginable through the descriptions of cities by an explorer, Marco Polo."
+description: "Reconfigured Fedora, is a reconfiguration of an installation of work made for my degree show earlier in the year. The use of the name 'Fedora' comes from the Italo Calvino novel called Invisible Cities which explores imagination and the imaginable through the descriptions of cities by an explorer, Marco Polo."
 thumbnail: "/assets/img/works/reconfigured-fedora/post-thumbnail.webp"
 
 link: "/works/reconfigured-fedora/"
@@ -69,8 +69,10 @@ gallery:
 
 <br>
 
+<p>Italo Calvino. Invisible Cities, Cities & Desire 4. P. 28:</p>
+
 <blockquote>
-<p class="indent">"<i>IN THE CENTER of Fedora</i>, that gray stone metroprolis, stands a metal building with a crystal globe in every room. Looking into each globe you see a blue city, the model of a different Fedora. These are the forms the city could have taken if, for one reason or another, it had not become what we see today. In every age someone, looking at Fedora as it was, imagined a way of making it the ideal city, but while he constructed his miniature model, Fedora was already no longer the same as before, and what had been until yesterday a possible future became only a toy in a glass globe.</p>
+<p class="indent"><i>IN THE CENTER of Fedora</i>, that gray stone metroprolis, stands a metal building with a crystal globe in every room. Looking into each globe you see a blue city, the model of a different Fedora. These are the forms the city could have taken if, for one reason or another, it had not become what we see today. In every age someone, looking at Fedora as it was, imagined a way of making it the ideal city, but while he constructed his miniature model, Fedora was already no longer the same as before, and what had been until yesterday a possible future became only a toy in a glass globe.</p>
 
 <br>
 
@@ -78,9 +80,7 @@ gallery:
 
 <br>
 
-<p>On the map of your empire, O Great Khan, there must be room both for the big, stone Fedora and the little Fedoras in the glass globes. Not because all are only assumptions. The one contains what is accepted as necessary when it is not yet so; the others, what is imagined as possible and, a moment later, is possible no longer."</p>
-
-<cite>~ Italo Calvino. Invisible Cities, Cities & Desire 4. P. 28</cite>
+<p>On the map of your empire, O Great Khan, there must be room both for the big, stone Fedora and the little Fedoras in the glass globes. Not because all are only assumptions. The one contains what is accepted as necessary when it is not yet so; the others, what is imagined as possible and, a moment later, is possible no longer.</p>
 </blockquote>
 
 <br>

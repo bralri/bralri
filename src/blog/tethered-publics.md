@@ -3,7 +3,7 @@ title: "Tethered Publics"
 type: "BlogPosting"
 date: 2023-05-04
 year: "2023"
-tags: ["post"]
+tags: ["post", "exhibition"]
 description: "Augmented reality exhibition!"
 thumbnail: "/assets/img/blog/tethered-publics/post-thumbnail.webp"
 
@@ -33,7 +33,7 @@ This exhibition will provide a unique opportunity for audiences to experience th
 <p>Tethered Publics statement:</p>
 
 <blockquote>
-<p>"Step into the captivating world of augmented reality (AR) art through the innovative *Home Collection 2023* exhibition, curated by Tethered Publics. As emerging technologies transform how we perceive and engage with art, this exhibition strives to re-envision concepts of collecting and displaying items within domestic environments, seamlessly connecting physical and digital manifestations.</p>
+<p>Step into the captivating world of augmented reality (AR) art through the innovative *Home Collection 2023* exhibition, curated by Tethered Publics. As emerging technologies transform how we perceive and engage with art, this exhibition strives to re-envision concepts of collecting and displaying items within domestic environments, seamlessly connecting physical and digital manifestations.</p>
 
 <br>
 
@@ -55,9 +55,7 @@ This exhibition will provide a unique opportunity for audiences to experience th
 
 <p>By harnessing the power of AR technology, Tethered Publics aims to democratise access to cutting-edge technologies for artists and art enthusiasts alike. This exhibition not only eases the transition of artists' work into the virtual 3D domain but also sparks reflection on the future of art collections in the realm of immersive AR experiences.</p>
 
-<p>We invite you to delve into and enjoy Home Collection 2023."</p>
-
-<cite>~ Tethered Publics</cite>
+<p>We invite you to delve into and enjoy Home Collection 2023.</p>
 </blockquote>
 
 <br>

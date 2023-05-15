@@ -59,19 +59,18 @@ gallery:
 
 <br>
 
-<p class="indent">"<i>Yeah, about utopia ...</i>" is a singel channel mockumetary which was created as part of a larger installation of work which was the focus for my graduate degree show. The larger body of work and this film explored themes of nostalgia and how places and things in the past were designed with a utopian ideal but over time have become concrete shells of their intended design.</p>
+<p class="indent"><i>Yeah, about utopia ...</i>, is a singel channel mockumetary which was created as part of a larger installation of work which was the focus for my graduate degree show. The larger body of work and this film explored themes of nostalgia and how places and things in the past were designed with a utopian ideal but over time have become concrete shells of their intended design.</p>
 
 <p>This film focuses on one of the first <i>New Towns</i> built in the UK after the second world war, these towns were built in response to workers on London wanting somewhere greener to live, so towns like Stevenage were built to house these new workers. Except that however well intentioned the original designs for these towns was, they have become incredibly dated and neglected. Multiple decades worth of little to no investment in the local infrastructure, this combined with the ironic fact that Stevenage's town center is now being redesigned to be a place to live and commute into London dues to its close proximity to the captial and direct public transportation. That DREAM of a utopian small town for worked to escape a large city, get a comfortable job and enjoy family life has eroded.</p>
 
 <p>Leonard Vincent was the Chief Architect and Key Planner of Stevenage from 1954 ~ 1962, ...</p>
 
+<p>As Leonard Vincent said in <a href="https://www.talkingnewtowns.org.uk/content/category/towns/stevenage/leonard-vincent" title="Talking New Towns">Talking New Towns</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></p>
+
 <blockquote>
-<p class="indent">"transcript"</p>
+<p>"transcript"</p>
 
-<cite>~ Leonard Vincent, Talking New Towns: <a href="https://www.talkingnewtowns.org.uk/content/category/towns/stevenage/leonard-vincent" title="Talking New Towns: title">link</a></cite>
 </blockquote>
-
-<br>
 
 <p class="indent">continue</p>
 

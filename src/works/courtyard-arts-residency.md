@@ -99,7 +99,7 @@ gallery:
 <br>
 
 <blockquote>
-<p>"what do we call these relics?</p>
+<p>what do we call these relics?</p>
 <p>do they have names? Or are they just things?</p>
 <p>things that did a thing?</p>
 <p>things that will do a thing?</p>
@@ -116,9 +116,7 @@ gallery:
 <p>things of opportunity,</p>
 <p>things of the past,</p>
 <p>things of the future & things of the present,</p>
-<p>things of the never-will & always."</p>
-
-<cite>~ Things of the Never-Will and Always</cite>
+<p>things of the never-will & always.</p>
 </blockquote>
 
 <br>

@@ -4,7 +4,7 @@ type: "BlogPosting"
 date: 2023-05-13
 year: "2023"
 tags: ["post", "creative-coding", "coding"]
-description: "A brief breakdown of how it was made"
+description: "A brief breakdown & walkthrough"
 thumbnail: "/assets/img/blog/how-i-made-build-a-vessel/post-thumbnail.webp"
 
 gallery:

@@ -81,8 +81,10 @@ gallery:
 
 <br>
 
+<p>Press release:</p>
+
 <blockquote>
-<p>"Where are we now, now Jennifer is in Paradise? *</p>
+<p>Where are we now, now Jennifer is in Paradise? *</p>
 
 <br>
 
@@ -90,13 +92,12 @@ gallery:
 
 <br>
 
-<p class="indent">The show features playful enquires into futurities, feelings about our rapidly changing digital age, our sense of place and its erosion in time. An exploration and findings of what might become our (future) relics, with the birth of a new everyday in a defunct reality."</p>
+<p>The show features playful enquires into futurities, feelings about our rapidly changing digital age, our sense of place and its erosion in time. An exploration and findings of what might become our (future) relics, with the birth of a new everyday in a defunct reality.</p>
 
+<br>
 <br>
 
 <p>* <i>Taken in 1987 "Jennifer In Paradise" is the first Photoshopped image by its creator, John Knoll.</i></p>
-
-<cite>~ Press release</cite>
 </blockquote>
 
 <br>

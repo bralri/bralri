@@ -55,13 +55,11 @@ gallery:
 <br>
 
 <blockquote>
-<p>"Forced Collaboration is an online platform that matches artist's practices anonymously and creates a space for cross-disciplinary collaborations through the process of making/following instructions to create artworks.</p>
+<p>Forced Collaboration is an online platform that matches artist's practices anonymously and creates a space for cross-disciplinary collaborations through the process of making/following instructions to create artworks.</p>
 
 <br>
 
-<p>Forced Collaboration aims to take the pressure off your own practice by experimenting with an idea you won't actually have to make and making an artwork you didn’t actually think of."</p>
-
-<cite>~ <a href="https://forcedcollaboration.org/about">forcedcollaboration.org/about</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></cite>
+<p>Forced Collaboration aims to take the pressure off your own practice by experimenting with an idea you won't actually have to make and making an artwork you didn’t actually think of.</p>
 </blockquote>
 
 <br>
