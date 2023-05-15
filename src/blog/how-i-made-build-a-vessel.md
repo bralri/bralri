@@ -573,7 +573,7 @@ function saveArrayBuffer(buffer, fileName) {
 
 <br>
 
-<p>To finish the application, I included several quality-of-life improvements. I included a shuffle button that enables users to reload the application with a new set of models, this button is does essentially the exact same thing a refreshing your browser but in a convienent on screen button. I also added a reset camera button, which allows users to reset the orbit controls camera to its original position.</p>
+<p>To finish the application, I included several quality-of-life improvements. I included a shuffle button that enables users to reload the application with a new set of models, this button makes it convienient to refresh the application and gives you a new set of vessel parts to work with. As well as this, I also added a reset camera button, which allows users to reset the camera position to its original position.</p>
 
 <br>
 
@@ -660,7 +660,7 @@ function resetCamera() {
 
 <br>
 
-<p>I would like to add functionality which is in the original DragControls example which allows you to select multiple objects and add them to a group. This means that when you add join models into a group, when you drag them they move as one group. I think this would improve the usabilty of the application and make it easier to position in-progress or finished vessels.</p>
+<p>I would like to add functionality which is in the original DragControls example which allows you to select multiple objects and add them to a group. This means that when you add models to join into a group, when you drag them they move all move together as one. I think this would improve the usabilty of the application and make it easier to position in-progress or finished vessels.</p>
 
 <br>
 <br>
@@ -678,7 +678,7 @@ function resetCamera() {
 
 <br>
 
-<p>I would like to make Build-A-Vessel and any other applications I might make in the future to be as fully accessible as I can. To do this I would use something like <a href="https://github.com/pmndrs/react-three-a11y">@react-three/a11y</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup> which is a WebGL accessibility plugin which can add components like: Focus and focus indication, tab indexing and keyboard navigation, screen reader support and alt-text, roles, cursor shapes, and descriptive links.</p>
+<p>I would like to make Build-A-Vessel and any other applications I might make in the future to be as fully accessible as I can. To do this I would use something like <a href="https://github.com/pmndrs/react-three-a11y">@react-three/a11y</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup> which is a WebGL accessibility plugin that can add components like: Focus and focus indication, tab indexing and keyboard navigation, screen reader support and alt-text, roles, cursor shapes, and descriptive links.</p>
 
 <br>
 <br>
@@ -724,6 +724,74 @@ function resetCamera() {
 <br>
 
 <p>Added the ability to capture and save a screenshot from the current camera view. This works both on mobile and pc. To save a jpeg screenshot image just adjust the camera to the exact view you want and then press the "Take Camera Screenshot" button! It will download automatically to your device.</p>
+
+<pre>
+<code>
+/* build-a-vessel.njk */
+
+
+&lt;div id=&quot;buttons&quot;&gt;
+    &lt;p&gt;
+        /* add the button to the HTML so we can access this in the javascript and add functionality */
+        &lt;button id=&quot;save-img&quot; title=&quot;Take Camera Screenshot&quot;&gt;&lt;i class=&quot;fa-solid fa-image&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+    &lt;/p&gt;
+&lt;/div&gt;
+</code>
+</pre>
+
+<pre>
+<code>
+/* vessels.min.js */
+
+
+/* get the save-img button from HTML */
+const imageScreenshotButton = document.getElementById('save-img');
+
+function sceneSetup() {
+
+    renderer = new THREE.WebGLRenderer({
+        alpha: true,
+        antialias: true,
+
+        /* add preserveDrawingBuffer to your renderer, this flag will get the base64 encoding of the current frame */
+        preserveDrawingBuffer: true
+    });
+
+    /* add event listeners to the button and attach savAsImage to run when button is clicked */
+    imageScreenshotButton.addEventListener('click', saveAsImage);
+}
+
+function saveAsImage() {
+
+    let imgData;
+
+    try {
+        const strMime = "image/jpeg";
+        const strDownloadMime = "image/octet-stream";
+        imgData = renderer.domElement.toDataURL(strMime);
+        saveFile(imgData.replace(strMime, strDownloadMime), `vessel-${groupID}.jpg`);
+    } catch (e) {
+        console.log(e);
+        return;
+    }
+}
+
+function saveFile(strData, fileName) {
+
+    const link = document.createElement('a');
+    if (typeof link.download === 'string') {
+        document.body.appendChild(link);
+        link.download = fileName;
+        link.href = strData;
+        link.click();
+        document.body.removeChild(link);
+    } else {
+        location.replace(uri);
+    };
+}
+
+</code>
+</pre>
 </section>
 
 <br>
