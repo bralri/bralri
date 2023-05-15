@@ -88,13 +88,15 @@ gallery:
 
 
 export const vesselPaths = {
-        vessel0: "/assets/models/vessels/0.glb",
-        vessel1: "/assets/models/vessels/1.glb",
-        vessel2: "/assets/models/vessels/2.glb",
-        vessel3: "/assets/models/vessels/3.glb",
-        vessel4: "/assets/models/vessels/4.glb",
-        vessel5: "/assets/models/vessels/5.glb",
-        /* etc ... */
+
+    vessel0: "/assets/models/vessels/0.glb",
+    vessel1: "/assets/models/vessels/1.glb",
+    vessel2: "/assets/models/vessels/2.glb",
+    vessel3: "/assets/models/vessels/3.glb",
+    vessel4: "/assets/models/vessels/4.glb",
+    vessel5: "/assets/models/vessels/5.glb",
+    /* etc ... */
+    
 };
 
 </code>
