@@ -725,6 +725,8 @@ function resetCamera() {
 
 <p>Added the ability to capture and save a screenshot from the current camera view. This works both on mobile and pc. To save a jpeg screenshot image just adjust the camera to the exact view you want and then press the "Take Camera Screenshot" button! It will download automatically to your device.</p>
 
+<br>
+
 <pre>
 <code>
 /* build-a-vessel.njk */
@@ -753,7 +755,8 @@ function sceneSetup() {
         alpha: true,
         antialias: true,
 
-        /* add preserveDrawingBuffer to your renderer, this flag will get the base64 encoding of the current frame */
+        /* add preserveDrawingBuffer to your renderer, */
+        /* this flag will get the base64 encoding of the current frame */
         preserveDrawingBuffer: true
     });
 
@@ -766,10 +769,14 @@ function saveAsImage() {
     let imgData;
 
     try {
+        /* set the dowload image file to be jpeg */
         const strMime = "image/jpeg";
         const strDownloadMime = "image/octet-stream";
         imgData = renderer.domElement.toDataURL(strMime);
+
+        /* run the save function */
         saveFile(imgData.replace(strMime, strDownloadMime), `vessel-${groupID}.jpg`);
+
     } catch (e) {
         console.log(e);
         return;
@@ -779,13 +786,27 @@ function saveAsImage() {
 function saveFile(strData, fileName) {
 
     const link = document.createElement('a');
+
+    /* check if jpeg is supported by the browser */
     if (typeof link.download === 'string') {
+
+        /* if it is, append the 'link' and set variables */
         document.body.appendChild(link);
+
         link.download = fileName;
         link.href = strData;
         link.click();
+
+        /* remove anchor tag from body */
         document.body.removeChild(link);
+
     } else {
+
+        /* if jpeg is not supported by the browser, */
+        /* download file data without jpeg extention */
+        /* users can then append the file extention themselves */
+        /* and convert to whichever file format they want */
+
         location.replace(uri);
     };
 }
