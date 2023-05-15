@@ -684,6 +684,14 @@ function resetCamera() {
 
 <br>
 
+<p>~ Accessibility ~</p>
+
+<br>
+
+<p>I would like to make Build-A-Vessel and any other applications I might make in the future to be as fully accessible as I can. To do this I would use something like <a href="https://github.com/pmndrs/react-three-a11y">@react-three/a11y</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup> which is a WebGL accessibility plugin which can add components like: Focus and focus indication, tab indexing and keyboard navigation, screen reader support and alt-text, roles, cursor shapes, and descriptive links.</p>
+
+<br>
+
 <p>~ Exhibiting ~</p>
 
 <br>
