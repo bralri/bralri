@@ -28,22 +28,8 @@ gallery:
     alt: "Screenshot of arrange vessel models from Build-A-Vessel"
 ---
 
-<div class="anchors">
-    <p># <a href="#what-is-build-a-vessel" style="color: grey;">What is Build-A-Vessel?</a></p>
-    <p># <a href="#initializing-the-project" style="color: grey;">Initializing the project</a></p>
-    <p># <a href="#adding-camera-mobility" style="color: grey;">Adding camera mobility</a></p>
-    <p># <a href="#picking-and-shuffling-the-models" style="color: grey;">Picking and shuffling the models</a></p>
-    <p># <a href="#grid-layouts-and-responsive-design" style="color: grey;">Grid layouts and responsive design</a></p>
-    <p># <a href="#adding-download-functionality" style="color: grey;">Adding download functionality</a></p>
-    <p># <a href="#finishing-touches" style="color: grey;">Finishing touches</a></p>
-    <p># <a href="#future-updates-and-plans" style="color: grey;">Future updates & plans</a></p>
-</div>
-
-<br>
-<br>
-
-<section id="what-is-build-a-vessel">
-<h4># What is Build-A-Vessel?</h4>
+<section id="what-is-build-a-vessel" class="blog-section">
+<h4><a href="#what-is-build-a-vessel" class="anchor-tag">#</a> What is Build-A-Vessel?</h4>
 
 <br>
 
@@ -64,8 +50,8 @@ gallery:
 
 <br>
 
-<section id="initializing-the-project">
-<h4># Initializing the project</h4>
+<section id="initializing-the-project" class="blog-section">
+<h4><a href="#initializing-the-project" class="anchor-tag">#</a> Initializing the project</h4>
 
 <br>
 
@@ -236,8 +222,8 @@ window.onload = function() {
 
 <br>
 
-<section id="adding-camera-mobility">
-<h4># Adding camera mobility</h4>
+<section id="adding-camera-mobility" class="blog-section">
+<h4><a href="#adding-camera-mobility" class="anchor-tag">#</a> Adding camera mobility</h4>
 
 <br>
 
@@ -297,8 +283,8 @@ function sceneSetup() {
 
 <br>
 
-<section id="picking-and-shuffling-the-models">
-<h4># Picking and shuffling the models</h4>
+<section id="picking-and-shuffling-the-models" class="blog-section">
+<h4><a href="#picking-and-shuffling-the-models" class="anchor-tag">#</a> Picking and shuffling the models</h4>
 
 <br>
 
@@ -369,8 +355,8 @@ function loadAssets() {
 
 <br>
 
-<section id="grid-layouts-and-responsive-design">
-<h4># Grid layouts and responsive design</h4>
+<section id="grid-layouts-and-responsive-design" class="blog-section">
+<h4><a href="#grid-layouts-and-responsive-design" class="anchor-tag">#</a> Grid layouts and responsive design</h4>
 
 <br>
 
@@ -381,8 +367,10 @@ function loadAssets() {
         </figcaption>
 </figure>
 
-<figure>
-    <img src="/assets/img/blog/how-i-made-build-a-vessel/vertical-grid.png" alt="" title="Vessel parts loaded in a grid vertical pattern" loading="lazy" style="width: 100%;">
+<br>
+
+<figure class="main-article__figure-vert">
+    <img src="/assets/img/blog/how-i-made-build-a-vessel/vertical-grid.png" alt="" title="Vessel parts loaded in a grid vertical pattern" loading="lazy">
         <figcaption>
             Vessel parts loaded in a vertical grid pattern
         </figcaption>
@@ -480,8 +468,8 @@ function loadAssets() {
 
 <br>
 
-<section  id="adding-download-functionality">
-<h4># Adding download functionality</h4>
+<section id="adding-download-functionality" class="blog-section">
+<h4><a href="#adding-download-functionality" class="anchor-tag">#</a> Adding download functionality</h4>
 
 <br>
 
@@ -571,8 +559,8 @@ function saveArrayBuffer(buffer, fileName) {
 
 <br>
 
-<section id="finishing-touches">
-<h4># Finishing touches</h4>
+<section id="finishing-touches" class="blog-section">
+<h4><a href="#finishing-touches" class="anchor-tag">#</a> Finishing touches</h4>
 
 <br>
 
@@ -663,44 +651,48 @@ function resetCamera() {
 
 <br>
 
-<section id="future-updates-and-plans">
-<h4># Future updates & plans</h4>
+<section id="future-plans" class="blog-section">
+<h4><a href="#future-plans" class="anchor-tag">#</a> Future plans</h4>
 
 <br>
 
-<p>~ Add model grouping ~</p>
+<p>Add model grouping:</p>
 
 <br>
 
 <p>I would like to add functionality which is in the original DragControls example which allows you to select multiple objects and add them to a group. This means that when you add join models into a group, when you drag them they move as one group. I think this would improve the usabilty of the application and make it easier to position in-progress or finished vessels.</p>
 
 <br>
+<br>
 
-<p>~ Camera screenshots ~</p>
+<p style="text-decoration: line-through;">Camera screenshots:</p>
 
 <br>
 
-<p>For users who are on mobile or are not able to view the downloaded .glb vessel models, I would like to add a button which takes a screenshot image of the current camera view and saves it. This is so that all users can have the option to save their Build-A-Vessel creations regardless of which device they are on!</p>
+<p style="text-decoration: line-through;">For users who are on mobile or are not able to view the downloaded .glb vessel models, I would like to add a button which takes a screenshot image of the current camera view and saves it. This is so that all users can have the option to save their Build-A-Vessel creations regardless of which device they are on!</p>
 
 <br>
+<br>
 
-<p>~ Accessibility ~</p>
+<p>Accessibility:</p>
 
 <br>
 
 <p>I would like to make Build-A-Vessel and any other applications I might make in the future to be as fully accessible as I can. To do this I would use something like <a href="https://github.com/pmndrs/react-three-a11y">@react-three/a11y</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup> which is a WebGL accessibility plugin which can add components like: Focus and focus indication, tab indexing and keyboard navigation, screen reader support and alt-text, roles, cursor shapes, and descriptive links.</p>
 
 <br>
+<br>
 
-<p>~ Exhibiting ~</p>
+<p>Exhibiting:</p>
 
 <br>
 
 <p>I would like to exhibit Build-A-Vessel in some capacity, I would like to develop a way to put the application onto touch screen monitors powered by something like a Raspberry Pi so that the monitors can be portable or included in some kind of multi-media installation.</p>
 
 <br>
+<br>
 
-<p>~ Saving models when installed in an exhibition ~</p>
+<p>Saving models when installed in an exhibition:</p>
 
 <br>
 
@@ -713,6 +705,26 @@ function resetCamera() {
 <p><i class="fa-solid fa-star-of-life icon-accent"></i> Try out <a href="https://bralri.net/works/build-a-vessel">Build-A-Vessel</a> <sup><i class="fa-solid fa-arrow-up-right-from-square icon-grey"></i></sup></p>
 
 <p><i class="fa-solid fa-star-of-life icon-accent"></i> Got some feedback? <a href="/contact">Contact</a></p>
+
+<br>
+
+<hr>
+
+<section id="updates" class="blog-section">
+<h4><a href="#updates" class="anchor-tag">#</a> Updates</h4>
+
+<br>
+
+<p style="color: grey;"><span>Update: 15/05/2023</span> <sub><i class="fa-solid fa-arrow-turn-down"></i></sub></p>
+
+<br>
+
+<p>Camera Screenshots:</p>
+
+<br>
+
+<p>Added the ability to capture and save a screenshot from the current camera view. This works both on mobile and pc. To save a jpeg screenshot image just adjust the camera to the exact view you want and then press the "Take Camera Screenshot" button! It will download automatically to your device.</p>
+</section>
 
 <br>
 <br>

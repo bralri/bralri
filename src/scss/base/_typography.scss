@@ -133,6 +133,31 @@ a {
         }
 }
 
+a.anchor-tag {
+    color: $accent;
+    font-size: $--fs-500;
+    opacity: 0;
+    text-decoration: underline;
+    margin-right: 5px;
+
+        &:hover {
+            text-decoration: none;
+        }
+}
+h3:hover {
+    a.anchor-tag {
+        opacity: 1;
+    }
+}
+h4:hover {
+    a.anchor-tag {
+        opacity: 1;
+    }
+}
+.blog-section {
+    padding-top: 20px;
+}
+
 #social__links {
     font-size:  $--fs-500;
     padding-right: 10px;
@@ -155,7 +180,17 @@ sup {
 sub {
     display: inline-block;
     vertical-align: sub; 
-    font-size: $--fs-500;
+}
+h3 {
+    sub {
+        font-size: $--fs-500;
+    }
+}
+
+p {
+    sub {
+        font-size: $--fs-300;
+    }
 }
 
 code {

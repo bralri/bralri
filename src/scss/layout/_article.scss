@@ -5,6 +5,11 @@
     aspect-ratio: 3/2;
 }
 
+.main-article__figure-vert img {
+    width: 50%;
+    height: 100%;
+}
+
 .photo-grid-image {
     width: 100%;
     object-fit: cover;
