@@ -9,6 +9,82 @@ date: 2017-01-01
 thumbnail: "/assets/bralri.webp"
 ---
 
+<section id="hero" class="hero">
+    <div class="container container--narrow">
+        <figure class="main-article__figure">
+            <a id="galleryImageLink" href="">
+                <img 
+                    id="galleryImage"
+                    src="" 
+                    alt="" 
+                    title=""
+                    style="opacity: 0; transition: opacity 0.3s ease;"
+                >
+            </a>
+            <figcaption id="figCaption" style="opacity: 0; transition: opacity 0.3s ease;"></figcaption>
+        </figure>
+    </div>
+</section>
+
+<script>
+    const gallery = [
+        {   
+            src: "/assets/img/works/jennifer-is-in-paradise/gallery/jennifer-is-in-paradise-1.webp",
+            title: "Thingamajig, 2020",
+            alt: "Digital print. Mounted on an unfinished wall below industrial piping with bright intense spot lighting",
+            url: "/works/jennifer-is-in-paradise/"
+        },
+        {   
+            src: "/assets/img/works/jennifer-is-in-paradise/gallery/jennifer-is-in-paradise-2.webp",
+            title: "non life-threatening heart irregularities, 2017",
+            alt: "Clay, plaster, elastic band, sponge, used ECG Tabs. Installed on top of a black metal plinth made out of 25mm steel square-tubing and acrylic",
+            url: "/works/jennifer-is-in-paradise/"
+        },
+        {
+            src: "/assets/img/works/jennifer-is-in-paradise/gallery/jennifer-is-in-paradise-3.webp",
+            title: "non life-threatening heart irregularities, 2017",
+            alt: "Clay, plaster, elastic band, sponge, used ECG Tabs. Installed on top of a black metal plinth made out of 25mm steel square-tubing and acrylic",
+            url: "/works/jennifer-is-in-paradise/"
+        }
+    ];
+
+    const image = document.getElementById('galleryImage');
+    const imageLink = document.getElementById('galleryImageLink');
+    const figCaption = document.getElementById('figCaption');
+
+    let currentIndex = 0;
+
+    gallery.forEach((item) => {
+        const img = new Image();
+        img.src = item.url;
+    });
+
+    window.onload = () => {
+
+        image.addEventListener('load', () => {
+            image.style.opacity = 1;
+            figCaption.style.opacity = 1;;
+        });
+
+        image.src = gallery[0].src;
+        figCaption.textContent = `${gallery[0].title}`
+        image.alt = gallery[0].alt;
+        image.title = gallery[0].title;
+        imageLink.href = gallery[0].url;
+    }
+
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % gallery.length;
+
+        image.src = gallery[currentIndex].src;
+        image.alt = gallery[currentIndex].alt;
+        image.title = gallery[currentIndex].title;
+        imageLink.href = gallery[currentIndex].url;
+        figCaption.textContent = `${gallery[currentIndex].title}`;
+    }, 10000);
+</script>
+
+
 {% include 'layouts/featured-works.njk' %}
 
 {% include 'layouts/featured-articles.njk' %}
