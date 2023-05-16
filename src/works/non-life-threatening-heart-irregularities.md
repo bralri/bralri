@@ -5,7 +5,7 @@ type: "BlogPosting"
 priority: "0.5"
 date: 2017-02-23
 year: "2017"
-tags: ["featured_work"]
+tags: ["featured_work", "sculpture"]
 description: "non life-threatening heart irregularities, 2017."
 thumbnail: "/assets/img/works/non-life-threatening-heart-irregularities/post-thumbnail.webp"
 

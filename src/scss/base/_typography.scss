@@ -139,19 +139,23 @@ a.anchor-tag {
     opacity: 0;
     text-decoration: underline;
     margin-right: 5px;
+    transition: all 0.3s ease-in-out;
 
         &:hover {
             text-decoration: none;
+            transition: all 0.3s ease-in-out;
         }
 }
 h3:hover {
     a.anchor-tag {
         opacity: 1;
+        transition: all 0.3s ease-in-out;
     }
 }
 h4:hover {
     a.anchor-tag {
         opacity: 1;
+        transition: all 0.3s ease-in-out;
     }
 }
 .blog-section {
@@ -195,4 +199,21 @@ p {
 
 code {
     color: $white;
+}
+
+.tag-filter {
+    color: $grey;
+
+        &:hover {
+            color: $white;
+        }
+}
+.tag-icon {
+    cursor: pointer;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+
+        &:hover {
+            opacity: 0;
+        }
 }

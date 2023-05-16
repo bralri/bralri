@@ -6,6 +6,7 @@ priority: "0.5"
 date: 2020-06-30
 year: "2020"
 description: "DeepSpaceAnomaly"
+tags: ["video", "digital"]
 thumbnail: "/assets/img/works/deepspaceanomaly/post-thumbnail.webp"
 
 link: "/works/deepspaceanomaly/"

@@ -3,29 +3,29 @@ title: "How I made Build-A-Vessel"
 type: "BlogPosting"
 date: 2023-05-13
 year: "2023"
-tags: ["post", "creative-coding", "coding"]
+tags: ["post", "creative-coding"]
 description: "A brief breakdown & walkthrough"
 thumbnail: "/assets/img/blog/how-i-made-build-a-vessel/post-thumbnail.webp"
 
-gallery:
-  - url: "/assets/img/blog/how-i-made-build-a-vessel/gallery/build-a-vessel-gallery-1.png"
-    title: "Build-A-Vessel screenshot"
-    alt: "Screenshot of arrange vessel models from Build-A-Vessel"
-  - url: "/assets/img/blog/how-i-made-build-a-vessel/gallery/build-a-vessel-gallery-2.png"
-    title: "Build-A-Vessel screenshot"
-    alt: "Screenshot of arrange vessel models from Build-A-Vessel"
-  - url: "/assets/img/blog/how-i-made-build-a-vessel/gallery/build-a-vessel-gallery-3.png"
-    title: "Build-A-Vessel screenshot"
-    alt: "Screenshot of arrange vessel models from Build-A-Vessel"
-  - url: "/assets/img/blog/how-i-made-build-a-vessel/gallery/build-a-vessel-gallery-4.png"
-    title: "Build-A-Vessel screenshot"
-    alt: "Screenshot of arrange vessel models from Build-A-Vessel"
-  - url: "/assets/img/blog/how-i-made-build-a-vessel/gallery/build-a-vessel-gallery-5.png"
-    title: "Build-A-Vessel screenshot"
-    alt: "Screenshot of arrange vessel models from Build-A-Vessel"
-  - url: "/assets/img/blog/how-i-made-build-a-vessel/gallery/build-a-vessel-gallery-6.png"
-    title: "Build-A-Vessel screenshot"
-    alt: "Screenshot of arrange vessel models from Build-A-Vessel"
+# gallery:
+#   - url: "/assets/img/blog/how-i-made-build-a-vessel/gallery/build-a-vessel-gallery-1.png"
+#     title: "Build-A-Vessel screenshot"
+#     alt: "Screenshot of arrange vessel models from Build-A-Vessel"
+#   - url: "/assets/img/blog/how-i-made-build-a-vessel/gallery/build-a-vessel-gallery-2.png"
+#     title: "Build-A-Vessel screenshot"
+#     alt: "Screenshot of arrange vessel models from Build-A-Vessel"
+#   - url: "/assets/img/blog/how-i-made-build-a-vessel/gallery/build-a-vessel-gallery-3.png"
+#     title: "Build-A-Vessel screenshot"
+#     alt: "Screenshot of arrange vessel models from Build-A-Vessel"
+#   - url: "/assets/img/blog/how-i-made-build-a-vessel/gallery/build-a-vessel-gallery-4.png"
+#     title: "Build-A-Vessel screenshot"
+#     alt: "Screenshot of arrange vessel models from Build-A-Vessel"
+#   - url: "/assets/img/blog/how-i-made-build-a-vessel/gallery/build-a-vessel-gallery-5.png"
+#     title: "Build-A-Vessel screenshot"
+#     alt: "Screenshot of arrange vessel models from Build-A-Vessel"
+#   - url: "/assets/img/blog/how-i-made-build-a-vessel/gallery/build-a-vessel-gallery-6.png"
+#     title: "Build-A-Vessel screenshot"
+#     alt: "Screenshot of arrange vessel models from Build-A-Vessel"
 ---
 
 <section id="what-is-build-a-vessel" class="blog-section">
@@ -651,8 +651,8 @@ function resetCamera() {
 
 <br>
 
-<section id="future-plans" class="blog-section">
-<h4><a href="#future-plans" class="anchor-tag">#</a> Future plans</h4>
+<section id="whats-next" class="blog-section">
+<h4><a href="#whats-next" class="anchor-tag">#</a> What's next?</h4>
 
 <br>
 
@@ -665,7 +665,7 @@ function resetCamera() {
 <br>
 <br>
 
-<p style="text-decoration: line-through;">Camera screenshots:</p>
+<p style="text-decoration: line-through;">Add camera screenshots:</p>
 
 <br>
 
@@ -674,7 +674,7 @@ function resetCamera() {
 <br>
 <br>
 
-<p>Accessibility:</p>
+<p>Add accessibility options:</p>
 
 <br>
 
@@ -719,7 +719,7 @@ function resetCamera() {
 
 <br>
 
-<p>Camera Screenshots:</p>
+<p>Added camera screenshots:</p>
 
 <br>
 

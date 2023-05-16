@@ -1,60 +1,90 @@
 ---
 eleventyExcludeFromCollections: true
+layout: 'layouts/base.njk'
+
+title: "Links"
+type: "WebSite"
+description: "Links"
+date: 2023-05-16
+thumbnail: "/assets/bralri.webp"
 ---
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-M5WMJG46JF"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
 
-          gtag('config', 'G-M5WMJG46JF');
-        </script>
-        
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="Bryan Ridpath">
-        <meta name="Description" content="Links">
+<section class="container container--narrow flow">
+    <h3 class="section-title">Links</h3>
 
-        <link rel="stylesheet" href="{{ '/css/main.css' | url }}">
+    <br>
 
-        <link rel="icon" type="image/x-icon" href="{{ site.favicon }}">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <p>
+        <i class="fa-solid fa-star-of-life icon-accent"></i>
+        <a
+            href="https://instagram.com/bralri"
+            title="Instagram"
+            aria-label="Instagram Link">Instagram</a>
+    </p>
 
-        <title>Links</title>
-    </head>
-    <body>
-        <div class="links-container">
-            <img class="profile-picture" src="{{ site.favicon }}" alt="profile picture">
-            <div class="profile-name">
-                <p>Bryan Ridpath</p>
-            </div>
-            <div class="profile-at">
-                <p>@bralri</p>
-            </div>
+    <p>
+        <i class="fa-solid fa-star-of-life icon-accent"></i>
+        <a
+            href="https://twitch.tv/bralri"
+            title="Twitch"
+            aria-label="Twitch Link">Twitch</a>
+    </p>
 
-            <a class="links" href="https://www.bralri.net" target="_blank" rel="noopener">
-                Portfolio
-            </a>
-            <a class="links" href="https://cloudshelter.space" target="_blank" rel="noopener">
-                Cloud Shelter
-            </a>
-            <a class="links" href="https://bralri.net/blog" target="_blank" rel="noopener">
-                Blog
-            </a>
-            <a class="links" href="https://www.instagram.com/bralri" target="_blank" rel="noopener">
-                Instagram
-            </a>
-            <a class="links" href="https://twitter.com/bryanridpath" target="_blank" rel="noopener">
-                Twitter
-            </a>
-            <a class="links" href="https://www.github.com/bralri" target="_blank" rel="noopener">
-                GitHub
-            </a>
-        </div>
-    </body>
-</html>
+    <p>
+        <i class="fa-solid fa-star-of-life icon-accent"></i>
+        <a
+            href="https://twitter.com/bryanridpath"
+            title="Twitter"
+            aria-label="Twitter Link">Twitter</a>
+    </p>
+
+    <p>
+        <i class="fa-solid fa-star-of-life icon-accent"></i>
+        <a
+            href="mailto:bryanridpath@gmail.com"
+            title="Email"
+            aria-label="Email link">Email</a>
+    </p>
+
+    <p>
+        <i class="fa-solid fa-star-of-life icon-accent"></i>
+        <a
+            href="https://github.com/bralri"
+            title="GitHub"
+            aria-label="GitHub link">GitHub</a>
+    </p>
+
+    <p>
+        <i class="fa-solid fa-star-of-life icon-accent"></i>
+        <a
+            href="https://cloudshelter.space"
+            title="Cloud Shelter"
+            aria-label="Cloud Shelter Link">Cloud Shelter</a>
+    </p>
+
+    <p>
+        <i class="fa-solid fa-star-of-life icon-accent"></i>
+        Support me on
+        <a
+            href="https://ko-fi.com/bralri"
+            title="Ko-fi"
+            aria-label="Ko-fi Link">Ko-fi
+        </a>
+
+        or
+
+        <a
+            href=""
+            title="PayPal"
+            aria-label="PayPal Link">PayPal
+        </a>
+
+        or
+
+        <a
+            href=""
+            title="Patreon"
+            aria-label="Patreon Link">Patreon
+        </a>
+    </p>
+</section>

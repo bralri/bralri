@@ -6,6 +6,7 @@ priority: "0.5"
 date: 2018-09-18
 year: "2018"
 description: "Courtyard Arts Residency"
+tags: ["residency", "sculpture", "video"]
 thumbnail: "/assets/img/works/courtyard-arts-residency/post-thumbnail.webp"
 
 link: "/works/courtyard-arts-residency/"

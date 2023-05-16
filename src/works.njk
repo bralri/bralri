@@ -12,6 +12,14 @@ thumbnail: "/assets/bralri.webp"
 <section id="featured-works" class="featured-works">
     <div class="container container--narrow flow">
         <h3 class="section-title">Works</h3>
+        <h4><i class="fa-solid fa-tags tag-filter tag-icon" data-tag="work"></i> 
+            <a href="#" class="tag-filter" data-tag="work">#all</a>
+            <a href="#" class="tag-filter" data-tag="exhibition">#exhibition</a> 
+            <a href="#" class="tag-filter" data-tag="residency">#residency</a> 
+            <a href="#" class="tag-filter" data-tag="video">#video</a> 
+            <a href="#" class="tag-filter" data-tag="sculpture">#sculpture</a> 
+            <a href="#" class="tag-filter" data-tag="digital">#digital</a>
+        </h4>
         <ul role="list" class="works__list">
             {%- for post in collections.work | reverse -%}
                 {% include 'layouts/works-snippet.njk' %}
@@ -19,3 +27,30 @@ thumbnail: "/assets/bralri.webp"
         </ul>
     </div>
 </section>
+
+<script>
+    const tagFilterLinks = document.querySelectorAll('.tag-filter');
+    const workSnippets = document.querySelectorAll('.works__list > li');
+
+    const filterSnippets = (tag) => {
+
+        workSnippets.forEach((snippet) => {
+            let workSnippetTags = snippet.getAttribute('data-tags');
+
+            if (workSnippetTags.includes(tag)) {
+                snippet.style.display = 'block';
+            } else {
+                snippet.style.display = 'none';
+            }
+        });
+    };
+
+    tagFilterLinks.forEach((link) => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            let tag = link.getAttribute('data-tag');
+            filterSnippets(tag);
+            window.location.href = `#${tag}`;
+        });
+    });
+</script>

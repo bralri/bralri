@@ -5,7 +5,7 @@ type: "BlogPosting"
 priority: "0.5"
 date: 2022-03-03
 year: "2022"
-tags: ["featured_work"]
+tags: ["featured_work", "sculpture", "exhibition", "video"]
 description: "Jennifer is in Paradise was a group exhibition"
 thumbnail: "/assets/img/works/jennifer-is-in-paradise/post-thumbnail.webp"
 

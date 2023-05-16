@@ -6,6 +6,7 @@ priority: "0.5"
 date: 2020-04-17
 year: "2020"
 description: "Forced Collaboration is an online platform that matches artist's practices anonymously and creates a space for cross-disciplinary collaborations through the process of making/following instructions to create artworks."
+tags: ["sculpture"]
 thumbnail: "/assets/img/works/forced-collaboration/post-thumbnail.webp"
 
 link: "/works/forced-collaboration/"

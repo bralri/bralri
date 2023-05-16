@@ -6,6 +6,7 @@ priority: "0.5"
 date: 2022-07-04
 year: "2022"
 description: "Transient Residency is an Online Residency Programme via Instagram, supporting creatives who explore the relationship between Art & Technology. During this residency I shared works from a recent work in progress project called <i>Metamorphosis</i>. Metamorphosis being the transformation, change and growth of something, this project is interested in those concepts of change specific to the human condition."
+tags: ["residency", "video", "digital"]
 thumbnail: "/assets/img/works/transient-residency/post-thumbnail.webp"
 
 link: "/works/transient-residency/"

@@ -15,3 +15,9 @@
     object-fit: cover;
     aspect-ratio: 3/2;
 }
+
+@media (max-width: 50em) {
+    .main-article__figure-vert img {
+        width: 100%;
+    }
+}
