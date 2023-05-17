@@ -1,15 +1,20 @@
 <li data-tags="{{ post.data.tags }}">
     <article class="works-snippet">
-      <a href="{{ post.data.link }}" class="works-snippet__image" aria-label="Read more about {{ post.data.title }}">
-        <div class="works-snippet-img-container">
-          <img class="works-snippet__image post-thumbnail" src="{{ post.data.thumbnail }}" alt="{{ post.data.gallery[0].alt }}" title="{{ post.data.gallery[0].title }}">
-        </div>
-      </a>
-      <h4 class="works-snippet__title" title="{{ post.data.gallery[0].title }}" style="line-height: 21px;">
-        <a href="{{ post.data.link }}" aria-label="Read more about {{ post.data.title }}" class="postURL" id="post-link">
-          {{ post.data.title }} {{ post.data.year }}
+        <a href="{{ post.data.link }}" class="works-snippet__image" aria-label="Read more about {{ post.data.title }}">
+            <div class="works-snippet-img-container">
+                <img class="works-snippet__image post-thumbnail" 
+                    src="{{ post.data.thumbnail }}" 
+                    alt="{{ post.data.gallery[0].alt }}" 
+                    title="{{ post.data.gallery[0].title }}"
+                    width="100%"
+                    height="100%">
+            </div>
         </a>
-      </h4>
+        <h4 class="works-snippet__title" title="{{ post.data.gallery[0].title }}" style="line-height: 21px;">
+            <a href="{{ post.data.link }}" aria-label="Read more about {{ post.data.title }}" class="postURL" id="post-link">
+                {{ post.data.title }} {{ post.data.year }}
+            </a>
+        </h4>
     </article>
 </li>
   
