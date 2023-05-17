@@ -9,10 +9,10 @@
                     loading="lazy">
             </div>
         </a>
-        <h4 class="works-snippet__title">
+        <h4 class="works-snippet__title" style="padding-bottom: 5px;">
             <a href="{{ post.url }}" title="{{ post.data.title }}" aria-label="Read more about {{ post.data.title }}" class="postURL">{{ post.data.title }}</a>
         </h4>
-        <p class="snippet__meta" aria-label="Date published"><span>{{ post.date | postDate }}</span></p>
+        <p class="snippet__meta" aria-label="Date published" style="padding-bottom: 5px;"><span>{{ post.date | postDate }}</span></p>
         <p class="snippet__body" aria-label="Blog post description">{{ post.data.description }}</p>
     </article>
 </li>

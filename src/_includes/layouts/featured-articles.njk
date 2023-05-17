@@ -1,6 +1,6 @@
-<section id="featured-articles" class="featured-articles">
+<section id="featured-articles" class="featured-articles blog-section">
     <div class="container container--narrow flow">
-        <h3 class="section-title">Featured <a href="blog">Blog</a> Posts <sub><i class="fa-solid fa-arrow-turn-down icon-accent"></i></sub></h3>
+        <h3 class="section-title"><a href="#featured-articles" class="anchor-tag">#</a> Featured <a href="blog">Blog</a> Posts</h3>
         <ul role="list" class="works__list">
             {%- for post in collections.post | reverse -%}
                 {% if loop.index0 < 8 %}
