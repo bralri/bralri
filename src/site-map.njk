@@ -1,0 +1,54 @@
+---
+eleventyExcludeFromCollections: true
+layout: 'layouts/base.njk'
+
+title: "Site Map"
+type: "WebPage"
+description: "HTML Site Map for www.bralri.net"
+date: 2023-06-05
+thumbnail: "/assets/bralri.webp"
+---
+
+<style>
+    .site-map-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+</style>
+
+<section class="container container--narrow">
+    <h1 class="section-title">Site Map</h1><br><br>
+
+    <ul class="site-map-list">
+        <li>
+            <h4>Works</h4> <br>
+            <ul>
+                {%- for post in collections.work | reverse -%}
+                    <li>
+                        <a href="{{ post.data.link }}">{{ post.data.title }}</a>
+                    </li>
+                {%- endfor -%}
+            </ul>
+        </li>
+        <li>
+            <h4>Works on Paper</h4> <br>
+            <ul>
+                {%- for post in collections.works_on_paper | reverse -%}
+                    <li>
+                        <a href="{{ post.data.link }}">{{ post.data.title }}</a>
+                    </li>
+                {%- endfor -%}
+            </ul>
+        </li>
+        <li>
+            <h4>Blog</h4> <br>
+            <ul>
+                {%- for post in collections.post | reverse -%}
+                    <li>
+                        <a href="{{ post.data.link }}">{{ post.data.title }}</a>
+                    </li>
+                {%- endfor -%}
+            </ul>
+        </li>
+    </ul>
+</section>

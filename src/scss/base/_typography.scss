@@ -217,3 +217,22 @@ code {
             opacity: 0;
         }
 }
+
+// CSS2DRenderer
+.tooltip {
+    background-color: $black;
+    color: $white;
+    padding: 10px;
+    position: relative;
+    opacity: 0;
+    transition-duration: 0.3s;
+    transition-property: opacity, transform;
+}
+
+.hide {
+    opacity: 0;
+}
+
+.show {
+    opacity: 0.5;
+}

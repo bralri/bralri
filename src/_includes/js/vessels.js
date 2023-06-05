@@ -3,39 +3,40 @@ import {GLTFLoader} from 'three/GLTFLoader.js';
 import {GLTFExporter} from 'three/GLTFExporter.js';
 import {DragControls} from 'three/DragControls.js';
 import {OrbitControls} from 'three/OrbitControls.js';
+import {CSS2DRenderer, CSS2DObject} from 'three/CSS2DRenderer.js'
+import {vesselPaths} from '../js/_config.min.js';
 
-import {vesselAssets} from '../js/_config.min.js';
+let scene, camera, renderer, cssRenderer, group;
+let dragControls, orbitControls;
+let numCols, numRows;
+let vessels = vesselPaths;
 
-let scene, camera, renderer, dragControls, orbitControls;
-let object, numObjects, numRows, numCols;
+const vesselFragments = [];
+const vesselTooltip = [];
+const vesselID = []
+const uuids = [];
+
 const manager = new THREE.LoadingManager();
-const modelArray = []; 
-const uuidArray = [];
 
-const urlParams = new URLSearchParams(window.location.search);
-let groupNumb = parseInt(urlParams.get('id')) > vesselAssets.length ? '0' : 
-                parseInt(urlParams.get('id')) <= vesselAssets.length ? parseInt(urlParams.get('id')) : 
-                0;
-const groupID = window.location.href.split('=').pop();
-let currentGroup = vesselAssets[groupNumb];
+const mouse = new THREE.Vector2();
+const raycaster = new THREE.Raycaster();
 
 const loading = document.getElementById('loading');
-const downloadButton = document.getElementById('download-glb');
-const resetCameraButton = document.getElementById('reset');
 const shuffleButton = document.getElementById('shuffle');
+const resetCameraButton = document.getElementById('reset');
+const downloadButton = document.getElementById('download-glb');
 const imageScreenshotButton = document.getElementById('save-img');
 
-let sceneReady = false;
-
-function sceneSetup() {
+const init = () => {
 
     scene = new THREE.Scene();
     scene.background = new THREE.Color(0x000000);
-    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000);
-    if (window.innerWidth <= 800) {
-        camera.position.z = 12;
-    } else {
+    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 50);
+
+    if (window.innerWidth > 800) {
         camera.position.z = 10;
+    } else {
+        camera.position.z = 12;
     }
 
     renderer = new THREE.WebGLRenderer({
@@ -48,125 +49,179 @@ function sceneSetup() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
 
+    cssRenderer = new CSS2DRenderer();
+    cssRenderer.setSize(window.innerWidth, window.innerHeight);
+    cssRenderer.domElement.style.position = 'absolute';
+    cssRenderer.domElement.style.top = '0px';
+    cssRenderer.domElement.style.pointerEvents = 'none';
+    document.body.appendChild(cssRenderer.domElement);
+
     orbitControls = new OrbitControls(camera, renderer.domElement);
     orbitControls.update();
-    orbitControls.addEventListener('change', animate)
+    orbitControls.addEventListener('change', render)
     orbitControls.maxDistance = 15;
     orbitControls.enablePan = true;
     orbitControls.panSpeed = 0.5;
 
-    dragControls = new DragControls(modelArray, camera, renderer.domElement);
-    dragControls.addEventListener('dragstart', function() {
+    dragControls = new DragControls(vesselFragments, camera, renderer.domElement);
+    dragControls.addEventListener('drag', render);
+    dragControls.addEventListener('dragstart', () => {
         orbitControls.enabled = false;
     });
-    dragControls.addEventListener('dragend', function() {
+    dragControls.addEventListener('dragend', () => {
         orbitControls.enabled = true;
     });
 
-    window.addEventListener('resize', onWindowResize);
-
     downloadButton.addEventListener('click', downloadVessel);
-
     imageScreenshotButton.addEventListener('click', saveAsImage);
 
-    resetCameraButton.addEventListener('click', resetCamera, false);
-    document.body.addEventListener('keydown', (event) => {
-        if (event.code == "KeyR") {
+    resetCameraButton.addEventListener('click', resetCamera);
+    document.body.addEventListener('keydown', (e) => {
+        if (e.code == "KeyR") {
             resetCamera();
         }
-    }, false);
+    });
 
     generateUUID();
 
-    shuffleButton.onclick = function() {
+    shuffleButton.onclick = () => {
         loading.classList.remove('fade');
         setTimeout(() => {
-            window.location.href = `?id=${uuidArray[0]}`;
+            window.location.href = `?id=${uuids[0]}`;
         }, 1200)
     }
 
-    sceneReady = true;
+    window.addEventListener('mousemove', (e) => {
+
+        mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+        mouse.y = - (e.clientY / window.innerHeight) * 2 + 1;
+
+        raycaster.setFromCamera(mouse, camera);
+        const intersects = raycaster.intersectObject(group, true);
+
+        if (intersects[0] && vesselID.indexOf(intersects[0].object.id) !== -1) {
+
+            for (let i = 0; i < vesselTooltip.length; i++) {
+                if (intersects[0].object.id === vesselTooltip[i].id) {
+                    vesselTooltip[i].p.className = 'tooltip show';
+                    vesselTooltip[i].p.textContent = vesselTooltip[i].content;
+                    vesselTooltip[i].label.position.set(
+                        vesselTooltip[i].fragmentPos.x, 
+                        vesselTooltip[i].fragmentPos.y + 1,
+                        vesselTooltip[i].fragmentPos.z
+                    );
+                }
+            }
+
+        } else {
+
+            for (let i = 0; i < vesselTooltip.length; i++) {
+                vesselTooltip[i].p.className = 'tooltip hide';
+            }
+
+        }
+
+        render();
+    })
+
+    window.addEventListener('resize', onWindowResize);
 }
 
-function generateUUID() {
-
+const generateUUID = () => {
     const uuid = Math.floor(Math.random() * 100000);
-    uuidArray.push(uuid);
+    uuids.push(uuid);
     return uuid;
 }
 
-function loadAssets() {
+const loadAssets = () => {
 
-    let spacing = 3;
+    group = new THREE.Group();
+    scene.add(group);
 
-    for (let i = currentGroup.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [currentGroup[i], currentGroup[j]] = [currentGroup[j], currentGroup[i]];
-    }
-
-    currentGroup = currentGroup.slice(0, 15);
-    numObjects = currentGroup.length;
-
-    if (window.innerWidth < 800) {
-        numRows = 5;
-        numCols = 3;
-    } else {
+    if (window.innerWidth > 800) {
         numRows = 3;
         numCols = 5;
+    } else {
+        numRows = 5;
+        numCols = 3;
     }
 
-    for (let i = numObjects - 1; i > 0; i--) {
+    for (let i = vessels.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [currentGroup[i], currentGroup[j]] = [currentGroup[j], currentGroup[i]];
+        [vessels[i], vessels[j]] = [vessels[j], vessels[i]];
     }
+
+    vessels = vessels.slice(0, 15);
 
     const loader = new GLTFLoader(manager);
-    for (let i = 0; i < numObjects; i++) {
+    for (let i = 0; i < vessels.length; i++) {
 
-        const obj = currentGroup[i];
+          loader.load(vessels[i].src, (glb) => {
 
-        loader.load(obj.src, function (glb) {
-            object = glb.scene;
+            const vesselFragment = glb.scene;
 
             const row = Math.floor(i / numCols);
             const col = i % numCols;
-            const x = (col - (numCols - 1) / 2) * spacing;
-            const y = (row - (numRows - 1) / 2) * spacing;
+            const x = (col - (numCols - 1) / 2) * 3;
+            const y = (row - (numRows - 1) / 2) * 3;
 
-            if (window.innerWidth <= 800) {
-                object.position.set(x, y + 1, 0);
+            vesselFragment.rotation.y = Math.random() * 4 * Math.PI;
+
+            if (window.innerWidth > 800) {
+                vesselFragment.position.set(x, y, 0);
             } else {
-                object.position.set(x, y, 0);
+                vesselFragment.position.set(x, y + 1, 0);
             }
 
-            object.rotation.y = Math.random() * 4 * Math.PI;
+            let name = `vessel-fragment-${i + 1}`;
+            vesselFragment.name = name;
+            vesselFragment.userData.name = name;
 
-            scene.add(object)
-            modelArray.push(object);
+            const p = document.createElement('p');
+            p.className = 'tooltip';
+            const pContainer = document.createElement('div');
+            pContainer.className = 'tooltip-container';
+            pContainer.appendChild(p);
+            const tooltipLabel = new CSS2DObject(pContainer);
+            scene.add(tooltipLabel);
+
+            scene.add(vesselFragment);
+            group.add(vesselFragment);
+
+            vesselFragments.push(vesselFragment);
+            
+            vesselID.push(vesselFragment.children[0].id);
+            vesselTooltip.push({
+                id: vesselFragment.children[0].id,
+                p: p,
+                content: name,
+                label: tooltipLabel,
+                fragmentPos: vesselFragment.position
+            });
         })
     }
 }
 
-function downloadVessel() {
-
-    const exporter = new GLTFExporter();
+const downloadVessel = () => {
+    const exporter = new GLTFExporter(manager);
     const options = {
         onlyVisible: true,
         binary: true
     };
+
     exporter.parse(
         scene,
-        function(result) {
-            saveArrayBuffer(result, `vessel-${groupID}.glb`)
+        (result) => {
+            saveArrayBuffer(result, `vessel-${uuids[0]}.glb`)
         },
-        function (error) {
+        (error) => {
             console.log('An error happened during parsing', error);
         },
         options
     )
 }
-function save(blob, fileName) {
 
+const save = (blob, fileName) => {
     const link = document.createElement('a');
     document.body.appendChild(link);
     link.href = URL.createObjectURL(blob);
@@ -174,26 +229,25 @@ function save(blob, fileName) {
     link.click();
     document.body.removeChild(link);
 }
-function saveArrayBuffer(buffer, fileName) {
 
+const saveArrayBuffer = (buffer, fileName) => {
     save(new Blob([buffer], {type: 'application/octet-stream'}), fileName);
 }
 
-function saveAsImage() {
-
+const saveAsImage = () => {
     let imgData;
-
     try {
         const strMime = "image/jpeg";
         const strDownloadMime = "image/octet-stream";
         imgData = renderer.domElement.toDataURL(strMime);
-        saveFile(imgData.replace(strMime, strDownloadMime), `vessel-${groupID}.jpg`);
-    } catch (e) {
-        console.log(e);
+        saveFile(imgData.replace(strMime, strDownloadMime), `vessel-${uuids[0]}.jpg`);
+    } catch (error) {
+        console.log('An error happened during parsing', error);
         return;
     }
 }
-function saveFile(strData, fileName) {
+
+const saveFile = (strData, fileName) => {
 
     const link = document.createElement('a');
     if (typeof link.download === 'string') {
@@ -207,34 +261,38 @@ function saveFile(strData, fileName) {
     };
 }
 
-function resetCamera() {
-
+const resetCamera = () => {
     orbitControls.reset();
 }
 
-function onWindowResize() {
-
+const onWindowResize = () => {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
 
+    cssRenderer.setSize(this.window.innerWidth, this.window.innerHeight);
+
     animate();
 }
 
-function animate() {
+const animate = () => {
 
     requestAnimationFrame(animate);
+    render();
+}
+
+const render = () => {
+    cssRenderer.render(scene, camera);
     renderer.render(scene, camera);
 }
 
-window.onload = function() {
-    
-    sceneSetup();
+window.onload = () => {
+    init();
     loadAssets();
     setTimeout(animate, 1000);
     setTimeout(() => {
         loading.classList.add('fade');
     }, 1000);
 
-    console.log(`Build-A-Vessel-${groupID} Ready`);
+    console.log(vesselID)
 }

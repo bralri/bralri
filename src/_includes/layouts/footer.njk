@@ -1,68 +1,76 @@
+<style>
+    .footer-links-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .footer-info-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .footer-sitemap-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(1px, 1fr));
+    }
+</style>
+
 <footer>
     <div class="container">
         <div class="footer-text">
-            <p>
-                <i class="fa-solid fa-star-of-life icon-accent"></i>
-                RSS Feeds:
-                <a
-                    href="/rss.xml"
-                    title="Main RSS Feed"
-                    aria-label="Open the Main RSS Feed">Main</a>
+                <ul class="footer-links-list">
+                    <li>
+                        <p>RSS Feeds</p> <br>
+                        <ul>
+                            <li><a href="/rss.xml" title="Main RSS Feed" aria-label="Click to open the Main RSS Feed">Main</a></li>
+                            <li><a href="/blog.xml" title="Blog RSS Feed" aria-label="Click to open the Blog RSS Feed">Blog</a></li>
+                            <li><a href="/works.xml" title="Works RSS Feed" aria-label="Click to open the Works RSS Feed">Works</a></li>
+                            <li><a href="http://eepurl.com/iftvtz" title="News Letter"  aria-label="Click to subscribe to the News Letter">News Letter</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>Socials</p> <br>
+                        <ul>
+                            <li><a href="https://instagram.com/bralri" title="Instagram" aria-label="Click to visit instagram.com/bralri">Instagram</a></li>
+                            <li><a href="https://twitter.com/bryanridpath" title="Twitter" aria-label="Click to visit twitter.com/bryanridpath">Twitter</a></li>
+                            <li><a href="https://twitch.tv/bralri" title="Twitter" aria-label="Click to visit twitch.tv/bralri">Twitch</a></li>
+                            <li><a href="https://www.github.com/bralri" title="GitHub" aria-label="Click to visit github.com/bralri">GitHub</a></li>
+                            <li><a href="https://www.are.na/bryan-ridpath" title="Are.na" aria-label="Click to visit are.na/bryan-ridpath">Are.na</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>Support</p> <br>
+                        <ul>
+                            <li><a href="https://www.patreon.com/bralri" title="Patreon"  aria-label="Click to visit patreon.com/bralri">Patreon</a></li>
+                            <li><a href="https://ko-fi.com/bralri" title="Ko-fi"  aria-label="Click to visit ko-fi.com/bralri">Ko-fi</a></li>
+                            <li><a href="/" title="PayPal"  aria-label="Click to visit paypal.com/bralri">PayPal</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>Contact</p> <br>
+                        <ul>
+                            <li><a href="mailto:bryanridpath@gmail.com" title="email" aria-label="email">bryanridpath@gmail.com</a></li>
+                        </ul>
+                    </li>
+                </ul>
 
-                |
-
-                <a
-                    href="/blog.xml"
-                    title="Blog RSS Feed"
-                    aria-label="Open the Blog RSS Feed">Blog</a>
-
-                |
-
-                <a
-                    href="/works.xml"
-                    title="Works RSS Feed"
-                    aria-label="Open the Works RSS Feed">Works</a>
-
-                
-            </p>
-            <br>
-                <p>
-                    <i class="fa-solid fa-star-of-life icon-accent"></i>
-                    Subscribe to the
-                    <a
-                        href="http://eepurl.com/iftvtz"
-                        title="News Letter"
-                        aria-label="Open to subscribe to the News Letter">News Letter</a>
-                </p>
                 <br>
-                    <p>
-                        <i class="fa-solid fa-star-of-life icon-accent"></i>
-                        <a
-                            href="https://instagram.com/bralri"
-                            title="Instagram"
-                            aria-label="Open to visit instagram.com/bralri">Instagram</a>
-
-                        |
-
-                        <a
-                            href="https://twitter.com/bryanridpath"
-                            title="Twitter"
-                            aria-label="Open to visit twitter.com/bryanridpath">Twitter</a>
-
-                        |
-
-                        <a
-                            href="https://www.github.com/bralri"
-                            title="GitHub"
-                            aria-label="Open to visit github.com/bralri">GitHub</a>
-                    </p>
-                    <br>
-                    <br>
-                        <p style="color: #808080;">
-                            <i class="fa-regular fa-copyright"></i>
-                            {{ helpers.currentYear() }}
-                            ~ Bryan Ridpath
-                        </p>
+                <br>
+                <ul class="footer-info-list">
+                    <li>
+                        <p style="color: #808080;"><i class="fa-regular fa-copyright"></i> {{ helpers.currentYear() }} Bryan Ridpath</p>
+                    </li>
+                    <li>
+                        <ul class="footer-sitemap-list">
+                            <li class="footer-sitemap-link"><a href="/" style="color: #808080;" title="Home">Home</a></li>
+                            <li class="footer-sitemap-link"><a href="/works" style="color: #808080;" title="Works">Works</a></li>
+                            <li class="footer-sitemap-link"><a href="/blog" style="color: #808080;" title="Works">Blog</a></li>
+                            <li class="footer-sitemap-link"><a href="/about" style="color: #808080;" title="About">About</a></li>
+                            <li class="footer-sitemap-link"><a href="/contact" style="color: #808080;" title="Contact">Contact</a></li>
+                            <li class="footer-sitemap-link"><a href="/site-map" style="color: #808080;" title="Site Map">Site Map</a></li>
+                        </ul>
+                    </li>
+                </ul>
         </div>
     </div>
 </footer>

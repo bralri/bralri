@@ -1,169 +1,168 @@
-import {vesselPaths as v} from "../js/_variables.min.js";
+const path = "/assets/models/vessels"
+const ext = ".glb";
 
-export const vesselAssets = [
-    [
-        {
-            src: v.vessel0
-        },{
-            src: v.vessel1
-        },{
-            src: v.vessel2
-        },{
-            src: v.vessel3
-        },{
-            src: v.vessel4
-        },{
-            src: v.vessel5
-        },{
-            src: v.vessel6
-        },{
-            src: v.vessel7
-        },{
-            src: v.vessel8
-        },{
-            src: v.vessel9
-        },{
-            src: v.vessel10
-        },{
-            src: v.vessel11
-        },{
-            src: v.vessel12
-        },{
-            src: v.vessel13
-        },{
-            src: v.vessel14
-        },{
-            src: v.vessel15
-        },{
-            src: v.vessel16
-        },{
-            src: v.vessel17
-        },{
-            src: v.vessel18
-        },{
-            src: v.vessel19
-        },{
-            src: v.vessel20
-        },{
-            src: v.vessel21
-        },{
-            src: v.vessel22
-        },{
-            src: v.vessel23
-        },{
-            src: v.vessel24
-        },{
-            src: v.vessel25
-        },{
-            src: v.vessel26
-        },{
-            src: v.vessel27
-        },{
-            src: v.vessel28
-        },{
-            src: v.vessel29
-        },{
-            src: v.vessel30
-        },{
-            src: v.vessel31
-        },{
-            src: v.vessel32
-        },{
-            src: v.vessel33
-        },{
-            src: v.vessel34
-        },{
-            src: v.vessel35
-        },{
-            src: v.vessel36
-        },{
-            src: v.vessel37
-        },{
-            src: v.vessel38
-        },{
-            src: v.vessel39
-        },{
-            src: v.vessel40
-        },{
-            src: v.vessel41
-        },{
-            src: v.vessel42
-        },{
-            src: v.vessel43
-        },{
-            src: v.vessel44
-        },{
-            src: v.vessel45
-        },{
-            src: v.vessel46
-        },{
-            src: v.vessel47
-        },{
-            src: v.vessel48
-        },{
-            src: v.vessel49
-        },{
-            src: v.vessel50
-        },{
-            src: v.vessel51
-        },{
-            src: v.vessel52
-        },{
-            src: v.vessel53
-        },{
-            src: v.vessel54
-        },{
-            src: v.vessel55
-        },{
-            src: v.vessel56
-        },{
-            src: v.vessel57
-        },{
-            src: v.vessel58
-        },{
-            src: v.vessel59
-        },{
-            src: v.vessel60
-        },{
-            src: v.vessel61
-        },{
-            src: v.vessel62
-        },{
-            src: v.vessel63
-        },{
-            src: v.vessel64
-        },{
-            src: v.vessel65
-        },{
-            src: v.vessel66
-        },{
-            src: v.vessel67
-        },{
-            src: v.vessel68
-        },{
-            src: v.vessel69
-        },{
-            src: v.vessel70
-        },{
-            src: v.vessel71
-        },{
-            src: v.vessel72
-        },{
-            src: v.vessel73
-        },{
-            src: v.vessel74
-        },{
-            src: v.vessel75
-        },{
-            src: v.vessel76
-        },{
-            src: v.vessel77
-        },{
-            src: v.vessel78
-        },{
-            src: v.vessel79
-        },{
-            src: v.vessel80
-        }
-    ]
+export const vesselPaths = [
+    {
+        src: `${path}/1/0${ext}`
+    },{
+        src: `${path}/1/1${ext}`
+    },{
+        src: `${path}/1/2${ext}`
+    },{
+        src: `${path}/1/3${ext}`
+    },{
+        src: `${path}/1/4${ext}`
+    },{
+        src: `${path}/1/5${ext}`
+    },{
+        src: `${path}/1/6${ext}`
+    },{
+        src: `${path}/1/7${ext}`
+    },{
+        src: `${path}/1/8${ext}`
+    },{
+        src: `${path}/1/9${ext}`
+    },{
+        src: `${path}/1/10${ext}`
+    },{
+        src: `${path}/1/11${ext}`
+    },{
+        src: `${path}/1/12${ext}`
+    },{
+        src: `${path}/1/13${ext}`
+    },{
+        src: `${path}/1/14${ext}`
+    },{
+        src: `${path}/2/0${ext}`
+    },{
+        src: `${path}/2/1${ext}`
+    },{
+        src: `${path}/2/2${ext}`
+    },{
+        src: `${path}/2/3${ext}`
+    },{
+        src: `${path}/2/4${ext}`
+    },{
+        src: `${path}/2/5${ext}`
+    },{
+        src: `${path}/2/6${ext}`
+    },{
+        src: `${path}/2/7${ext}`
+    },{
+        src: `${path}/2/8${ext}`
+    },{
+        src: `${path}/2/9${ext}`
+    },{
+        src: `${path}/2/10${ext}`
+    },{
+        src: `${path}/2/11${ext}`
+    },{
+        src: `${path}/2/12${ext}`
+    },{
+        src: `${path}/2/13${ext}`
+    },{
+        src: `${path}/2/14${ext}`
+    },{
+        src: `${path}/2/15${ext}`
+    },{
+        src: `${path}/2/16${ext}`
+    },{
+        src: `${path}/3/0${ext}`
+    },{
+        src: `${path}/3/1${ext}`
+    },{
+        src: `${path}/3/2${ext}`
+    },{
+        src: `${path}/3/3${ext}`
+    },{
+        src: `${path}/3/4${ext}`
+    },{
+        src: `${path}/3/5${ext}`
+    },{
+        src: `${path}/3/6${ext}`
+    },{
+        src: `${path}/3/7${ext}`
+    },{
+        src: `${path}/3/8${ext}`
+    },{
+        src: `${path}/3/9${ext}`
+    },{
+        src: `${path}/3/10${ext}`
+    },{
+        src: `${path}/3/11${ext}`
+    },{
+        src: `${path}/3/12${ext}`
+    },{
+        src: `${path}/3/13${ext}`
+    },{
+        src: `${path}/3/14${ext}`
+    },{
+        src: `${path}/3/15${ext}`
+    },{
+        src: `${path}/3/16${ext}`
+    },{
+        src: `${path}/3/17${ext}`
+    },{
+        src: `${path}/3/18${ext}`
+    },{
+        src: `${path}/4/0${ext}`
+    },{
+        src: `${path}/4/1${ext}`
+    },{
+        src: `${path}/4/2${ext}`
+    },{
+        src: `${path}/4/3${ext}`
+    },{
+        src: `${path}/4/4${ext}`
+    },{
+        src: `${path}/4/5${ext}`
+    },{
+        src: `${path}/4/6${ext}`
+    },{
+        src: `${path}/4/7${ext}`
+    },{
+        src: `${path}/4/8${ext}`
+    },{
+        src: `${path}/4/9${ext}`
+    },{
+        src: `${path}/4/10${ext}`
+    },{
+        src: `${path}/4/11${ext}`
+    },{
+        src: `${path}/4/12${ext}`
+    },{
+        src: `${path}/4/13${ext}`
+    },{
+        src: `${path}/4/14${ext}`
+    },{
+        src: `${path}/4/15${ext}`
+    },{
+        src: `${path}/5/0${ext}`
+    },{
+        src: `${path}/5/1${ext}`
+    },{
+        src: `${path}/5/2${ext}`
+    },{
+        src: `${path}/5/3${ext}`
+    },{
+        src: `${path}/5/4${ext}`
+    },{
+        src: `${path}/5/5${ext}`
+    },{
+        src: `${path}/5/6${ext}`
+    },{
+        src: `${path}/5/7${ext}`
+    },{
+        src: `${path}/5/8${ext}`
+    },{
+        src: `${path}/5/9${ext}`
+    },{
+        src: `${path}/5/10${ext}`
+    },{
+        src: `${path}/5/11${ext}`
+    },{
+        src: `${path}/5/12${ext}`
+    },{
+        src: `${path}/5/13${ext}`
+    }
 ]

@@ -6,26 +6,6 @@ year: "2023"
 tags: ["post", "creative-coding"]
 description: "A brief breakdown & walkthrough"
 thumbnail: "/assets/img/blog/how-i-made-build-a-vessel/post-thumbnail.webp"
-
-# gallery:
-#   - url: "/assets/img/blog/how-i-made-build-a-vessel/gallery/build-a-vessel-gallery-1.png"
-#     title: "Build-A-Vessel screenshot"
-#     alt: "Screenshot of arrange vessel models from Build-A-Vessel"
-#   - url: "/assets/img/blog/how-i-made-build-a-vessel/gallery/build-a-vessel-gallery-2.png"
-#     title: "Build-A-Vessel screenshot"
-#     alt: "Screenshot of arrange vessel models from Build-A-Vessel"
-#   - url: "/assets/img/blog/how-i-made-build-a-vessel/gallery/build-a-vessel-gallery-3.png"
-#     title: "Build-A-Vessel screenshot"
-#     alt: "Screenshot of arrange vessel models from Build-A-Vessel"
-#   - url: "/assets/img/blog/how-i-made-build-a-vessel/gallery/build-a-vessel-gallery-4.png"
-#     title: "Build-A-Vessel screenshot"
-#     alt: "Screenshot of arrange vessel models from Build-A-Vessel"
-#   - url: "/assets/img/blog/how-i-made-build-a-vessel/gallery/build-a-vessel-gallery-5.png"
-#     title: "Build-A-Vessel screenshot"
-#     alt: "Screenshot of arrange vessel models from Build-A-Vessel"
-#   - url: "/assets/img/blog/how-i-made-build-a-vessel/gallery/build-a-vessel-gallery-6.png"
-#     title: "Build-A-Vessel screenshot"
-#     alt: "Screenshot of arrange vessel models from Build-A-Vessel"
 ---
 
 <section id="what-is-build-a-vessel" class="blog-section">
