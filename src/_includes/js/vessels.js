@@ -3,23 +3,16 @@ import {GLTFLoader} from 'three/GLTFLoader.js';
 import {GLTFExporter} from 'three/GLTFExporter.js';
 import {DragControls} from 'three/DragControls.js';
 import {OrbitControls} from 'three/OrbitControls.js';
-import {CSS2DRenderer, CSS2DObject} from 'three/CSS2DRenderer.js'
 import {vesselPaths} from '../js/_config.min.js';
 
-let scene, camera, renderer, cssRenderer, group;
+let scene, camera, renderer;
 let dragControls, orbitControls;
 let numCols, numRows;
-let vessels = vesselPaths;
 
-const vesselFragments = [];
-const vesselTooltip = [];
-const vesselID = []
+const fragments = [];
 const uuids = [];
 
 const manager = new THREE.LoadingManager();
-
-const mouse = new THREE.Vector2();
-const raycaster = new THREE.Raycaster();
 
 const loading = document.getElementById('loading');
 const shuffleButton = document.getElementById('shuffle');
@@ -49,13 +42,6 @@ const init = () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
 
-    cssRenderer = new CSS2DRenderer();
-    cssRenderer.setSize(window.innerWidth, window.innerHeight);
-    cssRenderer.domElement.style.position = 'absolute';
-    cssRenderer.domElement.style.top = '0px';
-    cssRenderer.domElement.style.pointerEvents = 'none';
-    document.body.appendChild(cssRenderer.domElement);
-
     orbitControls = new OrbitControls(camera, renderer.domElement);
     orbitControls.update();
     orbitControls.addEventListener('change', render)
@@ -63,7 +49,7 @@ const init = () => {
     orbitControls.enablePan = true;
     orbitControls.panSpeed = 0.5;
 
-    dragControls = new DragControls(vesselFragments, camera, renderer.domElement);
+    dragControls = new DragControls(fragments, camera, renderer.domElement);
     dragControls.addEventListener('drag', render);
     dragControls.addEventListener('dragstart', () => {
         orbitControls.enabled = false;
@@ -91,39 +77,6 @@ const init = () => {
         }, 1200)
     }
 
-    window.addEventListener('mousemove', (e) => {
-
-        mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
-        mouse.y = - (e.clientY / window.innerHeight) * 2 + 1;
-
-        raycaster.setFromCamera(mouse, camera);
-        const intersects = raycaster.intersectObject(group, true);
-
-        if (intersects[0] && vesselID.indexOf(intersects[0].object.id) !== -1) {
-
-            for (let i = 0; i < vesselTooltip.length; i++) {
-                if (intersects[0].object.id === vesselTooltip[i].id) {
-                    vesselTooltip[i].p.className = 'tooltip show';
-                    vesselTooltip[i].p.textContent = vesselTooltip[i].content;
-                    vesselTooltip[i].label.position.set(
-                        vesselTooltip[i].fragmentPos.x, 
-                        vesselTooltip[i].fragmentPos.y + 1,
-                        vesselTooltip[i].fragmentPos.z
-                    );
-                }
-            }
-
-        } else {
-
-            for (let i = 0; i < vesselTooltip.length; i++) {
-                vesselTooltip[i].p.className = 'tooltip hide';
-            }
-
-        }
-
-        render();
-    })
-
     window.addEventListener('resize', onWindowResize);
 }
 
@@ -134,10 +87,8 @@ const generateUUID = () => {
 }
 
 const loadAssets = () => {
-
-    group = new THREE.Group();
-    scene.add(group);
-
+    const loader = new GLTFLoader(manager);
+  
     if (window.innerWidth > 800) {
         numRows = 3;
         numCols = 5;
@@ -145,62 +96,39 @@ const loadAssets = () => {
         numRows = 5;
         numCols = 3;
     }
+  
+    const randomPaths = Array.from({length: 15}, () => {
+        const randomIndex = Math.floor(Math.random() * vesselPaths.length);
+        return vesselPaths.splice(randomIndex, 1)[0];
+    });
+  
+    randomPaths.forEach((path, i) => {
+        loader.load(
+            `/assets/models/vessels${path}.glb`,
+            (glb) => {
+                const fragment = glb.scene;
 
-    for (let i = vessels.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [vessels[i], vessels[j]] = [vessels[j], vessels[i]];
-    }
+                const row = Math.floor(i / numCols);
+                const col = i % numCols;
+                const x = (col - (numCols - 1) / 2) * 3;
+                const y = (row - (numRows - 1) / 2) * 3;
 
-    vessels = vessels.slice(0, 15);
+                fragment.rotateY(Math.random() * 4 * Math.PI);
 
-    const loader = new GLTFLoader(manager);
-    for (let i = 0; i < vessels.length; i++) {
+                if (window.innerWidth > 800) {
+                    fragment.position.set(x, y, 0);
+                } else {
+                    fragment.position.set(x, y + 1, 0);
+                }
 
-          loader.load(vessels[i].src, (glb) => {
+                scene.add(fragment);
 
-            const vesselFragment = glb.scene;
-
-            const row = Math.floor(i / numCols);
-            const col = i % numCols;
-            const x = (col - (numCols - 1) / 2) * 3;
-            const y = (row - (numRows - 1) / 2) * 3;
-
-            vesselFragment.rotation.y = Math.random() * 4 * Math.PI;
-
-            if (window.innerWidth > 800) {
-                vesselFragment.position.set(x, y, 0);
-            } else {
-                vesselFragment.position.set(x, y + 1, 0);
+                fragments.push(fragment);
             }
-
-            let name = `vessel-fragment-${i + 1}`;
-            vesselFragment.name = name;
-            vesselFragment.userData.name = name;
-
-            const p = document.createElement('p');
-            p.className = 'tooltip';
-            const pContainer = document.createElement('div');
-            pContainer.className = 'tooltip-container';
-            pContainer.appendChild(p);
-            const tooltipLabel = new CSS2DObject(pContainer);
-            scene.add(tooltipLabel);
-
-            scene.add(vesselFragment);
-            group.add(vesselFragment);
-
-            vesselFragments.push(vesselFragment);
-            
-            vesselID.push(vesselFragment.children[0].id);
-            vesselTooltip.push({
-                id: vesselFragment.children[0].id,
-                p: p,
-                content: name,
-                label: tooltipLabel,
-                fragmentPos: vesselFragment.position
-            });
-        })
-    }
-}
+        );
+    });
+};
+  
 
 const downloadVessel = () => {
     const exporter = new GLTFExporter(manager);
@@ -270,8 +198,6 @@ const onWindowResize = () => {
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
 
-    cssRenderer.setSize(this.window.innerWidth, this.window.innerHeight);
-
     animate();
 }
 
@@ -282,7 +208,6 @@ const animate = () => {
 }
 
 const render = () => {
-    cssRenderer.render(scene, camera);
     renderer.render(scene, camera);
 }
 
@@ -293,6 +218,4 @@ window.onload = () => {
     setTimeout(() => {
         loading.classList.add('fade');
     }, 1000);
-
-    console.log(vesselID)
 }
