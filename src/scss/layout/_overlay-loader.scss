@@ -108,3 +108,31 @@
 #reset, #download-glb, #shuffle, #save-img {
     width: 50px;
 }
+#archive-btn {
+    margin: 0;
+    position: absolute;
+    z-index: 9999;
+    display: flex;
+
+    right: 15px;
+    bottom: 15px;
+
+    #archive {
+        text-align: center;
+        display: inline-block;
+        height: 30px;
+        width: 50px;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            a {
+                text-decoration: none;
+
+                    &:hover {
+                        color: $accent;
+                    }
+            }
+    }
+}

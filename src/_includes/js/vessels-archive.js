@@ -127,9 +127,11 @@ const animate = () => {
                 document.querySelector('#caption p').innerHTML = asset.userData.caption;
             }
         });
+        document.body.style.cursor = 'pointer';
         document.getElementById('caption').style.display = 'block';
     } else {
-        document.getElementById('caption').style.display = 'none';
+        document.body.style.cursor = '';
+        document.getElementById('caption').style.display = '';
     };
 
     requestAnimationFrame(animate);

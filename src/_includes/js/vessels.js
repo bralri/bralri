@@ -15,6 +15,7 @@ const uuids = [];
 const manager = new THREE.LoadingManager();
 
 const loading = document.getElementById('loading');
+const archiveButton = document.getElementById('archive');
 const shuffleButton = document.getElementById('shuffle');
 const resetCameraButton = document.getElementById('reset');
 const downloadButton = document.getElementById('download-glb');
@@ -75,6 +76,10 @@ const init = () => {
         setTimeout(() => {
             window.location.href = `?id=${uuids[0]}`;
         }, 1200)
+    }
+
+    archiveButton.onclick = () => {
+        window.open('/works/build-a-vessel/archive/');
     }
 
     window.addEventListener('resize', onWindowResize);
