@@ -21,3 +21,16 @@
     font-weight: 400;
     font-size: 18px;
 }
+
+.coordinates {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    padding: 16px;
+    font-weight: 300;
+    font-size: 12px;
+
+    color: $white; //change this based on environment backgrounds etc
+    // mix-blend-mode: difference;
+}

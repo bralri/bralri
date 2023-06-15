@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import GUI from 'three/lil-gui.esm.min.js';
 import {GLTFLoader} from 'three/GLTFLoader.js';
 import {GLTFExporter} from 'three/GLTFExporter.js';
 import {DragControls} from 'three/DragControls.js';
@@ -7,19 +8,79 @@ import {vesselPaths} from '../js/_config.min.js';
 
 let scene, camera, renderer;
 let dragControls, orbitControls;
-let numCols, numRows;
 
-const fragments = [];
 const uuids = [];
+const fragments = [];
+let amountOfFragments = 16;
+let fragmentRotation = 0;
 
 const manager = new THREE.LoadingManager();
-
 const loading = document.getElementById('loading');
-const archiveButton = document.getElementById('archive');
-const shuffleButton = document.getElementById('shuffle');
-const resetCameraButton = document.getElementById('reset');
-const downloadButton = document.getElementById('download-glb');
-const imageScreenshotButton = document.getElementById('save-img');
+
+const gui = new GUI({title: 'Settings'});
+gui.domElement.id = 'gui';
+
+const guiSettings = {
+    // Controls
+    shuffleSelection: () => {
+        const selectedAmount = amountOfFragments; // Store the selected amountOfFragments
+        const vesselPathsCopy = [...vesselPaths];
+        const randomPaths = Array.from({length: selectedAmount}, () => {
+            const randomIndex = Math.floor(Math.random() * vesselPathsCopy.length);
+            return vesselPathsCopy.splice(randomIndex, 1)[0];
+        });
+        
+        loadAssets();
+    },
+    resetCamera: () => {
+        orbitControls.reset();
+    },
+    downloadVessel: () => {
+        downloadVessel();
+    },
+    takeScreenshot: () => {
+        saveAsImage();
+    },
+    visitArchive: () => {
+        window.open('/works/build-a-vessel/archive/');
+    },
+    // Options
+    amountOfFragments: 16
+}
+
+const guiControls = gui.addFolder('Controls');
+guiControls.add(guiSettings, "shuffleSelection").name("Shuffle Selection");
+guiControls.add(guiSettings, "resetCamera").name("Reset Camera");
+guiControls.add(guiSettings, "takeScreenshot").name("Take Screenshot");
+guiControls.add(guiSettings, "downloadVessel").name("Download Vessel");
+
+const guiOptions = gui.addFolder('Options');
+guiOptions.add(guiSettings, "amountOfFragments", [3, 4, 9, 16, 25]).name("Amount").onChange(
+    (value) => {
+        amountOfFragments = value;
+        loadAssets();
+    }
+)
+
+gui.add(guiSettings, "visitArchive").name("Visit Archive");
+
+gui.$title.title = gui.$title.innerHTML;
+gui.children.forEach((child) => {
+    if (!child.children) {
+        child.domElement.title = child.$name.innerHTML;
+    } else {
+        let parent = child;
+        parent.children.forEach((child) => {
+            child.domElement.title = child.$name.innerHTML;
+        })
+    }
+
+    if (child.$title) {
+        child.$title.title = child.$title.innerHTML
+    }
+})
+
+// to do: add tool tip for when you hover over the fragments which displays their fragment id????
 
 const init = () => {
 
@@ -59,28 +120,7 @@ const init = () => {
         orbitControls.enabled = true;
     });
 
-    downloadButton.addEventListener('click', downloadVessel);
-    imageScreenshotButton.addEventListener('click', saveAsImage);
-
-    resetCameraButton.addEventListener('click', resetCamera);
-    document.body.addEventListener('keydown', (e) => {
-        if (e.code == "KeyR") {
-            resetCamera();
-        }
-    });
-
     generateUUID();
-
-    shuffleButton.onclick = () => {
-        loading.classList.remove('fade');
-        setTimeout(() => {
-            window.location.href = `?id=${uuids[0]}`;
-        }, 1200)
-    }
-
-    archiveButton.onclick = () => {
-        window.open('/works/build-a-vessel/archive/');
-    }
 
     window.addEventListener('resize', onWindowResize);
 }
@@ -93,47 +133,45 @@ const generateUUID = () => {
 
 const loadAssets = () => {
     const loader = new GLTFLoader(manager);
-  
-    if (window.innerWidth > 800) {
-        numRows = 3;
-        numCols = 5;
-    } else {
-        numRows = 5;
-        numCols = 3;
-    }
-  
-    const randomPaths = Array.from({length: 15}, () => {
-        const randomIndex = Math.floor(Math.random() * vesselPaths.length);
-        return vesselPaths.splice(randomIndex, 1)[0];
+
+    fragments.forEach((fragment) => {
+        scene.remove(fragment);
     });
+    fragments.length = 0;
+    
+    const vesselPathsCopy = [...vesselPaths];
+
+    const randomPaths = Array.from({length: amountOfFragments}, () => {
+        const randomIndex = Math.floor(Math.random() * vesselPathsCopy.length);
+        return vesselPathsCopy.splice(randomIndex, 1)[0];
+    });
+
+    const gridSize = Math.ceil(Math.sqrt(amountOfFragments));
+    const spacing = 3;
+    const offset = (gridSize - 1) * spacing * 0.5;
   
     randomPaths.forEach((path, i) => {
         loader.load(
+
             `/assets/models/vessels${path}.glb`,
+
             (glb) => {
                 const fragment = glb.scene;
 
-                const row = Math.floor(i / numCols);
-                const col = i % numCols;
-                const x = (col - (numCols - 1) / 2) * 3;
-                const y = (row - (numRows - 1) / 2) * 3;
+                const row = Math.floor(i / gridSize);
+                const col = i % gridSize;
+                const x = (col * spacing) - offset;
+                const y = (row * spacing) - offset;
 
-                fragment.rotateY(Math.random() * 4 * Math.PI);
-
-                if (window.innerWidth > 800) {
-                    fragment.position.set(x, y, 0);
-                } else {
-                    fragment.position.set(x, y + 1, 0);
-                }
+                fragment.rotation.y = Math.random() * 4 * Math.PI;
+                fragment.position.set(x, y, 0);
 
                 scene.add(fragment);
-
                 fragments.push(fragment);
             }
         );
     });
 };
-  
 
 const downloadVessel = () => {
     const exporter = new GLTFExporter(manager);
@@ -194,20 +232,14 @@ const saveFile = (strData, fileName) => {
     };
 }
 
-const resetCamera = () => {
-    orbitControls.reset();
-}
-
 const onWindowResize = () => {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
-
     animate();
 }
 
 const animate = () => {
-
     requestAnimationFrame(animate);
     render();
 }

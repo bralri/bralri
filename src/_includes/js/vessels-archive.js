@@ -121,7 +121,7 @@ const animate = () => {
 
     raycaster.setFromCamera(mouse, camera);
     const intersects = raycaster.intersectObjects(objects);
-    if (intersects[0] && objectsID.indexOf(intersects[0].object.parent.parent.id) !== -1) {
+    if (intersects[0] && objectsID.includes(intersects[0].object.parent.parent.id) !== -1) {
         objects.forEach((asset) => {
             if (intersects[0].object.parent.parent.id === asset.userData.id) {
                 document.querySelector('#caption p').innerHTML = asset.userData.caption;
@@ -133,6 +133,10 @@ const animate = () => {
         document.body.style.cursor = '';
         document.getElementById('caption').style.display = '';
     };
+
+    document.querySelector('.co-ord').innerHTML =   Math.round(camera.position.x) + ", " +
+                                                    Math.round(camera.position.y) + ", " + 
+                                                    Math.round(camera.position.z);
 
     requestAnimationFrame(animate);
     controls.update();
