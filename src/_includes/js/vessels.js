@@ -161,6 +161,7 @@ const loadAssets = () => {
     const offset = (gridSize - 1) * 3 * 0.5;
 
     const assetNum = pickAssetNum(amountOfFragments);
+    console.log(assetNum);
     assetNum.forEach((id, i) => {
         const assetInstance = createAssetInstance(id);
         assetInstance.then((instance) => {
