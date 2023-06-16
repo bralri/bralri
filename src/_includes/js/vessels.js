@@ -1,10 +1,9 @@
 import * as THREE from 'three';
 import {GUI} from 'three/lil-gui.esm.min.js';
-import {GLTFLoader} from 'three/GLTFLoader.js';
 import {GLTFExporter} from 'three/GLTFExporter.js';
 import {DragControls} from 'three/DragControls.js';
 import {OrbitControls} from 'three/OrbitControls.js';
-import {vesselPaths} from '../js/_config.min.js';
+import {createAssetInstance} from '../js/_config.min.js';
 
 let scene, camera, renderer, orbitControls;
 let amountOfFragments = 16;
@@ -12,8 +11,6 @@ const fragments = [];
 const uuid = [];
 
 const loading = document.getElementById('loading');
-const modal = document.getElementById('modal');
-const span = document.getElementsByClassName("close")[0];
 
 const generateUUID = () => {
     const uuid = Math.floor(Math.random() * 100000);
@@ -31,18 +28,11 @@ const urlParam = () => {
 }
 
 const setupGUI = () => {
-    const gui = new GUI({title: 'Options'});
+    const gui = new GUI({title: "Options"});
     gui.domElement.id = 'gui';
     
-    const guiOptions = {
-        // Controls
+    const guiParams = {
         shuffleSelection: () => {
-            const selectedAmount = amountOfFragments;
-            const vesselPathsCopy = [...vesselPaths];
-            const randomPaths = Array.from({length: selectedAmount}, () => {
-                const randomIndex = Math.floor(Math.random() * vesselPathsCopy.length);
-                return vesselPathsCopy.splice(randomIndex, 1)[0];
-            });
             urlParam();
             loadAssets();
         },
@@ -59,23 +49,17 @@ const setupGUI = () => {
             window.open('/works/build-a-vessel/archive/');
         },
         submitToArchive: () => {
-            window.open('/works/build-a-vessel/submit/');
+            window.open('mailto:bryanridpath@gmail.com?subject=RE: Build-A-Vessel Archive Submission&body=Attach your file(s) to this email to submit to the archive!');
         },
-        submitToArchiveModal: () => {
-            openSubmitModal();
-        },
-        // Settings
         amountOfFragments: 16
     }
     
     const controls = gui.addFolder('Controls');
-    controls.add(guiOptions, "shuffleSelection").name("Shuffle Selection");
-    controls.add(guiOptions, "resetCamera").name("Reset Camera");
-    controls.add(guiOptions, "takeScreenshot").name("Take Screenshot");
-    controls.add(guiOptions, "downloadVessel").name("Download Vessel");
-    
-    const settings = gui.addFolder('Settings');
-    settings.add(guiOptions, "amountOfFragments", [3, 4, 9, 16, 25]).name("Amount").onChange(
+    controls.add(guiParams, "shuffleSelection").name("Shuffle");
+    controls.add(guiParams, "resetCamera").name("Reset");
+    controls.add(guiParams, "takeScreenshot").name("Screenshot");
+    controls.add(guiParams, "downloadVessel").name("Download");
+    controls.add(guiParams, "amountOfFragments", [3, 4, 9, 16, 25]).name("Amount").onChange(
         (value) => {
             amountOfFragments = value;
             urlParam();
@@ -83,37 +67,31 @@ const setupGUI = () => {
         }
     );
 
-    gui.add(guiOptions, "submitToArchiveModal").name("Submit to Archive (Modal)");
-    gui.add(guiOptions, "submitToArchive").name("Submit to Archive (Link)");
-    gui.add(guiOptions, "visitArchive").name("Visit the Archive");
+    const archive = gui.addFolder('Archive');
+    archive.add(guiParams, "visitArchive").name("Visit");
+    archive.add(guiParams, "submitToArchive").name("Submit");
     
     gui.$title.title = gui.$title.innerHTML;
     gui.children.forEach((child) => {
         if (!child.children) {
             child.domElement.title = child.$name.innerHTML;
+            child.domElement.tabIndex = 0;
+            child.domElement.ariaLabel = `Open ${child.$name.innerHTML}`;
         } else {
             let parent = child;
             parent.children.forEach((child) => {
                 child.domElement.title = child.$name.innerHTML;
+                child.domElement.tabIndex = 0;
+                child.domElement.ariaLabel = `Open ${child.$name.innerHTML}`;
             })
         }
     
         if (child.$title) {
             child.$title.title = child.$title.innerHTML
+            child.domElement.tabIndex = 0;
+            child.domElement.ariaLabel = `Open ${child.$title.innerHTML}`;
         }
     })
-}
-
-const openSubmitModal = () => {
-    modal.style.display = "block";
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
 }
 
 const init = () => {
@@ -162,46 +140,44 @@ const init = () => {
     setupGUI();
 }
 
-const loadAssets = () => {
-    const manager = new THREE.LoadingManager();
-    const loader = new GLTFLoader(manager);
+const pickAssetNum = (amount) => {
+    let pickedNums = []
 
+    for (let i = 0; i < amount; i++) {
+        const num = Math.floor(Math.random() * 83) + 1;
+        pickedNums.push(num);
+    }
+
+    return pickedNums;
+}
+
+const loadAssets = () => {
     fragments.forEach((fragment) => {
         scene.remove(fragment);
     });
     fragments.length = 0;
-    
-    const vesselPathsCopy = [...vesselPaths];
-
-    const randomPaths = Array.from({length: amountOfFragments}, () => {
-        const randomIndex = Math.floor(Math.random() * vesselPathsCopy.length);
-        return vesselPathsCopy.splice(randomIndex, 1)[0];
-    });
 
     const gridSize = Math.ceil(Math.sqrt(amountOfFragments));
     const offset = (gridSize - 1) * 3 * 0.5;
-  
-    randomPaths.forEach((path, i) => {
-        loader.load(
 
-            `/assets/models/vessels${path}.glb`,
+    const assetNum = pickAssetNum(amountOfFragments);
+    assetNum.forEach((id, i) => {
+        const assetInstance = createAssetInstance(id);
+        assetInstance.then((instance) => {
+            const row = Math.floor(i / gridSize);
+            const col = i % gridSize;
+            const x = (col * 3) - offset;
+            const y = (row * 3) - offset;
 
-            (glb) => {
-                const fragment = glb.scene;
+            instance.mesh.rotation.y = Math.random() * 4 * Math.PI;
+            instance.mesh.position.set(x, y, 0);
 
-                const row = Math.floor(i / gridSize);
-                const col = i % gridSize;
-                const x = (col * 3) - offset;
-                const y = (row * 3) - offset;
-
-                fragment.rotation.y = Math.random() * 4 * Math.PI;
-                fragment.position.set(x, y, 0);
-
-                scene.add(fragment);
-                fragments.push(fragment);
-            }
-        );
-    });
+            scene.add(instance.mesh);
+            fragments.push(instance.mesh);
+        }).catch((error) => {
+            console.log(error);
+        })
+    })
 };
 
 const downloadVessel = () => {

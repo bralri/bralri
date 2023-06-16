@@ -89,8 +89,7 @@ const init = () => {
 
 const loadAssets = () => {
     const gridSize = Math.ceil(Math.sqrt(archive.length));
-    const spacing = 400;
-    const offset = (gridSize - 1) * spacing * 0.5;
+    const offset = (gridSize - 1) * 400 * 0.5;
 
     shuffle(archive);
 
@@ -99,8 +98,8 @@ const loadAssets = () => {
         assetInstance.then((instance) => {
             const row = Math.floor(i / gridSize);
             const col = i % gridSize;
-            const x = (col * spacing) - offset;
-            const z = (row * spacing) - offset;
+            const x = (col * 400) - offset;
+            const z = (row * 400) - offset;
 
             instance.mesh.position.set(x, 40, z);
             instance.mesh.scale.set(20, 20, 20);
@@ -109,6 +108,8 @@ const loadAssets = () => {
             scene.add(instance.mesh);
             objects.push(instance.mesh);
             objectsId.push(instance.mesh.userData.id);
+        }).catch((error) => {
+            console.log(error);
         })
     });
 }

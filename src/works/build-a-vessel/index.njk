@@ -16,29 +16,4 @@ script: "vessels.min.js"
     <div id="loader"></div>
 </section>
 
-<div id="modal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <section class="container container--narrow flow">
-            <h1 class="section-title">Submit your Vessel to the Archive</h1>
-        
-            <form method="POST" name="vessel-submissions" data-netlify-recaptcha="true" netlify>
-          
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" placeholder="Name / Alias *">
-        
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="Email *">
-        
-              <label for="file">File</label>
-              <input name="file" id="file" type="file">
-        
-              <button type="submit">Send</button>
-        
-              <div data-netlify-recaptcha="true"></div>
-            </form>
-        </section>
-    </div>
-</div>
-
 {% include 'layouts/three.njk' %}
