@@ -141,11 +141,14 @@ const init = () => {
 }
 
 const pickAssetNum = (amount) => {
-    let pickedNums = []
+    let pickedNums = [];
 
-    for (let i = 0; i < amount; i++) {
-        const num = Math.floor(Math.random() * 81) + 1;
-        pickedNums.push(num);
+    while (pickedNums.length < amount) {
+        const num = Math.floor(Math.random() * 83) + 1;
+
+        if (!pickedNums.includes(num)) {
+            pickedNums.push(num);
+        }
     }
 
     return pickedNums;
@@ -161,6 +164,7 @@ const loadAssets = () => {
     const offset = (gridSize - 1) * 3 * 0.5;
 
     const assetNum = pickAssetNum(amountOfFragments);
+    console.log(assetNum);
     assetNum.forEach((id, i) => {
         const assetInstance = createAssetInstance(id);
         assetInstance.then((instance) => {
