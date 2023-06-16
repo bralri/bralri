@@ -8,10 +8,10 @@ const mouse = new THREE.Vector2();
 const objects = []; const objectsId = [];
 
 const setupGUI = () => {
-    const gui = new GUI({title: 'Options'});
+    const gui = new GUI();
     gui.domElement.id = 'gui';
 
-    const guiOptions = {
+    const guiParams = {
         build_a_vessel: () => {
             window.open('/works/build-a-vessel/')
         },
@@ -21,10 +21,8 @@ const setupGUI = () => {
         }
     }
 
-    const controls = gui.addFolder('Controls');
-    controls.add(guiOptions, "resetCamera").name("Reset Camera");
-
-    gui.add(guiOptions, "build_a_vessel").name("Build-A-Vessel");
+    gui.add(guiParams, "resetCamera").name("Reset");
+    gui.add(guiParams, "build_a_vessel").name("Build-A-Vessel");
 
     gui.$title.title = gui.$title.innerHTML;
     gui.children.forEach((child) => {
