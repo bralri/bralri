@@ -144,7 +144,7 @@ const pickAssetNum = (amount) => {
     let pickedNums = [];
 
     while (pickedNums.length < amount) {
-        const num = Math.floor(Math.random() * 83) + 1;
+        const num = Math.floor(Math.random() * 81) + 1;
 
         if (!pickedNums.includes(num)) {
             pickedNums.push(num);
