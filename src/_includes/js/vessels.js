@@ -144,7 +144,7 @@ const pickAssetNum = (amount) => {
     let pickedNums = []
 
     for (let i = 0; i < amount; i++) {
-        const num = Math.floor(Math.random() * 83) + 1;
+        const num = Math.floor(Math.random() * 81) + 1;
         pickedNums.push(num);
     }
 
@@ -161,7 +161,6 @@ const loadAssets = () => {
     const offset = (gridSize - 1) * 3 * 0.5;
 
     const assetNum = pickAssetNum(amountOfFragments);
-    console.log(assetNum);
     assetNum.forEach((id, i) => {
         const assetInstance = createAssetInstance(id);
         assetInstance.then((instance) => {
