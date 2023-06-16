@@ -12,7 +12,7 @@ thumbnail: "/assets/bralri.webp"
 <section class="container container--narrow flow">
     <h1 class="section-title">Contact</h1>
 
-    <form method="POST" name="contact" netlify>
+    <form method="POST" name="contact" data-netlify-recaptcha="true" netlify>
   
       <label for="name">Name</label>
       <input type="text" id="name" name="name" placeholder="Name *">
@@ -24,5 +24,7 @@ thumbnail: "/assets/bralri.webp"
       <textarea id="message" name="message" placeholder="Message *" style="height:200px"></textarea>
 
       <button type="submit">Send</button>
+
+      <div data-netlify-recaptcha="true"></div>
     </form>
 </section>
