@@ -1,89 +1,122 @@
 import * as THREE from 'three';
-import GUI from 'three/lil-gui.esm.min.js';
+import {GUI} from 'three/lil-gui.esm.min.js';
 import {GLTFLoader} from 'three/GLTFLoader.js';
 import {GLTFExporter} from 'three/GLTFExporter.js';
 import {DragControls} from 'three/DragControls.js';
 import {OrbitControls} from 'three/OrbitControls.js';
 import {vesselPaths} from '../js/_config.min.js';
 
-let scene, camera, renderer;
-let dragControls, orbitControls;
-
-const uuids = [];
-const fragments = [];
+let scene, camera, renderer, orbitControls;
 let amountOfFragments = 16;
-let fragmentRotation = 0;
+const fragments = [];
+const uuid = [];
 
-const manager = new THREE.LoadingManager();
 const loading = document.getElementById('loading');
+const modal = document.getElementById('modal');
+const span = document.getElementsByClassName("close")[0];
 
-const gui = new GUI({title: 'Settings'});
-gui.domElement.id = 'gui';
-
-const guiSettings = {
-    // Controls
-    shuffleSelection: () => {
-        const selectedAmount = amountOfFragments; // Store the selected amountOfFragments
-        const vesselPathsCopy = [...vesselPaths];
-        const randomPaths = Array.from({length: selectedAmount}, () => {
-            const randomIndex = Math.floor(Math.random() * vesselPathsCopy.length);
-            return vesselPathsCopy.splice(randomIndex, 1)[0];
-        });
-        
-        loadAssets();
-    },
-    resetCamera: () => {
-        orbitControls.reset();
-    },
-    downloadVessel: () => {
-        downloadVessel();
-    },
-    takeScreenshot: () => {
-        saveAsImage();
-    },
-    visitArchive: () => {
-        window.open('/works/build-a-vessel/archive/');
-    },
-    // Options
-    amountOfFragments: 16
+const generateUUID = () => {
+    const uuid = Math.floor(Math.random() * 100000);
+    return uuid;
 }
 
-const guiControls = gui.addFolder('Controls');
-guiControls.add(guiSettings, "shuffleSelection").name("Shuffle Selection");
-guiControls.add(guiSettings, "resetCamera").name("Reset Camera");
-guiControls.add(guiSettings, "takeScreenshot").name("Take Screenshot");
-guiControls.add(guiSettings, "downloadVessel").name("Download Vessel");
+const urlParam = () => {
+    const url = new URL(window.location);
+    const newUUID = generateUUID();
+    url.searchParams.set('id', newUUID);
+    window.history.pushState(null, '', url.toString());
 
-const guiOptions = gui.addFolder('Options');
-guiOptions.add(guiSettings, "amountOfFragments", [3, 4, 9, 16, 25]).name("Amount").onChange(
-    (value) => {
-        amountOfFragments = value;
-        loadAssets();
+    uuid.length = 0;
+    uuid.push(newUUID);
+}
+
+const setupGUI = () => {
+    const gui = new GUI({title: 'Options'});
+    gui.domElement.id = 'gui';
+    
+    const guiOptions = {
+        // Controls
+        shuffleSelection: () => {
+            const selectedAmount = amountOfFragments;
+            const vesselPathsCopy = [...vesselPaths];
+            const randomPaths = Array.from({length: selectedAmount}, () => {
+                const randomIndex = Math.floor(Math.random() * vesselPathsCopy.length);
+                return vesselPathsCopy.splice(randomIndex, 1)[0];
+            });
+            urlParam();
+            loadAssets();
+        },
+        resetCamera: () => {
+            orbitControls.reset();
+        },
+        downloadVessel: () => {
+            downloadVessel();
+        },
+        takeScreenshot: () => {
+            saveAsImage();
+        },
+        visitArchive: () => {
+            window.open('/works/build-a-vessel/archive/');
+        },
+        submitToArchive: () => {
+            window.open('/works/build-a-vessel/submit/');
+        },
+        submitToArchiveModal: () => {
+            openSubmitModal();
+        },
+        // Settings
+        amountOfFragments: 16
     }
-)
+    
+    const controls = gui.addFolder('Controls');
+    controls.add(guiOptions, "shuffleSelection").name("Shuffle Selection");
+    controls.add(guiOptions, "resetCamera").name("Reset Camera");
+    controls.add(guiOptions, "takeScreenshot").name("Take Screenshot");
+    controls.add(guiOptions, "downloadVessel").name("Download Vessel");
+    
+    const settings = gui.addFolder('Settings');
+    settings.add(guiOptions, "amountOfFragments", [3, 4, 9, 16, 25]).name("Amount").onChange(
+        (value) => {
+            amountOfFragments = value;
+            urlParam();
+            loadAssets();
+        }
+    );
 
-gui.add(guiSettings, "visitArchive").name("Visit Archive");
-
-gui.$title.title = gui.$title.innerHTML;
-gui.children.forEach((child) => {
-    if (!child.children) {
-        child.domElement.title = child.$name.innerHTML;
-    } else {
-        let parent = child;
-        parent.children.forEach((child) => {
+    gui.add(guiOptions, "submitToArchiveModal").name("Submit to Archive (Modal)");
+    gui.add(guiOptions, "submitToArchive").name("Submit to Archive (Link)");
+    gui.add(guiOptions, "visitArchive").name("Visit the Archive");
+    
+    gui.$title.title = gui.$title.innerHTML;
+    gui.children.forEach((child) => {
+        if (!child.children) {
             child.domElement.title = child.$name.innerHTML;
-        })
-    }
+        } else {
+            let parent = child;
+            parent.children.forEach((child) => {
+                child.domElement.title = child.$name.innerHTML;
+            })
+        }
+    
+        if (child.$title) {
+            child.$title.title = child.$title.innerHTML
+        }
+    })
+}
 
-    if (child.$title) {
-        child.$title.title = child.$title.innerHTML
+const openSubmitModal = () => {
+    modal.style.display = "block";
+    span.onclick = function() {
+        modal.style.display = "none";
     }
-})
-
-// to do: add tool tip for when you hover over the fragments which displays their fragment id????
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+}
 
 const init = () => {
-
     scene = new THREE.Scene();
     scene.background = new THREE.Color(0x000000);
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 50);
@@ -111,7 +144,7 @@ const init = () => {
     orbitControls.enablePan = true;
     orbitControls.panSpeed = 0.5;
 
-    dragControls = new DragControls(fragments, camera, renderer.domElement);
+    const dragControls = new DragControls(fragments, camera, renderer.domElement);
     dragControls.addEventListener('drag', render);
     dragControls.addEventListener('dragstart', () => {
         orbitControls.enabled = false;
@@ -120,18 +153,17 @@ const init = () => {
         orbitControls.enabled = true;
     });
 
-    generateUUID();
 
     window.addEventListener('resize', onWindowResize);
-}
 
-const generateUUID = () => {
-    const uuid = Math.floor(Math.random() * 100000);
-    uuids.push(uuid);
-    return uuid;
+    //
+
+    urlParam();
+    setupGUI();
 }
 
 const loadAssets = () => {
+    const manager = new THREE.LoadingManager();
     const loader = new GLTFLoader(manager);
 
     fragments.forEach((fragment) => {
@@ -147,8 +179,7 @@ const loadAssets = () => {
     });
 
     const gridSize = Math.ceil(Math.sqrt(amountOfFragments));
-    const spacing = 3;
-    const offset = (gridSize - 1) * spacing * 0.5;
+    const offset = (gridSize - 1) * 3 * 0.5;
   
     randomPaths.forEach((path, i) => {
         loader.load(
@@ -160,8 +191,8 @@ const loadAssets = () => {
 
                 const row = Math.floor(i / gridSize);
                 const col = i % gridSize;
-                const x = (col * spacing) - offset;
-                const y = (row * spacing) - offset;
+                const x = (col * 3) - offset;
+                const y = (row * 3) - offset;
 
                 fragment.rotation.y = Math.random() * 4 * Math.PI;
                 fragment.position.set(x, y, 0);
@@ -174,7 +205,7 @@ const loadAssets = () => {
 };
 
 const downloadVessel = () => {
-    const exporter = new GLTFExporter(manager);
+    const exporter = new GLTFExporter();
     const options = {
         onlyVisible: true,
         binary: true
@@ -183,13 +214,13 @@ const downloadVessel = () => {
     exporter.parse(
         scene,
         (result) => {
-            saveArrayBuffer(result, `vessel-${uuids[0]}.glb`)
+            saveArrayBuffer(result, `vessel-${uuid[0]}.glb`)
         },
         (error) => {
             console.log('An error happened during parsing', error);
         },
         options
-    )
+    );
 }
 
 const save = (blob, fileName) => {
@@ -211,7 +242,7 @@ const saveAsImage = () => {
         const strMime = "image/jpeg";
         const strDownloadMime = "image/octet-stream";
         imgData = renderer.domElement.toDataURL(strMime);
-        saveFile(imgData.replace(strMime, strDownloadMime), `vessel-${uuids[0]}.jpg`);
+        saveFile(imgData.replace(strMime, strDownloadMime), `vessel-${uuid[0]}.jpg`);
     } catch (error) {
         console.log('An error happened during parsing', error);
         return;

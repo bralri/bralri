@@ -2,7 +2,8 @@ form {
     width: 50%;
 }
 
-input[type=text], input[type=email], select, textarea {
+input[type=text], input[type=email], input[type=file], 
+select, textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid $white;
@@ -11,6 +12,11 @@ input[type=text], input[type=email], select, textarea {
     margin-top: 6px;
     margin-bottom: 16px;
     resize: vertical;
+}
+
+#file {
+    background-color: #3b3b3b;
+    color: $white;
 }
 
 button[type=submit] {

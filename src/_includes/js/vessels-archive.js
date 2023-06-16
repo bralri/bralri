@@ -1,41 +1,69 @@
 import * as THREE from 'three';
+import {GUI} from 'three/lil-gui.esm.min.js';
 import {MapControls} from 'three/MapControls.js';
-import {GLTFLoader} from 'three/GLTFLoader.js'
-import {archive} from '../js/_archive.min.js';
+import {archive, createAssetInstance} from '../js/_archive.min.js';
 
-let camera, controls, scene, renderer;
-const raycaster = new THREE.Raycaster();
+let camera, mapControls, scene, renderer;
 const mouse = new THREE.Vector2();
-const objects = []; const objectsID = [];
+const objects = []; const objectsId = [];
+
+const setupGUI = () => {
+    const gui = new GUI({title: 'Options'});
+    gui.domElement.id = 'gui';
+
+    const guiOptions = {
+        build_a_vessel: () => {
+            window.open('works/build-a-vessel/')
+        },
+        resetCamera: () => {
+            mapControls.reset();
+            mapControls.object.position.set(400, 200, 0);
+        }
+    }
+
+    const controls = gui.addFolder('Controls');
+    controls.add(guiOptions, "resetCamera").name("Reset Camera");
+
+    gui.add(guiOptions, "build_a_vessel").name("Build-A-Vessel");
+
+    gui.$title.title = gui.$title.innerHTML;
+    gui.children.forEach((child) => {
+        if (!child.children) {
+            child.domElement.title = child.$name.innerHTML;
+        } else {
+            let parent = child;
+            parent.children.forEach((child) => {
+                child.domElement.title = child.$name.innerHTML;
+            })
+        }
+    
+        if (child.$title) {
+            child.$title.title = child.$title.innerHTML
+        }
+    })
+}
 
 const init = () => {
-
     scene = new THREE.Scene();
     scene.background = new THREE.Color(0xcccccc);
     scene.fog = new THREE.FogExp2(0xcccccc, 0.002);
 
-    renderer = new THREE.WebGLRenderer({
-        antialias: true
-    });
+    renderer = new THREE.WebGLRenderer({antialias: true});
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
 
-    camera = new THREE.PerspectiveCamera(
-        60, 
-        window.innerWidth / window.innerHeight, 
-        1, 1000
-    );
-    camera.position.set(400, 200, 0);
+    camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
 
     // controls
-    controls = new MapControls(camera, renderer.domElement);
-    controls.enableDamping = true;
-    controls.dampingFactor = 0.05;
-    controls.screenSpacePanning = false;
-    controls.minDistance = 100;
-    controls.maxDistance = 500;
-    controls.maxPolarAngle = Math.PI / 2;
+    mapControls = new MapControls(camera, renderer.domElement);
+    mapControls.enableDamping = true;
+    mapControls.dampingFactor = 0.05;
+    mapControls.screenSpacePanning = false;
+    mapControls.minDistance = 100;
+    mapControls.maxDistance = 500;
+    mapControls.maxPolarAngle = Math.PI / 2;
+    mapControls.object.position.set(400, 200, 0);
 
     // lights
     const dirLight1 = new THREE.DirectionalLight(0xffffff);
@@ -53,51 +81,37 @@ const init = () => {
 
     window.addEventListener('resize', onWindowResize);
     window.addEventListener('mousemove', onMouseMove);
+
+    //
+
+    setupGUI();
 }
 
 const loadAssets = () => {
-    const manager = new THREE.LoadingManager();
-    const loader = new GLTFLoader(manager);
+    const gridSize = Math.ceil(Math.sqrt(archive.length));
+    const spacing = 400;
+    const offset = (gridSize - 1) * spacing * 0.5;
 
     shuffle(archive);
 
-    const gridSize = Math.ceil(Math.sqrt(archive.length));
-    const spacing = 350;
-    const offset = (gridSize - 1) * spacing * 0.5;
+    archive.forEach((item, i) => {
+        const assetInstance = createAssetInstance(item.id);
+        assetInstance.then((instance) => {
+            const row = Math.floor(i / gridSize);
+            const col = i % gridSize;
+            const x = (col * spacing) - offset;
+            const z = (row * spacing) - offset;
 
-    archive.forEach((asset, i) => {
-        loader.load(
+            instance.mesh.position.set(x, 40, z);
+            instance.mesh.scale.set(20, 20, 20);
+            instance.mesh.rotateY(Math.PI / -1.5);
 
-            `/assets/models/vessels/archive/vessel-${asset.id}.glb`,
-
-            (glb) => {
-                const model = glb.scene;
-
-                const row = Math.floor(i / gridSize);
-                const col = i % gridSize;
-                const x = (col * spacing) - offset;
-                const z = (row * spacing) - offset;
-
-                model.position.set(x, 40, z);
-                model.scale.set(20, 20, 20);
-                model.rotateY(Math.PI / 2);
-
-                model.userData = {
-                    id: model.id,
-                    caption: 
-                    `                                
-                        <span class="title">vessel-${asset.id}</span><br>
-                        <i class="author">by ${asset.author}</i><br>
-                    `
-                };
-
-                scene.add(model);
-                objects.push(model);
-                objectsID.push(model.id);
-            }
-        );
+            scene.add(instance.mesh);
+            objects.push(instance.mesh);
+            objectsId.push(instance.mesh.userData.id);
+        })
     });
-};
+}
 
 const shuffle = (array) => {
     array.forEach((_, i) => {
@@ -118,10 +132,10 @@ const onMouseMove = (e) => {
 }
 
 const animate = () => {
-
+    const raycaster = new THREE.Raycaster();
     raycaster.setFromCamera(mouse, camera);
     const intersects = raycaster.intersectObjects(objects);
-    if (intersects[0] && objectsID.includes(intersects[0].object.parent.parent.id) !== -1) {
+    if (intersects[0] && objectsId.includes(intersects[0].object.parent.parent.id) !== -1) {
         objects.forEach((asset) => {
             if (intersects[0].object.parent.parent.id === asset.userData.id) {
                 document.querySelector('#caption p').innerHTML = asset.userData.caption;
@@ -134,12 +148,10 @@ const animate = () => {
         document.getElementById('caption').style.display = '';
     };
 
-    document.querySelector('.co-ord').innerHTML =   Math.round(camera.position.x) + ", " +
-                                                    Math.round(camera.position.y) + ", " + 
-                                                    Math.round(camera.position.z);
+    // document.querySelector('.co-ord').innerHTML =  Math.round(controls.object.position.x) + ", " + Math.round(controls.object.position.y) + ", " + Math.round(controls.object.position.z);
 
     requestAnimationFrame(animate);
-    controls.update();
+    mapControls.update();
     render();
 }
 
