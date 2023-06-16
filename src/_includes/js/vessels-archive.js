@@ -13,7 +13,7 @@ const setupGUI = () => {
 
     const guiOptions = {
         build_a_vessel: () => {
-            window.open('works/build-a-vessel/')
+            window.open('/works/build-a-vessel/')
         },
         resetCamera: () => {
             mapControls.reset();
