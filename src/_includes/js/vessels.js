@@ -212,12 +212,10 @@ const saveVesselToServer = () => {
         },
         options
     );
-};
-
+}
 const saveToServerBuffer = (buffer, fileName) => {
     saveToServer(new Blob([buffer], {type: 'application/octet-stream'}), fileName);
 }
-
 const saveToServer = async (blob, fileName) => {
     try {
         const response = await fetch('/.netlify/functions/upload', {
@@ -239,8 +237,7 @@ const saveToServer = async (blob, fileName) => {
     } catch (error) {
         console.log('An error occurred while saving the file to the server:', error);
     }
-};
-  
+}  
 
 // Download Vessel to user device
 const downloadVessel = () => {
