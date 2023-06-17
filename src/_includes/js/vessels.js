@@ -49,7 +49,8 @@ const setupGUI = () => {
             window.open('/works/build-a-vessel/archive/');
         },
         submitToArchive: () => {
-            saveVesselToServer();
+            // saveVesselToServer();
+            helloworld();
         },
         amountOfFragments: 16
     }
@@ -182,6 +183,10 @@ const loadAssets = () => {
         })
     })
 };
+
+const helloworld = () => {
+    fetch('/.netlify/functions/hello-world')
+}
 
 // Save user created vessel to server
 const saveVesselToServer = () => {
