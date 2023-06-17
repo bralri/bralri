@@ -5,7 +5,7 @@ exports.handler = async (event) => {
     const fileBuffer = Buffer.from(event.body, 'base64');
     const headers = event.headers;
     const contentDisposition = headers['content-disposition'];
-    
+
     let fileName;
     if (contentDisposition) {
         const filenameRegex = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
@@ -16,7 +16,7 @@ exports.handler = async (event) => {
     }
 
     try {
-        fs.writeFileSync(`../submissions/${fileName}`, fileBuffer);
+        fs.writeFileSync(`${__dirname}/submissions/${fileName}`, fileBuffer);
 
         return {
             statusCode: 200,
