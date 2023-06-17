@@ -6,13 +6,17 @@ exports.handler = async (event) => {
     const fileBuffer = Buffer.from(event.body, 'base64');
     console.log("Buffer: ", fileBuffer);
     const headers = event.headers;
-    const contentDisposition = headers['Content-Disposition'];
-    const filenameRegex = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
-    const matches = contentDisposition.match(filenameRegex);
+    const contentDisposition = headers['content-disposition'];
     let fileName;
-    if (matches && matches[1]) {
-        fileName = matches[1].trim().replace(/['"]/g, '');
+
+    if (contentDisposition) {
+        const filenameRegex = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
+        const matches = contentDisposition.match(filenameRegex);
+        if (matches && matches[1]) {
+            fileName = matches[1].trim().replace(/['"]/g, '');
+        }
     }
+
     console.log("File: ", fileName);
     const uploadsPath = path.join(process.cwd(), 'submissions', fileName);
     console.log("Upload Path: ", uploadsPath);
