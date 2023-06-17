@@ -216,7 +216,11 @@ const saveVesselToServer = () => {
 const saveToServer = (buffer, fileName) => {
     fetch('/.netlify/functions/upload', {
         method: 'POST',
-        body: buffer
+        body: buffer,
+        headers: {
+            'Content-Type': 'application/octet-stream',
+            'Content-Disposition': `attachment; filename="${fileName}"`,
+        },
     }).then((response) => {
         if (response.ok) {
             console.log(`File ${fileName} saved to server successfully.`);
@@ -227,8 +231,9 @@ const saveToServer = (buffer, fileName) => {
         }
     }).catch((error) => {
         console.log('An error occurred while saving the file to the server:', error);
-    })
-}
+    });
+};
+  
 
 // Download Vessel to user device
 const downloadVessel = () => {
