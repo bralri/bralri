@@ -2,7 +2,9 @@ const fs = require('fs');
 const path = require('path');
 
 exports.handler = async (event) => {
+    console.log(event);
     const fileBuffer = Buffer.from(event.body, 'base64');
+    console.log("Buffer: ", fileBuffer);
     const headers = event.headers;
     const contentDisposition = headers['content-disposition'];
     let fileName;
@@ -16,13 +18,11 @@ exports.handler = async (event) => {
     }
 
     console.log("File: ", fileName);
-    const uploadsDirectory = path.join(process.env.LAMBDA_TASK_ROOT, 'submissions');
-    const filePath = path.join(uploadsDirectory, fileName);
-    console.log("Upload Path: ", filePath);
+    const uploadsPath = path.resolve(__dirname, '..', 'submissions', fileName);
+    console.log("Upload Path: ", uploadsPath);
 
     try {
-        fs.mkdirSync(uploadsDirectory, { recursive: true });
-        fs.writeFileSync(filePath, fileBuffer);
+        fs.writeFileSync(uploadsPath, fileBuffer);
 
         return {
             statusCode: 200,
