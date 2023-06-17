@@ -218,7 +218,7 @@ const saveToServerBuffer = (buffer, fileName) => {
 }
 const saveToServer = async (blob, fileName) => {
     try {
-        const response = await fetch('/.netlify/functions/upload', {
+        const response = await fetch('/.netlify/functions/submission', {
             method: 'POST',
             body: blob,
             headers: {
