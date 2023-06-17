@@ -18,7 +18,7 @@ exports.handler = async (event) => {
     }
 
     console.log("File: ", fileName);
-    const uploadsPath = path.resolve(__dirname, '..', 'submissions', fileName);
+    const uploadsPath = path.join(__dirname, '..', 'submissions', fileName);
     console.log("Upload Path: ", uploadsPath);
 
     try {
