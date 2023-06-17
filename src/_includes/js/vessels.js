@@ -205,8 +205,7 @@ const saveVesselToServer = () => {
     exporter.parse(
         scene,
         (result) => {
-            const blob = new Blob([result], { type: 'application/octet-stream' }); // Convert the result to a Blob
-            saveToServer(blob, `vessel-${uuid[0]}.glb`);
+            saveToServerBuffer(result, `vessel-${uuid[0]}.glb`);
         },
         (error) => {
             console.log('An error occurred during parsing', error);
@@ -214,6 +213,10 @@ const saveVesselToServer = () => {
         options
     );
 };
+
+const saveToServerBuffer = (buffer, fileName) => {
+    saveToServer(new Blob([buffer], {type: 'application/octet-stream'}), fileName);
+}
 
 const saveToServer = async (blob, fileName) => {
     try {
@@ -265,8 +268,6 @@ const save = (blob, fileName) => {
     link.download = fileName;
     link.click();
     document.body.removeChild(link);
-
-
 }
 const saveArrayBuffer = (buffer, fileName) => {
     save(new Blob([buffer], {type: 'application/octet-stream'}), fileName);
