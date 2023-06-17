@@ -43,6 +43,8 @@ const triggerRedeploy = async () => {
     const siteId = process.env.NETLIFY_SITE_ID;
     const deployHook = process.env.NETLIFY_DEPLOY_HOOK;
 
+    console.log(siteId, deployHook)
+
     const response = await fetch(`https://api.netlify.com/build_hooks/${deployHook}`, {
         method: 'POST',
         headers: {

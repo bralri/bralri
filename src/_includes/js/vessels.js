@@ -49,7 +49,9 @@ const setupGUI = () => {
             window.open('/works/build-a-vessel/archive/');
         },
         submitToArchive: () => {
-            // saveVesselToServer();
+            saveVesselToServer();
+        },
+        hello_world: () => {
             helloworld();
         },
         amountOfFragments: 16
@@ -71,6 +73,7 @@ const setupGUI = () => {
     const archive = gui.addFolder('Archive');
     // archive.add(guiParams, "visitArchive").name("Visit");
     archive.add(guiParams, "submitToArchive").name("Submit");
+    archive.add(guiParams, "hello_world").name("POST request test")
     
     gui.$title.title = gui.$title.innerHTML;
     gui.children.forEach((child) => {
