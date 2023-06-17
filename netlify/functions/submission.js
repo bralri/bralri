@@ -9,6 +9,7 @@ exports.handler = async (event) => {
         const fileData = Buffer.from(event.body, 'binary');
         const fileName = event.headers['content-disposition'].split('filename=')[1].replace(/"/g, '');
         const userName = event.headers['user-name'];
+        console.log(userName);
         const currentDate = getCurrentDate();
 
         const folderPath = `${currentDate}/${userName}`;
