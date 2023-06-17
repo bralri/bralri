@@ -49,7 +49,7 @@ const setupGUI = () => {
             window.open('/works/build-a-vessel/archive/');
         },
         submitToArchive: () => {
-            window.open('mailto:bryanridpath@gmail.com?subject=RE: Build-A-Vessel Archive Submission&body=Attach your file(s) to this email to submit to the archive!');
+            saveVesselToServer();
         },
         amountOfFragments: 16
     }
@@ -68,7 +68,7 @@ const setupGUI = () => {
     );
 
     const archive = gui.addFolder('Archive');
-    archive.add(guiParams, "visitArchive").name("Visit");
+    // archive.add(guiParams, "visitArchive").name("Visit");
     archive.add(guiParams, "submitToArchive").name("Submit");
     
     gui.$title.title = gui.$title.innerHTML;
@@ -164,7 +164,6 @@ const loadAssets = () => {
     const offset = (gridSize - 1) * 3 * 0.5;
 
     const assetNum = pickAssetNum(amountOfFragments);
-    console.log(assetNum);
     assetNum.forEach((id, i) => {
         const assetInstance = createAssetInstance(id);
         assetInstance.then((instance) => {
@@ -184,6 +183,43 @@ const loadAssets = () => {
     })
 };
 
+// Save user created vessel to server
+const saveVesselToServer = () => {
+    const exporter = new GLTFExporter();
+    const options = {
+        onlyVisible: true,
+        binary: true
+    };
+
+    exporter.parse(
+        scene,
+        (result) => {
+            saveToServer(result, `vessel-${uuid[0]}.glb`);
+        },
+        (error) => {
+            console.log('An error occurred during parsing', error);
+        },
+        options
+    );
+}
+const saveToServer = (buffer, fileName) => {
+    fetch('/.netlify/functions/upload', {
+        method: 'POST',
+        body: buffer
+    }).then((response) => {
+        if (response.ok) {
+            console.log(`File ${fileName} saved to server successfully.`);
+            window.alert(`Submitted ${fileName} successfully`);
+        } else {
+            console.log('Error saving file to server.');
+            window.alert(`Error submitting vessel, try again.`);
+        }
+    }).catch((error) => {
+        console.log('An error occurred while saving the file to the server:', error);
+    })
+}
+
+// Download Vessel to user device
 const downloadVessel = () => {
     const exporter = new GLTFExporter();
     const options = {
@@ -197,12 +233,11 @@ const downloadVessel = () => {
             saveArrayBuffer(result, `vessel-${uuid[0]}.glb`)
         },
         (error) => {
-            console.log('An error happened during parsing', error);
+            console.log('An error occurred during parsing', error);
         },
         options
     );
 }
-
 const save = (blob, fileName) => {
     const link = document.createElement('a');
     document.body.appendChild(link);
@@ -210,12 +245,14 @@ const save = (blob, fileName) => {
     link.download = fileName;
     link.click();
     document.body.removeChild(link);
-}
 
+
+}
 const saveArrayBuffer = (buffer, fileName) => {
     save(new Blob([buffer], {type: 'application/octet-stream'}), fileName);
 }
 
+// Save screenshot of scene to user device
 const saveAsImage = () => {
     let imgData;
     try {
@@ -228,7 +265,6 @@ const saveAsImage = () => {
         return;
     }
 }
-
 const saveFile = (strData, fileName) => {
 
     const link = document.createElement('a');
