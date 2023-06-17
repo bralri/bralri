@@ -5,8 +5,8 @@ const fetch = require('node-fetch');
 exports.handler = async (event) => {
     const fileBuffer = Buffer.from(event.body, 'binary');
     const fileName = event.headers['content-disposition'].match(/filename="(.+)"/)[1];
-    const uploadsPath = path.join(__dirname, 'uploads', fileName);
-    const archivePath = path.join(__dirname, '.', 'src', 'assets', 'models', 'vessels', 'archive', fileName);
+    const uploadsPath = path.join(__dirname, '..', 'uploads', fileName);
+    const archivePath = path.join(__dirname, '..', '..', 'src', 'assets', 'models', 'vessels', 'archive', fileName);
 
     try {
         fs.writeFileSync(uploadsPath, fileBuffer);
