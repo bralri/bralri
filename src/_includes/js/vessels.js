@@ -82,9 +82,8 @@ const setupGUI = () => {
         submissionName.push(value);
         console.log(submissionName)
     })
-    archive.add(guiParams, "submitToArchive").name("Submit");
-    archive.add(guiParams, "hello_world").name("POST request test")
-
+    archive.add(guiParams, "submitToArchive").name("Submit Vessel");
+    
     // archive.add(guiParams, "visitArchive").name("Visit");
     
     gui.$title.title = gui.$title.innerHTML;
@@ -225,7 +224,7 @@ const saveVesselToServer = () => {
     );
 }
 const saveToServerBuffer = (buffer, fileName) => {
-    saveToServer(new Blob([buffer], { type: 'application/octet-stream' }), fileName);
+    saveToServer(new Blob([buffer], {type: 'application/octet-stream'}), fileName);
 }
 const saveToServer = async (blob, fileName) => {
     try {
