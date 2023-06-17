@@ -184,8 +184,14 @@ const loadAssets = () => {
     })
 };
 
-const helloworld = () => {
-    fetch('/.netlify/functions/hello-world')
+const helloworld = async () => {
+    const response = await fetch('/.netlify/functions/hello-world')
+        .then(response => response.json()
+    )
+
+    let text = JSON.stringify(response)
+
+    console.log(text)
 }
 
 // Save user created vessel to server
