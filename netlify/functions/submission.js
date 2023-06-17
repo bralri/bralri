@@ -18,11 +18,13 @@ exports.handler = async (event) => {
     }
 
     console.log("File: ", fileName);
-    const uploadsPath = path.join(process.cwd(), 'functions', 'submissions', fileName);
-    console.log("Upload Path: ", uploadsPath);
+    const uploadsDirectory = path.join(__dirname, 'submissions');
+    const filePath = path.join(uploadsDirectory, fileName);
+    console.log("Upload Path: ", filePath);
 
     try {
-        fs.writeFileSync(uploadsPath, fileBuffer);
+        fs.mkdirSync(uploadsDirectory, { recursive: true });
+        fs.writeFileSync(filePath, fileBuffer);
 
         return {
             statusCode: 200,
