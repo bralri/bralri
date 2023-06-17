@@ -1,10 +1,12 @@
 const fs = require('fs');
 const path = require('path');
 
+// import {test} from '../functions/uploads/'
+
 exports.handler = async (event) => {
     const fileBuffer = Buffer.from(event.body, 'base64');
     const fileName = event.queryStringParameters.fileName;
-    const uploadsPath = path.join(__dirname, '..', 'uploads', fileName);
+    const uploadsPath = path.join(__dirname, '.', 'uploads', fileName);
 
     try {
         fs.writeFileSync(uploadsPath, fileBuffer);
