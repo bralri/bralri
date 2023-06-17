@@ -8,6 +8,7 @@ import {createAssetInstance} from '../js/_config.min.js';
 let scene, camera, renderer, orbitControls;
 let amountOfFragments = 16;
 const fragments = [];
+const submissionName = [];
 const uuid = [];
 
 const loading = document.getElementById('loading');
@@ -48,8 +49,13 @@ const setupGUI = () => {
         visitArchive: () => {
             window.open('/works/build-a-vessel/archive/');
         },
+        userName: "",
         submitToArchive: () => {
-            saveVesselToServer();
+            if (submissionName > 0) {
+                saveVesselToServer();
+            } else {
+                window.alert("A name is required to submit to the archive.")
+            }
         },
         hello_world: () => {
             helloworld();
@@ -71,9 +77,13 @@ const setupGUI = () => {
     );
 
     const archive = gui.addFolder('Archive');
-    // archive.add(guiParams, "visitArchive").name("Visit");
+    archive.add(guiParams, "userName").name("Name *").onFinishChange((value) => {
+        submissionName.push(value);
+    })
     archive.add(guiParams, "submitToArchive").name("Submit");
     archive.add(guiParams, "hello_world").name("POST request test")
+
+    // archive.add(guiParams, "visitArchive").name("Visit");
     
     gui.$title.title = gui.$title.innerHTML;
     gui.children.forEach((child) => {
