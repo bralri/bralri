@@ -18,7 +18,7 @@ exports.handler = async (event) => {
     }
 
     console.log("File: ", fileName);
-    const uploadsDirectory = path.join(__dirname, 'submissions');
+    const uploadsDirectory = path.join(process.env.LAMBDA_TASK_ROOT, 'submissions');
     const filePath = path.join(uploadsDirectory, fileName);
     console.log("Upload Path: ", filePath);
 
