@@ -2,10 +2,17 @@ const fs = require('fs');
 const path = require('path');
 
 exports.handler = async (event) => {
-    console.log(event)
+    console.log(event);
     const fileBuffer = Buffer.from(event.body, 'base64');
     console.log("Buffer: ", fileBuffer);
-    const fileName = event.queryStringParameters.fileName;
+    const headers = event.headers;
+    const contentDisposition = headers['Content-Disposition'];
+    const filenameRegex = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
+    const matches = contentDisposition.match(filenameRegex);
+    let fileName;
+    if (matches && matches[1]) {
+        fileName = matches[1].trim().replace(/['"]/g, '');
+    }
     console.log("File: ", fileName);
     const uploadsPath = path.join(process.cwd(), 'submissions', fileName);
     console.log("Upload Path: ", uploadsPath);
