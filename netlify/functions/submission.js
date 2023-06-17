@@ -29,4 +29,4 @@ exports.handler = async (event) => {
             body: JSON.stringify({ message: 'Error uploading file' }),
         };
     }
-};
+}
