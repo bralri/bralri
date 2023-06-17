@@ -6,14 +6,14 @@ exports.handler = async (event) => {
     const storage = new Storage({credentials: key});
 
     try {
-        // const fileData = Buffer.from(event.body, 'binary');
+        const fileData = Buffer.from(event.body, 'binary');
         const fileName = event.headers['content-disposition'].split('filename=')[1].replace(/"/g, '');
-        await storage.bucket('build-a-vessel-submissions').file(fileName).save(event.body);
+        await storage.bucket('build-a-vessel-submissions').file(fileName).save(fileData);
 
         return {
             statusCode: 200,
             headers: event.headers,
-            body: event.body
+            body: fileData
         };
     } catch (error) {
         console.error('Error uploading file:', error);
