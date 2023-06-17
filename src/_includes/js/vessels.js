@@ -212,11 +212,9 @@ const saveVesselToServer = () => {
         options
     );
 }
-
 const saveToServerBuffer = (buffer, fileName) => {
     saveToServer(new Blob([buffer], { type: 'application/octet-stream' }), fileName);
 }
-
 const saveToServer = async (blob, fileName) => {
     try {
         const response = await fetch('/.netlify/functions/submission', {
