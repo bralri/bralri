@@ -233,8 +233,8 @@ const saveToServer = async (blob, fileName) => {
             body: blob,
             headers: {
                 'Content-Type': 'application/octet-stream',
-                'Content-Disposition': `attachment; filename="${fileName}"`,
-                'User-Name': submissionName[0],
+                'File-Name': `${fileName}`,
+                'User-Name': `${submissionName[0]}`,
             },
         });
         if (!response.ok) {

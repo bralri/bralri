@@ -4,18 +4,11 @@ const key = JSON.parse(process.env.STORAGE_KEY_JSON);
 
 exports.handler = async (event) => {
     const storage = new Storage({credentials: key});
-
-    const currentDate = new Date();
-    const dateString = currentDate.toLocaleDateString().replace(/\//g, '.');
-
-    const userName = event.headers['user-name'];
-    const fileName = event.headers['content-disposition'].split('filename=')[1].replace(/"/g, '');
-
-    const filePath = `${dateString}/${userName}/${fileName}`;
+    const fileName = event.headers['file-name'];
 
     try {
         const fileData = Buffer.from(event.body, 'binary');
-        await storage.bucket('build-a-vessel-submissions').file(filePath).save(fileData);
+        await storage.bucket('build-a-vessel-submissions').file(fileName).save(fileData);
 
         return {
             statusCode: 200,
