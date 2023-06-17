@@ -217,7 +217,7 @@ const saveVesselToServer = () => {
 
 const saveToServer = async (blob, fileName) => {
     try {
-        const response = await fetch(`/.netlify/functions/upload?fileName=${fileName}`, {
+        const response = await fetch('/.netlify/functions/upload', {
             method: 'POST',
             body: blob,
             headers: {
