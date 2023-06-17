@@ -2,12 +2,14 @@ const fs = require('fs');
 const path = require('path');
 
 exports.handler = async (event) => {
-    const fileBuffer = Buffer.from(event.body, 'base64'); // File data is received as base64 encoded string
-    const fileName = event.queryStringParameters.fileName; // Extract the file name from query parameters
-    const uploadsPath = path.join(__dirname, '..', 'uploads', fileName); // Update the path to 'netlify/uploads'
+    const fileBuffer = Buffer.from(event.body, 'base64');
+    const fileName = event.queryStringParameters.fileName;
+    const uploadsPath = path.join(__dirname, '..', 'uploads', fileName);
+
+    console.log(uploadsPath);
 
     try {
-        fs.writeFileSync(uploadsPath, fileBuffer); // Save the file to 'netlify/uploads'
+        fs.writeFileSync(uploadsPath, fileBuffer);
         console.log('file saved')
 
         return {
