@@ -1,6 +1,6 @@
 const { Storage } = require('@google-cloud/storage');
 import {submissionName} from '../../public/js/vessels.min.js'
-
+console.log(submissionName)
 const key = JSON.parse(process.env.STORAGE_KEY_JSON);
 
 exports.handler = async (event) => {

@@ -77,7 +77,7 @@ const setupGUI = () => {
     );
 
     const archive = gui.addFolder('Archive');
-    archive.add(guiParams, "userName").name("Name *").onFinishChange((value) => {
+    archive.add(guiParams, "userName").name("Name (required)").onFinishChange((value) => {
         submissionName.push(value);
         console.log(submissionName)
     })
