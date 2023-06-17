@@ -2,13 +2,11 @@ const fs = require('fs');
 const path = require('path');
 
 exports.handler = async (event) => {
-    console.log(event);
     const fileBuffer = Buffer.from(event.body, 'base64');
-    console.log("Buffer: ", fileBuffer);
     const headers = event.headers;
     const contentDisposition = headers['content-disposition'];
+    
     let fileName;
-
     if (contentDisposition) {
         const filenameRegex = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
         const matches = contentDisposition.match(filenameRegex);
@@ -17,12 +15,8 @@ exports.handler = async (event) => {
         }
     }
 
-    console.log("File: ", fileName);
-    const uploadsPath = path.join(__dirname, '..', 'submissions', fileName);
-    console.log("Upload Path: ", uploadsPath);
-
     try {
-        fs.writeFileSync(uploadsPath, fileBuffer);
+        fs.writeFileSync(`../submissions/${fileName}`, fileBuffer);
 
         return {
             statusCode: 200,
