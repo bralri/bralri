@@ -218,9 +218,10 @@ const saveVesselToServer = () => {
 const saveToServer = async (blob, fileName) => {
     const formData = new FormData();
     formData.append('file', blob, fileName);
+    console.log(formData)
 
     try {
-        const response = await fetch('/.netlify/functions/upload', {
+        const response = await fetch('/.netlify/functions/submission', {
             method: 'POST',
             body: formData,
         });
