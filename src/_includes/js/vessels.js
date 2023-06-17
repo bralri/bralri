@@ -199,28 +199,29 @@ const saveVesselToServer = () => {
     const exporter = new GLTFExporter();
     const options = {
         onlyVisible: true,
-        binary: true
+        binary: true,
     };
 
     exporter.parse(
         scene,
         (result) => {
-            saveToServer(result, `vessel-${uuid[0]}.glb`);
+            const blob = new Blob([result], { type: 'application/octet-stream' }); // Convert the result to a Blob
+            saveToServer(blob, `vessel-${uuid[0]}.glb`);
         },
         (error) => {
             console.log('An error occurred during parsing', error);
         },
         options
     );
-}
-const saveToServer = (buffer, fileName) => {
+};
+
+const saveToServer = (blob, fileName) => {
+    const formData = new FormData();
+    formData.append('file', blob, fileName);
+
     fetch('/.netlify/functions/upload', {
         method: 'POST',
-        body: buffer,
-        headers: {
-            'Content-Type': 'application/octet-stream',
-            'Content-Disposition': `attachment; filename="${fileName}"`,
-        },
+        body: formData,
     }).then((response) => {
         if (response.ok) {
             console.log(`File ${fileName} saved to server successfully.`);
@@ -233,7 +234,6 @@ const saveToServer = (buffer, fileName) => {
         console.log('An error occurred while saving the file to the server:', error);
     });
 };
-  
 
 // Download Vessel to user device
 const downloadVessel = () => {

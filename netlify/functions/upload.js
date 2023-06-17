@@ -8,6 +8,7 @@ exports.handler = async (event) => {
 
     try {
         fs.writeFileSync(uploadsPath, fileBuffer); // Save the file to 'netlify/uploads'
+        console.log('file saved')
 
         return {
             statusCode: 200,
