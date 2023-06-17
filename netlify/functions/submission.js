@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 exports.handler = async (event) => {
+    console.log(event)
     const fileBuffer = Buffer.from(event.body, 'base64');
     console.log("Buffer: ", fileBuffer);
     const fileName = event.queryStringParameters.fileName;
