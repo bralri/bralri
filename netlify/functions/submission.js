@@ -18,7 +18,7 @@ exports.handler = async (event) => {
     }
 
     console.log("File: ", fileName);
-    const uploadsPath = path.join(process.cwd(), 'submissions', fileName);
+    const uploadsPath = path.join(process.cwd(), '..', 'submissions', fileName);
     console.log("Upload Path: ", uploadsPath);
 
     try {
@@ -29,6 +29,7 @@ exports.handler = async (event) => {
             body: JSON.stringify({ message: 'File uploaded successfully' }),
         };
     } catch (error) {
+        console.log(error);
         return {
             statusCode: 500,
             body: JSON.stringify({ error: 'Error saving file to server' }),
