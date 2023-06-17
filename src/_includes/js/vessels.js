@@ -191,7 +191,7 @@ const helloworld = async () => {
     const response = await fetch('/.netlify/functions/hello-world');
     const data = await response.json();
 
-    console.log(data.message);
+    window.alert(data.message);
 };
 
 // Save user created vessel to server
