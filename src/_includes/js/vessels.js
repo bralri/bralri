@@ -51,7 +51,7 @@ const setupGUI = () => {
         },
         userName: "",
         submitToArchive: () => {
-            if (submissionName) {
+            if (submissionName.length > 0) {
                 saveVesselToServer();
             } else {
                 window.alert("A name is required to submit to the archive.")
