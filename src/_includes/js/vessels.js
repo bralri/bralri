@@ -215,14 +215,16 @@ const saveVesselToServer = () => {
     );
 };
 
-const saveToServer = (blob, fileName) => {
+const saveToServer = async (blob, fileName) => {
     const formData = new FormData();
     formData.append('file', blob, fileName);
 
-    fetch('/.netlify/functions/upload', {
-        method: 'POST',
-        body: formData,
-    }).then((response) => {
+    try {
+        const response = await fetch('/.netlify/functions/upload', {
+            method: 'POST',
+            body: formData,
+        });
+
         if (response.ok) {
             console.log(`File ${fileName} saved to server successfully.`);
             window.alert(`Submitted ${fileName} successfully`);
@@ -230,9 +232,9 @@ const saveToServer = (blob, fileName) => {
             console.log('Error saving file to server.');
             window.alert(`Error submitting vessel, try again.`);
         }
-    }).catch((error) => {
+    } catch (error) {
         console.log('An error occurred while saving the file to the server:', error);
-    });
+    }
 };
 
 // Download Vessel to user device

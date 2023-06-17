@@ -6,11 +6,8 @@ exports.handler = async (event) => {
     const fileName = event.queryStringParameters.fileName;
     const uploadsPath = path.join(process.cwd(), 'uploads', fileName);
 
-    console.log(uploadsPath);
-
     try {
         fs.writeFileSync(uploadsPath, fileBuffer);
-        console.log('file saved')
 
         return {
             statusCode: 200,
