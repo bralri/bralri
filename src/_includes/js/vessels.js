@@ -51,7 +51,7 @@ const setupGUI = () => {
         },
         userName: "",
         submitToArchive: () => {
-            if (submissionName > 0) {
+            if (submissionName) {
                 saveVesselToServer();
             } else {
                 window.alert("A name is required to submit to the archive.")
@@ -79,6 +79,7 @@ const setupGUI = () => {
     const archive = gui.addFolder('Archive');
     archive.add(guiParams, "userName").name("Name *").onFinishChange((value) => {
         submissionName.push(value);
+        console.log(submissionName)
     })
     archive.add(guiParams, "submitToArchive").name("Submit");
     archive.add(guiParams, "hello_world").name("POST request test")
