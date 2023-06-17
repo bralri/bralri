@@ -201,7 +201,6 @@ const saveVesselToServer = () => {
         onlyVisible: true,
         binary: true,
     };
-
     exporter.parse(
         scene,
         (result) => {
@@ -213,9 +212,11 @@ const saveVesselToServer = () => {
         options
     );
 }
+
 const saveToServerBuffer = (buffer, fileName) => {
-    saveToServer(new Blob([buffer], {type: 'application/octet-stream'}), fileName);
+    saveToServer(new Blob([buffer], { type: 'application/octet-stream' }), fileName);
 }
+
 const saveToServer = async (blob, fileName) => {
     try {
         const response = await fetch('/.netlify/functions/submission', {
@@ -226,18 +227,13 @@ const saveToServer = async (blob, fileName) => {
                 'Content-Disposition': `attachment; filename="${fileName}"`,
             },
         });
-
-        if (response.ok) {
-            console.log(`File ${fileName} saved to server successfully.`);
-            window.alert(`Submitted ${fileName} successfully`);
-        } else {
-            console.log('Error saving file to server.');
-            window.alert(`Error submitting vessel, try again.`);
+        if (!response.ok) {
+            throw new Error('Failed to save to server');
         }
     } catch (error) {
-        console.log('An error occurred while saving the file to the server:', error);
+        console.error('An error occurred while saving to server:', error);
     }
-}  
+}
 
 // Download Vessel to user device
 const downloadVessel = () => {
@@ -258,6 +254,9 @@ const downloadVessel = () => {
         options
     );
 }
+const saveArrayBuffer = (buffer, fileName) => {
+    save(new Blob([buffer], {type: 'application/octet-stream'}), fileName);
+}
 const save = (blob, fileName) => {
     const link = document.createElement('a');
     document.body.appendChild(link);
@@ -265,9 +264,6 @@ const save = (blob, fileName) => {
     link.download = fileName;
     link.click();
     document.body.removeChild(link);
-}
-const saveArrayBuffer = (buffer, fileName) => {
-    save(new Blob([buffer], {type: 'application/octet-stream'}), fileName);
 }
 
 // Save screenshot of scene to user device

@@ -1,32 +1,30 @@
-const fs = require('fs');
-const path = require('path');
+const {Storage} = require('@google-cloud/storage');
+
+const key = JSON.parse(process.env.STORAGE_KEY_JSON);
 
 exports.handler = async (event) => {
-    const fileBuffer = Buffer.from(event.body, 'base64');
-    const headers = event.headers;
-    const contentDisposition = headers['content-disposition'];
-
-    let fileName;
-    if (contentDisposition) {
-        const filenameRegex = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
-        const matches = contentDisposition.match(filenameRegex);
-        if (matches && matches[1]) {
-            fileName = matches[1].trim().replace(/['"]/g, '');
-        }
-    }
+    // Create a new Google Cloud Storage client
+    const storage = new Storage({credentials: key});
 
     try {
-        fs.writeFileSync(`${__dirname}/submissions/${fileName}`, fileBuffer);
+        // Get the file data from the request body
+        const fileData = Buffer.from(event.body, 'binary');
+
+        // Set the name for the file in the storage bucket
+        const fileName = event.headers['content-disposition'].split('filename=')[1].replace(/"/g, '');
+
+        // Upload the file to the storage bucket
+        await storage.bucket('build-a-vessel-submission').file(fileName).save(fileData);
 
         return {
             statusCode: 200,
             body: JSON.stringify({ message: 'File uploaded successfully' }),
         };
     } catch (error) {
-        console.log(error);
+        console.error('Error uploading file:', error);
         return {
             statusCode: 500,
-            body: JSON.stringify({ error: 'Error saving file to server' }),
+            body: JSON.stringify({ message: 'Error uploading file' }),
         };
     }
 };
