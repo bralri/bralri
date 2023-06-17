@@ -229,7 +229,7 @@ const saveToServer = async (blob, fileName) => {
             console.log(`File ${fileName} saved to server successfully.`);
             window.alert(`Submitted ${fileName} successfully`);
         } else {
-            console.log('Error saving file to server.');
+            console.log('Error saving file to server.', response);
             window.alert(`Error submitting vessel, try again.`);
         }
     } catch (error) {
