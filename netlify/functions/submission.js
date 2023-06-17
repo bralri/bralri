@@ -18,7 +18,7 @@ exports.handler = async (event) => {
     }
 
     console.log("File: ", fileName);
-    const uploadsPath = path.join(process.cwd(), '..', 'submissions', fileName);
+    const uploadsPath = path.join(process.cwd(), '..', '..', 'submissions', fileName);
     console.log("Upload Path: ", uploadsPath);
 
     try {
