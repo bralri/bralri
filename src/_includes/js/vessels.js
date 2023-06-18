@@ -190,12 +190,18 @@ const loadAssets = () => {
     })
 };
 
+const jsonData = '../../'
+
 // Save user created vessel to server
 const sendShitJson = async () => {
     try {
         const post = await fetch('/.netlify/functions/submission', {
             method: 'POST',
-            body: '../../shit.json',
+            body: {
+                "name": "John Doe",
+                "age": 30,
+                "email": "johndoe@example.com"
+            },
             headers: {
                 'Content-Type': 'application/json',
                 'Content-Disposition': 'attachment; filename="shit.json"',
