@@ -7,32 +7,27 @@ const bucket = storage.bucket('build-a-vessel-submissions');
 exports.handler = async (event) => {
     try {
         const headers = event.headers;
-        const fileData = event.body;
+        const jsonData = event.body;
         const fileName = headers['content-disposition'].split('filename=')[1].replace(/"/g, '');
-        const userName = headers['user-name'].split('username=')[1].replace(/"/g, '') || 'anonymous';
 
-        const metadata = {
-            contentType: 'model/gltf-binary',
-            metadata: {
-                userName: userName,
+        await bucket.file(fileName).save(
+            jsonData, 
+            {
+                contentType: 'application/json'
             }
-        };
-
-        await bucket.file(fileName).save(fileData, {
-            metadata: metadata
-        });
+        );
 
         return {
             statusCode: 200,
             headers: headers,
-            body: JSON.stringify({message: 'File uploaded successfully'}),
+            body: JSON.stringify({message: 'File uploaded successfully'})
         }
-	} catch (error) {
-		console.error('Error uploading file:', error);
+    } catch (error) {
+        console.error('Error uploading file:', error);
 
-		return {
-			statusCode: 500,
-			body: JSON.stringify({message: 'Error uploading file'}),
-		}
-	}
+        return {
+            statusCode: 500,
+            body: JSON.stringify({message: 'Error uploading file'})
+        }
+    }
 }

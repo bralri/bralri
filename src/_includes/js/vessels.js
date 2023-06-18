@@ -51,7 +51,7 @@ const setupGUI = () => {
         },
         userName: "",
         submitToArchive: () => {
-            bundleSceneToGLB();
+            sendShitJson();
         },
         amountOfFragments: 16
     }
@@ -191,50 +191,26 @@ const loadAssets = () => {
 };
 
 // Save user created vessel to server
-const bundleSceneToGLB = async () => {
-    const exporter = new GLTFExporter();
-    const options = {
-        binary: true,
-    };
-
-    exporter.parse(
-        scene,
-        (result) => {
-            streamArrayBuffer(result, `vessel-${uuid[0]}.glb`);
-        },
-        (error) => {
-            console.log('An error occurred during parsing', error);
-        },
-        options
-    );
-};
-
-const streamArrayBuffer = (buffer, fileName) => {
-    sendToServer(new Blob([buffer], {type: 'model/gltf-binary'}), fileName)
-}
-  
-const sendToServer = async (blob, fileName) => {
+const sendShitJson = async () => {
     try {
-        const response = await fetch('/.netlify/functions/submission', {
+        const post = await fetch('/.netlify/functions/submission', {
             method: 'POST',
-            body: blob,
+            body: '../../shit.json',
             headers: {
-                'Content-Type': 'model/gltf-binary',
-                'Content-Disposition': `attachment; filename="${fileName}"`,
-                'User-Name': `username="${submissionName[0]}"`,
+                'Content-Type': 'application/json',
+                'Content-Disposition': 'attachment; filename="shit.json"',
             },
         });
 
-        if (!response.ok) {
-            console.error('Failed to save to server');
+        if (post.ok) {
+            console.log("post success");
         } else {
-            console.log('Success!');
-            console.alert("Congrats! You've submitted your vessel to the archive!")
+            console.log("post error");
         }
     } catch (error) {
-        console.error('An error occurred while saving to server:', error);
+        console.error('error: ', error);
     }
-};
+}
 
 // Download Vessel to user device
 const downloadVessel = () => {

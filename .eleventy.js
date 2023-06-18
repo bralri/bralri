@@ -40,6 +40,7 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.addPassthroughCopy('./src/js');
 
     eleventyConfig.addPassthroughCopy('./src/robots.txt');
+    eleventyConfig.addPassthroughCopy('./src/shit.json');
 
     eleventyConfig.addPassthroughCopy('./src/site.webmanifest');
     eleventyConfig.addPassthroughCopy('./src/browserconfig.xml');
