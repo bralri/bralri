@@ -106,7 +106,7 @@ const loadAssets = () => {
             console.log(asset.file.metadata.metadata.author);
             const assetInstance = createAssetInstance(
                 asset.file.name, 
-                asset.file.metadata.metadata.author, 
+                'bryan ridpath', 
                 `https://storage.googleapis.com/build-a-vessel-submissions/${asset.file.name}`,
             );
             assetInstance.then((instance) => {
