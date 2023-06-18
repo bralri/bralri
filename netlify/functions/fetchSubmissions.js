@@ -2,8 +2,8 @@ const { Storage } = require('@google-cloud/storage');
 
 const key = JSON.parse(process.env.STORAGE_KEY_JSON);
 
-exports.handler = async (event, context) => {
-    const storage = new Storage({ credentials: key });
+exports.handler = async () => {
+    const storage = new Storage({credentials: key});
     const bucket = storage.bucket('build-a-vessel-submissions');
 
     try {
@@ -21,6 +21,8 @@ exports.handler = async (event, context) => {
             statusCode: 200,
             headers: {
                 'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Headers': 'Content-Type',
+                'Access-Control-Allow-Methods': 'GET, OPTIONS',
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({ files: fileUrls }),
