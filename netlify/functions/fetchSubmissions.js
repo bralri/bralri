@@ -16,7 +16,7 @@ exports.handler = async () => {
             const month = String(date.getMonth() + 1).padStart(2, "0");
             const day = String(date.getDate()).padStart(2, "0");
 
-            let createdBy = file.metadata.author;
+            let createdBy = "bryan ridpath"; // figure out the dynamics of this
 
             return {
                 name: file.name,
