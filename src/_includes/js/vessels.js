@@ -51,14 +51,7 @@ const setupGUI = () => {
         },
         userName: "",
         submitToArchive: () => {
-            if (submissionName.length > 0) {
-                saveVesselToServer();
-            } else {
-                window.alert("A name is required to submit to the archive.")
-            }
-        },
-        hello_world: () => {
-            helloworld();
+            bundleSceneToGLB();
         },
         amountOfFragments: 16
     }
@@ -77,10 +70,9 @@ const setupGUI = () => {
     );
 
     const archive = gui.addFolder('Archive');
-    archive.add(guiParams, "userName").name("Name (required)").onFinishChange((value) => {
+    archive.add(guiParams, "userName").name("Name (optional)").onFinishChange((value) => {
         submissionName.length = 0;
         submissionName.push(value);
-        console.log(submissionName)
     })
     archive.add(guiParams, "submitToArchive").name("Submit Vessel");
     
@@ -199,47 +191,50 @@ const loadAssets = () => {
 };
 
 // Save user created vessel to server
-const saveVesselToServer = async () => {
+const bundleSceneToGLB = async () => {
     const exporter = new GLTFExporter();
     const options = {
         binary: true,
-    }
+    };
 
     exporter.parse(
         scene,
-        async (result) => {
-            const blob = new Blob([result], {type: 'application/octet-stream'});
-            const fileName = `vessel-${uuid[0]}.glb`;
-            await saveToServer(blob, fileName);
+        (result) => {
+            streamArrayBuffer(result, `vessel-${uuid[0]}.glb`);
         },
         (error) => {
             console.log('An error occurred during parsing', error);
         },
         options
-    )
-}
-const saveToServer = async (blob, fileName) => {
-    try {
-        const formData = new FormData();
-        formData.append('file', blob, fileName, submissionName[0]);
+    );
+};
 
-        const response = await fetch(
-            '/.netlify/functions/submission', 
-            {
-                method: 'POST',
-                body: formData,
-            }
-        );
+const streamArrayBuffer = (buffer, fileName) => {
+    sendToServer(new Blob([buffer], {type: 'application/octet-stream'}), fileName)
+}
+  
+const sendToServer = async (blob, fileName) => {
+    try {
+        const response = await fetch('/.netlify/functions/submission', {
+            method: 'POST',
+            body: blob,
+            headers: {
+                'Content-Type': 'application/octet-stream',
+                'Content-Disposition': `attachment; filename="${fileName}"`,
+                'User-Name': `attachment; filename="${submissionName[0]}"`,
+            },
+        });
 
         if (!response.ok) {
             console.error('Failed to save to server');
         } else {
             console.log('Success!');
+            console.alert("Congrats! You've submitted your vessel to the archive!")
         }
     } catch (error) {
         console.error('An error occurred while saving to server:', error);
     }
-}
+};
 
 // Download Vessel to user device
 const downloadVessel = () => {

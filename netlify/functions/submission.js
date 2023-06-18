@@ -1,40 +1,38 @@
 const {Storage} = require('@google-cloud/storage');
 
 const key = JSON.parse(process.env.STORAGE_KEY_JSON);
-const storage = new Storage({ credentials: key });
+const storage = new Storage({credentials: key});
 const bucket = storage.bucket('build-a-vessel-submissions');
 
 exports.handler = async (event) => {
     try {
-        const formData = event.body;
-        console.log(formData)
-
-        const file = formData.get('file');
-        const fileName = file.name;
-        const fileData = file.stream;
+        const headers = event.headers;
+        const fileData = event.body;
+        const fileName = headers['content-disposition'].split('filename=')[1].replace(/"/g, '');
+        const userName = headers['user-name'].split('username=')[1].replace(/"/g, '') || 'anonnymous';
 
         const metadata = {
-            contentType: 'model/gltf-binary',
+            contentType: 'application/octet-stream',
             metadata: {
-                userName: formData.get('fileName', ''),
-            },
-        }
+                userName: userName,
+            }
+        };
 
         await bucket.file(fileName).save(fileData, {
-            contentType: metadata.contentType,
-            metadata: metadata.metadata,
+            metadata: metadata
         });
 
         return {
             statusCode: 200,
-            headers: event.headers,
-            body: JSON.stringify({ message: 'File uploaded successfully' }),
+            headers: headers,
+            body: JSON.stringify({message: 'File uploaded successfully'}),
         }
-    } catch (error) {
-        console.error('Error uploading file:', error);
-        return {
-            statusCode: 500,
-            body: JSON.stringify({ message: 'Error uploading file' }),
-        }
-    }
+	} catch (error) {
+		console.error('Error uploading file:', error);
+
+		return {
+			statusCode: 500,
+			body: JSON.stringify({message: 'Error uploading file'}),
+		}
+	}
 }
