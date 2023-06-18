@@ -1,4 +1,4 @@
-const { Storage } = require('@google-cloud/storage');
+const {Storage} = require('@google-cloud/storage');
 const key = JSON.parse(process.env.STORAGE_KEY_JSON);
 
 exports.handler = async () => {
@@ -16,16 +16,16 @@ exports.handler = async () => {
             const month = String(date.getMonth() + 1).padStart(2, "0");
             const day = String(date.getDate()).padStart(2, "0");
 
-            let author;
+            let createdBy;
             if (file.metadata.metadata.author) {
-                author = file.metadata.metadata.author
+                createdBy = file.metadata.metadata.author
             } else {
-                author = undefined;
+                createdBy = undefined;
             }
 
             return {
                 name: file.name,
-                author: author,
+                createdBy: createdBy,
                 url: urlPath,
                 dateCreated: day + "/" + month + "/" + year,
                 data: file

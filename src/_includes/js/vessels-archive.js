@@ -105,7 +105,7 @@ const loadAssets = () => {
         array.forEach((asset, i) => {
             const assetInstance = createAssetInstance(
                 asset.name, 
-                asset.author,
+                asset.createdBy,
                 asset.dateCreated,
                 asset.url,
             );

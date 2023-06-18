@@ -4,7 +4,7 @@ import {GLTFLoader} from 'three/GLTFLoader.js';
 const manager = new THREE.LoadingManager();
 const loader = new GLTFLoader(manager);
 
-const loadModels = (name, author, date, url) => {
+const loadModels = (name, createdBy, date, url) => {
     return new Promise((resolve, reject) => {
         loader.load(
 
@@ -17,7 +17,7 @@ const loadModels = (name, author, date, url) => {
                 caption:     
                 `                                
                     <span class="title">${name}</span><br>
-                    <i class="author">by: ${author}</i><br>
+                    <i class="author">by: ${createdBy}</i><br>
                     <i class="author">created: ${date}</i><br>
                 ` 
             }; // figure out a way to include the date day it way made
@@ -28,9 +28,9 @@ const loadModels = (name, author, date, url) => {
     });
 }
 
-export const createAssetInstance = async (name, author, date, url) => {
+export const createAssetInstance = async (name, createdBy, date, url) => {
     try {
-        const asset = await loadModels(name, author, date, url);
+        const asset = await loadModels(name, createdBy, date, url);
         return asset;
     } catch (error) {
         console.log(`Asset does not exist`, error);
