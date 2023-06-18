@@ -122,7 +122,7 @@ const test = async () => {
                 return response.json(); // Add return statement here
             }
         ).then((data) => {
-                console.log(data);
+                console.log("Data: ", data);
             }
         ).catch((error) => {
                 console.error('Error fetching file URLs:', error);
@@ -131,8 +131,7 @@ const test = async () => {
     } catch (error) {
         console.error('An error occurred while fetching:', error);
     }
-};
-
+}
 
 const shuffle = (array) => {
     array.forEach((_, i) => {
