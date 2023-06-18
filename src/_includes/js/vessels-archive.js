@@ -101,12 +101,18 @@ const loadAssets = () => {
         const gridSize = Math.ceil(Math.sqrt(fileArray.length));
         const spacing = 800;
         const offset = (gridSize - 1) * spacing * 0.5;
+        let author;
 
         fileArray.forEach((asset, i) => {
             console.log(asset.file.metadata.metadata.author);
+            if (!asset.file.metadata.metadata.author) {
+                author = "anonymous"
+            } else {
+                author = asset.file.metadata.metadata.author
+            }
             const assetInstance = createAssetInstance(
                 asset.file.name, 
-                'bryan ridpath', 
+                author, 
                 `https://storage.googleapis.com/build-a-vessel-submissions/${asset.file.name}`,
             );
             assetInstance.then((instance) => {
