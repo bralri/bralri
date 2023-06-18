@@ -104,6 +104,7 @@ const loadAssets = () => {
 
         array.forEach((asset, i) => {
             console.log(asset.data);
+            console.log("created by: ", asset.data.metadata.metadata.author);
             const assetInstance = createAssetInstance(
                 asset.name, 
                 asset.createdBy,
