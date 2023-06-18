@@ -103,6 +103,8 @@ const loadAssets = () => {
     const spacing = 600;
     const offset = (gridSize - 1) * spacing * 0.5;
 
+    console.log(assetsFromCloud);
+
     assetsFromCloud.forEach((asset) => {
         const assetInstance = createAssetInstance(asset.name, asset.publicURL);
         assetInstance.then((instance) => {
