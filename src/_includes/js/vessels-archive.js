@@ -85,13 +85,12 @@ const init = () => {
     setupGUI();
 }
 
-
 const loadAssets = () => {
     const gridSize = Math.ceil(Math.sqrt(27));
     const spacing = 600;
     const offset = (gridSize - 1) * spacing * 0.5;
 
-    const assetInstance = createAssetInstance(item.id);
+    const assetInstance = createAssetInstance();
     assetInstance.then((instance) => {
         const row = Math.floor(i / gridSize);
         const col = i % gridSize;
