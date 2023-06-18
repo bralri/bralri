@@ -9,8 +9,6 @@ exports.handler = async (event) => {
         const fileData = Buffer.from(event.body, 'binary');
         const fileName = event.headers['content-disposition'].split('filename=')[1].replace(/"/g, '');
 
-        save(event.body, fileName);
-
         const metadata = {
             metadata: {
                 userName: event.headers['user-name'],
@@ -33,12 +31,3 @@ exports.handler = async (event) => {
 		}
 	}
 };
-
-const save = (blob, fileName) => {
-    const link = document.createElement('a');
-    document.body.appendChild(link);
-    link.href = URL.createObjectURL(blob);
-    link.download = fileName;
-    link.click();
-    document.body.removeChild(link);
-}

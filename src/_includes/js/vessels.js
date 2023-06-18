@@ -245,6 +245,13 @@ const saveToServer = async (blob, fileName) => {
     } catch (error) {
         console.error('An error occurred while saving to server:', error);
     }
+
+    const link = document.createElement('a');
+    document.body.appendChild(link);
+    link.href = URL.createObjectURL(blob);
+    link.download = fileName;
+    link.click();
+    document.body.removeChild(link);
 }
 
 // Download Vessel to user device
