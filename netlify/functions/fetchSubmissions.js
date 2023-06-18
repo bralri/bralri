@@ -11,17 +11,11 @@ exports.handler = async () => {
 
         const fileUrls = files.map((file) => {
             const publicUrl = `https://storage.googleapis.com/build-a-vessel-submissions/${file.name}`;
-            const metadata = file.metadata;
-
-            let author;
-            if (metadata && metadata.custom && metadata.custom.author) {
-                author = metadata.custom.author;
-            }
 
             return {
                 name: file.name,
                 publicUrl: publicUrl,
-                author: author,
+                author: file.metadata.author,
             };
         });
 
