@@ -2,7 +2,6 @@ import * as THREE from 'three';
 import {GUI} from 'three/lil-gui.esm.min.js';
 import {MapControls} from 'three/MapControls.js';
 import {archive, createAssetInstance} from '../js/_archive.min.js';
-import {GLTFLoader} from 'three/GLTFLoader.js';
 
 let camera, mapControls, scene, renderer;
 const mouse = new THREE.Vector2();
@@ -91,64 +90,24 @@ const loadAssets = () => {
     const spacing = 600;
     const offset = (gridSize - 1) * spacing * 0.5;
 
-    shuffle(archive);
+    const assetInstance = createAssetInstance(item.id);
+    assetInstance.then((instance) => {
+        const row = Math.floor(i / gridSize);
+        const col = i % gridSize;
+        const x = (col * spacing) - offset;
+        const z = (row * spacing) - offset;
 
-    archive.forEach((item, i) => {
-        const assetInstance = createAssetInstance(item.id);
-        assetInstance.then((instance) => {
-            const row = Math.floor(i / gridSize);
-            const col = i % gridSize;
-            const x = (col * spacing) - offset;
-            const z = (row * spacing) - offset;
+        instance.mesh.position.set(x, 50, z);
+        instance.mesh.scale.set(40, 40, 40);
+        instance.mesh.rotateY(Math.PI / -1.5);
 
-            instance.mesh.position.set(x, 50, z);
-            instance.mesh.scale.set(40, 40, 40);
-            instance.mesh.rotateY(Math.PI / -1.5);
+        scene.add(instance.mesh);
 
-            // scene.add(instance.mesh);
-
-            objects.push(instance.mesh);
-            objectsId.push(instance.mesh.userData.id);
-        }).catch((error) => {
-            console.log(error);
-        })
-    });
-}
-
-const test = async () => {
-    const loader = new GLTFLoader();
-    try {
-        const response = await fetch('/.netlify/functions/fetchSubmissions');
-        const data = await response.json();
-        const files = data.files;
-
-        files.forEach((item) => {
-            console.log(item.name, item.publicUrl);
-            loader.load(
-                item.publicUrl,
-                (glb) => {
-                    const mesh = glb.scene;
-                    mesh.scale.set(40, 40, 40);
-                    mesh.position.set(0, 50, 0);
-
-                    scene.add(mesh);
-                },
-                undefined,
-                (error) => {
-                    console.error('Error loading model:', error);
-                }
-            );
-        });
-    } catch (error) {
-        console.error('Error fetching file URLs:', error);
-    }
-}
-
-const shuffle = (array) => {
-    array.forEach((_, i) => {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    });
+        objects.push(instance.mesh);
+        objectsId.push(instance.mesh.userData.id);
+    }).catch((error) => {
+        console.log(error);
+    })
 }
 
 const onWindowResize = () => {
@@ -193,7 +152,6 @@ const render = () => {
 window.onload = () => {
     init();
     loadAssets();
-    test();
     setTimeout(animate, 1000);
     setTimeout(() => {
         loading.classList.add('fade');
