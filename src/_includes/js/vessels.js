@@ -233,7 +233,9 @@ const saveToServer = async (blob, fileName) => {
             }
         );
         if (!response.ok) {
-            throw new Error('Failed to save to server');
+            console.error('Failed to save to server');
+        } else {
+            console.log('Success!')
         }
     } catch (error) {
         console.error('An error occurred while saving to server:', error);

@@ -6,7 +6,9 @@ const key = JSON.parse(process.env.STORAGE_KEY_JSON);
 
 exports.handler = async (event) => {
     try {
+        const fileData = Buffer.from(event.body, 'binary');
         const fileName = event.headers['content-disposition'].split('filename=')[1].replace(/"/g, '');
+
         const metadata = {
             contentType: 'application/octet-stream',
             metadata: {
@@ -14,9 +16,8 @@ exports.handler = async (event) => {
             }
         };
 
-        await bucket.file(fileName).save(event.body, {
-            metadata: metadata,
-        });
+        await bucket.file(fileName).save(fileData);
+        await bucket.file(fileName).setMetadata(metadata);
 
         return {
             statusCode: 200,
