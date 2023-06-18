@@ -235,7 +235,7 @@ const saveToServer = async (blob, fileName) => {
                 headers: {
                     'Content-Type': 'application/octet-stream',
                     'Content-Disposition': `attachment; filename="${fileName}"`,
-                    'User-Name': `${submissionName[0]}`,
+                    'User-Name': `attachment; username="${submissionName[0]}"`,
                 },
             }
         );

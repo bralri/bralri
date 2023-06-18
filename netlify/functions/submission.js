@@ -12,7 +12,7 @@ exports.handler = async (event) => {
 
         const metadata = {
             metadata: {
-                userName: event.headers['user-name'],
+                userName: event.headers['user-name'].split('username=')[1].replace(/"/g, ''),
             }
         };
 
