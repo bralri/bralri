@@ -116,35 +116,31 @@ const loadAssets = () => {
 }
 
 const test = async () => {
-    const loader = new GLTFLoader();
+    const loader = new THREE.GLTFLoader();
     try {
-        return  fetch('/.netlify/functions/fetchSubmissions'
-                ).then(
-                    (response) => {
-                        return response.json(); // Add return statement here
-                    }
-                ).then((data) => {
-                        const files = data.files;
-                        files.forEach((item) => {
-                            console.log(item.name, item.publicUrl);
-                            loader.load(
-                                item.publicUrl,
-                                (glb) => {
-                                    const mesh = glb.scene;
-                                    mesh.scale.set(40, 40, 40);
-                                    mesh.position.set(0, 50, 0);
+        const response = await fetch('/.netlify/functions/fetchSubmissions');
+        const data = await response.json();
+        const files = data.files;
 
-                                    scene.add(mesh);
-                                }
-                            )
-                        })
-                    }
-                ).catch((error) => {
-                        console.error('Error fetching file URLs:', error);
-                    }
-                );
+        files.forEach((item) => {
+            console.log(item.name, item.publicUrl);
+            loader.load(
+                item.publicUrl,
+                (glb) => {
+                    const mesh = glb.scene;
+                    mesh.scale.set(40, 40, 40);
+                    mesh.position.set(0, 50, 0);
+
+                    scene.add(mesh);
+                },
+                undefined,
+                (error) => {
+                    console.error('Error loading model:', error);
+                }
+            );
+        });
     } catch (error) {
-        console.error('An error occurred while fetching:', error);
+        console.error('Error fetching file URLs:', error);
     }
 }
 
