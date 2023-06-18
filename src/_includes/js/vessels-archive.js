@@ -116,7 +116,7 @@ const loadAssets = () => {
 }
 
 const test = async () => {
-    const loader = new THREE.GLTFLoader();
+    const loader = new GLTFLoader();
     try {
         const response = await fetch('/.netlify/functions/fetchSubmissions');
         const data = await response.json();
