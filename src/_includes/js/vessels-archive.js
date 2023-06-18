@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import {GUI} from 'three/lil-gui.esm.min.js';
 import {MapControls} from 'three/MapControls.js';
 import {archive, createAssetInstance} from '../js/_archive.min.js';
+import {GLTFLoader} from 'three/GLTFLoader.js';
 
 let camera, mapControls, scene, renderer;
 const mouse = new THREE.Vector2();
@@ -112,6 +113,22 @@ const loadAssets = () => {
             console.log(error);
         })
     });
+
+    try {
+        const fetch = fetch('/.netlify/functions/fetchSubmissions').then(
+            (response) => {
+                response.json()
+            }
+        ).then((data) => {
+                console.log(data);
+            }
+        ).catch((error) => {
+                console.error('Error fetching file URLs:', error);
+            }
+        );
+    } catch (error) {
+        console.error('An error occurred while fetching:', error);
+    }
 }
 
 const shuffle = (array) => {
