@@ -221,12 +221,12 @@ const sendToServer = async (blob, fileName) => {
             headers: {
                 'Content-Type': 'application/octet-stream',
                 'Content-Disposition': `attachment; filename="${fileName}"`,
-                'User-Name': `attachment; filename="${submissionName[0]}"`,
+                'User-Name': `username="${submissionName[0]}"`,
             },
         });
 
         if (!response.ok) {
-            console.error('Failed to save to server');
+            console.error('Failed to save to server', response);
         } else {
             console.log('Success!');
             console.alert("Congrats! You've submitted your vessel to the archive!")
