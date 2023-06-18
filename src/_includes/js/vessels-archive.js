@@ -51,7 +51,7 @@ const init = () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
 
-    camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
+    camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 5000);
 
     // controls
     mapControls = new MapControls(camera, renderer.domElement);
@@ -103,6 +103,7 @@ const loadAssets = () => {
         const offset = (gridSize - 1) * spacing * 0.5;
 
         fileArray.forEach((asset, i) => {
+            console.log(asset.file)
             const assetInstance = createAssetInstance(
                 asset.file.name, 
                 "Bryan Ridpath", 
@@ -124,7 +125,7 @@ const loadAssets = () => {
                 objectsId.push(instance.mesh.userData.id);
             }).catch((error) => {
                 console.log(error);
-            })
+            });
         })
     })
 }
