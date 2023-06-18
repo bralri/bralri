@@ -99,7 +99,7 @@ const loadAssets = () => {
     const files = fetchModelsFromCloud();
     files.then((array) => {
         const gridSize = Math.ceil(Math.sqrt(array.length));
-        const spacing = 800;
+        const spacing = 600;
         const offset = (gridSize - 1) * spacing * 0.5;
 
         array.forEach((asset, i) => {
@@ -114,8 +114,8 @@ const loadAssets = () => {
                 const x = (col * spacing) - offset;
                 const z = (row * spacing) - offset;
         
-                instance.mesh.position.set(x, 50, z);
-                instance.mesh.scale.set(40, 40, 40);
+                instance.mesh.position.set(x, 40, z);
+                instance.mesh.scale.set(30, 30, 30);
                 instance.mesh.rotateY(Math.PI / -1.5);
         
                 scene.add(instance.mesh);
