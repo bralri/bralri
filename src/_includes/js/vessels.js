@@ -199,43 +199,42 @@ const loadAssets = () => {
 };
 
 // Save user created vessel to server
-const saveVesselToServer = () => {
+const saveVesselToServer = async () => {
     const exporter = new GLTFExporter();
     const options = {
-        binary: true
-    };
+        binary: true,
+    }
+
     exporter.parse(
         scene,
-        (result) => {
-            saveToServerBuffer(result, `vessel-${uuid[0]}.glb`);
+        async (result) => {
+            const blob = new Blob([result], {type: 'application/octet-stream'});
+            const fileName = `vessel-${uuid[0]}.glb`;
+            await saveToServer(blob, fileName);
         },
         (error) => {
             console.log('An error occurred during parsing', error);
         },
         options
-    );
-}
-const saveToServerBuffer = (buffer, fileName) => {
-    saveToServer(new Blob([buffer], {type: 'application/octet-stream'}), fileName);
+    )
 }
 const saveToServer = async (blob, fileName) => {
     try {
+        const formData = new FormData();
+        formData.append('file', blob, fileName, submissionName[0]);
+
         const response = await fetch(
             '/.netlify/functions/submission', 
             {
                 method: 'POST',
-                body: blob,
-                headers: {
-                    'Content-Type': 'application/octet-stream',
-                    'Content-Disposition': `attachment; filename="${fileName}"`,
-                    'User-Name': `attachment; username="${submissionName[0]}"`,
-                },
+                body: formData,
             }
         );
+
         if (!response.ok) {
             console.error('Failed to save to server');
         } else {
-            console.log('Success!')
+            console.log('Success!');
         }
     } catch (error) {
         console.error('An error occurred while saving to server:', error);
