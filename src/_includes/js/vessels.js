@@ -209,8 +209,7 @@ const helloworld = async () => {
 const saveVesselToServer = () => {
     const exporter = new GLTFExporter();
     const options = {
-        onlyVisible: true,
-        binary: true,
+        binary: true
     };
     exporter.parse(
         scene,
@@ -252,7 +251,6 @@ const saveToServer = async (blob, fileName) => {
 const downloadVessel = () => {
     const exporter = new GLTFExporter();
     const options = {
-        onlyVisible: true,
         binary: true
     };
 
