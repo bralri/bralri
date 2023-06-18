@@ -113,9 +113,11 @@ const loadAssets = () => {
             console.log(error);
         })
     });
+}
 
+const test = async () => {
     try {
-        const fetch = fetch('/.netlify/functions/fetchSubmissions').then(
+        fetch('/.netlify/functions/fetchSubmissions').then(
             (response) => {
                 response.json()
             }
@@ -180,6 +182,7 @@ const render = () => {
 window.onload = () => {
     init();
     loadAssets();
+    test();
     setTimeout(animate, 1000);
     setTimeout(() => {
         loading.classList.add('fade');
