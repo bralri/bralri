@@ -198,13 +198,6 @@ const loadAssets = () => {
     })
 };
 
-const helloworld = async () => {
-    const response = await fetch('/.netlify/functions/hello-world');
-    const data = await response.json();
-
-    window.alert(data.message);
-};
-
 // Save user created vessel to server
 const saveVesselToServer = () => {
     const exporter = new GLTFExporter();
@@ -233,7 +226,6 @@ const saveToServer = async (blob, fileName) => {
                 method: 'POST',
                 body: blob,
                 headers: {
-                    'Content-Type': 'application/octet-stream',
                     'Content-Disposition': `attachment; filename="${fileName}"`,
                     'User-Name': `attachment; username="${submissionName[0]}"`,
                 },
