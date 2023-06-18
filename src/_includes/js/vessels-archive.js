@@ -117,9 +117,9 @@ const loadAssets = () => {
 
 const test = async () => {
     try {
-        fetch('/.netlify/functions/fetchSubmissions').then(
+        return fetch('/.netlify/functions/fetchSubmissions').then(
             (response) => {
-                response.json()
+                return response.json(); // Add return statement here
             }
         ).then((data) => {
                 console.log(data);
@@ -131,7 +131,8 @@ const test = async () => {
     } catch (error) {
         console.error('An error occurred while fetching:', error);
     }
-}
+};
+
 
 const shuffle = (array) => {
     array.forEach((_, i) => {
