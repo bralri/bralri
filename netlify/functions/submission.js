@@ -12,8 +12,7 @@ try {
 	const metadata = {
 		metadata: {
 			userName: event.headers['user-name'],
-		},
-		contentType: 'text/plain',
+		}
 	};
 
 	await storage.bucket('build-a-vessel-submissions').file(fileName).save(fileData);
