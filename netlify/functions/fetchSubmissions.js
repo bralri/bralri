@@ -13,6 +13,7 @@ exports.handler = async () => {
             return {
                 name: file.name,
                 publicUrl: publicUrl,
+                file: file,
             };
         });
 
