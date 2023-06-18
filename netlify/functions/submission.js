@@ -6,8 +6,8 @@ exports.handler = async (event) => {
     const storage = new Storage({credentials: key});
     const bucket = storage.bucket('build-a-vessel-submissions');
     try {
-        const fileData = Buffer.from(event.body, 'binary');
-        console.log(fileData);
+        // const fileData = Buffer.from(event.body, 'binary');
+        // console.log(fileData);
         const fileName = event.headers['content-disposition'].split('filename=')[1].replace(/"/g, '');
 
         const metadata = {
@@ -16,7 +16,7 @@ exports.handler = async (event) => {
             }
         };
 
-        await bucket.file(fileName).save(fileData);
+        await bucket.file(fileName).save(event.body);
         await bucket.file(fileName).setMetadata(metadata);
 
         return {
