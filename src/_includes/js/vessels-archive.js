@@ -105,7 +105,7 @@ const loadAssets = () => {
             instance.mesh.scale.set(40, 40, 40);
             instance.mesh.rotateY(Math.PI / -1.5);
 
-            scene.add(instance.mesh);
+            // scene.add(instance.mesh);
 
             objects.push(instance.mesh);
             objectsId.push(instance.mesh.userData.id);
