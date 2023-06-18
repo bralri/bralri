@@ -96,7 +96,7 @@ const fetchModelsFromCloud = async () => {
     }
 }
 const loadAssets = () => {
-    const cloudFiles = fetchModelsFromCloud(); // returns array of files
+    const cloudFiles = fetchModelsFromCloud();
     cloudFiles.then((fileArray) => {
         const gridSize = Math.ceil(Math.sqrt(fileArray.length));
         const spacing = 600;
