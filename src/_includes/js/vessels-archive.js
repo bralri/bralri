@@ -98,31 +98,34 @@ const fetchModelsFromCloud = async () => {
 
 const loadAssets = () => {
     const assetsFromCloud = fetchModelsFromCloud(); // returns array of files
+    assetsFromCloud.then((assetFromCloud) => {
 
-    const gridSize = Math.ceil(Math.sqrt(assetsFromCloud.length));
-    const spacing = 600;
-    const offset = (gridSize - 1) * spacing * 0.5;
+        console.log("Asset from cloud: ", assetFromCloud);
 
-    console.log(assetsFromCloud);
+        const gridSize = Math.ceil(Math.sqrt(assetFromCloud.length));
+        const spacing = 600;
+        const offset = (gridSize - 1) * spacing * 0.5;
 
-    assetsFromCloud.forEach((asset) => {
-        const assetInstance = createAssetInstance(asset.name, asset.publicURL);
-        assetInstance.then((instance) => {
-            const row = Math.floor(i / gridSize);
-            const col = i % gridSize;
-            const x = (col * spacing) - offset;
-            const z = (row * spacing) - offset;
-    
-            instance.mesh.position.set(x, 50, z);
-            instance.mesh.scale.set(40, 40, 40);
-            instance.mesh.rotateY(Math.PI / -1.5);
-    
-            scene.add(instance.mesh);
-    
-            objects.push(instance.mesh);
-            objectsId.push(instance.mesh.userData.id);
-        }).catch((error) => {
-            console.log(error);
+        assetFromCloud.forEach((asset) => {
+            console.log("Each asset: ". asset)
+            const assetInstance = createAssetInstance(asset.name, asset.publicURL);
+            assetInstance.then((instance) => {
+                const row = Math.floor(i / gridSize);
+                const col = i % gridSize;
+                const x = (col * spacing) - offset;
+                const z = (row * spacing) - offset;
+        
+                instance.mesh.position.set(x, 50, z);
+                instance.mesh.scale.set(40, 40, 40);
+                instance.mesh.rotateY(Math.PI / -1.5);
+        
+                scene.add(instance.mesh);
+        
+                objects.push(instance.mesh);
+                objectsId.push(instance.mesh.userData.id);
+            }).catch((error) => {
+                console.log(error);
+            })
         })
     })
 }
