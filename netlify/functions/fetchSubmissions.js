@@ -9,11 +9,18 @@ exports.handler = async () => {
         const [files] = await bucket.getFiles();
         const fileData = files.map((file) => {
             const urlPath = `https://storage.googleapis.com/build-a-vessel-submissions/${file.name}`;
+            
+            const dateString = file.metadata.timeCreated;
+            const date = new Date(dateString);
+            const year = date.getFullYear();
+            const month = date.getMonth();
+            const day = date.getDate();
 
             return {
                 name: file.name,
                 author: "Bryan Ridpath", // figure out a way to dynamically change this
                 url: urlPath,
+                dateCreated: day + "/" + month + "/" + year,
                 data: file
             }
         });
