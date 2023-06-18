@@ -85,6 +85,7 @@ const init = () => {
     setupGUI();
 }
 
+
 const loadAssets = () => {
     const gridSize = Math.ceil(Math.sqrt(27));
     const spacing = 600;
