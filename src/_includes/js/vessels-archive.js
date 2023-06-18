@@ -104,12 +104,12 @@ const loadAssets = () => {
         let author;
 
         fileArray.forEach((asset, i) => {
-            console.log(asset.file.metadata.metadata.author);
             if (!asset.file.metadata.metadata.author) {
                 author = "anonymous"
             } else {
                 author = asset.file.metadata.metadata.author
             }
+            console.log(author);
             const assetInstance = createAssetInstance(
                 asset.file.name, 
                 author, 
