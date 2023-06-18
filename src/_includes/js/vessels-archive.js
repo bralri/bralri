@@ -95,20 +95,15 @@ const fetchModelsFromCloud = async () => {
         console.error('Error fetching file URLs:', error);
     }
 }
-
 const loadAssets = () => {
-    const assetsFromCloud = fetchModelsFromCloud(); // returns array of files
-    assetsFromCloud.then((assetFromCloud) => {
-
-        console.log("Asset from cloud: ", assetFromCloud);
-
-        const gridSize = Math.ceil(Math.sqrt(assetFromCloud.length));
+    const cloudFiles = fetchModelsFromCloud(); // returns array of files
+    cloudFiles.then((fileArray) => {
+        const gridSize = Math.ceil(Math.sqrt(fileArray.length));
         const spacing = 600;
         const offset = (gridSize - 1) * spacing * 0.5;
 
-        assetFromCloud.forEach((asset) => {
-            console.log("Each asset: ". asset)
-            const assetInstance = createAssetInstance(asset.name, asset.publicURL);
+        fileArray.forEach((file, i) => {
+            const assetInstance = createAssetInstance(file.name, file.publicUrl);
             assetInstance.then((instance) => {
                 const row = Math.floor(i / gridSize);
                 const col = i % gridSize;
