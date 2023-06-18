@@ -105,7 +105,7 @@ const loadAssets = () => {
         array.forEach((asset, i) => {
             const assetInstance = createAssetInstance(
                 asset.name, 
-                "Bryan Ridpath", 
+                asset.author, 
                 asset.url,
             );
             assetInstance.then((instance) => {
