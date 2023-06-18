@@ -103,7 +103,7 @@ const loadAssets = () => {
         const offset = (gridSize - 1) * spacing * 0.5;
 
         fileArray.forEach((asset, i) => {
-            console.log(asset.file)
+            console.log(asset.author)
             const assetInstance = createAssetInstance(
                 asset.name, 
                 asset.author, 
