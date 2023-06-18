@@ -123,25 +123,6 @@ const loadAssets = () => {
             console.log(error);
         })
     })
-
-    const assetInstance = createAssetInstance();
-    assetInstance.then((instance) => {
-        const row = Math.floor(i / gridSize);
-        const col = i % gridSize;
-        const x = (col * spacing) - offset;
-        const z = (row * spacing) - offset;
-
-        instance.mesh.position.set(x, 50, z);
-        instance.mesh.scale.set(40, 40, 40);
-        instance.mesh.rotateY(Math.PI / -1.5);
-
-        scene.add(instance.mesh);
-
-        objects.push(instance.mesh);
-        objectsId.push(instance.mesh.userData.id);
-    }).catch((error) => {
-        console.log(error);
-    })
 }
 
 const onWindowResize = () => {
