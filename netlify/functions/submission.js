@@ -5,9 +5,9 @@ const key = JSON.parse(process.env.STORAGE_KEY_JSON);
 exports.handler = async (event) => {
     const storage = new Storage({credentials: key});
     const bucket = storage.bucket('build-a-vessel-submissions');
-    console.log(event.body);
     try {
         const fileData = Buffer.from(event.body, 'binary');
+        console.log(fileData);
         const fileName = event.headers['content-disposition'].split('filename=')[1].replace(/"/g, '');
 
         const metadata = {
