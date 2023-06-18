@@ -16,9 +16,16 @@ exports.handler = async () => {
             const month = String(date.getMonth() + 1).padStart(2, "0");
             const day = String(date.getDate()).padStart(2, "0");
 
+            let author;
+            if (file.metadata.metadata.author) {
+                author = file.metadata.metadata.author
+            } else {
+                author = undefined;
+            }
+
             return {
                 name: file.name,
-                author: "Bryan Ridpath", // figure out a way to dynamically change this
+                author: author,
                 url: urlPath,
                 dateCreated: day + "/" + month + "/" + year,
                 data: file
