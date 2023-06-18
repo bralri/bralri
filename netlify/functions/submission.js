@@ -4,6 +4,7 @@ const key = JSON.parse(process.env.STORAGE_KEY_JSON);
 
 exports.handler = async (event) => {
     const storage = new Storage({credentials: key});
+    const bucket = storage.bucket('build-a-vessel-submissions');
 
     try {
         const fileData = Buffer.from(event.body, 'binary');
@@ -15,8 +16,8 @@ exports.handler = async (event) => {
             }
         };
 
-        await storage.bucket('build-a-vessel-submissions').file(fileName).save(fileData);
-        await storage.bucket('build-a-vessel-submissions').file(fileName).setMetadata(metadata);
+        await bucket.file(fileName).save(fileData);
+        await bucket.file(fileName).setMetadata(metadata);
 
         return {
             statusCode: 200,
