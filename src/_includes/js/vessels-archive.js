@@ -122,7 +122,10 @@ const test = async () => {
                 return response.json(); // Add return statement here
             }
         ).then((data) => {
-                console.log("Data: ", data);
+                const files = data.files;
+                files.forEach((item) => {
+                    console.log(item.name, item.publicUrl);
+                })
             }
         ).catch((error) => {
                 console.error('Error fetching file URLs:', error);
