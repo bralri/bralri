@@ -228,15 +228,18 @@ const saveToServerBuffer = (buffer, fileName) => {
 }
 const saveToServer = async (blob, fileName) => {
     try {
-        const response = await fetch('/.netlify/functions/submission', {
-            method: 'POST',
-            body: blob,
-            headers: {
-                'Content-Type': 'application/octet-stream',
-                'File-Name': `${fileName}`,
-                'User-Name': `${submissionName[0]}`,
-            },
-        });
+        const response = await fetch(
+            '/.netlify/functions/submission', 
+            {
+                method: 'POST',
+                body: blob,
+                headers: {
+                    'Content-Type': 'application/octet-stream',
+                    'Content-Disposition': `attachment; filename="${fileName}"`,
+                    'User-Name': `${submissionName[0]}`,
+                },
+            }
+        );
         if (!response.ok) {
             throw new Error('Failed to save to server');
         }
