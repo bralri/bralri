@@ -9,10 +9,10 @@ exports.handler = async (event) => {
         const headers = event.headers;
         const fileData = event.body;
         const fileName = headers['content-disposition'].split('filename=')[1].replace(/"/g, '');
-        const userName = headers['user-name'].split('username=')[1].replace(/"/g, '') || 'anonnymous';
+        const userName = headers['user-name'].split('username=')[1].replace(/"/g, '') || 'anonymous';
 
         const metadata = {
-            contentType: 'application/octet-stream',
+            contentType: 'model/gltf-binary',
             metadata: {
                 userName: userName,
             }

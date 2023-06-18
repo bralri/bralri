@@ -210,7 +210,7 @@ const bundleSceneToGLB = async () => {
 };
 
 const streamArrayBuffer = (buffer, fileName) => {
-    sendToServer(new Blob([buffer], {type: 'application/octet-stream'}), fileName)
+    sendToServer(new Blob([buffer], {type: 'model/gltf-binary'}), fileName)
 }
   
 const sendToServer = async (blob, fileName) => {
@@ -219,14 +219,14 @@ const sendToServer = async (blob, fileName) => {
             method: 'POST',
             body: blob,
             headers: {
-                'Content-Type': 'application/octet-stream',
+                'Content-Type': 'model/gltf-binary',
                 'Content-Disposition': `attachment; filename="${fileName}"`,
                 'User-Name': `username="${submissionName[0]}"`,
             },
         });
 
         if (!response.ok) {
-            console.error('Failed to save to server', response);
+            console.error('Failed to save to server');
         } else {
             console.log('Success!');
             console.alert("Congrats! You've submitted your vessel to the archive!")
