@@ -13,7 +13,6 @@ exports.handler = async () => {
             return {
                 name: file.name,
                 publicUrl: publicUrl,
-                author: file.metadata.metadata.author,
             };
         });
 
