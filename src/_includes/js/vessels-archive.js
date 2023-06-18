@@ -116,7 +116,7 @@ const loadAssets = () => {
         
                 instance.mesh.position.set(x, 40, z);
                 instance.mesh.scale.set(30, 30, 30);
-                // instance.mesh.rotateY(Math.PI / -1.5);
+                instance.mesh.rotateY(Math.PI / 2);
         
                 scene.add(instance.mesh);
         
