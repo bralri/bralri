@@ -103,8 +103,6 @@ const loadAssets = () => {
         const offset = (gridSize - 1) * spacing * 0.5;
 
         array.forEach((asset, i) => {
-            console.log(asset.data);
-            console.log("created by: ", asset.data.metadata.metadata.author);
             const assetInstance = createAssetInstance(
                 asset.name, 
                 asset.createdBy,
