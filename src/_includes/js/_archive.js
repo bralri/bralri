@@ -3,54 +3,32 @@ import {GLTFLoader} from 'three/GLTFLoader.js';
 
 const manager = new THREE.LoadingManager();
 const loader = new GLTFLoader(manager);
-const createCaption = (title, author) => {
-    let captionText = 
-    `                                
-        <span class="title">${title}</span><br>
-        <i class="author">created by ${author}</i><br>
-    ` 
-    return captionText;
-}
 
-const fetchModels = async () => {
-    try {
-        const response = await fetch('/.netlify/functions/fetchSubmissions');
-        const data = await response.json();
-        const files = data.files;
-
-        files.forEach((item) => {
-            const asset = loadModel(item.publicUrl);
-            asset.then((asset) => {
-                asset.mesh.userData = {
-                    id: asset.mesh.id,
-                    caption: createCaption(item.name, 'Bryan Ridpath')
-                };
-            });
-            return asset;
-        });
-    } catch (error) {
-        console.error('Error fetching file URLs:', error);
-    }
-}
-
-const loadModel = (src) => {
+const loadModels = (name, url) => {
     return new Promise((resolve, reject) => {
-        loader.load(src, (glb) => {
+        loader.load(url, (glb) => {
             const mesh = glb.scene;
-            
+            mesh.userData = {
+                id: mesh.id,
+                caption:     
+                `                                
+                    <span class="title">${name}</span><br>
+                    <i class="author">created by Bryan Ridpath</i><br>
+                ` 
+            };
             resolve({
-                mesh
+            mesh
             });
         }, undefined, reject)
     });
 }
 
-export const createAssetInstance = async () => {
-    if (id in database) {
-        const asset = await fetchModels();
+export const createAssetInstance = async (name, url) => {
+    try {
+        const asset = await loadModels(name, url);
         return asset;
-    } else {
-        console.log(`Asset does not exist`);
+    } catch (error) {
+        console.log(`Asset does not exist`, error);
         return undefined;
     }
 }

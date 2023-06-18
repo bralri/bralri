@@ -85,10 +85,44 @@ const init = () => {
     setupGUI();
 }
 
+const fetchModelsFromCloud = async () => {
+    try {
+        const response = await fetch('/.netlify/functions/fetchSubmissions');
+        const data = await response.json();
+        const files = data.files;
+        return files;
+    } catch (error) {
+        console.error('Error fetching file URLs:', error);
+    }
+}
+
 const loadAssets = () => {
-    const gridSize = Math.ceil(Math.sqrt(27));
+    const assetsFromCloud = fetchModelsFromCloud(); // returns array of files
+
+    const gridSize = Math.ceil(Math.sqrt(assetsFromCloud.length));
     const spacing = 600;
     const offset = (gridSize - 1) * spacing * 0.5;
+
+    assetsFromCloud.forEach((asset) => {
+        const assetInstance = createAssetInstance(asset.name, asset.publicURL);
+        assetInstance.then((instance) => {
+            const row = Math.floor(i / gridSize);
+            const col = i % gridSize;
+            const x = (col * spacing) - offset;
+            const z = (row * spacing) - offset;
+    
+            instance.mesh.position.set(x, 50, z);
+            instance.mesh.scale.set(40, 40, 40);
+            instance.mesh.rotateY(Math.PI / -1.5);
+    
+            scene.add(instance.mesh);
+    
+            objects.push(instance.mesh);
+            objectsId.push(instance.mesh.userData.id);
+        }).catch((error) => {
+            console.log(error);
+        })
+    })
 
     const assetInstance = createAssetInstance();
     assetInstance.then((instance) => {
