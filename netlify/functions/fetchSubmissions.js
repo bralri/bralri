@@ -7,13 +7,9 @@ exports.handler = async () => {
 
     try {
         const [files] = await bucket.getFiles();
-        const fileUrls = files.map((file) => {
-            const publicUrl = `https://storage.googleapis.com/build-a-vessel-submissions/${file.name}`;
-
+        const fileData = files.map((file) => {
             return {
-                name: file.name,
-                publicUrl: publicUrl,
-                file: file,
+                file
             };
         });
 
@@ -25,7 +21,7 @@ exports.handler = async () => {
                 'Access-Control-Allow-Methods': 'GET, OPTIONS',
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({files: fileUrls}),
+            body: JSON.stringify({files: fileData}),
         }
     } catch (error) {
         console.error('Error fetching files from bucket:', error);

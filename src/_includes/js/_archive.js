@@ -6,7 +6,11 @@ const loader = new GLTFLoader(manager);
 
 const loadModels = (name, url) => {
     return new Promise((resolve, reject) => {
-        loader.load(url, (glb) => {
+        loader.load(
+            
+            url, 
+            
+            (glb) => {
             const mesh = glb.scene;
             mesh.userData = {
                 id: mesh.id,
