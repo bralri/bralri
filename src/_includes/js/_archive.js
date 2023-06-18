@@ -17,9 +17,10 @@ const loadModels = (name, author, url) => {
                 caption:     
                 `                                
                     <span class="title">${name}</span><br>
-                    <i class="author">created by ${author}</i><br>
+                    <i class="author">by: ${author}</i><br>
+                    <i class="author">created: 18/06/2023</i><br>
                 ` 
-            };
+            }; // figure out a way to include the date day it way made
             resolve({
                 mesh
             });

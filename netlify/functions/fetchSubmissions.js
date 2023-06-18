@@ -13,7 +13,8 @@ exports.handler = async () => {
             return {
                 name: file.name,
                 author: "Bryan Ridpath", // figure out a way to dynamically change this
-                url: urlPath
+                url: urlPath,
+                data: file
             }
         });
 
