@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import {GUI} from 'three/lil-gui.esm.min.js';
 import {MapControls} from 'three/MapControls.js';
-import {archive, createAssetInstance} from '../js/_archive.min.js';
+import {createAssetInstance} from '../js/_archive.min.js';
 
 let camera, mapControls, scene, renderer;
 const mouse = new THREE.Vector2();
@@ -86,7 +86,7 @@ const init = () => {
 }
 
 const loadAssets = () => {
-    const gridSize = Math.ceil(Math.sqrt(archive.length));
+    const gridSize = Math.ceil(Math.sqrt(27));
     const spacing = 600;
     const offset = (gridSize - 1) * spacing * 0.5;
 
