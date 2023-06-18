@@ -9,12 +9,12 @@ exports.handler = async () => {
         const [files] = await bucket.getFiles();
         const fileData = files.map((file) => {
             const urlPath = `https://storage.googleapis.com/build-a-vessel-submissions/${file.name}`;
-            const author = file.metadata.metadata.author;
+            // const author = file.metadata.metadata.author;
             return {
                 name: file.name,
-                author: author !== undefined ? author : undefined,
+                // author: author !== undefined ? author : undefined,
                 url: urlPath
-            };
+            }
         });
 
         return {

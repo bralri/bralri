@@ -96,16 +96,16 @@ const fetchModelsFromCloud = async () => {
     }
 }
 const loadAssets = () => {
-    const cloudFiles = fetchModelsFromCloud();
-    cloudFiles.then((fileArray) => {
-        const gridSize = Math.ceil(Math.sqrt(fileArray.length));
+    const files = fetchModelsFromCloud();
+    files.then((array) => {
+        const gridSize = Math.ceil(Math.sqrt(array.length));
         const spacing = 800;
         const offset = (gridSize - 1) * spacing * 0.5;
 
-        fileArray.forEach((asset, i) => {
+        array.forEach((asset, i) => {
             const assetInstance = createAssetInstance(
                 asset.name, 
-                asset.author, 
+                "Bryan Ridpath", 
                 asset.url,
             );
             assetInstance.then((instance) => {
