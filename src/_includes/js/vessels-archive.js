@@ -105,9 +105,9 @@ const loadAssets = () => {
         fileArray.forEach((asset, i) => {
             console.log(asset.file)
             const assetInstance = createAssetInstance(
-                asset.file.name, 
-                "Bryan Ridpath", 
-                `https://storage.googleapis.com/build-a-vessel-submissions/${asset.file.name}`,
+                asset.name, 
+                asset.author, 
+                asset.url,
             );
             assetInstance.then((instance) => {
                 const row = Math.floor(i / gridSize);

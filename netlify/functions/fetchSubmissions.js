@@ -8,8 +8,12 @@ exports.handler = async () => {
     try {
         const [files] = await bucket.getFiles();
         const fileData = files.map((file) => {
+            const urlPath = `https://storage.googleapis.com/build-a-vessel-submissions/${file.name}`;
+            const author = file.metadata.metadata.author;
             return {
-                file
+                name: file.name,
+                author: author !== undefined ? author : undefined,
+                url: urlPath
             };
         });
 
