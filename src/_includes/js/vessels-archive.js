@@ -116,6 +116,7 @@ const loadAssets = () => {
 }
 
 const test = async () => {
+    const loader = new GLTFLoader();
     try {
         return fetch('/.netlify/functions/fetchSubmissions').then(
             (response) => {
@@ -125,6 +126,16 @@ const test = async () => {
                 const files = data.files;
                 files.forEach((item) => {
                     console.log(item.name, item.publicUrl);
+                    loader.load(
+                        item.publicUrl,
+                        (glb) => {
+                            const mesh = glb.scene;
+                            mesh.scale.set(40, 40, 40);
+                            mesh.position.set(0, 50, 0);
+
+                            scene.add(mesh);
+                        }
+                    )
                 })
             }
         ).catch((error) => {
