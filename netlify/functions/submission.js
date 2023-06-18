@@ -8,6 +8,7 @@ exports.handler = async (event) => {
     try {
         const fileName = event.headers['content-disposition'].split('filename=')[1].replace(/"/g, '');
         const metadata = {
+            contentType: 'application/octet-stream',
             metadata: {
                 userName: event.headers['user-name'].split('username=')[1].replace(/"/g, ''),
             }
