@@ -6,28 +6,29 @@ const bucket = storage.bucket('build-a-vessel-submissions');
 
 exports.handler = async (event) => {
     try {
-        const headers = event.headers;
-        const jsonData = event.body;
-        const fileName = headers['content-disposition'].split('filename=')[1].replace(/"/g, '');
+        const file = event.body.file;
+        const fileName = event.body.fileName;
 
-        await bucket.file(fileName).save(
-            jsonData, 
+        const blob = bucket.file(fileName);
+        const blobStream = blob.createWriteStream();
+
+        file.pipe(blobStream);
+
+        await new Promise((resolve, reject) => 
             {
-                contentType: 'application/json'
+                blobStream.on('finish', resolve);
+                blobStream.on('error', reject);
             }
         );
 
         return {
-            statusCode: 200,
-            headers: headers,
-            body: JSON.stringify({message: 'File uploaded successfully'})
+        statusCode: 200,
+        body: 'File uploaded successfully!',
         }
     } catch (error) {
-        console.error('Error uploading file:', error);
-
         return {
             statusCode: 500,
-            body: JSON.stringify({message: 'Error uploading file'})
+            body: 'File upload failed.',
         }
     }
 }

@@ -12,6 +12,7 @@ const submissionName = [];
 const uuid = [];
 
 const loading = document.getElementById('loading');
+const exporter = new GLTFExporter();
 
 const generateUUID = () => {
     const uuid = Math.floor(Math.random() * 100000);
@@ -41,7 +42,7 @@ const setupGUI = () => {
             orbitControls.reset();
         },
         downloadVessel: () => {
-            downloadVessel();
+            exportVesselToDevice();
         },
         takeScreenshot: () => {
             saveAsImage();
@@ -51,7 +52,7 @@ const setupGUI = () => {
         },
         userName: "",
         submitToArchive: () => {
-            sendShitJson();
+            exportVesselToCloud();
         },
         amountOfFragments: 16
     }
@@ -190,35 +191,7 @@ const loadAssets = () => {
     })
 };
 
-// Save user created vessel to server
-const sendShitJson = async () => {
-    try {
-        const post = await fetch('/.netlify/functions/submission', {
-            method: 'POST',
-            body: JSON.stringify({
-                "name": "John Doe",
-                "age": 30,
-                "email": "johndoe@example.com"
-            }),
-            headers: {
-                'Content-Type': 'application/json',
-                'Content-Disposition': 'attachment; filename="shit.json"',
-            },
-        });
-
-        if (post.ok) {
-            console.log("post success");
-        } else {
-            console.log("post error");
-        }
-    } catch (error) {
-        console.error('error: ', error);
-    }
-}
-
-// Download Vessel to user device
-const downloadVessel = () => {
-    const exporter = new GLTFExporter();
+const exportVesselToCloud = () => {
     const options = {
         binary: true
     };
@@ -226,7 +199,7 @@ const downloadVessel = () => {
     exporter.parse(
         scene,
         (result) => {
-            saveArrayBuffer(result, `vessel-${uuid[0]}.glb`)
+            saveToCloudArrayBuffer(result, `vessel-${uuid[0]}.glb`)
         },
         (error) => {
             console.log('An error occurred during parsing', error);
@@ -234,10 +207,54 @@ const downloadVessel = () => {
         options
     );
 }
-const saveArrayBuffer = (buffer, fileName) => {
-    save(new Blob([buffer], {type: 'application/octet-stream'}), fileName);
+const saveToCloudArrayBuffer = (buffer, fileName) => {
+    saveToCloud(new Blob([buffer], {type: 'application/octet-stream'}), fileName);
 }
-const save = (blob, fileName) => {
+const saveToCloud = (blob, fileName) => {
+    const formData = new FormData();
+    formData.append('file', blob, fileName);
+
+    fetch('.netlify/functions/submission.js', 
+        {
+            method: 'POST',
+            body: formData
+        }
+    ).then((response) => 
+        {
+            if (response.ok) {
+                console.log('File uploaded successfully!');
+            } else {
+                console.log('File upload failed.');
+            }
+        }
+    ).catch((error) => 
+        {
+        console.log('An error occurred while uploading the file:', error);
+        }
+    );
+}
+
+// Download Vessel to user device
+const exportVesselToDevice = () => {
+    const options = {
+        binary: true
+    };
+
+    exporter.parse(
+        scene,
+        (result) => {
+            saveToDeviceArrayBuffer(result, `vessel-${uuid[0]}.glb`)
+        },
+        (error) => {
+            console.log('An error occurred during parsing', error);
+        },
+        options
+    );
+}
+const saveToDeviceArrayBuffer = (buffer, fileName) => {
+    saveToDevice(new Blob([buffer], {type: 'application/octet-stream'}), fileName);
+}
+const saveToDevice = (blob, fileName) => {
     const link = document.createElement('a');
     document.body.appendChild(link);
     link.href = URL.createObjectURL(blob);

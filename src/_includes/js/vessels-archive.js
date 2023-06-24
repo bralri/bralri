@@ -102,6 +102,8 @@ const loadAssets = () => {
         const spacing = 600;
         const offset = (gridSize - 1) * spacing * 0.5;
 
+        if (!asset.url.lastIndexOf('.')+1 === 'glb') return;
+        
         array.forEach((asset, i) => {
             const assetInstance = createAssetInstance(
                 asset.name, 
