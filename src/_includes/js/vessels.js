@@ -210,8 +210,8 @@ const exportVesselToCloud = () => {
     );
 }
 const saveToCloudArrayBuffer = (buffer, fileName) => {
-    console.log("buffer: ", buffer);
-    saveToCloud(new Blob([buffer], {type: 'application/octet-stream'}), fileName);
+    const jsonBuffer = JSON.stringify(Array.from(new Uint8Array(buffer)));
+    saveToCloud(new Blob([jsonBuffer], {type: 'application/json'}), fileName);
 }
 const saveToCloud = (blob, fileName) => {
     console.log(blob)
