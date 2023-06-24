@@ -191,6 +191,7 @@ const loadAssets = () => {
     })
 };
 
+// Upload vessel to cloud storage
 const exportVesselToCloud = () => {
     const options = {
         binary: true
