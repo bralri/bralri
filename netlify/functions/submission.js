@@ -27,6 +27,10 @@ exports.handler = async (event) => {
 
         return {
             statusCode: 200,
+            headers: {
+                'Content-Type': 'application/octet-stream',
+                'Vary': '',
+            },
             body: 'File uploaded successfully!',
         }
     } catch (error) {
