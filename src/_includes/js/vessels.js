@@ -52,11 +52,8 @@ const setupGUI = () => {
             window.open('/works/build-a-vessel/archive/');
         },
         userName: "",
-        chooseFile: () => {
-            selectFile();
-        },
         submitToArchive: () => {
-            submitFile();
+            exportVesselToCloud();
         },
         amountOfFragments: 16
     }
@@ -195,82 +192,6 @@ const loadAssets = () => {
         })
     })
 };
-
-const selectFile = () => {
-    const input = document.getElementById('file-input');
-    selectedFile = input.files[0];
-
-    const submitButton = document.querySelector('button[onclick="submitFile()"]');
-    submitButton.disabled = false;
-}
-
-const submitFile = async () => {
-    if (!selectedFile) {
-        console.log('No file selected.');
-        return;
-    }
-
-    const formData = new FormData();
-    formData.append('file', selectedFile);
-
-    try {
-        const response = await fetch('/.netlify/functions/submission',
-            {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/octet-stream',
-
-                    // Metadata
-                    'User-Name': submissionName[0],
-                },
-                body: formData,
-            }
-        );
-
-        if (response.ok) {
-            console.log('upload successfull');
-        } else {
-            console.log('upload failed');
-        }
-    } catch (error) {
-        console.log('error: ', error);
-    }
-}
-
-// Upload File
-const uploadFile = async () => {
-    const input = document.getElementById('file-input');
-    const file = input.files[0];
-    
-    const formData = new FormData();
-    formData.append('file', file);
-
-    try {
-        const response = await fetch(
-            '/.netlify/functions/submission',
-            {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/octet-stream',
-
-                    // Metadata
-                    'User-Name': submissionName[0],
-                },
-                body: formData,
-            }
-        );
-
-        if (response.ok) {
-            console.log('Upload successfull!');
-            console.alert('Upload successfull!');
-        } else {
-            console.log('Upload failed.');
-            console.alert('Upload failed.');
-        }
-    } catch (error) {
-        console.log('An error occured while uploading the file: ', error);
-    }
-}
 
 // Upload Vessel to cloud storage
 const exportVesselToCloud = () => {
