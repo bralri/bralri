@@ -214,7 +214,7 @@ const saveToCloud = (blob, fileName) => {
     const formData = new FormData();
     formData.append('file', blob, fileName);
 
-    fetch('.netlify/functions/submission.js', 
+    fetch('/.netlify/functions/submission.js', 
         {
             method: 'POST',
             body: formData
