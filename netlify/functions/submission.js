@@ -15,15 +15,16 @@ exports.handler = async (event) => {
         const fileName = _fileName;
         const userName = _userName ? _userName : `Anonymous`;
 
-        const metaData = {
-            metadata: {
-                userName: userName,
-                type: _contentType,
-            },
-            resumable: false,
-        };
-
-        await storage.bucket(bucket).file(fileName).save(content, metaData);
+        await storage.bucket(bucket).file(fileName).save(
+            content, 
+            {
+                metadata: {
+                    userName: userName,
+                    type: _contentType,
+                },
+                resumable: false,
+            }
+        );
 
         return {
             statusCode: 200,

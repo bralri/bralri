@@ -234,6 +234,7 @@ const saveToCloud = (arrayBuffer, fileName) => {
         {
             if (response.ok) {
                 console.log('File uploaded successfully!');
+                window.alert('File uploaded successfully!');
             } else {
                 console.log('File upload failed.');
             }
