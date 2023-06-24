@@ -211,9 +211,9 @@ const exportVesselToCloud = () => {
 }
 const saveToCloudArrayBuffer = (buffer, fileName) => {
     saveToCloud(new Blob([buffer], {type: 'application/octet-stream'}), fileName);
-    saveTest(new Blob([buffer], {type: 'application/octet-stream'}), fileName);
 }
 const saveToCloud = (blob, fileName) => {
+    console.log(blob)
     fetch(
         '/.netlify/functions/submission', 
         {

@@ -7,10 +7,6 @@ const storage = new Storage({credentials: key});
 
 exports.handler = async (event) => {
     try {
-        const key = JSON.parse(process.env.STORAGE_KEY_JSON);
-        const bucket = 'build-a-vessel-submissions';
-        const storage = new Storage({credentials: key});
-
         const content = event.body;
         console.log('content', content);
         const _fileName = event.headers['file-name'];
