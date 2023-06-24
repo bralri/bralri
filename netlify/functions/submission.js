@@ -1,4 +1,5 @@
 const {Storage} = require('@google-cloud/storage');
+const {FormData} = require('form-data');
 
 const key = JSON.parse(process.env.STORAGE_KEY_JSON);
 const storage = new Storage({credentials: key});
