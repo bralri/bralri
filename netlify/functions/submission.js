@@ -6,10 +6,8 @@ const bucket = storage.bucket('build-a-vessel-submissions');
 
 exports.handler = async (event) => {
     try {
-        console.log("body: ", event.body);
         const data = JSON.parse(event.body);
-        console.log("data: ", data);
-        const file = data.file;
+        const file = Buffer.from(data.file);
         const fileName = data.fileName;
         const userName = data.userName;
 
