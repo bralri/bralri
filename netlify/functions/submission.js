@@ -11,7 +11,7 @@ exports.handler = async (event) => {
         const _fileName = event.headers['file-name'];
         const _userName = event.headers['user-name'];
         const _data = event.headers['data-test'];
-        console.log("Data: ", JSON.stringify(_data));
+        console.log("Data: ", JSON.parse(_data));
         const fileName = _fileName;
         const userName = _userName ? _userName : 'Anonymous';
 
