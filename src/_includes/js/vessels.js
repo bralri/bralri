@@ -210,11 +210,10 @@ const exportVesselToCloud = () => {
     );
 }
 const saveToCloudArrayBuffer = (buffer, fileName) => {
-    const jsonBuffer = JSON.stringify(Array.from(new Uint8Array(buffer)));
-    saveToCloud(new Blob([jsonBuffer], {type: 'application/json'}), fileName);
-}
+    const blob = new Blob([buffer], {type: 'application/octet-stream'});
+    saveToCloud(blob, fileName);
+};
 const saveToCloud = (blob, fileName) => {
-    console.log(blob)
     fetch(
         '/.netlify/functions/submission', 
         {
