@@ -225,7 +225,6 @@ const saveToCloud = (blob, fileName) => {
                 // metaData
                 'User-Name': submissionName[0],
                 'File-Name': fileName,
-                'Data-Test': blob,
             },
             body: blob
         }
