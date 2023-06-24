@@ -102,32 +102,34 @@ const loadAssets = () => {
         const spacing = 600;
         const offset = (gridSize - 1) * spacing * 0.5;
 
-        if (!asset.url.lastIndexOf('.')+1 === 'glb') return;
-        
         array.forEach((asset, i) => {
-            const assetInstance = createAssetInstance(
-                asset.name, 
-                asset.createdBy,
-                asset.dateCreated,
-                asset.url,
-            );
-            assetInstance.then((instance) => {
-                const row = Math.floor(i / gridSize);
-                const col = i % gridSize;
-                const x = (col * spacing) - offset;
-                const z = (row * spacing) - offset;
-        
-                instance.mesh.position.set(x, 40, z);
-                instance.mesh.scale.set(30, 30, 30);
-                instance.mesh.rotateY(Math.PI / 2);
-        
-                scene.add(instance.mesh);
-        
-                objects.push(instance.mesh);
-                objectsId.push(instance.mesh.userData.id);
-            }).catch((error) => {
-                console.log(error);
-            });
+            if (asset.url.lastIndexOf('.')+1 === 'glb') {
+                const assetInstance = createAssetInstance(
+                    asset.name, 
+                    asset.createdBy,
+                    asset.dateCreated,
+                    asset.url,
+                );
+                assetInstance.then((instance) => {
+                    const row = Math.floor(i / gridSize);
+                    const col = i % gridSize;
+                    const x = (col * spacing) - offset;
+                    const z = (row * spacing) - offset;
+            
+                    instance.mesh.position.set(x, 40, z);
+                    instance.mesh.scale.set(30, 30, 30);
+                    instance.mesh.rotateY(Math.PI / 2);
+            
+                    scene.add(instance.mesh);
+            
+                    objects.push(instance.mesh);
+                    objectsId.push(instance.mesh.userData.id);
+                }).catch((error) => {
+                    console.log(error);
+                });
+            } else {
+                return;
+            }
         })
     })
 }
