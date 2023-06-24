@@ -10,8 +10,8 @@ exports.handler = async (event) => {
     try {
         const formData = upload.single('file')(event);
         const file = formData.file;
-        const fileName = formData.originalname;
-        const userName = formData.body.userName;
+        const fileName = formData.fileName;
+        const userName = formData.userName;
         console.log('fileName:', fileName);
         console.log('userName:', userName);
 
