@@ -10,6 +10,8 @@ exports.handler = async () => {
         const fileData = files.map((file) => {
             const urlPath = `https://storage.googleapis.com/build-a-vessel-submissions/${file.name}`;
             
+            console.log(file.metadata);
+
             const dateString = file.metadata.timeCreated;
             const date = new Date(dateString);
             const year = date.getFullYear();

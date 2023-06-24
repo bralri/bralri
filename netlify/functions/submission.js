@@ -11,20 +11,23 @@ exports.handler = async (event) => {
         const content = event.body;
         const _fileName = event.headers['file-name'];
         const _userName = event.headers['user-name'];
-        const _contentType = event.headers['content-type'];
+        const _contentType = 'application/octet-stream';
         const fileName = _fileName;
         const userName = _userName ? _userName : `Anonymous`;
 
-        await storage.bucket(bucket).file(fileName).save(
-            content, 
-            {
-                metadata: {
-                    userName: userName,
-                    type: _contentType,
-                },
-                resumable: false,
-            }
-        );
+        await storage
+            .bucket(bucket)
+            .file(fileName)
+            .save(
+                content, 
+                {
+                    metadata: {
+                        userName: userName,
+                        contentType: _contentType,
+                    },
+                    resumable: false,
+                }
+            );
 
         return {
             statusCode: 200,
