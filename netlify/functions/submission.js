@@ -6,8 +6,9 @@ const bucket = storage.bucket('build-a-vessel-submissions');
 
 exports.handler = async (event) => {
     try {
-        const file = event.body.get('file');
-        const fileName = event.body.get('fileName');
+        const formData = JSON.parse(event.body);
+        const file = formData.file;
+        const fileName = formData.fileName;
 
         const blob = bucket.file(fileName);
         const blobStream = blob.createWriteStream();
