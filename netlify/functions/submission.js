@@ -21,7 +21,9 @@ exports.handler = async (event) => {
 
         const file = formData.files.file;
         const fileName = formData.fields.fileName;
+        const userName = formData.fields.userName;
         console.log('fileName: ', fileName);
+        console.log('userName: ', userName);
 
         const blob = bucket.file(fileName);
         const blobStream = blob.createWriteStream();
@@ -31,7 +33,7 @@ exports.handler = async (event) => {
             return {
                 statusCode: 500,
                 body: 'File upload failed.',
-            };
+            }
         });
 
         blobStream.on('finish', () => {
@@ -39,7 +41,7 @@ exports.handler = async (event) => {
             return {
                 statusCode: 200,
                 body: 'File uploaded successfully!',
-            };
+            }
         });
 
         file.on('data', (chunk) => 
@@ -62,6 +64,6 @@ exports.handler = async (event) => {
         return {
             statusCode: 500,
             body: 'File upload failed.',
-        };
+        }
     }
 }
