@@ -76,7 +76,6 @@ const setupGUI = () => {
         submissionName.length = 0;
         submissionName.push(value);
     })
-    archive.add(guiParams, "chooseFile").name("Choose Vessel");
     archive.add(guiParams, "submitToArchive").name("Submit Vessel");
     
     gui.add(guiParams, "visitArchive").name("Visit the Archive");
