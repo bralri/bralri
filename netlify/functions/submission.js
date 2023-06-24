@@ -9,9 +9,9 @@ exports.handler = async (event) => {
         const storage = new Storage({credentials: key});
 
         const content = event.body;
+        console.log('content', content);
         const _fileName = event.headers['file-name'];
         const _userName = event.headers['user-name'];
-        const _contentType = 'application/octet-stream';
         const fileName = _fileName;
         const userName = _userName ? _userName : `Anonymous`;
 
@@ -22,8 +22,10 @@ exports.handler = async (event) => {
                 content, 
                 {
                     metadata: {
-                        userName: userName,
-                        contentType: _contentType,
+                        metadata: {
+                            userName: userName,
+                        },
+                        contentType: 'application/octet-stream',
                     },
                     resumable: false,
                 }
