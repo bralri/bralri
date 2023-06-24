@@ -210,21 +210,25 @@ const exportVesselToCloud = () => {
 }
 const saveToCloudArrayBuffer = (buffer, fileName) => {
     const blob = new Blob([buffer], { type: 'application/octet-stream' });
-    saveToCloud(blob, fileName);
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+        saveToCloud(fileReader.result, fileName);
+    };
+    fileReader.readAsArrayBuffer(blob);
 }
-const saveToCloud = (blob, fileName) => {
+const saveToCloud = (arrayBuffer, fileName) => {
     fetch(
         '/.netlify/functions/submission', 
         {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/octet-stream',
-                
+
                 // metaData
                 'User-Name': submissionName[0],
                 'File-Name': fileName,
             },
-            body: blob
+            body: arrayBuffer
         }
     ).then((response) => 
         {

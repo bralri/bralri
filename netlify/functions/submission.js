@@ -1,7 +1,6 @@
 // /.netlify/functions/submission.js
 
 const {Storage} = require('@google-cloud/storage');
-const {v4: uuidv4} = require('uuid');
 
 exports.handler = async (event) => {
     try {
@@ -9,20 +8,22 @@ exports.handler = async (event) => {
         const bucket = 'build-a-vessel-submissions';
         const storage = new Storage({credentials: key});
 
-        const _fileName = event.headers['File-Name'];
-        const _userName = event.headers['User-Name'];
-        const fileName = _fileName ? _fileName : `vessel-${uuidv4()}.glb`;
+        const content = event.body;
+        const _fileName = event.headers['file-name'];
+        const _userName = event.headers['user-name'];
+        const _contentType = event.headers['content-type'];
+        const fileName = _fileName;
         const userName = _userName ? _userName : `Anonymous`;
 
         const metaData = {
             metadata: {
                 userName: userName,
+                type: _contentType,
             },
             resumable: false,
         };
 
-        const fileBuffer = Buffer.from(event.body, 'binary');
-        await storage.bucket(bucket).file(fileName).save(fileBuffer, metaData);
+        await storage.bucket(bucket).file(fileName).save(content, metaData);
 
         return {
             statusCode: 200,
