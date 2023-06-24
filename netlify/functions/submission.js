@@ -1,5 +1,6 @@
 const {Storage} = require('@google-cloud/storage');
-const {IncomingForm} = require('formidable');
+const multer = require('multer');
+const upload = multer();
 
 const key = JSON.parse(process.env.STORAGE_KEY_JSON);
 const storage = new Storage({credentials: key});
@@ -7,46 +8,39 @@ const bucket = storage.bucket('build-a-vessel-submissions');
 
 exports.handler = async (event) => {
     try {
-        const form = IncomingForm({multiples: true});
-        const formData = await new Promise((resolve, reject) => 
-            {
-                form.parse(event.body, (error, fields, files) => 
-                    {
-                        if (error) reject(error);
-                        resolve({fields, files});
-                    }
-                );
-            }
-        );
-
-        const file = formData.files.file;
-        const fileName = formData.fields.fileName;
-        const userName = formData.fields.userName;
-        console.log('fileName: ', fileName);
-        console.log('userName: ', userName);
+        const formData = upload.single('file')(event);
+        const file = formData.file;
+        const fileName = formData.originalname;
+        const userName = formData.body.userName;
+        console.log('fileName:', fileName);
+        console.log('userName:', userName);
 
         const blob = bucket.file(fileName);
         const blobStream = blob.createWriteStream();
 
-        blobStream.on('error', (error) => {
-            console.error('Error uploading the file:', error);
-            return {
-                statusCode: 500,
-                body: 'File upload failed.',
+        blobStream.on('error', (error) => 
+            {
+                console.error('Error uploading the file:', error);
+                return {
+                    statusCode: 500,
+                    body: 'File upload failed.',
+                };
             }
-        });
+        );
 
-        blobStream.on('finish', () => {
-            console.log('File uploaded successfully!');
-            return {
-                statusCode: 200,
-                body: 'File uploaded successfully!',
+        blobStream.on('finish', () => 
+            {
+                console.log('File uploaded successfully!');
+                return {
+                    statusCode: 200,
+                    body: 'File uploaded successfully!',
+                };
             }
-        });
+        );
 
         file.on('data', (chunk) => 
             {
-                blobStream.write(chunk)
+                blobStream.write(chunk);
             }
         );
         file.on('end', () => 
@@ -64,6 +58,6 @@ exports.handler = async (event) => {
         return {
             statusCode: 500,
             body: 'File upload failed.',
-        }
+        };
     }
 }

@@ -58,7 +58,6 @@ const setupGUI = () => {
     }
     
     const controls = gui.addFolder('Controls');
-    controls.closed = true;
     controls.add(guiParams, "shuffleSelection").name("Shuffle");
     controls.add(guiParams, "resetCamera").name("Reset");
     controls.add(guiParams, "takeScreenshot").name("Screenshot");
@@ -72,7 +71,6 @@ const setupGUI = () => {
     );
 
     const archive = gui.addFolder('Submit to the Archive');
-    archive.closed = true;
     archive.add(guiParams, "userName").name("Name").onFinishChange((value) => {
         submissionName.length = 0;
         submissionName.push(value);
