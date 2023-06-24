@@ -1,5 +1,5 @@
 const {Storage} = require('@google-cloud/storage');
-const formidable = require('formidable');
+const {IncomingForm} = require('formidable');
 
 const key = JSON.parse(process.env.STORAGE_KEY_JSON);
 const storage = new Storage({credentials: key});
@@ -7,7 +7,7 @@ const bucket = storage.bucket('build-a-vessel-submissions');
 
 exports.handler = async (event) => {
     try {
-        const form = formidable.IncomingForm({multiples: true});
+        const form = IncomingForm({multiples: true});
         const formData = await new Promise((resolve, reject) => 
             {
                 form.parse(event.body, (error, fields, files) => 
@@ -17,10 +17,11 @@ exports.handler = async (event) => {
                     }
                 );
             }
-        )
+        );
 
         const file = formData.files.file;
         const fileName = formData.fields.fileName;
+        console.log('fileName: ', fileName);
 
         const blob = bucket.file(fileName);
         const blobStream = blob.createWriteStream();
