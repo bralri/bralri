@@ -7,7 +7,8 @@ const bucket = storage.bucket('build-a-vessel-submissions');
 exports.handler = async (event) => {
     try {
         const data = JSON.parse(event.body);
-        const file = Buffer.from(data.file);
+        const file = data.file;
+        console.log('file: ', file);
         const fileName = data.fileName;
         const userName = data.userName;
 
@@ -20,7 +21,8 @@ exports.handler = async (event) => {
             resumable: false,
         }
 
-        await blob.save(file, metaData);
+        const buffer = Buffer.from(file);
+        await blob.save(buffer, metaData);
 
         console.log('File uploaded successfully!');
 
