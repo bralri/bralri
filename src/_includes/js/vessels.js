@@ -212,16 +212,17 @@ const saveToCloudArrayBuffer = (buffer, fileName) => {
     saveToCloud(new Blob([buffer], {type: 'application/octet-stream'}), fileName);
 }
 const saveToCloud = (blob, fileName) => {
-    const formData = new FormData();
-    formData.append('file', blob);
-    formData.append('fileName', fileName);
-    formData.append('userName', submissionName[0]);
+    const data = {
+        file: blob,
+        fileName: fileName,
+        userName: submissionName[0],
+    }
 
     fetch(
         '/.netlify/functions/submission', 
         {
             method: 'POST',
-            body: formData,
+            body: data,
         }
     ).then((response) => 
         {

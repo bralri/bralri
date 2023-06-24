@@ -2,19 +2,17 @@ const {Storage} = require('@google-cloud/storage');
 
 const key = JSON.parse(process.env.STORAGE_KEY_JSON);
 const storage = new Storage({credentials: key});
-const bucketName = 'build-a-vessel-submissions';
+const bucket = 'build-a-vessel-submissions';
 
 exports.handler = async (event) => {
     try {
-        console.log('Event body:', event.body);
-        const formData = JSON.parse(event.body);
-        console.log('Parsed formData:', formData);
+        const data = event.body;
+        console.log(data);
+        const file = data.file;
+        const fileName = data.fileName;
+        const userName = data.userName;
 
-        const file = formData.file;
-        const fileName = formData.fileName;
-        const userName = formData.userName;
-
-        const bucket = storage.bucket(bucketName);
+        const bucket = storage.bucket(bucket);
         const blob = bucket.file(fileName);
 
         const metaData = {
