@@ -220,6 +220,7 @@ const saveToCloud = (blob, fileName) => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/octet-stream',
+                'Vary': '',
 
                 // metaData
                 'User-Name': submissionName[0],
