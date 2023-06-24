@@ -12,20 +12,24 @@ exports.handler = async (event) => {
         const blob = bucket.file(fileName);
         const blobStream = blob.createWriteStream();
 
-        file.pipe(blobStream);
-
-        await new Promise((resolve, reject) => 
+        file.on('data', (chunk) => 
             {
-                blobStream.on('finish', resolve);
-                blobStream.on('error', reject);
+                blobStream.write(chunk)
+            }
+        );
+        file.on('end', () => 
+            {
+                blobStream.end();
+                console.log('File uploaded successfully!');
             }
         );
 
         return {
-        statusCode: 200,
-        body: 'File uploaded successfully!',
+            statusCode: 200,
+            body: 'File upload in progress.',
         }
     } catch (error) {
+        console.log('An error occurred while uploading the file:', error);
         return {
             statusCode: 500,
             body: 'File upload failed.',
