@@ -70,14 +70,14 @@ const setupGUI = () => {
         }
     );
 
-    const archive = gui.addFolder('Archive');
-    archive.add(guiParams, "userName").name("Name (optional)").onFinishChange((value) => {
+    const archive = gui.addFolder('Submit to the Archive');
+    archive.add(guiParams, "userName").name("Name").onFinishChange((value) => {
         submissionName.length = 0;
         submissionName.push(value);
     })
     archive.add(guiParams, "submitToArchive").name("Submit Vessel");
     
-    // archive.add(guiParams, "visitArchive").name("Visit");
+    gui.add(guiParams, "visitArchive").name("Visit the Archive");
     
     gui.$title.title = gui.$title.innerHTML;
     gui.children.forEach((child) => {
