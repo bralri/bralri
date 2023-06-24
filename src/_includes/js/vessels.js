@@ -212,7 +212,8 @@ const saveToCloudArrayBuffer = (buffer, fileName) => {
 }
 const saveToCloud = (blob, fileName) => {
     const formData = new FormData();
-    formData.append('file', blob, fileName);
+    formData.append('file', blob);
+    formData.append('fileName', fileName);
 
     fetch('/.netlify/functions/submission', 
         {
@@ -229,7 +230,7 @@ const saveToCloud = (blob, fileName) => {
         }
     ).catch((error) => 
         {
-        console.log('An error occurred while uploading the file:', error);
+            console.log('An error occurred while uploading the file:', error);
         }
     );
 }
