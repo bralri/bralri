@@ -222,7 +222,7 @@ const saveToCloud = (blob, fileName) => {
         '/.netlify/functions/submission', 
         {
             method: 'POST',
-            body: JSON.parse(data),
+            body: JSON.stringify(data),
         }
     ).then((response) => 
         {
