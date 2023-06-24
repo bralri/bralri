@@ -200,7 +200,7 @@ const exportVesselToCloud = () => {
     exporter.parse(
         scene,
         (result) => {
-            saveToCloudArrayBuffer(result, `vessel-${uuid[0]}.glb`)
+            saveToCloudArrayBuffer(result, `vessel-${uuid[0]}.glb`);
         },
         (error) => {
             console.log('An error occurred during parsing', error);
@@ -209,20 +209,22 @@ const exportVesselToCloud = () => {
     );
 }
 const saveToCloudArrayBuffer = (buffer, fileName) => {
-    saveToCloud(new Blob([buffer], {type: 'application/octet-stream'}), fileName);
+    const blob = new Blob([buffer], { type: 'application/octet-stream' });
+    saveToCloud(blob, fileName);
 }
 const saveToCloud = (blob, fileName) => {
-    const data = {
-        file: blob,
-        fileName: fileName,
-        userName: submissionName[0],
-    }
-
     fetch(
         '/.netlify/functions/submission', 
         {
             method: 'POST',
-            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/octet-stream',
+                
+                // metaData
+                'User-Name': submissionName[0],
+                'File-Name': fileName,
+            },
+            body: blob
         }
     ).then((response) => 
         {
@@ -238,7 +240,7 @@ const saveToCloud = (blob, fileName) => {
         }
     );
 }
-
+  
 // Download Vessel to user device
 const exportVesselToDevice = () => {
     const options = {

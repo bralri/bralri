@@ -1,41 +1,38 @@
-const {Storage} = require('@google-cloud/storage');
+// /.netlify/functions/submission.js
 
-const key = JSON.parse(process.env.STORAGE_KEY_JSON);
-const storage = new Storage({credentials: key});
-const bucket = storage.bucket('build-a-vessel-submissions');
+const {Storage} = require('@google-cloud/storage');
+const {v4: uuidv4} = require('uuid');
 
 exports.handler = async (event) => {
     try {
-        const data = JSON.parse(event.body);
-        const file = data.file;
-        console.log('file: ', file);
-        const fileName = data.fileName;
-        const userName = data.userName;
+        const key = JSON.parse(process.env.STORAGE_KEY_JSON);
+        const bucket = 'build-a-vessel-submissions';
+        const storage = new Storage({credentials: key});
 
-        const blob = bucket.file(fileName);
+        const _fileName = event.headers['File-Name'];
+        const _userName = event.headers['User-Name'];
+        const fileName = _fileName ? _fileName : `vessel-${uuidv4()}.glb`;
+        const userName = _userName ? _userName : `Anonymous`;
 
         const metaData = {
-            metaData: {
+            metadata: {
                 userName: userName,
             },
             resumable: false,
-        }
+        };
 
-        const buffer = Buffer.from(file);
-        await blob.save(buffer, metaData);
-
-        console.log('File uploaded successfully!');
+        const fileBuffer = Buffer.from(event.body, 'binary');
+        await storage.bucket(bucket).file(fileName).save(fileBuffer, metaData);
 
         return {
             statusCode: 200,
-            body: 'File uploaded successfully!',
+            body: 'File uploaded successfully!'
         }
     } catch (error) {
-        console.error('An error occurred while processing the request:', error);
-
+        console.error('An error occurred while uploading the file:', error);
         return {
             statusCode: 500,
-            body: 'File upload failed.',
+            body: 'File upload failed.'
         }
     }
 }
