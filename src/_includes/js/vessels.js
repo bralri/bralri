@@ -7,6 +7,7 @@ import {createAssetInstance} from '../js/_config.min.js';
 
 let scene, camera, renderer, orbitControls;
 let amountOfFragments = 16;
+let selectedFile;
 const fragments = [];
 const submissionName = [];
 const uuid = [];
@@ -51,8 +52,11 @@ const setupGUI = () => {
             window.open('/works/build-a-vessel/archive/');
         },
         userName: "",
+        chooseFile: () => {
+            selectFile();
+        },
         submitToArchive: () => {
-            exportVesselToCloud();
+            submitFile();
         },
         amountOfFragments: 16
     }
@@ -75,6 +79,7 @@ const setupGUI = () => {
         submissionName.length = 0;
         submissionName.push(value);
     })
+    archive.add(guiParams, "chooseFile").name("Choose Vessel");
     archive.add(guiParams, "submitToArchive").name("Submit Vessel");
     
     gui.add(guiParams, "visitArchive").name("Visit the Archive");
@@ -191,6 +196,82 @@ const loadAssets = () => {
     })
 };
 
+const selectFile = () => {
+    const input = document.getElementById('file-input');
+    selectedFile = input.files[0];
+
+    const submitButton = document.querySelector('button[onclick="submitFile()"]');
+    submitButton.disabled = false;
+}
+
+const submitFile = async () => {
+    if (!selectedFile) {
+        console.log('No file selected.');
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append('file', selectedFile);
+
+    try {
+        const response = await fetch('/.netlify/functions/submission',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/octet-stream',
+
+                    // Metadata
+                    'User-Name': submissionName[0],
+                },
+                body: formData,
+            }
+        );
+
+        if (response.ok) {
+            console.log('upload successfull');
+        } else {
+            console.log('upload failed');
+        }
+    } catch (error) {
+        console.log('error: ', error);
+    }
+}
+
+// Upload File
+const uploadFile = async () => {
+    const input = document.getElementById('file-input');
+    const file = input.files[0];
+    
+    const formData = new FormData();
+    formData.append('file', file);
+
+    try {
+        const response = await fetch(
+            '/.netlify/functions/submission',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/octet-stream',
+
+                    // Metadata
+                    'User-Name': submissionName[0],
+                },
+                body: formData,
+            }
+        );
+
+        if (response.ok) {
+            console.log('Upload successfull!');
+            console.alert('Upload successfull!');
+        } else {
+            console.log('Upload failed.');
+            console.alert('Upload failed.');
+        }
+    } catch (error) {
+        console.log('An error occured while uploading the file: ', error);
+    }
+}
+
 // Upload Vessel to cloud storage
 const exportVesselToCloud = () => {
     const options = {
@@ -211,34 +292,6 @@ const exportVesselToCloud = () => {
 const saveToCloudArrayBuffer = (buffer, fileName) => {
     saveToCloud(new Blob([buffer], {type: 'application/octet-stream'}), fileName);
     saveTest(new Blob([buffer], {type: 'application/octet-stream'}), fileName);
-}
-const saveTest = (blob, fileName) => {
-    const endpoint = '/.netlify/functions/submission';
-    const formData = new FormData();
-
-    let content = new File([blob], fileName);
-    formData.append('file', content);
-
-    const options = {
-        method: 'Post',
-        headers: {
-            'Content-Type': 'application/octet-stream',
-
-            // metaData
-            'User-Name': submissionName[0],
-            'File-Name': "test-" + fileName,
-        },
-        body: formData,
-    };
-
-    fetch(
-        endpoint,
-        options
-    ).then((response) => {
-        console.log(JSON.stringify(response))
-    }).catch((error) => {
-        console.error('Error: ', error);
-    })
 }
 const saveToCloud = (blob, fileName) => {
     fetch(
