@@ -6,7 +6,9 @@ const bucketName = 'build-a-vessel-submissions';
 
 exports.handler = async (event) => {
     try {
+        console.log('Event body:', event.body);
         const formData = JSON.parse(event.body);
+        console.log('Parsed formData:', formData);
 
         const file = formData.file;
         const fileName = formData.fileName;
