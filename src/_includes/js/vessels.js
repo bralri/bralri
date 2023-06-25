@@ -213,6 +213,7 @@ const saveToCloudArrayBuffer = (result, fileName) => {
     saveToCloud(result, fileName);
 };
 const saveToCloud = (result, fileName) => {
+    console.log("file data: ", result);
     fetch(
         '/.netlify/functions/submission', 
         {

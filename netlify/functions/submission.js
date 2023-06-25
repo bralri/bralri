@@ -6,6 +6,7 @@ const bucket = 'build-a-vessel-submissions';
 const storage = new Storage({credentials: key});
 
 exports.handler = async (event) => {
+    console.log("file data: ", event.body);
     try {
         const content = event.body;
         const _fileName = event.headers['file-name'];
