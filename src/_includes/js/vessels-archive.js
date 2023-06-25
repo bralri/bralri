@@ -20,7 +20,7 @@ const setupGUI = () => {
             mapControls.object.position.set(400, 200, 0);
         }
     }
-    const controls = guid.addFolder("Controls");
+    const controls = gui.addFolder("Controls");
     controls.add(guiParams, "resetCamera").name("Reset Camera");
     
     const link = gui.addFolder("Add to the Archive");
