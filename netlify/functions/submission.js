@@ -8,7 +8,11 @@ const storage = new Storage({credentials: key});
 exports.handler = async (event) => {
     try {
         const _formData = event.body;
-        console.log(_formData);
+        
+        const _reader = _formData.getReader();
+        const {value} = await _reader.read();
+        console.log(value);
+
         const _file = _formData.get('file');
         const _fileName = _formData.get('fileName');
         const _userName = _formData.get('userName');
