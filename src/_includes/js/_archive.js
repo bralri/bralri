@@ -5,7 +5,13 @@ const manager = new THREE.LoadingManager();
 const loader = new GLTFLoader(manager);
 
 const loadModels = (name, createdBy, date, url) => {
+
     const _name = name.split('.');
+    
+    if (typeof createdBy === 'undefined') {
+        createdBy = 'Anonymous';
+    };
+
     return new Promise((resolve, reject) => {
         loader.load(
 
