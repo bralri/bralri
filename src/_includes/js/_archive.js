@@ -5,6 +5,7 @@ const manager = new THREE.LoadingManager();
 const loader = new GLTFLoader(manager);
 
 const loadModels = (name, createdBy, date, url) => {
+    const _name = name.split('.');
     return new Promise((resolve, reject) => {
         loader.load(
 
@@ -16,7 +17,7 @@ const loadModels = (name, createdBy, date, url) => {
                 id: mesh.id,
                 caption:     
                 `                                
-                    <span class="title">${name}</span><br>
+                    <span class="title">${_name[0]}</span><br>
                     <i class="author">by: ${createdBy}</i><br>
                     <i class="author">created: ${date}</i><br>
                 ` 
