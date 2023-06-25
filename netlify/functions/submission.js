@@ -7,11 +7,21 @@ const storage = new Storage({credentials: key});
 
 exports.handler = async (event) => {
     try {
-        const content = event.body;
-        const _fileName = event.headers['file-name'];
-        const _userName = event.headers['user-name'];
+        const _formData = event.body;
+        console.log(_formData);
+        const _file = _formData.get('file');
+        const _fileName = _formData.get('fileName');
+        const _userName = _formData.get('userName');
+
+        const content = await _file.arrayBuffer();
         const fileName = _fileName;
         const userName = _userName ? _userName : 'Anonymous';
+
+        // const content = event.body;
+        // const _fileName = event.headers['file-name'];
+        // const _userName = event.headers['user-name'];
+        // const fileName = _fileName;
+        // const userName = _userName ? _userName : 'Anonymous';
 
         await storage.bucket(bucket).file(fileName).save(content, {
             metadata: {
