@@ -209,15 +209,10 @@ const exportVesselToCloud = () => {
         options
     );
 }
-const saveToCloudArrayBuffer = (buffer, fileName) => {
-    saveToCloud(new Blob([buffer], {type: 'application/octet-stream'}), fileName);
+const saveToCloudArrayBuffer = (result, fileName) => {
+    saveToCloud(result, fileName);
 };
-const saveToCloud = (blob, fileName) => {
-    const formData = new FormData();
-    formData.append('file', blob, fileName);
-    formData.append('fileName', fileName);
-    formData.append('userName', submissionName[0]);
-
+const saveToCloud = (result, fileName) => {
     fetch(
         '/.netlify/functions/submission', 
         {
@@ -230,7 +225,7 @@ const saveToCloud = (blob, fileName) => {
                 'User-Name': submissionName[0],
                 'File-Name': fileName,
             },
-            body: formData
+            body: result
         }
     ).then((response) => 
         {
