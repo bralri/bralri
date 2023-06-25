@@ -209,11 +209,13 @@ const exportVesselToCloud = () => {
         options
     );
 }
-const saveToCloudArrayBuffer = (result, fileName) => {
-    saveToCloud(result, fileName);
+const saveToCloudArrayBuffer = (buffer, fileName) => {
+    console.log("buffer: ", buffer);
+    const base64 = btoa(String.fromCharCode(...new Uint8Array(buffer)));
+    saveToCloud(base64, fileName);
 };
-const saveToCloud = (result, fileName) => {
-    console.log("file data: ", result);
+const saveToCloud = (base64, fileName) => {
+    console.log("base64: ", base64);
     fetch(
         '/.netlify/functions/submission', 
         {
@@ -226,7 +228,7 @@ const saveToCloud = (result, fileName) => {
                 'User-Name': submissionName[0],
                 'File-Name': fileName,
             },
-            body: result
+            body: base64
         }
     ).then((response) => 
         {
