@@ -21,7 +21,7 @@ const setupGUI = () => {
         }
     }
 
-    gui.add(guiParams, "resetCamera").name("Reset");
+    gui.add(guiParams, "resetCamera").name("Reset Camera");
     gui.add(guiParams, "build_a_vessel").name("Build-A-Vessel");
 
     gui.$title.title = gui.$title.innerHTML;

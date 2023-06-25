@@ -7,9 +7,8 @@ import {createAssetInstance} from '../js/_config.min.js';
 
 let scene, camera, renderer, orbitControls;
 let amountOfFragments = 16;
-let selectedFile;
+let userName;
 const fragments = [];
-const submissionName = [];
 const uuid = [];
 
 const loading = document.getElementById('loading');
@@ -31,7 +30,7 @@ const urlParam = () => {
 }
 
 const setupGUI = () => {
-    const gui = new GUI({title: "Options"});
+    const gui = new GUI({title: "Build-A-Vessel"});
     gui.domElement.id = 'gui';
     
     const guiParams = {
@@ -51,7 +50,7 @@ const setupGUI = () => {
         visitArchive: () => {
             window.open('/works/build-a-vessel/archive/');
         },
-        userName: "",
+        setUserName: "",
         submitToArchive: () => {
             exportVesselToCloud();
         },
@@ -59,11 +58,11 @@ const setupGUI = () => {
     }
     
     const controls = gui.addFolder('Controls');
-    controls.add(guiParams, "shuffleSelection").name("Shuffle");
-    controls.add(guiParams, "resetCamera").name("Reset");
-    controls.add(guiParams, "takeScreenshot").name("Screenshot");
-    controls.add(guiParams, "downloadVessel").name("Download");
-    controls.add(guiParams, "amountOfFragments", [3, 4, 9, 16, 25]).name("Amount").onChange(
+    controls.add(guiParams, "shuffleSelection").name("Shuffle Fragments");
+    controls.add(guiParams, "resetCamera").name("Reset Camera");
+    controls.add(guiParams, "takeScreenshot").name("Take Screenshot");
+    controls.add(guiParams, "downloadVessel").name("Download Vessel");
+    controls.add(guiParams, "amountOfFragments", [3, 4, 9, 16, 25]).name("Choose Amount").onChange(
         (value) => {
             amountOfFragments = value;
             urlParam();
@@ -72,9 +71,10 @@ const setupGUI = () => {
     );
 
     const archive = gui.addFolder('Submit to the Archive');
-    archive.add(guiParams, "userName").name("Name").onFinishChange((value) => {
-        submissionName.length = 0;
-        submissionName.push(value);
+    archive.add(guiParams, "setUserName").name("Your Name").onFinishChange((value) => {
+        const stringLength = 20;
+        const trimmedString = value.substring(0, stringLength);
+        userName = trimmedString;
     })
     archive.add(guiParams, "submitToArchive").name("Submit Vessel");
     
@@ -201,7 +201,7 @@ const exportVesselToCloud = () => {
     exporter.parse(
         scene,
         (result) => {
-            saveToCloudArrayBuffer(result, `vessel-${uuid[0]}.glb`);
+            saveToCloud(result, `vessel-${uuid[0]}.glb`);
         },
         (error) => {
             console.log('An error occurred during parsing', error);
@@ -209,9 +209,6 @@ const exportVesselToCloud = () => {
         options
     );
 }
-const saveToCloudArrayBuffer = (buffer, fileName) => {
-    saveToCloud(buffer, fileName);
-};
 const saveToCloud = (buffer, fileName) => {
     fetch(
         '/.netlify/functions/submission', 
@@ -222,7 +219,7 @@ const saveToCloud = (buffer, fileName) => {
                 'Vary': '',
 
                 // Metadata
-                'User-Name': submissionName[0],
+                'User-Name': userName,
                 'File-Name': fileName,
             },
             body: buffer
