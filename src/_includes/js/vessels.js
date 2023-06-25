@@ -228,7 +228,7 @@ const saveToCloud = (buffer, fileName) => {
         {
             if (response.ok) {
                 console.log('File uploaded successfully!');
-                window.alert('File uploaded successfully!');
+                window.alert(`${fileName} successfully uploaded to the Archive!`);
             } else {
                 console.log('File upload failed.');
             }
