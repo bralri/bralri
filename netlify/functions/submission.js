@@ -8,15 +8,13 @@ const storage = new Storage({credentials: key});
 exports.handler = async (event) => {
     try {
         const base64 = event.body;
-        console.log("base64 body: ", base64);
-        const buffer = Buffer.from(base64, 'base64');
-        console.log("buffer from base64: ", buffer);
+        const content = Buffer.from(base64, 'base64');
         const _fileName = event.headers['file-name'];
         const _userName = event.headers['user-name'];
         const fileName = _fileName;
         const userName = _userName ? _userName : 'Anonymous';
 
-        await storage.bucket(bucket).file(fileName).save(buffer, {
+        await storage.bucket(bucket).file(fileName).save(content, {
             metadata: {
                 metadata: {
                     userName: userName,

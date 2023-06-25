@@ -210,20 +210,9 @@ const exportVesselToCloud = () => {
     );
 }
 const saveToCloudArrayBuffer = (buffer, fileName) => {
-    const uint8Array = new Uint8Array(buffer);
-    const base64 = uint8ArrayToBase64(uint8Array);
-    saveToCloud(base64, fileName);
+    saveToCloud(buffer, fileName);
 };
-const uint8ArrayToBase64 = (uint8Array) => {
-    const CHUNK_SIZE = 0x8000;
-    const chunks = [];
-    for (let i = 0; i < uint8Array.length; i += CHUNK_SIZE) {
-        chunks.push(String.fromCharCode.apply(null, uint8Array.subarray(i, i + CHUNK_SIZE)));
-    }
-    return btoa(chunks.join(''));
-};
-const saveToCloud = (base64, fileName) => {
-    console.log("base64: ", base64);
+const saveToCloud = (buffer, fileName) => {
     fetch(
         '/.netlify/functions/submission', 
         {
@@ -236,7 +225,7 @@ const saveToCloud = (base64, fileName) => {
                 'User-Name': submissionName[0],
                 'File-Name': fileName,
             },
-            body: base64
+            body: buffer
         }
     ).then((response) => 
         {
