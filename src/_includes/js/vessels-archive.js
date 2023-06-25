@@ -8,7 +8,7 @@ const mouse = new THREE.Vector2();
 const objects = []; const objectsId = [];
 
 const setupGUI = () => {
-    const gui = new GUI();
+    const gui = new GUI({title: "Archive"});
     gui.domElement.id = 'gui';
 
     const guiParams = {
@@ -20,9 +20,11 @@ const setupGUI = () => {
             mapControls.object.position.set(400, 200, 0);
         }
     }
-
-    gui.add(guiParams, "resetCamera").name("Reset Camera");
-    gui.add(guiParams, "build_a_vessel").name("Build-A-Vessel");
+    const controls = guid.addFolder("Controls");
+    controls.add(guiParams, "resetCamera").name("Reset Camera");
+    
+    const link = gui.addFolder("Add to the Archive");
+    link.add(guiParams, "build_a_vessel").name("Build-A-Vessel");
 
     gui.$title.title = gui.$title.innerHTML;
     gui.children.forEach((child) => {

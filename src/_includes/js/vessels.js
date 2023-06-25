@@ -31,7 +31,7 @@ const urlParam = () => {
 
 const setupGUI = () => {
     const gui = new GUI({title: "Build-A-Vessel"});
-    gui.domElement.id = 'gui';
+    gui.domElement.id = "gui";
     
     const guiParams = {
         shuffleSelection: () => {
@@ -57,7 +57,7 @@ const setupGUI = () => {
         amountOfFragments: 16
     }
     
-    const controls = gui.addFolder('Controls');
+    const controls = gui.addFolder("Controls");
     controls.add(guiParams, "shuffleSelection").name("Shuffle Fragments");
     controls.add(guiParams, "resetCamera").name("Reset Camera");
     controls.add(guiParams, "takeScreenshot").name("Take Screenshot");
@@ -76,7 +76,7 @@ const setupGUI = () => {
         const trimmedString = value.substring(0, stringLength);
         userName = trimmedString;
     })
-    archive.add(guiParams, "submitToArchive").name("Submit Vessel");
+    archive.add(guiParams, "submitToArchive").name("Submit Current Vessel");
     
     gui.add(guiParams, "visitArchive").name("Visit the Archive");
     
