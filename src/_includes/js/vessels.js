@@ -210,8 +210,7 @@ const exportVesselToCloud = () => {
     );
 }
 const saveToCloudArrayBuffer = (buffer, fileName) => {
-    console.log("buffer: ", buffer);
-    const base64 = btoa(String.fromCharCode(...new Uint8Array(buffer)));
+    const base64 = Buffer.from(buffer).toString('base64');
     saveToCloud(base64, fileName);
 };
 const saveToCloud = (base64, fileName) => {
