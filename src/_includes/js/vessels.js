@@ -50,7 +50,7 @@ const setupGUI = () => {
         visitArchive: () => {
             window.open('/works/build-a-vessel/archive/');
         },
-        setUserName: "",
+        setUserName: "Optional",
         submitToArchive: () => {
             exportVesselToCloud();
         },
@@ -82,14 +82,12 @@ const setupGUI = () => {
     });
 
     const inputElement = userNameControl.domElement.querySelector('input'); // Get the input element
-
     inputElement.addEventListener('input', () => {
         const inputValue = inputElement.value;
         if (inputValue.length > userNameLength) {
             inputElement.value = inputValue.substring(0, userNameLength); // Truncate input if it exceeds the limit
         }
     });
-    
     inputElement.addEventListener('keydown', (event) => {
         if (event.key.length === 1 && inputElement.value.length >= userNameLength) {
             event.preventDefault(); // Prevent further typing when the limit is reached
