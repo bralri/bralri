@@ -10,8 +10,8 @@ const loadModels = (name, createdBy, date, url) => {
 
     console.log('Initial:', createdBy);
     if (typeof 
-        createdBy === 'undefined' || 
-        createdBy === 'null' || 
+        createdBy === undefined || 
+        createdBy === null || 
         createdBy === 'Optional' || 
         createdBy === '') {
         createdBy = 'Anonymous';
