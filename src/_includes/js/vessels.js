@@ -71,6 +71,8 @@ const setupGUI = () => {
     );
 
     const archive = gui.addFolder('Submit to the Archive');
+
+    // add a filter for correct characters and banned words list etc
     const userNameControl = archive.add(guiParams, "setUserName").name(`Your Name (${userNameLength})`)
     userNameControl.onFinishChange((value) => {
         const trimmedString = value.substring(0, userNameLength);
@@ -80,7 +82,6 @@ const setupGUI = () => {
         updateCharLimit = userNameLength - value.length;
         userNameControl.name(`Your Name (${updateCharLimit})`);
     });
-
     const inputElement = userNameControl.domElement.querySelector('input'); // Get the input element
     inputElement.addEventListener('input', () => {
         const inputValue = inputElement.value;
