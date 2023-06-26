@@ -8,11 +8,11 @@ const loadModels = (name, createdBy, date, url) => {
 
     const _name = name.split('.');
 
-    if (createdBy === undefined) {
+    if (createdBy === 'undefined') {
         console.log('CreatedBy: ', createdBy);
         createdBy = 'Anonymous';
         console.log('CreatedBy: ', createdBy);
-    } else if (createdBy === null) {
+    } else if (createdBy === 'null') {
         console.log('CreatedBy: ', createdBy);
         createdBy = 'Anonymous';
         console.log('CreatedBy: ', createdBy);
