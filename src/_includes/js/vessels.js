@@ -7,7 +7,7 @@ import {createAssetInstance} from '../js/_config.min.js';
 
 let scene, camera, renderer, orbitControls;
 let amountOfFragments = 16;
-let userName; const userNameLength = 20; let updateCharLimit;
+let userName; const userNameLength = 30; let updateCharLimit;
 const fragments = [];
 const uuid = [];
 
