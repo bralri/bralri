@@ -7,11 +7,16 @@ const loader = new GLTFLoader(manager);
 const loadModels = (name, createdBy, date, url) => {
 
     const _name = name.split('.');
-    console.log("Initial: ", createdBy);
-    if (createdBy === undefined || createdBy === 'Optional' || createdBy === '') {
+
+    console.log('Initial:', createdBy);
+    if (typeof 
+        createdBy === 'undefined' || 
+        createdBy === 'null' || 
+        createdBy === 'Optional' || 
+        createdBy === '') {
         createdBy = 'Anonymous';
     }
-    console.log("Final: ", createdBy);
+    console.log('Final:', createdBy);
     
 
     return new Promise((resolve, reject) => {
@@ -29,7 +34,7 @@ const loadModels = (name, createdBy, date, url) => {
                     <i class="author">by: ${createdBy}</i><br>
                     <i class="author">created: ${date}</i><br>
                 ` 
-            }; // figure out a way to include the date day it way made
+            };
             resolve({
                 mesh
             });
