@@ -8,15 +8,23 @@ const loadModels = (name, createdBy, date, url) => {
 
     const _name = name.split('.');
 
-    console.log('Initial:', createdBy);
-    if (typeof 
-        createdBy === undefined || 
-        createdBy === null || 
-        createdBy === 'Optional' || 
-        createdBy === '') {
+    if (createdBy === undefined) {
+        console.log('CreatedBy: ', createdBy);
         createdBy = 'Anonymous';
+        console.log('CreatedBy: ', createdBy);
+    } else if (createdBy === null) {
+        console.log('CreatedBy: ', createdBy);
+        createdBy = 'Anonymous';
+        console.log('CreatedBy: ', createdBy);
+    } else if (createdBy === 'Optional') {
+        console.log('CreatedBy: ', createdBy);
+        createdBy = 'Anonymous';
+        console.log('CreatedBy: ', createdBy);
+    } else if (createdBy === '') {
+        console.log('CreatedBy: ', createdBy);
+        createdBy = 'Anonymous';
+        console.log('CreatedBy: ', createdBy);
     }
-    console.log('Final:', createdBy);
     
 
     return new Promise((resolve, reject) => {
