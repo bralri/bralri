@@ -8,7 +8,7 @@ const loadModels = (name, createdBy, date, url) => {
 
     const _name = name.split('.');
     
-    if (typeof createdBy === 'undefined') {
+    if (createdBy === undefined || 'Optional') {
         createdBy = 'Anonymous';
     };
 

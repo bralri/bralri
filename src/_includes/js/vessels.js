@@ -7,7 +7,7 @@ import {createAssetInstance} from '../js/_config.min.js';
 
 let scene, camera, renderer, orbitControls;
 let amountOfFragments = 16;
-let userName;
+let userName; const userNameLength = 20; let updateCharLimit;
 const fragments = [];
 const uuid = [];
 
@@ -71,12 +71,32 @@ const setupGUI = () => {
     );
 
     const archive = gui.addFolder('Submit to the Archive');
-    archive.add(guiParams, "setUserName").name("Your Name").onFinishChange((value) => {
-        const stringLength = 20;
-        const trimmedString = value.substring(0, stringLength);
+    const userNameControl = archive.add(guiParams, "setUserName").name(`Your Name (${userNameLength})`)
+    userNameControl.onFinishChange((value) => {
+        const trimmedString = value.substring(0, userNameLength);
         userName = trimmedString;
     })
-    archive.add(guiParams, "submitToArchive").name("Submit Current Vessel");
+    userNameControl.onChange((value) => {
+        updateCharLimit = userNameLength - value.length;
+        userNameControl.name(`Your Name (${updateCharLimit})`);
+    });
+
+    const inputElement = userNameControl.domElement.querySelector('input'); // Get the input element
+
+    inputElement.addEventListener('input', () => {
+        const inputValue = inputElement.value;
+        if (inputValue.length > userNameLength) {
+            inputElement.value = inputValue.substring(0, userNameLength); // Truncate input if it exceeds the limit
+        }
+    });
+    
+    inputElement.addEventListener('keydown', (event) => {
+        if (event.key.length === 1 && inputElement.value.length >= userNameLength) {
+            event.preventDefault(); // Prevent further typing when the limit is reached
+        }
+    });
+
+    archive.add(guiParams, "submitToArchive").name("Submit your Vessel");
     
     gui.add(guiParams, "visitArchive").name("Visit the Archive");
     
