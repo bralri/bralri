@@ -23,8 +23,7 @@ exports.handler = async () => {
                 name: file.name,
                 createdBy: createdBy,
                 url: urlPath,
-                dateCreated: day + "/" + month + "/" + year,
-                data: file
+                dateCreated: day + "/" + month + "/" + year
             }
         });
 
