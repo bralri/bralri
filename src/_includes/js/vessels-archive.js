@@ -89,9 +89,9 @@ const init = () => {
 
 const fetchModelsFromCloud = async () => {
     try {
-        const fetch = await fetch('/.netlify/functions/fetchSubmissions');
-        const response = await fetch.json();
-        const files = response.files;
+        const response = await fetch('/.netlify/functions/fetchSubmissions');
+        const data = await response.json();
+        const files = data.files;
         return files;
     } catch (error) {
         console.error('Error fetching file URLs:', error);
