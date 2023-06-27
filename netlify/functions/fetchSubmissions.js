@@ -1,14 +1,15 @@
+// /.netlify/functions/fetchSubmission.js
+
 const {Storage} = require('@google-cloud/storage');
 const key = JSON.parse(process.env.STORAGE_KEY_JSON);
+const storage = new Storage({credentials: key});
+const bucket = storage.bucket('build-a-vessel-submissions');
 
 exports.handler = async () => {
-    const storage = new Storage({credentials: key});
-    const bucket = storage.bucket('build-a-vessel-submissions');
-
     try {
         const [files] = await bucket.getFiles();
         const fileData = files.map((file) => {
-            const urlPath = `https://storage.googleapis.com/build-a-vessel-submissions/${file.name}`;
+            const urlPath = `${process.env.SUB_URL}/${file.name}`;
 
             const dateString = file.metadata.timeCreated;
             const date = new Date(dateString);
