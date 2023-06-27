@@ -7,18 +7,12 @@ const storage = new Storage({credentials: key});
 
 exports.handler = async (event) => {
     try {
-        const body = JSON.parse(event.body);
-        const base64 = body.model_file;
+        const base64 = event.body;
         const content = Buffer.from(base64, 'base64');
-        const fileName = body.file_name;
-        const userName = body.user_name;
-
-        // const base64 = event.body;
-        // const content = Buffer.from(base64, 'base64');
-        // const _fileName = event.headers['file-name'];
-        // const _userName = event.headers['user-name'];
-        // const fileName = _fileName;
-        // const userName = _userName;
+        const _fileName = event.headers['file-name'];
+        const _userName = event.headers['user-name'];
+        const fileName = _fileName;
+        const userName = _userName;
 
         await storage.bucket(bucket).file(fileName).save(content, {
             metadata: {
@@ -32,10 +26,10 @@ exports.handler = async (event) => {
 
         return {
             statusCode: 200,
-            headers: {
-                'Content-Type': 'application/octet-stream',
-                'Vary': '',
-            },
+            // headers: {
+            //     'Content-Type': 'application/octet-stream',
+            //     'Vary': '',
+            // },
             body: 'File uploaded successfully!',
         }
     } catch (error) {

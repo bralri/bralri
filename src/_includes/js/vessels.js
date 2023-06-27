@@ -235,17 +235,12 @@ const saveToCloud = (buffer, fileName) => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/octet-stream',
-                'Vary': '',
 
                 // Metadata
                 'User-Name': userName,
                 'File-Name': fileName,
             },
-            body: JSON.stringify({
-                model_file: buffer,
-                user_name: userName,
-                file_name: fileName
-            })
+            body: buffer
         }
     ).then((response) => 
         {
