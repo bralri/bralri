@@ -7,12 +7,18 @@ const storage = new Storage({credentials: key});
 
 exports.handler = async (event) => {
     try {
-        const base64 = event.body;
+        const body = JSON.parse(event.body);
+        const base64 = body.model_file;
         const content = Buffer.from(base64, 'base64');
-        const _fileName = event.headers['file-name'];
-        const _userName = event.headers['user-name'];
-        const fileName = _fileName;
-        const userName = _userName;
+        const fileName = body.file_name;
+        const userName = body.user_name;
+
+        // const base64 = event.body;
+        // const content = Buffer.from(base64, 'base64');
+        // const _fileName = event.headers['file-name'];
+        // const _userName = event.headers['user-name'];
+        // const fileName = _fileName;
+        // const userName = _userName;
 
         await storage.bucket(bucket).file(fileName).save(content, {
             metadata: {

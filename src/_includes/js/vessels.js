@@ -241,7 +241,11 @@ const saveToCloud = (buffer, fileName) => {
                 'User-Name': userName,
                 'File-Name': fileName,
             },
-            body: buffer
+            body: JSON.stringify({
+                model_file: buffer,
+                user_name: userName,
+                file_name: fileName
+            })
         }
     ).then((response) => 
         {
