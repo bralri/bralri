@@ -5,6 +5,15 @@ const key = JSON.parse(process.env.STORAGE_KEY_JSON);
 const bucket = 'build-a-vessel-submissions';
 const storage = new Storage({credentials: key});
 
+const nodemailer = require('nodemailer');
+const transporter = nodemailer.createTransport({
+    service: 'Gmail',
+    auth: {
+        user: 'bryanridpath@gmail.com',
+        pass: 'Pavilion1996',
+    }
+});
+
 exports.handler = async (event) => {
     try {
         const _base64 = event.body;
@@ -23,6 +32,8 @@ exports.handler = async (event) => {
             resumable: false,
         });
 
+        sendEmailNotif(_fileName, _userName);
+
         return {
             statusCode: 200,
             body: 'File uploaded successfully!',
@@ -33,5 +44,21 @@ exports.handler = async (event) => {
             statusCode: 500,
             body: 'File upload failed.',
         }
+    }
+}
+
+const sendEmailNotif = async (fileName, userName) => {
+    try {
+        const options = {
+            from: 'bryanridpath@gmail.com',
+            to: 'bryanridpath@gmail.com',
+            subject: 'New Build-A-Vessel archive submission',
+            text: `${fileName} submitted by: ${userName}`,
+        }
+
+        await transporter.sendMail(options);
+        console.log('Email notification sent!')
+    } catch (error) {
+        console.log('Error: ', error);
     }
 }
