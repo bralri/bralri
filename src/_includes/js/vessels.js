@@ -91,6 +91,9 @@ const setupGUI = () => {
         userName = trimmedString;
 
         const bannedWords = await fetchBannedWords();
+        bannedWords.then((value) => {
+            console.log(value);
+        })
         console.log(bannedWords);
 
         if (bannedWords.length > 0) {
