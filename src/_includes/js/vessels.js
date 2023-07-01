@@ -77,6 +77,7 @@ const setupGUI = () => {
         try {
             const response = await fetch('/.netlify/functions/bannedWords');
             if (response.ok) {
+                console.log(response);
                 const bannedWords = await response.json();
                 
                 // Check value against the list of banned words:
