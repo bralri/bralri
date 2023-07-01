@@ -72,38 +72,54 @@ const setupGUI = () => {
 
     const archive = gui.addFolder('Submit to the Archive');
 
-    // add a filter for correct characters and banned words list etc
     const userNameControl = archive.add(guiParams, "setUserName").name(`Your Name (${userNameLength})`);
-    const bannedWords = JSON.parse(process.env.BANNED_WORDS);
-    userNameControl.onFinishChange((value) => {
-        const trimmedString = value.substring(0, userNameLength);
-        userName = trimmedString;
-
-        // Check value against list of banned words:
-        const isBannedWord = bannedWords.some((word) => {
-            const regex = new RegExp(`\\b${word.word}\\b`, 'i');
-            return regex.test(value);
-        });
-
-        if (isBannedWord) {
-            window.alert('Please choose a different name. The entered name contains banned words.')
+    const fetchBannedWords = async () => {
+        try {
+            const response = await fetch('/.netlify/functions/bannedWords');
+            if (response.ok) {
+                const bannedWords = await response.json();
+                
+                // Check value against the list of banned words:
+                userNameControl.onFinishChange((value) => {
+                    const trimmedString = value.substring(0, userNameLength);
+                    userName = trimmedString;
+            
+                    const isBannedWord = bannedWords.some((word) => {
+                        const regex = new RegExp(`\\b${word.word}\\b`, 'i');
+                        return regex.test(value);
+                    });
+            
+                    if (isBannedWord) {
+                        window.alert('Please choose a different name. The entered name contains banned words.');
+                    }
+                }); 
+            } else {
+            throw new Error('Failed to fetch banned words');
+            }
+        } catch (error) {
+            console.error(error);
         }
-    })
+    };
+
+    fetchBannedWords();
+
     userNameControl.onChange((value) => {
         updateCharLimit = userNameLength - value.length;
         userNameControl.name(`Your Name (${updateCharLimit})`);
     });
-    const inputElement = userNameControl.domElement.querySelector('input'); // Get the input element
+
+    const inputElement = userNameControl.domElement.querySelector('input');
     inputElement.addEventListener('input', () => {
         let inputValue = inputElement.value;
         inputValue = inputValue.replace(/[^a-zA-Z0-9]/g, '');
         if (inputValue.length > userNameLength) {
-            inputElement.value = inputValue.substring(0, userNameLength); // Truncate input if it exceeds the limit
+            inputElement.value = inputValue.substring(0, userNameLength);
         }
     });
+
     inputElement.addEventListener('keydown', (event) => {
         if (event.key.length === 1 && inputElement.value.length >= userNameLength) {
-            event.preventDefault(); // Prevent further typing when the limit is reached
+            event.preventDefault();
         }
     });
 
