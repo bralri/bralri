@@ -24,11 +24,11 @@ const setupGUI = () => {
     }
 
     const controls = gui.addFolder("Controls");
-    controls.add(guiParams, "searchArchive").name("Search").onFinishChange((value) => {
-        const filteredModels = searchModels(value);
-        console.log(filteredModels);
-        displayFilteredModels(filteredModels);
-    });
+    // controls.add(guiParams, "searchArchive").name("Search").onFinishChange((value) => {
+    //     const filteredModels = searchModels(value);
+    //     console.log(filteredModels);
+    //     displayFilteredModels(filteredModels);
+    // });
     controls.add(guiParams, "resetCamera").name("Reset Camera");
     
     const link = gui.addFolder("Create your own Vessel");
