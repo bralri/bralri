@@ -73,10 +73,21 @@ const setupGUI = () => {
     const archive = gui.addFolder('Submit to the Archive');
 
     // add a filter for correct characters and banned words list etc
-    const userNameControl = archive.add(guiParams, "setUserName").name(`Your Name (${userNameLength})`)
+    const userNameControl = archive.add(guiParams, "setUserName").name(`Your Name (${userNameLength})`);
+    const bannedWords = JSON.parse(process.env.BANNED_WORDS);
     userNameControl.onFinishChange((value) => {
         const trimmedString = value.substring(0, userNameLength);
         userName = trimmedString;
+
+        // Check value against list of banned words:
+        const isBannedWord = bannedWords.some((word) => {
+            const regex = new RegExp(`\\b${word.word}\\b`, 'i');
+            return regex.test(value);
+        });
+
+        if (isBannedWord) {
+            window.alert('Please choose a different name. The entered name contains banned words.')
+        }
     })
     userNameControl.onChange((value) => {
         updateCharLimit = userNameLength - value.length;
@@ -84,7 +95,8 @@ const setupGUI = () => {
     });
     const inputElement = userNameControl.domElement.querySelector('input'); // Get the input element
     inputElement.addEventListener('input', () => {
-        const inputValue = inputElement.value;
+        let inputValue = inputElement.value;
+        inputValue = inputValue.replace(/[^a-zA-Z0-9]/g, '');
         if (inputValue.length > userNameLength) {
             inputElement.value = inputValue.substring(0, userNameLength); // Truncate input if it exceeds the limit
         }
