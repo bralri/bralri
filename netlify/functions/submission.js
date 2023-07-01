@@ -34,7 +34,7 @@ exports.handler = async (event) => {
             resumable: false,
         });
 
-        sendEmailNotif(_fileName, _userName);
+        await sendEmailNotif(_fileName, _userName);
 
         return {
             statusCode: 200,
@@ -61,6 +61,6 @@ const sendEmailNotif = async (fileName, userName) => {
         await transporter.sendMail(options);
         console.log('Email notification sent!')
     } catch (error) {
-        console.log('Error: ', error);
+        console.error('Error: ', error);
     }
 }
