@@ -6,7 +6,7 @@ exports.handler = async () => {
     try {
         return {
             statusCode: 200, 
-            body: JSON.stringify(bannedWords)
+            body: JSON.stringify({words: bannedWords})
         }
     } catch (error) {
         console.error(error);

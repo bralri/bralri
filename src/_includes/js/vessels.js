@@ -76,33 +76,28 @@ const setupGUI = () => {
     const fetchBannedWords = async () => {
         try {
             const response = await fetch('/.netlify/functions/bannedWords');
-            if (response.ok) {
-                console.log(response);
-                const bannedWords = await response.json();
-                
-                // Check value against the list of banned words:
-                userNameControl.onFinishChange((value) => {
-                    const trimmedString = value.substring(0, userNameLength);
-                    userName = trimmedString;
-            
-                    const isBannedWord = bannedWords.some((word) => {
-                        const regex = new RegExp(`\\b${word.word}\\b`, 'i');
-                        return regex.test(value);
-                    });
-            
-                    if (isBannedWord) {
-                        window.alert('Please choose a different name. The entered name contains banned words.');
-                    }
-                }); 
-            } else {
-            throw new Error('Failed to fetch banned words');
-            }
+            const data = await response.json();
+            const bannedWords = data.words;
+            return bannedWords;
         } catch (error) {
-            console.error(error);
+            console.error('Error fetching list: ', error);
         }
     };
+    userNameControl.onFinishChange((value) => {
+        const trimmedString = value.substring(0, userNameLength);
+        userName = trimmedString;
 
-    fetchBannedWords();
+        const bannedWords = fetchBannedWords();
+        console.log(bannedWords)
+        const isBannedWord = bannedWords.some((word) => {
+            const regex = new RegExp(`\\b${word.word}\\b`, 'i');
+            return regex.test(value);
+        });
+
+        if (isBannedWord) {
+            window.alert('Please choose a different name. The entered name contains banned words.');
+        }
+    }); 
 
     userNameControl.onChange((value) => {
         updateCharLimit = userNameLength - value.length;
