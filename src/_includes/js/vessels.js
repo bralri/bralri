@@ -82,6 +82,7 @@ const setupGUI = () => {
             return bannedWords;
         } catch (error) {
             console.error('Error fetching list: ', error);
+            return []; // Return an empty array if an error occurs
         }
     };
 
@@ -92,13 +93,15 @@ const setupGUI = () => {
         const bannedWords = await fetchBannedWords();
         console.log(bannedWords);
 
-        const isBannedWord = bannedWords.some((word) => {
+        if (bannedWords.length > 0) {
+            const isBannedWord = bannedWords.some((word) => {
             const regex = new RegExp(`\\b${word}\\b`, 'i');
             return regex.test(value);
-        });
+            });
 
-        if (isBannedWord) {
+            if (isBannedWord) {
             window.alert('Please choose a different name. The entered name contains banned words.');
+            }
         }
     });
 
@@ -108,7 +111,7 @@ const setupGUI = () => {
     });
 
     const inputElement = userNameControl.domElement.querySelector('input');
-        inputElement.addEventListener('input', () => {
+    inputElement.addEventListener('input', () => {
         let inputValue = inputElement.value;
         inputValue = inputValue.replace(/[^a-zA-Z0-9]/g, '');
         if (inputValue.length > userNameLength) {
