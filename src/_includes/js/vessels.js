@@ -54,7 +54,7 @@ const setupGUI = () => {
         submitToArchive: () => {
             exportVesselToCloud();
         },
-        amountOfFragments: 16
+        amountOfFragments: 9
     }
     
     const controls = gui.addFolder("Controls");
