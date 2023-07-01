@@ -88,7 +88,13 @@ const setupGUI = () => {
         userName = trimmedString;
 
         const bannedWords = fetchBannedWords();
-        console.log(bannedWords)
+        bannedWords.then((words) => {
+            console.log(words)
+            
+            words.forEach((word) => {
+                console.log(word)
+            })
+        })
         const isBannedWord = bannedWords.some((word) => {
             const regex = new RegExp(`\\b${word.word}\\b`, 'i');
             return regex.test(value);
