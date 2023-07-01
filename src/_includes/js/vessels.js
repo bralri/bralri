@@ -72,7 +72,7 @@ const setupGUI = () => {
 
     const archive = gui.addFolder('Submit to the Archive');
 
-    const userNameControl = archive.add(guiParams, "setUserName").name(`Your Name (${userNameLength})`);
+    const userNameControl = archive.add(guiParams, 'setUserName').name(`Your Name (${userNameLength})`);
     const fetchBannedWords = async () => {
         try {
             const response = await fetch('/.netlify/functions/bannedWords');
@@ -82,34 +82,24 @@ const setupGUI = () => {
         } catch (error) {
             console.error('Error fetching list: ', error);
         }
-    };
-    userNameControl.onFinishChange((value) => {
+    }
+    userNameControl.onFinishChange(async (value) => {
         const trimmedString = value.substring(0, userNameLength);
         userName = trimmedString;
 
-        const bannedWords = fetchBannedWords();
-        bannedWords.then((words) => {
-            console.log(words)
-            
-            words.forEach((word) => {
-                console.log(word)
-            })
-        })
+        const bannedWords = await fetchBannedWords();
         const isBannedWord = bannedWords.some((word) => {
-            const regex = new RegExp(`\\b${word.word}\\b`, 'i');
+            const regex = new RegExp(`\\b${word}\\b`, 'i');
             return regex.test(value);
         });
-
         if (isBannedWord) {
             window.alert('Please choose a different name. The entered name contains banned words.');
         }
-    }); 
-
+    });
     userNameControl.onChange((value) => {
         updateCharLimit = userNameLength - value.length;
         userNameControl.name(`Your Name (${updateCharLimit})`);
     });
-
     const inputElement = userNameControl.domElement.querySelector('input');
     inputElement.addEventListener('input', () => {
         let inputValue = inputElement.value;
@@ -118,7 +108,6 @@ const setupGUI = () => {
             inputElement.value = inputValue.substring(0, userNameLength);
         }
     });
-
     inputElement.addEventListener('keydown', (event) => {
         if (event.key.length === 1 && inputElement.value.length >= userNameLength) {
             event.preventDefault();
@@ -126,9 +115,7 @@ const setupGUI = () => {
     });
 
     archive.add(guiParams, "submitToArchive").name("Submit your Vessel");
-    
     gui.add(guiParams, "visitArchive").name("Visit the Archive");
-    
     gui.$title.title = gui.$title.innerHTML;
     gui.children.forEach((child) => {
         if (!child.children) {
@@ -143,7 +130,6 @@ const setupGUI = () => {
                 child.domElement.ariaLabel = `Open ${child.$name.innerHTML}`;
             })
         }
-    
         if (child.$title) {
             child.$title.title = child.$title.innerHTML
             child.domElement.tabIndex = 0;
