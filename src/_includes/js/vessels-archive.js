@@ -4,6 +4,7 @@ import {MapControls} from 'three/MapControls.js';
 import {createAssetInstance} from '../js/_archive.min.js';
 
 let camera, mapControls, scene, renderer;
+let searchArray = [];
 const mouse = new THREE.Vector2();
 const objects = []; const objectsId = [];
 
@@ -24,7 +25,8 @@ const setupGUI = () => {
 
     const controls = gui.addFolder("Controls");
     controls.add(guiParams, "searchArchive").name("Search").onFinishChange((value) => {
-        // opperation
+        const filteredModels = searchModels(value);
+        displayFilteredModels(filteredModels);
     });
     controls.add(guiParams, "resetCamera").name("Reset Camera");
     
@@ -46,6 +48,42 @@ const setupGUI = () => {
             child.$title.title = child.$title.innerHTML
         }
     })
+}
+
+const searchModels = (searchTerm) => {
+    const lowercaseSearchTerm = searchTerm.toLowerCase();
+    return searchArray.filter((model) => {
+        model.vessel.toLowerCase().includes(lowercaseSearchTerm) || 
+        model.createdBy.toLowerCase().includes(lowercaseSearchTerm) || 
+        model.dateCreated.toLowerCase().includes(lowercaseSearchTerm)
+    });
+}
+
+const displayFilteredModels = (models) => {
+    objects.forEach((model) => {
+        scene.remove(model)
+    });
+    objects.length = 0;
+
+    // Add filtered models back to the scene
+    models.forEach((model) => {
+        const assetInstance = createAssetInstance(
+            model.vessel,
+            model.createdBy,
+            model.dateCreated,
+            model.url
+        );
+        assetInstance.then((instance) => {
+            instance.mesh.position.set(x, 40, z);
+            instance.mesh.scale.set(30, 30, 30);
+            instance.mesh.rotateY(Math.PI / 2);
+            scene.add(instance.mesh);
+            objects.push(instance.mesh);
+            objectsId.push(instance.mesh.userData.id);
+        }).catch((error) => {
+            console.log(error);
+        });
+    });
 }
 
 const init = () => {
@@ -110,6 +148,11 @@ const loadAssets = () => {
         const offset = (gridSize - 1) * spacing * 0.5;
 
         array.forEach((asset, i) => {
+            searchArray.push({
+                vessel: asset.name,
+                createdBy: asset.createdBy,
+                dateCreated: asset.dateCreated
+            });
             const assetInstance = createAssetInstance(
                 asset.name, 
                 asset.createdBy,
