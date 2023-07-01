@@ -6,7 +6,7 @@ import {OrbitControls} from 'three/OrbitControls.js';
 import {createAssetInstance} from '../js/_config.min.js';
 
 let scene, camera, renderer, orbitControls;
-let amountOfFragments = 16;
+let amountOfFragments = 9;
 let userName; const userNameLength = 30; let updateCharLimit;
 const fragments = [];
 const uuid = [];
@@ -54,7 +54,7 @@ const setupGUI = () => {
         submitToArchive: () => {
             exportVesselToCloud();
         },
-        amountOfFragments: 9
+        amountOfFragments: amountOfFragments
     }
     
     const controls = gui.addFolder("Controls");
