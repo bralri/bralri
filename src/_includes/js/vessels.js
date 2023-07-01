@@ -73,46 +73,14 @@ const setupGUI = () => {
     const archive = gui.addFolder('Submit to the Archive');
 
     const userNameControl = archive.add(guiParams, 'setUserName').name(`Your Name (${userNameLength})`);
-
-    const fetchBannedWords = async () => {
-        try {
-            const response = await fetch('/.netlify/functions/bannedWords');
-            const data = await response.json();
-            const bannedWords = data.words;
-            return bannedWords;
-        } catch (error) {
-            console.error('Error fetching list: ', error);
-            return []; // Return an empty array if an error occurs
-        }
-    };
-
     userNameControl.onFinishChange(async (value) => {
         const trimmedString = value.substring(0, userNameLength);
         userName = trimmedString;
-
-        const bannedWords = await fetchBannedWords();
-        bannedWords.then((value) => {
-            console.log(value);
-        })
-        console.log(bannedWords);
-
-        if (bannedWords.length > 0) {
-            const isBannedWord = bannedWords.some((word) => {
-            const regex = new RegExp(`\\b${word}\\b`, 'i');
-            return regex.test(value);
-            });
-
-            if (isBannedWord) {
-            window.alert('Please choose a different name. The entered name contains banned words.');
-            }
-        }
     });
-
     userNameControl.onChange((value) => {
         updateCharLimit = userNameLength - value.length;
         userNameControl.name(`Your Name (${updateCharLimit})`);
     });
-
     const inputElement = userNameControl.domElement.querySelector('input');
     inputElement.addEventListener('input', () => {
         let inputValue = inputElement.value;
@@ -121,7 +89,6 @@ const setupGUI = () => {
             inputElement.value = inputValue.substring(0, userNameLength);
         }
     });
-
     inputElement.addEventListener('keydown', (event) => {
         if (event.key.length === 1 && inputElement.value.length >= userNameLength) {
             event.preventDefault();
