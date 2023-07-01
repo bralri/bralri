@@ -1,8 +1,10 @@
 // bannedWords.js
 
+const {getBannedWords} = require('./bannedWordsList');
+
 exports.handler = async () => {
     try {
-        const bannedWords = process.env.BANNED_WORDS;
+        const bannedWords = getBannedWords;
         return {
             statusCode: 200,
             body: JSON.stringify({ words: bannedWords }),
