@@ -8,9 +8,11 @@ const storage = new Storage({credentials: key});
 const nodemailer = require('nodemailer');
 const transporter = nodemailer.createTransport({
     service: 'Gmail',
+    port: 587,
+    secure: false,
     auth: {
-        user: 'bryanridpath@gmail.com',
-        pass: 'Pavilion1996',
+        user: process.env.EMAIL_ADDRESS,
+        pass: process.env.EMAIL_PASSWORD,
     }
 });
 
@@ -50,8 +52,8 @@ exports.handler = async (event) => {
 const sendEmailNotif = async (fileName, userName) => {
     try {
         const options = {
-            from: 'bryanridpath@gmail.com',
-            to: 'bryanridpath@gmail.com',
+            from: process.env.EMAIL_ADDRESS,
+            to: process.env.EMAIL_ADDRESS,
             subject: 'New Build-A-Vessel archive submission',
             text: `${fileName} submitted by: ${userName}`,
         }
