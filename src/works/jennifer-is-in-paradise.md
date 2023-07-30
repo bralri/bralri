@@ -75,7 +75,7 @@ gallery:
         </figcaption>
 </figure>
 
-<br>
+<!-- <br>
 
 <p class="indent">Jennifer is in Paradise was a group exhibition</p>
 
@@ -100,9 +100,9 @@ gallery:
 <p>* <i>Taken in 1987 "Jennifer In Paradise" is the first Photoshopped image by its creator, John Knoll.</i></p>
 </blockquote>
 
-<br>
+<br> -->
 
-<p>text</p>
+<!-- <p>text</p> -->
 
 <br>
 <br>

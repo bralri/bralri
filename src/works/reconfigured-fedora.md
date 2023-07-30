@@ -84,9 +84,9 @@ gallery:
 <p>On the map of your empire, O Great Khan, there must be room both for the big, stone Fedora and the little Fedoras in the glass globes. Not because all are only assumptions. The one contains what is accepted as necessary when it is not yet so; the others, what is imagined as possible and, a moment later, is possible no longer.</p>
 </blockquote>
 
-<br>
+<!-- <br>
 
-<p>continue</p>
+<p>continue</p> -->
 
 <br>
 <br>

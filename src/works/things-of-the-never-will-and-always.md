@@ -66,9 +66,9 @@ gallery:
         </figcaption>
 </figure>
 
-<br>
+<!-- <br>
 
-<p class="indent"><i>Things of the Never-Will and Always</i>, was a re-installation from a body of work which combined sculptures and objects from previous exhibitions and residencies. This installation was part of a group show at a pop-up gallery in London. the work made during this residency was a continuation of a a previous project which had explored ideas of archeology, nostalgia, preservation and ...</p>
+<p class="indent"><i>Things of the Never-Will and Always</i>, was a re-installation from a body of work which combined sculptures and objects from previous exhibitions and residencies. This installation was part of a group show at a pop-up gallery in London. the work made during this residency was a continuation of a a previous project which had explored ideas of archeology, nostalgia, preservation and ...</p> -->
 
 <br>
 <br>

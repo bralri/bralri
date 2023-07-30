@@ -93,9 +93,9 @@ gallery:
     "{{ video[0].name }}". {{ video[0].description }}.
 </figcaption>
 
-<br>
+<!-- <br>
 
-<p class="indent">In 2018, I was artist in residence at Courtyard Arts Centre in Hertford, UK. Explain the residency concept further.</p>
+<p class="indent">In 2018, I was artist in residence at Courtyard Arts Centre in Hertford, UK. Explain the residency concept further.</p> -->
 
 <br>
 

@@ -36,9 +36,9 @@ gallery:
         </figcaption>
 </figure>
 
-<br>
+<!-- <br>
 
-<p class="indent">text</p>
+<p class="indent">text</p> -->
 
 <br>
 <br>

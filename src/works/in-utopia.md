@@ -73,10 +73,10 @@ gallery:
 
 <br>
 
-<p class="indent">In Utopia was an installation of a made for my undergraduate degree show group exhibition in 2018. The installation consisted of a series of large sculptures, ceramics, improvised structures and a single channel video mockumentary.</p>
+<!-- <p class="indent">In Utopia was an installation of a made for my undergraduate degree show group exhibition in 2018. The installation consisted of a series of large sculptures, ceramics, improvised structures and a single channel video mockumentary.</p>
 
 <br>
-<br>
+<br> -->
 
 <video width="100%" height="100%" controls controlsList="nodownload" poster="{{ video[0].thumbnail }}">
     <source src="{{ video[0].url }}" type="video/mp4">
@@ -86,11 +86,11 @@ gallery:
     "{{ video[0].name }}". {{ video[0].description }}.
 </figcaption>
 
-<br>
+<!-- <br>
 
 <p class="indent">text here</p>
 
-<br>
+<br> -->
 <br>
 
 <video width="50%" height="100%" controls controlsList="nodownload" poster="{{ video[1].thumbnail }}">
@@ -101,9 +101,9 @@ gallery:
     "{{ video[1].name }}". {{ video[1].description }}.
 </figcaption>
 
-<br>
+<!-- <br>
 
-<p>text here</p>
+<p>text here</p> -->
 
 <br>
 <br>
